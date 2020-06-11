@@ -8,5 +8,3 @@ if __name__ == '__main__':
         main(path=sys.argv[1])
     else: # host:port
         main()
-
-    main()

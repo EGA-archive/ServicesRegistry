@@ -1,8 +1,6 @@
 host = '0.0.0.0'
 port = 8000
 
-path = '/var/run/service-registry.sock'
-
 # import ssl
 ssl_context = None
 
