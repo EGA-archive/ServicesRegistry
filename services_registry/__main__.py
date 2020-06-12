@@ -2,7 +2,7 @@
 
 if __name__ == '__main__':
     import sys
-    from .dispatcher import main
+    from .app import main
 
     if len(sys.argv) > 1: # Unix socket
         main(path=sys.argv[1])
