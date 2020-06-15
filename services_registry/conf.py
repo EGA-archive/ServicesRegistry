@@ -9,10 +9,10 @@ services = [ ('EGA Beacon v0.3', 'https://ega-archive.org/beacon-api/'),
 			 ('Covid Beacon', 'https://covid19beacon.crg.eu/api/')]
 
 
-urls_whitelisted = ['^\/$',
-					'^\/service-info$',
-					'^\/query\?.*',
-					'^\/g_variants.*',
-					'^\/biosamples.*',]
+urls_whitelisted = [r'^/$',
+					r'^/service-info$',
+					r'^/query?.*',
+					r'^/g_variants.*',
+					r'^/biosamples.*',]
 
 urls_blacklisted = []
