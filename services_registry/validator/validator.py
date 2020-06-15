@@ -10,13 +10,6 @@ LOG = logging.getLogger(__name__)
 routes = web.RouteTableDef()
 
 
-@routes.view('/favicon.ico')
-class Validator(web.View):
-
-    async def get(self):
-        raise web.HTTPNotFound()
-
-
 @routes.view('/{anything:.*}')
 class Validator(web.View):
 
