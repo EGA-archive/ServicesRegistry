@@ -36,22 +36,10 @@ def build_meta(qparams, func_response_type):
 def build_received_request(qparams):
     """"Fills the `receivedRequest` part with the request data"""
 
-    # g_variant = build_g_variant_params(qparams, variant_id)
-    # individual = build_individual_params(qparams, individual_id)
-    # biosample = build_biosample_params(qparams, biosample_id)
-    #
-    # query_part = {}
-    # if g_variant:
-    #     query_part['gVariant'] = g_variant
-    # if individual:
-    #     query_part['individual'] = individual
-    # if biosample:
-    #     query_part['biosample'] = biosample
-
     request = {
         'meta': {
             'requestedSchemas' : build_requested_schemas(qparams),
-            'apiVersion' : qparams.apiVersion,
+            'apiVersion' : None,
         },
         'query': None
     }
@@ -127,9 +115,9 @@ def build_response(data, qparams, func):
             'beaconHandover': None, # build_beacon_handover
         }
 
-    # error = build_error(qparams)
-    # if error is not None:
-    #     response['error'] = error
+    error = build_error(qparams)
+    if error is not None:
+        response['error'] = error
 
     return response
 

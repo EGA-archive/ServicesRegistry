@@ -18,16 +18,9 @@ routes = web.RouteTableDef()
 # ----------------------------------------------------------------------------------------------------------------------
 
 class ServiceInfoParameters(RequestParameters):
-    serviceType = ChoiceField(i for i in conf.service_types)
-    model = SchemasField()
-    listFormat = ChoiceField('short', 'full', default='full')
-    apiVersion = Field(default=None)
+    model = ChoiceField('ga4gh-service-info-v1.0', default=None)
     requestedSchemasServiceInfo = SchemasField()
 
-    def correlate(self, req, values):
-        LOG.info('Further correlation for the services endpoint')
-        if values.apiVersion is not None and values.model is None:
-            raise web.HTTPBadRequest(reason="Parameter 'model' is required when using 'apiVersion'")
 
 # ----------------------------------------------------------------------------------------------------------------------
 #                                         HANDLER
@@ -45,6 +38,7 @@ async def handler_info(request):
     if LOG.isEnabledFor(logging.DEBUG):
         print_qparams(qparams_db, service_info_proxy, LOG)
 
+    LOG.debug('model %s', qparams_db.model)
     if qparams_db.model is not None:
         return await handler_service_info(request)
 
