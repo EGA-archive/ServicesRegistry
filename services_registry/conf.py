@@ -16,3 +16,35 @@ urls_whitelisted = [r'^/$',
 					r'^/biosamples.*',]
 
 urls_blacklisted = []
+
+service_types = ['org.ga4gh.registry.0.1', 'org.ga4gh.beacon.1.0', 'org.ga4gh.beacon.2.0']
+
+ga4gh_service_info_group = 'org.ga4gh'
+ga4gh_service_info_artifact = 'registry'
+version = '0.1'
+
+service_info = {
+	'id': 'eu.crg.services-registry',
+	'name': 'Services Registry',
+	'serviceType': ga4gh_service_info_group + '.' + ga4gh_service_info_artifact + '.' + version,
+	'apiVersion': 'v2.0.0-draft.1',
+	'serviceUrl': 'TODO',
+	'entryPoint': False,
+	'organization': {
+		'id': 'eu.crg',
+		'name': 'Centre for Genomic Regulation (CRG)',
+		'description': None,
+		'address': 'C/ Dr. Aiguader, 88. 08001 Barcelona (Spain)',
+		'welcomeUrl': 'www.crg.eu',
+		'contactUrl': None,
+		'logoUrl': None,
+		'info': None
+	},
+	'description': 'This is a registry for services of any kind.',
+	'version': version,
+	'open': True,
+	'welcomeUrl': None,
+	'alternativeUrl': None,
+	'createDateTime': None,
+	'updateDateTime': None
+}

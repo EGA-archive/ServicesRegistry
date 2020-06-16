@@ -10,7 +10,8 @@ import yaml
 from aiohttp import web
 
 from . import conf
-from .validator import validator
+# from .validator import validator
+from .endpoints import dispatcher, service_handler
 
 LOG = logging.getLogger(__name__)
 LOG_FILE = Path(os.getenv('SERVICES_REGISTRY_LOG', 'logger.yml')).resolve()
@@ -29,7 +30,9 @@ def main(path=None):
     server = web.Application()
 
     # Add the routes
-    server.add_routes(validator.routes)
+    # server.add_routes(validator.routes)
+    server.add_routes(service_handler.routes)
+    server.add_routes(dispatcher.routes)
 
     # .... and cue music!
     LOG.info(f"Start services registry")

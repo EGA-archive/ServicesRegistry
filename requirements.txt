@@ -1,4 +1,5 @@
 aiohttp
+asyncpg
 httpx
 pyyaml
 supervisor
