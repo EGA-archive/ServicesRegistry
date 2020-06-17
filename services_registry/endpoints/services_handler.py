@@ -42,7 +42,7 @@ services_proxy = ServicesParameters()
 
 @routes.get('/bn_services')
 async def handler_services(request):
-    LOG.info('Running a GET services request')
+    LOG.info('Running a GET bn_services request')
 
     _, qparams_db = await services_proxy.fetch(request)
 
@@ -55,6 +55,14 @@ async def handler_services(request):
 
     # return await forward_specific_path('/info') # just concatenate responses
     return await forward_and_process_response(request, qparams_db, '/info')
+
+
+@routes.get('/services')
+async def handler_services(request):
+    LOG.info('Running a GET GA4GH services request')
+
+    response = response_from_services(path='/service-info')
+    return web.json_response(list([r async for r in response]))
 
 
 async def forward_and_process_response(request, qparams_db, path):
