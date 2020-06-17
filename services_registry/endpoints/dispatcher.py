@@ -3,7 +3,7 @@ from aiohttp import web
 import httpx
 
 from services_registry import conf
-from ..validator import validator
+from ..validation import path_validator
 
 LOG = logging.getLogger(__name__)
 
@@ -46,7 +46,7 @@ async def response_from_services(request=None, path=None):
 async def forward_endpoint(request):
     LOG.info('-------- Aggregator query %s', request.path_qs)
 
-    await validator.validate(request) # it will raise an error if path is not valid
+    await path_validator.validate(request) # it will raise an error if path is not valid
 
     response = response_from_services(request)
     return web.json_response(dict([r async for r in response]))  # change that for streaming response

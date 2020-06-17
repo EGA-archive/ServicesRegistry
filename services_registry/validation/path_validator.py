@@ -2,7 +2,7 @@ import logging
 import re
 from aiohttp import web
 
-from .. import conf
+from services_registry import conf
 
 LOG = logging.getLogger(__name__)
 
