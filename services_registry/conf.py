@@ -21,13 +21,14 @@ service_types = ['org.ga4gh.registry.0.1', 'org.ga4gh.beacon.1.0', 'org.ga4gh.be
 
 ga4gh_service_info_group = 'org.ga4gh'
 ga4gh_service_info_artifact = 'registry'
-version = '0.1'
+version = '2.0'
+api_version = 'v2.0.0-draft.1'
 
 service_info = {
 	'id': 'eu.crg.services-registry',
 	'name': 'Services Registry',
 	'serviceType': ga4gh_service_info_group + '.' + ga4gh_service_info_artifact + '.' + version,
-	'apiVersion': 'v2.0.0-draft.1',
+	'apiVersion': api_version,
 	'serviceUrl': 'TODO',
 	'entryPoint': False,
 	'organization': {

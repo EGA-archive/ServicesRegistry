@@ -8,7 +8,7 @@ def ga4gh_service_info_v10(row):
         'type': {
             'group': conf.ga4gh_service_info_group,
             'artifact': conf.ga4gh_service_info_artifact,
-            'version': conf.version
+            'version': conf.api_version
         },
         'description': conf.service_info['description'],
         'organization': {
