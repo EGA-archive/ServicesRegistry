@@ -18,7 +18,9 @@ services = {
 urls_whitelisted = [r'^/$',
 					r'^/query?.*',
 					r'^/g_variants.*',
-					r'^/biosamples.*',]
+					r'^/biosamples.*',
+					r'^/datasets',
+					r'^/cohorts']
 
 urls_blacklisted = []
 
