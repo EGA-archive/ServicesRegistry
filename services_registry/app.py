@@ -11,7 +11,7 @@ from aiohttp import web
 
 from . import conf
 # from .validator import validator
-from .endpoints import dispatcher, service_info_handler
+from .endpoints import dispatcher, service_info_handler, services_handler
 
 LOG = logging.getLogger(__name__)
 LOG_FILE = Path(os.getenv('SERVICES_REGISTRY_LOG', 'logger.yml')).resolve()
@@ -32,6 +32,7 @@ def main(path=None):
     # Add the routes
     # server.add_routes(validator.routes)
     server.add_routes(service_info_handler.routes)
+    server.add_routes(services_handler.routes)
     server.add_routes(dispatcher.routes)
 
     # .... and cue music!

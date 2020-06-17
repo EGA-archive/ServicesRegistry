@@ -25,8 +25,8 @@ def build_meta(qparams, func_response_type):
     """
 
     meta = {
-        'serviceId' : conf.service_info['id'],
-        'apiVersion': conf.service_info['apiVersion'],
+        'serviceId' : conf.service_id,
+        'apiVersion': conf.api_version,
         'receivedRequest' : build_received_request(qparams),
         'returnedSchemas': build_returned_schemas(qparams, func_response_type)
     }
@@ -128,8 +128,10 @@ def build_service_info_response(data, qparams):
     service_info_requested_schemas = qparams.requestedSchemasServiceInfo[0]
 
     if data is None:
+        LOG.debug('data is None')
         yield transform_data_into_schema(None, 'ServiceInfo', service_info_requested_schemas)
     else:
+        LOG.debug('data is NOT None')
         for row in data:
             yield transform_data_into_schema(row, 'ServiceInfo', service_info_requested_schemas)
 

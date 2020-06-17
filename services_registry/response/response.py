@@ -23,7 +23,7 @@ async def json_stream(request, data):
     LOG.debug('HTTP response stream')
     headers = {
         'Content-Type': 'application/json;charset=utf-8',
-        'Server': f"{conf.service_info['name']} {conf.version} (based on {SERVER_SOFTWARE})"
+        'Server': f"{conf.service_name} {conf.service_version} (based on {SERVER_SOFTWARE})"
     }
     response = StreamResponse(headers=headers)
 

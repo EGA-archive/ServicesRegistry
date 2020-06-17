@@ -4,48 +4,27 @@ port = 8000
 # import ssl
 ssl_context = None
 
-services = [ ('EGA Beacon v0.3', 'https://ega-archive.org/beacon-api/'),
+services = [ #('EGA Beacon v0.3', 'https://ega-archive.org/beacon-api/'),
 			#('EGA Beacon', 'https://beacon-api.ega-archive.org'),
-			 ('Covid Beacon', 'https://covid19beacon.crg.eu/api/')]
+			 ('Covid Beacon', 'https://covid19beacon.crg.eu/api/'),
+			 ('CANDIG', 'https://poc.distributedgenomics.ca:5050')]
 
 
 urls_whitelisted = [r'^/$',
 					r'^/service-info$',
+					r'^/services$',
 					r'^/query?.*',
 					r'^/g_variants.*',
 					r'^/biosamples.*',]
 
 urls_blacklisted = []
 
-service_types = ['org.ga4gh.registry.0.1', 'org.ga4gh.beacon.1.0', 'org.ga4gh.beacon.2.0']
-
-ga4gh_service_info_group = 'org.ga4gh'
-ga4gh_service_info_artifact = 'registry'
-version = '2.0'
+service_id = 'eu.crg.services-registry'
+service_name = ''
+service_version = '2.0'
 api_version = 'v2.0.0-draft.1'
 
-service_info = {
-	'id': 'eu.crg.services-registry',
-	'name': 'Services Registry',
-	'serviceType': ga4gh_service_info_group + '.' + ga4gh_service_info_artifact + '.' + version,
-	'apiVersion': api_version,
-	'serviceUrl': 'TODO',
-	'entryPoint': False,
-	'organization': {
-		'id': 'eu.crg',
-		'name': 'Centre for Genomic Regulation (CRG)',
-		'description': None,
-		'address': 'C/ Dr. Aiguader, 88. 08001 Barcelona (Spain)',
-		'welcomeUrl': 'www.crg.eu',
-		'contactUrl': None,
-		'logoUrl': None,
-		'info': None
-	},
-	'description': 'This is a registry for services of any kind.',
-	'version': version,
-	'open': True,
-	'welcomeUrl': None,
-	'alternativeUrl': None,
-	'createDateTime': None,
-	'updateDateTime': None
-}
+ga4gh_service_info_group = 'org.ga4gh'
+ga4gh_service_info_artifact = 'service-registry'
+ga4gh_version = '1.0'
+ga4gh_service_types = ['org.ga4gh.service-registry.1.0', 'org.ga4gh.beacon-aggregator.1.0', 'org.ga4gh.beacon.1.0']
