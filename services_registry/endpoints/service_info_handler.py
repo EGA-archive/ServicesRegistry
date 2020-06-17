@@ -51,3 +51,10 @@ async def handler_service_info(request):
     LOG.info('Running a GET service-info request')
 
     return await json_stream(request, alternative.ga4gh_service_info_v10(None))
+
+
+@routes.get('/registered_services')
+async def handler_registered_services(request):
+    LOG.info('Running a GET registered services request')
+
+    return await json_stream(request, conf.services)
