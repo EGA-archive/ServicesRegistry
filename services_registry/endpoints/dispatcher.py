@@ -25,8 +25,8 @@ async def response_from_services(request=None, path=None):
         post_data = request.post()
 
     # Allow only GET and POST ?
-    for name, address in SERVICES:
-        url = f'{address}{path}'
+    for key, service in SERVICES.items():
+        url = f"{service['address']}{path}"
         LOG.info('%s %s', method, url)
         async with httpx.AsyncClient() as client:
             r = await client.request(method,
@@ -34,12 +34,12 @@ async def response_from_services(request=None, path=None):
                                      # headers=request.headers,
                                      data=None if method == 'GET' else post_data)
             if r.status_code > 200:
-                LOG.error("Invalid response [%s] for %s", r.status_code, name)
+                LOG.error("Invalid response [%s] for %s", r.status_code, service['name'])
                 response = f"Invalid response {r.status_code}"
             else:
                 response = r.json()
 
-            yield (name, {'request': url, 'response': response})
+            yield (service['name'], {'request': url, 'response': response})
 
 
 @routes.get('/{anything:.*}')

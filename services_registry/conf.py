@@ -4,15 +4,18 @@ port = 8000
 # import ssl
 ssl_context = None
 
-services = [ #('EGA Beacon v0.3', 'https://ega-archive.org/beacon-api/'),
-			#('EGA Beacon', 'https://beacon-api.ega-archive.org'),
-			 ('Covid Beacon', 'https://covid19beacon.crg.eu/api/'),
-			 ('CANDIG', 'https://poc.distributedgenomics.ca:5050')]
-
+services = {
+	'eu.crg.covid19beacon': {
+		'name': 'Covid Beacon',
+		'address': 'https://covid19beacon.crg.eu/api/'
+	},
+	'ca.distributedgenomics.poc': {
+		'name': 'CANDIG',
+		'address': 'https://poc.distributedgenomics.ca:5050'
+	}
+}
 
 urls_whitelisted = [r'^/$',
-					r'^/service-info$',
-					r'^/services$',
 					r'^/query?.*',
 					r'^/g_variants.*',
 					r'^/biosamples.*',]
@@ -20,7 +23,7 @@ urls_whitelisted = [r'^/$',
 urls_blacklisted = []
 
 service_id = 'eu.crg.services-registry'
-service_name = ''
+service_name = 'Service Registry'
 service_version = '2.0'
 api_version = 'v2.0.0-draft.1'
 

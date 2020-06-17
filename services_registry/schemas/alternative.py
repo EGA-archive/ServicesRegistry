@@ -6,11 +6,13 @@ from .default import service_info_v01
 LOG = logging.getLogger(__name__)
 
 
+# noinspection PyDictCreation
 def ga4gh_service_info_v10(row):
 
     group = None
     artifact = None
     version = None
+    url = None
 
     if row is None:
         # Data for this registry
@@ -20,6 +22,7 @@ def ga4gh_service_info_v10(row):
         version = conf.ga4gh_version
     else:
         # Data for other services registered
+        url = row.get('url')
         service_type = row.get('serviceType', None)
         if service_type is not None:
             tokens = service_type.rsplit('.', 1)
@@ -27,7 +30,7 @@ def ga4gh_service_info_v10(row):
                 group = tokens[0]
                 artifact = tokens[1]
 
-    return {
+    schema = {
         'id': row['id'],
         'name': row['name'],
         'type': {
@@ -47,3 +50,8 @@ def ga4gh_service_info_v10(row):
         'environment': None,
         'version': row['version'],
     }
+
+    if url is not None:
+        schema['url'] = url
+
+    return schema
