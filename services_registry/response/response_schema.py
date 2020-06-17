@@ -91,7 +91,7 @@ def build_error(qparams):
 
     message = 'Some requested schemas are not supported.'
 
-    if len(qparams.requestedSchemasVariant[1]) > 0:
+    if len(qparams.requestedSchemasServiceInfo[1]) > 0:
         message += f' ServiceInfo: {qparams.requestedSchemasServiceInfo[1]}'
 
 
