@@ -2,7 +2,9 @@ from . import default, alternative
 
 
 SUPPORTED_SCHEMAS = {
+    # default
     'elixirbn-service-info-v0.1': default.service_info_v01,
+    # alternative
     'ga4gh-service-info-v1.0': alternative.ga4gh_service_info_v10,
 }
 
