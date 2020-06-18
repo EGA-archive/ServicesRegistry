@@ -48,6 +48,7 @@ COPY services_registry /crg/services_registry
 COPY entrypoint.sh     /usr/local/bin/entrypoint.sh
 COPY static/css        /crg/static/css
 COPY static/img        /crg/static/img
+COPY templates         /crg/templates
 
 RUN groupadd crg                           && \
     useradd -M -g crg crg                  && \

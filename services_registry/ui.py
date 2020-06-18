@@ -5,12 +5,17 @@ import os
 import logging
 from logging.config import dictConfig
 from pathlib import Path
-import yaml
-import httpx
+import asyncio
+from urllib.parse import quote
+import json
 
+import yaml
 from aiohttp import web
+import aiohttp_jinja2
+import jinja2
 
 from . import conf
+from .utils import collect_responses
 
 LOG = logging.getLogger(__name__)
 LOG_FILE = Path(os.getenv('SERVICES_REGISTRY_LOG', 'logger.yml')).resolve()
@@ -18,74 +23,58 @@ LOG_FILE = Path(os.getenv('SERVICES_REGISTRY_LOG', 'logger.yml')).resolve()
 
 async def initialize(app):
     """Initialize HTTP server."""
-
-    # Configure CORS settings
-    cors = aiohttp_cors.setup(app, defaults={
-        "*": aiohttp_cors.ResourceOptions(
-            allow_credentials=True,
-            expose_headers="*",
-            allow_headers="*",
-        )
-    })
-    # Apply CORS to endpoints
-    for route in list(app.router.routes()):
-        cors.add(route)
-
-    # Setup the HTML templates
-    templates_path = Path(__file__).parent / 'templates'
+    templates_path = Path(__file__).parent.parent / 'templates'
     LOG.debug('template directory: %s', str(templates_path))
     aiohttp_jinja2.setup(app,
                          loader=jinja2.FileSystemLoader(str(templates_path)))
     app['static_root_url'] = '/static'
-    # env = aiohttp_jinja2.get_env(app)
-    # env.globals.update(
-    #     len=len,
-    #     max=max,
-    #     enumerate=enumerate,
-    #     range=range)
     LOG.info("Initialization done.")
 
 
-async def explore_service(name, service_url):
+def explore_service(name, url, info, error):
     """Fetch the interesting information of a service
     by using its base URL"""
-    service = {}
 
-    # Use the name and address keys of the service input dictionary
-    service["title"] = name
+    # LOG.info("Exploring %s: %s", name, url)
+    # LOG.info("==> [error: %s] %s", error, info)
 
-    # Fetch the info page of the service
-    try:
-        async with httpx.AsyncClient() as client:
-            r = await client.get(service_url) # no header
-            service["error"] = False
-            info = r.json()
+    if error:
+        return {
+            "title": name,
+            "error": error
+        }
 
-            org = info["organization"]
-            service["organization_name"] = org["name"]
-            service["name"] = info["name"] # reset
-            service["description"] = info["description"]
-            service["visit_us"] = org["welcomeUrl"]
-            service["beacon_api"] = info["welcomeUrl"]
-            service["contact_us"] = org["contactUrl"]
-
-            # For the logo, we need to check if the link is OK
-            logo_url = info["organization"]["logoUrl"]
-            service["logo_url"] = service_url + logo_url if not logo_url.startswith("http") else logo_url
-    except Exception as e:
-        service["error"] = True
-
-    LOG.info('------ [%s] %s: %s', name, service_url, service)
-    return service
+    org = info["organization"]
+    logo_url = info["organization"]["logoUrl"]
+    return {
+        "title": name,
+        "error": error,
+        "organization_name": org["name"],
+        "name": info["name"],
+        "description": info["description"],
+        "visit_us": org["welcomeUrl"],
+        "beacon_api": info["welcomeUrl"],
+        "contact_us": org["contactUrl"],
+        "logo_url": service_url + logo_url if not logo_url.startswith("http") else logo_url,
+    }
 
 @aiohttp_jinja2.template('index.html')
 async def index(request):
-    aws = [explore_service(d['name'], d['address'])
-           for d in conf.services]
-    services_info = [await coro
-                     for coro in asyncio.as_completed(aws)]
+    results = await collect_responses('/') # json=True
+    services_info = [explore_service(*args) for args in results]
     return { "services": services_info }
 
+async def dispatch(request):
+    data = await request.post()
+    LOG.debug('Captured data: %s', data)
+    url = data.get('url', '')
+    if not url or url[0] != '/':
+        url = '/' + url
+    LOG.debug('Captured URL: %s', url)
+    raise web.HTTPFound(url)
+    # redirect = quote(url)
+    # LOG.info('Redirect to: %s', redirect)
+    # raise web.HTTPFound(redirect)
 
 def main(path=None):
 
@@ -98,9 +87,11 @@ def main(path=None):
 
     # Create the server
     server = web.Application()
+    server.on_startup.append(initialize)
 
     # Add the routes
-    server.add_routes([web.get('/', index, name='index')])
+    server.add_routes([web.get('/', index, name='index'),
+                       web.post('/', dispatch)])
 
     # .... and cue music!
     LOG.info(f"Start services registry UI")
@@ -119,3 +110,12 @@ def main(path=None):
                     port=getattr(conf, 'ui_port', 8001),
                     shutdown_timeout=0,
                     ssl_context=getattr(conf, 'ssl_context', None))
+
+
+if __name__ == '__main__':
+    import sys
+
+    if len(sys.argv) > 1: # Unix socket
+        main(path=sys.argv[1])
+    else: # host:port
+        main()

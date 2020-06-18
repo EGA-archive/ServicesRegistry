@@ -2,7 +2,7 @@ import logging
 from aiohttp import web
 import httpx
 
-from .dispatcher import forward_endpoint, forward_specific_path
+from .dispatcher import forward_endpoint
 from ..validation.request import RequestParameters, print_qparams
 from ..validation.fields import Field, ChoiceField, SchemasField
 from ..response.response import json_stream
@@ -54,7 +54,6 @@ async def handler_services(request):
         response = response_from_services(path='/service-info')
         return web.json_response(list([r async for r in response]))
 
-    # return await forward_specific_path('/info') # just concatenate responses
     return await forward_and_process_response(request, qparams_db, '/info')
 
 
@@ -73,7 +72,6 @@ async def handler_services_by_id(request):
         response = response_from_services(path='/service-info', requested_service_id=requested_service_id)
         return web.json_response(list([r async for r in response]))
 
-    # return await forward_specific_path('/info') # just concatenate responses
     return await forward_and_process_response(request, qparams_db, '/info', requested_service_id=requested_service_id)
 
 

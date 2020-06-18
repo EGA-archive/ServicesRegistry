@@ -23,10 +23,12 @@
         </nav>
 
         <main>
-          <form action="" id="query-form">
-            <input type="text" value=""
-		   placeholder="Type here a URL you want to dispatch to the available services..."
-                   title="For example: /query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL">
+          <form action="{{ url('index') }}" method="POST">
+            <input type="text"
+		   value=""
+		   name="url"
+		   placeholder="Input a URL you want to dispatch to the available services"
+                   title="For example: /query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL" />
             <button type="submit"><i class="fas fa-search"></i></button>
           </form>
 
@@ -39,19 +41,19 @@
             <div class="card">
               <section id="left-part">
                 {% if service.logo_url %}
-                <img src="{{ registry.logo_url }}" alt="{{ service.name }} Logo" />
+                <img src="{{ service.logo_url }}" alt="{{ service.name }} Logo" />
                 {% else %}
                 <img src="{{ static('img/beacon_default.png') }}" alt="Default Logo" />
                 {% endif %}
                 <ul>
                   <li>
-                    <a href="{{ service.visit_us }}" target="_blank"><i class="fas fa-globe"></i> Visit us</a> 
+                    <a href="{{ service.visit_us }}"><i class="fas fa-globe"></i> Visit us</a> 
                   </li>
                   <li>
-                    <a href="{{ service.beacon_api }}" target="_blank"><i class="fas fa-share-square"></i>Beacon API</a> 
+                    <a href="{{ service.beacon_api }}"><i class="fas fa-share-square"></i>Beacon API</a> 
                   </li>
                   <li>
-                    <a href="{{ service.contact_us }}" target="_blank"><i class="fas fa-envelope"></i>Contact us</a>
+                    <a href="{{ service.contact_us }}"><i class="fas fa-envelope"></i>Contact us</a>
                   </li>
                 </ul>
               </section>

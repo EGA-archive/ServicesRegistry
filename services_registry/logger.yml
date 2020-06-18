@@ -10,12 +10,9 @@ loggers:
     level: DEBUG
     handlers: [console]
     propagate: True
-  asynpg:
-    level: INFO
-    handlers: [console]
-  aiohttp:
-    level: INFO
-    handlers: [console]
+  # aiohttp:
+  #   level: INFO
+  #   handlers: [console]
 
 handlers:
   noHandler:

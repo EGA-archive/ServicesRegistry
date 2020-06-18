@@ -15,7 +15,7 @@ build:
 up:
 	docker run -d --rm \
                --name services-registry \
-               -p 8000:8000 \
+               -p 8000:8080 \
                crg/services-registry:$(COMMIT)
 
 down:
@@ -28,9 +28,10 @@ down:
 run:
 	docker run -d --rm \
                --name services-registry \
-               -p 8000:8000 \
+               -p 8000:8080 \
 	       -v $(shell pwd)/services_registry:/crg/services_registry \
 	       -v $(shell pwd)/static:/crg/static \
+	       -v $(shell pwd)/templates:/crg/templates \
                --entrypoint "/bin/sleep" \
                crg/services-registry:$(COMMIT) \
            1000000000000
