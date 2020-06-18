@@ -21,16 +21,19 @@ def explore_service(service):
         service_dict["name"] = service_info_dict["name"]
         service_dict["description"] = service_info_dict["description"]
         service_dict["visit_us"] = service_info_dict["organization"]["welcomeUrl"]
-        service_dict["beacon_api"] = service_info_dict["welcomeUrl"]
+        service_dict["beacon_api"] = service_info_dict["serviceUrl"]
         service_dict["contact_us"] = service_info_dict["organization"]["contactUrl"]
 
         # For the logo, we need to check if the link is OK
         logo_url = service_info_dict["organization"]["logoUrl"]
         if logo_url.startswith("http"):
-            logo_request = requests.get(logo_url)
-            if logo_request:
-                service_dict["logo_url"] = logo_url
-            else:
+            try:
+                logo_request = requests.get(logo_url)
+                if logo_request:
+                    service_dict["logo_url"] = logo_url
+                else:
+                    service_dict["logo_url"] = False
+            except (requests.exceptions.InvalidURL, requests.exceptions.ConnectionError, requests.exceptions.Timeout, requests.exceptions.HTTPError):
                 service_dict["logo_url"] = False
         else:
             service_dict["logo_url"] = False
@@ -55,6 +58,10 @@ def get_service_registry_context(serviceRegistryUrl):
         "ca.distributedgenomics.poc": {
             "name": "CANDIG",
             "address": "https://poc.distributedgenomics.ca:5050"
+            },
+        "h3abionet.org": {
+            "name": "H3Africa",
+            "address": "https://beacon2.h3abionet.org/api"
             }
         }
     
