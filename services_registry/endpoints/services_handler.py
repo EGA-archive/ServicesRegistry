@@ -23,12 +23,11 @@ SERVICES = conf.services
 # ----------------------------------------------------------------------------------------------------------------------
 
 class ServicesParameters(RequestParameters):
-    serviceType = ChoiceField(i for i in conf.ga4gh_service_types) # TODO
+    serviceType = ChoiceField(i for i in conf.service_types) # TODO
     model = SchemasField()
     listFormat = ChoiceField('short', 'full', default='full') # TODO
     apiVersion = Field(default=None) # TODO
     requestedSchemasServiceInfo = SchemasField()
-    # targetIdReq = Field(default=None)
 
     def correlate(self, req, values):
         LOG.info('Further correlation for the services endpoint')
@@ -40,6 +39,7 @@ class ServicesParameters(RequestParameters):
 # ----------------------------------------------------------------------------------------------------------------------
 
 services_proxy = ServicesParameters()
+
 
 @routes.get('/bn_services')
 async def handler_services(request):
@@ -59,7 +59,7 @@ async def handler_services(request):
 
 
 @routes.get('/bn_services/{service_id}')
-async def handler_services(request):
+async def handler_services_by_id(request):
     LOG.info('Running a GET bn_services by ID request')
 
     _, qparams_db = await services_proxy.fetch(request)
@@ -78,7 +78,7 @@ async def handler_services(request):
 
 
 @routes.get('/services')
-async def handler_services(request):
+async def handler_ga4gh_services(request):
     LOG.info('Running a GET GA4GH services request')
 
     response = response_from_services(path='/service-info')
@@ -86,7 +86,7 @@ async def handler_services(request):
 
 
 @routes.get('/services/{service_id}')
-async def handler_services(request):
+async def handler_ga4gh_services_by_id(request):
     LOG.info('Running a GET GA4GH services by ID request')
 
     requested_service_id = request.match_info['service_id']
