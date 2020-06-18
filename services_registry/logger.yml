@@ -7,7 +7,7 @@ root:
 
 loggers:
   services_registry:
-    level: DEBUG
+    level: INFO
     handlers: [console]
     propagate: True
   # aiohttp:

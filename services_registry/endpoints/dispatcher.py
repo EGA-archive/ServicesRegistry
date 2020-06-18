@@ -29,8 +29,8 @@ async def forward_endpoint(request):
                  for (name, url, response, error) in results]
 
     res = dict(responses)
-    LOG.info('==================')
-    LOG.info('responses: %s', res)
+    LOG.debug('==================')
+    LOG.debug('responses: %s', res)
     return web.json_response(res)  # change that for streaming response
 
 
