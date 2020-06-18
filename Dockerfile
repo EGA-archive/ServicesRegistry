@@ -35,18 +35,19 @@ LABEL org.label-schema.vcs-ref=$COMMIT
 # Too much ?
 COPY --from=BUILD /usr/local      /usr/local
 
-RUN apt-get update && \
-    apt-get upgrade -y && \
+RUN apt-get update; \
+    apt-get upgrade -y; \
     apt-get install -y --no-install-recommends \
-    nginx \
-    && \
-    rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/nginx.list && \
+    nginx; \
+    rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/nginx.list; \
     apt-get purge -y --auto-remove
 
 COPY nginx.conf        /crg/nginx.conf
 COPY supervisord.conf  /crg/supervisord.conf
 COPY services_registry /crg/services_registry
 COPY entrypoint.sh     /usr/local/bin/entrypoint.sh
+COPY static/css        /crg/static/css
+COPY static/img        /crg/static/img
 
 RUN groupadd crg                           && \
     useradd -M -g crg crg                  && \

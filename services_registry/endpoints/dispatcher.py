@@ -42,7 +42,7 @@ async def response_from_services(request=None, path=None):
             yield (service['name'], {'request': url, 'response': response})
 
 
-@routes.get('/{anything:.*}')
+@routes.get('/{anything:.+}')
 async def forward_endpoint(request):
     LOG.info('-------- Aggregator query %s', request.path_qs)
 

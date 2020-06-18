@@ -30,6 +30,7 @@ run:
                --name services-registry \
                -p 8000:8000 \
 	       -v $(shell pwd)/services_registry:/crg/services_registry \
+	       -v $(shell pwd)/static:/crg/static \
                --entrypoint "/bin/sleep" \
                crg/services-registry:$(COMMIT) \
            1000000000000
