@@ -111,8 +111,8 @@ def build_response(data, qparams, func):
             'exists': True if data is None or len(data) > 0 else False,
             'results': func(data, qparams),
             'info': None,
-            'resultsHandover': None, # build_results_handover
-            'beaconHandover': None, # build_beacon_handover
+            # 'resultsHandover': None, # build_results_handover
+            # 'beaconHandover': None, # build_beacon_handover
         }
 
     error = build_error(qparams)
