@@ -71,8 +71,5 @@ async def handler_ga4gh_services_types(request):
 @routes.get('/bn_service_types')
 async def handler_services_types(request):
     LOG.info('Running a GET services types request')
-    _, qparams_db = await service_info_proxy.fetch(request)
 
-    # return await json_stream(request, conf.service_types)
-    response_converted = build_service_response(None, qparams_db, build_service_type_response)
-    return await json_stream(request, response_converted)
+    return await json_stream(request, conf.service_types)
