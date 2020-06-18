@@ -33,7 +33,7 @@ api_version = 'v2.0.0-draft.1'
 
 ga4gh_service_info_group = 'org.ga4gh'
 ga4gh_service_info_artifact = 'service-registry'
-ga4gh_version = '1.0'
+# ga4gh_version = '1.0'
 
 service_types = ['GA4GHRegistry', 'GA4GHBeaconAggregator', 'GA4GHBeacon']
 

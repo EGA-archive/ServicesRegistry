@@ -19,10 +19,11 @@ def ga4gh_service_info_v10(row):
         row = service_info_v01(None)
         group = conf.ga4gh_service_info_group
         artifact = conf.ga4gh_service_info_artifact
-        version = conf.ga4gh_version
+        version = conf.api_version
     else:
         # Data for other services registered
         url = row.get('url')
+        version = row.get('apiVersion')
         service_type = row.get('serviceType', None)
         if service_type is not None:
             tokens = service_type.rsplit('.', 1)
