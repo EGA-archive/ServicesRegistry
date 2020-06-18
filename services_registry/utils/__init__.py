@@ -16,7 +16,7 @@ async def fetch(name, url, method, headers, data, json=True):
             response = r.json() if json else r.content
             error = False
     except Exception as e:
-        LOG.error("Invalid response for %s/ %s", name, e)
+        LOG.error("Invalid response for %s: %s", name, e)
         response = str(e)
         error = True
 

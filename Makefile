@@ -10,37 +10,38 @@ build:
 	       --build-arg REPO=https://github.com/EGA-archive/ServicesRegistry.git \
 	       --build-arg COMMIT=$(COMMIT) \
                --build-arg BUILD_DATE="$(shell date +%Y-%m-%d_%H.%M.%S)" \
-	       -t crg/services-registry:$(COMMIT) .
+	       -t cineca/services-registry-test:$(COMMIT) .
 
 up:
 	docker run -d --rm \
-               --name services-registry \
-               -p 8000:8080 \
-               crg/services-registry:$(COMMIT)
+               --name cineca-services-registry-test \
+               -p 5160:8080 \
+	       -v $(shell pwd)/tmp/conf.py:/crg/services_registry/conf.py \
+               cineca/services-registry-test:$(COMMIT)
 
 down:
-	-docker kill services-registry
-	-docker rm services-registry
+	-docker kill cineca-services-registry-test
+	-docker rm cineca-services-registry-test
 
 ####################################################
 # For development
 
 run:
 	docker run -d --rm \
-               --name services-registry \
+               --name cineca-services-registry-test \
                -p 8000:8080 \
 	       -v $(shell pwd)/services_registry:/crg/services_registry \
 	       -v $(shell pwd)/static:/crg/static \
 	       -v $(shell pwd)/templates:/crg/templates \
                --entrypoint "/bin/sleep" \
-               crg/services-registry:$(COMMIT) \
+               cineca/services-registry-test:$(COMMIT) \
            1000000000000
 
 
-server: CMD=python -m services_registry
+server: CMD=python -m cineca-services-registry-test
 exec: CMD=bash
 exec server:
-	docker exec -it services-registry $(CMD)
+	docker exec -it cineca-services-registry-test $(CMD)
 
 ####################################################
 # Cleaning docker images
@@ -50,7 +51,7 @@ define remove_dangling
 endef
 
 erase:
-	@$(call remove_dangling,crg/services-registry)
+	@$(call remove_dangling,cineca/services-registry-test)
 
 purge:
 	@$(call remove_dangling,)

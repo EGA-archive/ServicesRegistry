@@ -16,13 +16,13 @@ services = {
 }
 
 urls_whitelisted = [r'^/$',
-					r'^/query?.*',
-					r'^/genomic_snp?.*',
-					r'^/genomic_region?.*',
-					r'^/g_variants.*',
-					r'^/biosamples.*',
-					r'^/datasets',
-					r'^/cohorts']
+		    r'^/query?.*',
+		    r'^/genomic_snp?.*',
+		    r'^/genomic_region?.*',
+		    r'^/g_variants.*',
+		    r'^/biosamples.*',
+		    r'^/datasets',
+		    r'^/cohorts']
 
 urls_blacklisted = []
 
