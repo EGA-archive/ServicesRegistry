@@ -11,12 +11,14 @@ services = {
 	},
 	'h3abionet-test-beacon': {
 		'name': 'H3Africa-test Beacon',
-		'address': 'https://beacon2.h3abionet.org/'
+		'address': 'https://beacon2.h3abionet.org'
 	}
 }
 
 urls_whitelisted = [r'^/$',
 					r'^/query?.*',
+					r'^/genomic_snp?.*',
+					r'^/genomic_region?.*',
 					r'^/g_variants.*',
 					r'^/biosamples.*',
 					r'^/datasets',
