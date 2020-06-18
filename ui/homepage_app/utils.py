@@ -51,17 +51,13 @@ def get_service_registry_context(serviceRegistryUrl):
 
     # service_registry = requests.get(serviceRegistryUrl)
     service_registry = {
-        "eu.crg.covid19beacon": {
-            "name": "Covid Beacon",
-            "address": "https://covid19beacon.crg.eu/api/"
-            },
         "ca.distributedgenomics.poc": {
             "name": "CANDIG",
             "address": "https://poc.distributedgenomics.ca:5050"
             },
         "h3abionet.org": {
             "name": "H3Africa",
-            "address": "https://beacon2.h3abionet.org/api"
+            "address": "https://beacon2.h3abionet.org/"
             }
         }
     
