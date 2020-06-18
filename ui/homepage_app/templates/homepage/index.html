@@ -21,6 +21,7 @@
         </nav>
 
         <main>
+            <h1 id="title">CINECA Services Registry</h1>
             <form action="" id="query-form">
                 <input type="text" value="" placeholder="Type here a URL you want to dispatch to the available services..." title="For example: query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL">
                 <button type="submit"><i class="fas fa-search"></i></button>
@@ -41,13 +42,13 @@
                             {% endif %}
                             <ul>
                                 <li>
-                                    <a href="{{ registry.visit_us }}" target="_blank"><i class="fas fa-globe"></i> Visit us</a> 
+                                    <a href="{{ registry.visit_us }}" target="_blank"><i class="fas fa-globe"></i>Org. website</a> 
                                 </li>
                                 <li>
                                     <a href="{{ registry.beacon_api }}" target="_blank"><i class="fas fa-share-square"></i>Beacon API</a> 
                                 </li>
                                 <li>
-                                    <a href="{{ registry.contact_us }}" target="_blank"><i class="fas fa-envelope"></i>Contact us</a>
+                                    <a href="{{ registry.contact_us }}" target="_blank"><i class="fas fa-envelope"></i>Contact address</a>
                                 </li>
                             </ul>
                         </section>
@@ -60,85 +61,18 @@
                 <!-- END CARD -->
                 {% endif %}
                 {% endfor %}
-
-
-                <!-- DEMO CARD 1 -->
-                <div class="card">
-                    <section id="left-part">
-                        <img src="{% static 'homepage/img/ega_logo.png' %}" alt="EGA Logo">
-                        <ul>
-                            <li>
-                                <a href=""><i class="fas fa-globe"></i> Visit us</a> 
-                            </li>
-                            <li>
-                                <a href=""><i class="fas fa-share-square"></i>Beacon API</a> 
-                            </li>
-                            <li>
-                                <a href=""><i class="fas fa-envelope"></i>Contact us</a>
-                            </li>
-                        </ul>
-                    </section>
-                    <section id="right-part">
-                        <h1>CRG Center for Genomic Regulation</h1>
-                        <h2>EGA Beacon</h2>
-                        <h2>EGA Beacon</h2>
-                    </section>
-                </div>
-                <!-- END DEMO CARD 1 -->
-
-                <!-- DEMO CARD 2 -->
-                <div class="card">
-                    <section id="left-part">
-                        <img src="{% static 'homepage/img/candig_logo.png' %}" alt="CanDIG Logo">
-                        <ul>
-                            <li>
-                                <a href=""><i class="fas fa-globe"></i> Visit us</a> 
-                            </li>
-                            <li>
-                                <a href=""><i class="fas fa-share-square"></i>Beacon API</a> 
-                            </li>
-                            <li>
-                                <a href=""><i class="fas fa-envelope"></i>Contact us</a>
-                            </li>
-                        </ul>
-                    </section>
-                    <section id="right-part">
-                        <h1>CanDIG</h1>
-                        <h2>CanDIG Beacon</h2>
-                        <h2>CanDIG Beacon</h2>
-                    </section>
-                </div>
-                <!-- END DEMO CARD 2 -->
-
-                <!-- DEMO CARD 3 -->
-                <div class="card">
-                    <section id="left-part">
-                        <img src="{% static 'homepage/img/h3africa_logo.png' %}" alt="H3Africa Logo" class="white-img">
-                        <ul>
-                            <li>
-                                <a href=""><i class="fas fa-globe"></i> Visit us</a> 
-                            </li>
-                            <li>
-                                <a href=""><i class="fas fa-share-square"></i>Beacon API</a> 
-                            </li>
-                            <li>
-                                <a href=""><i class="fas fa-envelope"></i>Contact us</a>
-                            </li>
-                        </ul>
-                    </section>
-                    <section id="right-part">
-                        <h1>Advancing Bioinformatics Research and Capacity Building in Africa</h1>
-                        <h2>H3Africa Beacon</h2>
-                        <h2>H3Africa Beacon</h2>
-                    </section>
-                </div>
-                <!-- END DEMO CARD 3 -->
-
             </div>
         </main>
 
         <footer>
-            <p>&copy; Copyright 2020</p>
+            <section id="EGA">
+                <p>Hosted by the <a href="https://ega-archive.org/">EGA</a></p>
+            </section>
+            <section id="EU">
+                <p>This project has received funding from the European Union's Horizon 2020 Research and Innovation Programme under grant agreement No. 825775.</p>
+                <img src="{% static 'homepage/img/eu_white.jpg' %}" alt="EU Logo">
+            </section>
+            <!-- <p>&copy; Copyright 2020</p> -->
         </footer>
 
 
