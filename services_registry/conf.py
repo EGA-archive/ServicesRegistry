@@ -5,7 +5,7 @@ port = 8000
 ssl_context = None
 
 services = {
-	'ca.distributedgenomics.poc': {
+	'ca.distributedgenomics.poc.beaconv2': {
 		'name': 'PseudoCHILD Beacon',
 		'address': 'https://poc.distributedgenomics.ca:5050'
 	},

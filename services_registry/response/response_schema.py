@@ -74,9 +74,6 @@ def build_returned_schemas(qparams, func_response_type):
         'build_service_info_response': {
             'ServiceInfo': [DEFAULT_SCHEMAS['ServiceInfo']] + [s for s, f in qparams.requestedSchemasServiceInfo[0]],
         },
-        'build_service_type_response': {
-            'ServiceType': [DEFAULT_SCHEMAS['ServiceType']] # No other schemas available
-        },
     }
 
     return returned_schemas_by_response_type[func_response_type.__name__] # We let it throw a KeyError
@@ -114,8 +111,8 @@ def build_response(data, qparams, func):
             'exists': True if data is None or len(data) > 0 else False,
             'results': func(data, qparams),
             'info': None,
-            'resultsHandover': None, # build_results_handover
-            'beaconHandover': None, # build_beacon_handover
+            # 'resultsHandover': None, # build_results_handover
+            # 'beaconHandover': None, # build_beacon_handover
         }
 
     error = build_error(qparams)
@@ -137,12 +134,6 @@ def build_service_info_response(data, qparams):
         LOG.debug('data is NOT None')
         for row in data:
             yield transform_data_into_schema(row, 'ServiceInfo', service_info_requested_schemas)
-
-
-def build_service_type_response(data, qparams):
-    """"Fills the `results` part with the format for ServiceType"""
-
-    yield transform_data_into_schema(None, 'ServiceType', None)
 
 
 def transform_data_into_schema(row, field_name, requested_schemas):
