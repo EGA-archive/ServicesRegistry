@@ -1,0 +1,275 @@
+/* line 5, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 4, ../sass/_main.scss */
+body {
+  background-color: #F5F9FA;
+  font-family: 'Open Sans', sans-serif;
+  color: #717578;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* line 12, ../sass/_main.scss */
+body nav {
+  width: 100%;
+  min-width: 1000px;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+}
+/* line 25, ../sass/_main.scss */
+body nav img {
+  height: 40px;
+  padding: 10px 0 10px 30px;
+}
+/* line 30, ../sass/_main.scss */
+body nav button {
+  background-color: #1070B7;
+  padding: 6px 12px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 11px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px 30px 10px 0;
+  transition: ease .5s;
+}
+/* line 42, ../sass/_main.scss */
+body nav button:hover {
+  background-color: #74C5EB;
+}
+/* line 48, ../sass/_main.scss */
+body main {
+  width: 1000px;
+  margin: 0 auto 80px;
+}
+/* line 52, ../sass/_main.scss */
+body main form {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-top: 80px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+/* line 66, ../sass/_main.scss */
+body main form.active {
+  box-shadow: 0 0 10px #74C5EB;
+}
+/* line 71, ../sass/_main.scss */
+body main form input {
+  background-color: transparent;
+  border: none;
+  margin-left: 30px;
+  width: 95%;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  color: #717578;
+}
+/* line 81, ../sass/_main.scss */
+body main form input:focus {
+  outline: none;
+}
+/* line 86, ../sass/_main.scss */
+body main form button {
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+  font-size: 14px;
+  color: #717578;
+  transition: ease .5s;
+}
+/* line 96, ../sass/_main.scss */
+body main form button:hover {
+  color: #74C5EB;
+}
+/* line 102, ../sass/_main.scss */
+body main hr {
+  display: none;
+  width: 80%;
+  border: 0.5px solid #1070B7;
+  background-color: #1070B7;
+  border-bottom: none;
+  margin: 50px auto 0;
+}
+/* line 111, ../sass/_main.scss */
+body main div#cards-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 3em;
+}
+/* line 118, ../sass/_main.scss */
+body main div#cards-container div.card {
+  width: 475px;
+  height: 180px;
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+/* line 134, ../sass/_main.scss */
+body main div#cards-container div.card:nth-child(odd) {
+  margin-right: 50px;
+}
+/* line 138, ../sass/_main.scss */
+body main div#cards-container div.card section#left-part {
+  padding: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 140px;
+}
+/* line 145, ../sass/_main.scss */
+body main div#cards-container div.card section#left-part img {
+  height: 40px;
+}
+/* line 148, ../sass/_main.scss */
+body main div#cards-container div.card section#left-part img.white-img {
+  -webkit-filter: drop-shadow(1px 1px 4px #222);
+  filter: drop-shadow(1px 1px 5px rgba(34, 34, 34, 0.5));
+}
+/* line 153, ../sass/_main.scss */
+body main div#cards-container div.card section#left-part ul {
+  font-size: 12px;
+}
+/* line 155, ../sass/_main.scss */
+body main div#cards-container div.card section#left-part ul li {
+  list-style: none;
+  padding: 8px;
+}
+/* line 158, ../sass/_main.scss */
+body main div#cards-container div.card section#left-part ul li a {
+  text-decoration: none;
+  color: #717578;
+  transition: ease .5s;
+}
+/* line 163, ../sass/_main.scss */
+body main div#cards-container div.card section#left-part ul li a:hover {
+  color: #74C5EB;
+}
+/* line 167, ../sass/_main.scss */
+body main div#cards-container div.card section#left-part ul li a i {
+  margin-right: 3px;
+}
+/* line 174, ../sass/_main.scss */
+body main div#cards-container div.card section#right-part {
+  margin: 20px 0;
+  padding: 0 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: left;
+  border-left: 1px solid #74C5EB;
+}
+/* line 183, ../sass/_main.scss */
+body main div#cards-container div.card section#right-part h1 {
+  font-size: 110%;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+/* line 188, ../sass/_main.scss */
+body main div#cards-container div.card section#right-part h2 {
+  font-size: 80%;
+}
+/* line 196, ../sass/_main.scss */
+body a {
+  cursor: pointer;
+  color: #74C5EB;
+  text-decoration: underline;
+  transition: ease .5s;
+}
+/* line 201, ../sass/_main.scss */
+body a:hover {
+  color: #1070B7;
+}
+/* line 204, ../sass/_main.scss */
+body footer {
+  width: 100%;
+  background-color: #275F90;
+  height: 55px;
+  margin-top: auto;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+/* line 215, ../sass/_main.scss */
+body footer p {
+  font-size: 11px;
+  float: right;
+  padding: 2em;
+}

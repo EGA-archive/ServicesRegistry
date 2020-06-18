@@ -130,3 +130,10 @@ dmypy.json
 
 # PyCharm
 .idea/
+
+# Mac
+*/.DS_Store
+.DS_Store
+
+# Sass cache
+ui/homepage_app/static/homepage/.sass-cache/*
