@@ -30,9 +30,3 @@ def service_info_v01(row):
         }
     else:
         return row # just return it as it is
-
-
-def service_type_v01(row):
-    return {
-        'types': conf.service_types
-    }

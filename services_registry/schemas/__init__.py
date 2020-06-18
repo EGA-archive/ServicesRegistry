@@ -4,7 +4,6 @@ from . import default, alternative
 SUPPORTED_SCHEMAS = {
     # default
     'elixirbn-service-info-v0.1': default.service_info_v01,
-    'elixirbn-service-type-v0.1': default.service_type_v01,
     # alternative
     'ga4gh-service-info-v1.0': alternative.ga4gh_service_info_v10,
 }
@@ -12,7 +11,6 @@ SUPPORTED_SCHEMAS = {
 
 DEFAULT_SCHEMAS = {
     'ServiceInfo': 'elixirbn-service-info-v0.1',
-    'ServiceType': 'elixirbn-service-type-v0.1'
 }
 
 
