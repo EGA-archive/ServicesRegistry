@@ -139,7 +139,13 @@ body {
             div.card {
                 width: 475px;
                 height: 180px;
-                margin-top: 50px;
+
+                transition: ease all 0.5s;
+
+                @media screen and (max-width:550px){
+                    width: 350px;
+                    margin: 25px auto;
+                }
 
                 background-color: white;
 
@@ -240,6 +246,13 @@ body {
             line-height: 15px;
             font-weight: 300;
             font-size: 11px;
+
+            transition: ease all 0.5s;
+
+            @media screen and (max-width:580px){
+                font-size: 9px;
+                line-height: 10px;
+            }
         }
 
         section#EGA {
