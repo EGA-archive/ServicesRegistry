@@ -4,7 +4,7 @@ from aiohttp import web
 from ..validation.request import RequestParameters, print_qparams
 from ..validation.fields import ChoiceField, SchemasField
 from ..response.response import json_stream
-from ..response.response_schema import build_service_response, build_service_info_response, build_service_type_response
+from ..response.response_schema import build_service_response, build_service_info_response
 from ..schemas import alternative
 from .. import conf
 
