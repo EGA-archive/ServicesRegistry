@@ -23,7 +23,7 @@
         </nav>
 
         <main>
-          <form action="{{ url('index') }}" method="POST">
+          <form action="{{ url('index') }}" method="POST" target="_blank">
             <input type="text"
 		   value=""
 		   name="url"
@@ -32,7 +32,12 @@
             <button type="submit"><i class="fas fa-search"></i></button>
           </form>
 
-          <hr>
+          <div id="examples">
+	    <a href="/query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL">Query: Y: 2655179 G &gt; A</a>
+	    <a href="/cohorts">Cohorts</a>
+	    <a href="/datasets">Cohorts</a>
+	    <a href="/cohorts">Cohorts</a>
+	  </div>
 
           <div id="cards-container">
             {% for service in services %}
@@ -75,7 +80,7 @@
           </section>
           <section id="EU">
             <p>This project has received funding from the European Union's Horizon 2020 Research and Innovation Programme under grant agreement No. 825775.</p>
-            <img src="{{ static('homepage/img/eu_white.jpg'}}" alt="EU Logo" />
+            <img src="{{ static('homepage/img/eu_white.jpg') }}" alt="EU Logo" />
           </section>
           <!-- <p>&copy; Copyright 2020</p> -->
         </footer>
