@@ -39,7 +39,7 @@ run:
            1000000000000
 
 
-server: CMD=python -m cineca-services-registry-test
+server: CMD=python -m services_registry
 exec: CMD=bash
 exec server:
 	docker exec -it cineca-services-registry-test $(CMD)
