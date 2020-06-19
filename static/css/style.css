@@ -131,7 +131,7 @@ body main {
   justify-content: center;
 }
 /* line 67, ../sass/_main.scss */
-body main h1 {
+body main > h1 {
   color: #a5a8aa;
   font-size: 24px;
   font-weight: 300;
@@ -219,7 +219,7 @@ body main div#cards-container div.card {
   }
 }
 /* line 160, ../sass/_main.scss */
-body main div#cards-container div.card section#left-part {
+body main div#cards-container div.card section.left-part {
   padding: 20px;
   display: flex;
   flex-flow: column nowrap;
@@ -228,55 +228,55 @@ body main div#cards-container div.card section#left-part {
   min-width: 140px;
 }
 /* line 167, ../sass/_main.scss */
-body main div#cards-container div.card section#left-part img {
+body main div#cards-container div.card section.left-part img {
   height: 40px;
 }
 /* line 170, ../sass/_main.scss */
-body main div#cards-container div.card section#left-part img.white-img {
+body main div#cards-container div.card section.left-part img.white-img {
   -webkit-filter: drop-shadow(1px 1px 4px #222);
   filter: drop-shadow(1px 1px 5px rgba(34, 34, 34, 0.5));
 }
 /* line 175, ../sass/_main.scss */
-body main div#cards-container div.card section#left-part ul {
+body main div#cards-container div.card section.left-part ul {
   font-size: 12px;
 }
 /* line 177, ../sass/_main.scss */
-body main div#cards-container div.card section#left-part ul li {
+body main div#cards-container div.card section.left-part ul li {
   list-style: none;
   padding: 8px;
 }
 /* line 180, ../sass/_main.scss */
-body main div#cards-container div.card section#left-part ul li a {
+body main div#cards-container div.card section.left-part ul li a {
   text-decoration: none;
   color: #717578;
   transition: ease .5s;
 }
 /* line 185, ../sass/_main.scss */
-body main div#cards-container div.card section#left-part ul li a:hover {
+body main div#cards-container div.card section.left-part ul li a:hover {
   color: #74C5EB;
 }
 /* line 189, ../sass/_main.scss */
-body main div#cards-container div.card section#left-part ul li a i {
+body main div#cards-container div.card section.left-part ul li a i {
   margin-right: 3px;
 }
 /* line 196, ../sass/_main.scss */
-body main div#cards-container div.card section#right-part {
+body main div#cards-container div.card section.right-part {
   margin: 20px 0;
   padding: 0 20px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
-  align-items: left;
+  align-items: flex-start;
   border-left: 1px solid #74C5EB;
 }
 /* line 205, ../sass/_main.scss */
-body main div#cards-container div.card section#right-part h1 {
+body main div#cards-container div.card section.right-part h1 {
   font-size: 110%;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
 /* line 210, ../sass/_main.scss */
-body main div#cards-container div.card section#right-part h2 {
+body main div#cards-container div.card section.right-part h2, body main div#cards-container div.card section.right-part p {
   font-size: 80%;
 }
 /* line 218, ../sass/_main.scss */

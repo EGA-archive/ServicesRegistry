@@ -45,7 +45,7 @@
             {% if not service.error %}
             <!-- CARD -->
             <div class="card">
-              <section id="left-part">
+              <section class="left-part">
                 {% if service.logo_url %}
                 <img src="{{ service.logo_url }}" alt="{{ service.name }} Logo" />
                 {% else %}
@@ -63,10 +63,10 @@
                   </li>
                 </ul>
               </section>
-              <section id="right-part">
+              <section class="right-part">
                 <h1>{{ service.organization_name|safe }}</h1>
                 <h2>{{ service.name|safe }}</h2>
-                <h2>{{ service.description|safe }}</h2>
+                <p>{{ service.description|safe }}</p>
               </section>
             </div>
             <!-- END CARD -->
