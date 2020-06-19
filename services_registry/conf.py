@@ -12,7 +12,15 @@ services = {
 	'h3abionet-test-beacon': {
 		'name': 'H3Africa-test Beacon',
 		'address': 'https://beacon2.h3abionet.org'
-	}
+	},
+	'heg-beacon': {
+		'name': 'heg Beacon',
+		'address': 'http://goldorak.hesge.ch:8890'
+	},
+	# 'ega-beacon': {
+	# 	'name': 'EGA Beacon',
+	# 	'address': 'https://ega-archive.org/beacon-api'
+	# }
 }
 
 urls_whitelisted = [r'^/$',
