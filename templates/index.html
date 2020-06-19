@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cineca Services Registry</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width, shrink-to-fit=no"/>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+              integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+              crossorigin="anonymous" />
+
+        <link rel="stylesheet"
+	      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" />
+
+        <link rel="stylesheet" href="{{ static('css/style.css') }}" />
+    </head>
+    <body>
+
+        <nav>
+          <a href="{{ url('index') }}">
+	    <img src="{{ static('img/CINECA_logo.png') }}" alt="CINECA" />
+	  </a>
+        </nav>
+
+        <main>
+	  <h1>CINECA Services Registry</h1>
+          <form action="{{ url('index') }}" method="POST" target="_blank">
+            <input type="text"
+		   value=""
+		   name="url"
+		   placeholder="Input a URL you want to dispatch to the available services"
+                   title="For example: /query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL" />
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+
+          <div id="examples">
+	    Examples: 
+	    <a href="/query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL">Y: 2655179 G &gt; A</a>
+	    <a href="/cohorts">Cohorts</a>
+	    <a href="/datasets">Datasets</a>
+	  </div>
+
+          <div id="cards-container">
+            {% for service in services %}
+            {% if not service.error %}
+            <!-- CARD -->
+            <div class="card">
+              <section class="left-part">
+                {% if service.logo_url %}
+                <img src="{{ service.logo_url }}" alt="{{ service.name }} Logo" />
+                {% else %}
+                <img src="{{ static('img/beacon_default.png') }}" alt="Default Logo" />
+                {% endif %}
+                <ul>
+                  <li>
+                    <a href="{{ service.visit_us }}"><i class="fas fa-globe"></i> Visit us</a> 
+                  </li>
+                  <li>
+                    <a href="{{ service.beacon_api }}"><i class="fas fa-share-square"></i>Beacon API</a> 
+                  </li>
+                  <li>
+                    <a href="{{ service.contact_us }}"><i class="fas fa-envelope"></i>Contact us</a>
+                  </li>
+                </ul>
+              </section>
+              <section class="right-part">
+                <h1>{{ service.organization_name|safe }}</h1>
+                <h2>{{ service.name|safe }}</h2>
+                <p>{{ service.description|safe }}</p>
+              </section>
+            </div>
+            <!-- END CARD -->
+            {% endif %}
+            {% endfor %}
+          </div>
+        </main>
+
+	<footer>
+          <section id="EGA">
+            <p>Hosted by the <a href="https://ega-archive.org/">EGA</a></p>
+          </section>
+          <section id="EU">
+            <p>This project has received funding from the European Union's Horizon 2020 Research and Innovation Programme under grant agreement No. 825775.</p>
+            <img src="{{ static('img/eu_white.jpg') }}" alt="EU Logo" />
+          </section>
+          <!-- <p>&copy; Copyright 2020</p> -->
+        </footer>
+
+    </body>
+</html>
