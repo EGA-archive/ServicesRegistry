@@ -29,7 +29,8 @@ down:
 run:
 	docker run -d --rm \
                --name cineca-services-registry-test \
-               -p 8000:8080 \
+               -p 8000:8000 \
+               -p 8001:8001 \
 	       -v $(shell pwd)/services_registry:/crg/services_registry \
 	       -v $(shell pwd)/static:/crg/static \
 	       -v $(shell pwd)/templates:/crg/templates \
@@ -55,3 +56,7 @@ erase:
 
 purge:
 	@$(call remove_dangling,)
+
+
+css:
+	cd static/sass && compass compile

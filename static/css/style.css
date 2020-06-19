@@ -131,7 +131,7 @@ body main {
   justify-content: center;
 }
 /* line 67, ../sass/_main.scss */
-body main h1#title {
+body main h1 {
   color: #a5a8aa;
   font-size: 24px;
   font-weight: 300;
@@ -140,13 +140,14 @@ body main h1#title {
 }
 /* line 75, ../sass/_main.scss */
 body main form {
+  margin: 40px auto 0;
+  width: 100%;
   height: 40px;
   background-color: white;
   border-radius: 30px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin: 40px 50px 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }
 /* line 88, ../sass/_main.scss */
@@ -181,22 +182,23 @@ body main form button:hover {
   color: #74C5EB;
 }
 /* line 124, ../sass/_main.scss */
-body main hr {
-  display: none;
-  width: 80%;
-  border: 0.5px solid #1070B7;
-  background-color: #1070B7;
-  border-bottom: none;
-  margin: 50px auto 0;
+body main div#examples {
+  font-size: 0.7em;
+  margin: 0.5em 0 0 1em;
 }
-/* line 133, ../sass/_main.scss */
+/* line 127, ../sass/_main.scss */
+body main div#examples a {
+  display: inline;
+  margin-left: 1em;
+}
+/* line 131, ../sass/_main.scss */
 body main div#cards-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin: 3em auto 0;
 }
-/* line 139, ../sass/_main.scss */
+/* line 137, ../sass/_main.scss */
 body main div#cards-container div.card {
   width: 475px;
   height: 180px;
@@ -210,13 +212,13 @@ body main div#cards-container div.card {
   margin: 25px;
 }
 @media screen and (max-width: 550px) {
-  /* line 139, ../sass/_main.scss */
+  /* line 137, ../sass/_main.scss */
   body main div#cards-container div.card {
     width: 350px;
     margin: 25px auto;
   }
 }
-/* line 162, ../sass/_main.scss */
+/* line 160, ../sass/_main.scss */
 body main div#cards-container div.card section#left-part {
   padding: 20px;
   display: flex;
@@ -225,39 +227,39 @@ body main div#cards-container div.card section#left-part {
   align-items: center;
   min-width: 140px;
 }
-/* line 169, ../sass/_main.scss */
+/* line 167, ../sass/_main.scss */
 body main div#cards-container div.card section#left-part img {
   height: 40px;
 }
-/* line 172, ../sass/_main.scss */
+/* line 170, ../sass/_main.scss */
 body main div#cards-container div.card section#left-part img.white-img {
   -webkit-filter: drop-shadow(1px 1px 4px #222);
   filter: drop-shadow(1px 1px 5px rgba(34, 34, 34, 0.5));
 }
-/* line 177, ../sass/_main.scss */
+/* line 175, ../sass/_main.scss */
 body main div#cards-container div.card section#left-part ul {
   font-size: 12px;
 }
-/* line 179, ../sass/_main.scss */
+/* line 177, ../sass/_main.scss */
 body main div#cards-container div.card section#left-part ul li {
   list-style: none;
   padding: 8px;
 }
-/* line 182, ../sass/_main.scss */
+/* line 180, ../sass/_main.scss */
 body main div#cards-container div.card section#left-part ul li a {
   text-decoration: none;
   color: #717578;
   transition: ease .5s;
 }
-/* line 187, ../sass/_main.scss */
+/* line 185, ../sass/_main.scss */
 body main div#cards-container div.card section#left-part ul li a:hover {
   color: #74C5EB;
 }
-/* line 191, ../sass/_main.scss */
+/* line 189, ../sass/_main.scss */
 body main div#cards-container div.card section#left-part ul li a i {
   margin-right: 3px;
 }
-/* line 198, ../sass/_main.scss */
+/* line 196, ../sass/_main.scss */
 body main div#cards-container div.card section#right-part {
   margin: 20px 0;
   padding: 0 20px;
@@ -267,28 +269,27 @@ body main div#cards-container div.card section#right-part {
   align-items: left;
   border-left: 1px solid #74C5EB;
 }
-/* line 207, ../sass/_main.scss */
+/* line 205, ../sass/_main.scss */
 body main div#cards-container div.card section#right-part h1 {
   font-size: 110%;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
-/* line 212, ../sass/_main.scss */
+/* line 210, ../sass/_main.scss */
 body main div#cards-container div.card section#right-part h2 {
   font-size: 80%;
 }
-/* line 220, ../sass/_main.scss */
+/* line 218, ../sass/_main.scss */
 body a {
-  cursor: pointer;
   color: #74C5EB;
   text-decoration: underline;
   transition: ease .5s;
 }
-/* line 225, ../sass/_main.scss */
+/* line 222, ../sass/_main.scss */
 body a:hover {
   color: #1070B7;
 }
-/* line 228, ../sass/_main.scss */
+/* line 225, ../sass/_main.scss */
 body footer {
   width: 100%;
   background-color: #275F90;
@@ -301,7 +302,7 @@ body footer {
   align-items: center;
   justify-content: space-between;
 }
-/* line 244, ../sass/_main.scss */
+/* line 239, ../sass/_main.scss */
 body footer p {
   margin-right: 10px;
   line-height: 15px;
@@ -310,39 +311,39 @@ body footer p {
   transition: ease all 0.5s;
 }
 @media screen and (max-width: 580px) {
-  /* line 244, ../sass/_main.scss */
+  /* line 239, ../sass/_main.scss */
   body footer p {
     font-size: 9px;
     line-height: 10px;
   }
 }
-/* line 258, ../sass/_main.scss */
+/* line 253, ../sass/_main.scss */
 body footer section#EGA {
   margin-left: 30px;
   font-size: 12px;
 }
-/* line 261, ../sass/_main.scss */
+/* line 256, ../sass/_main.scss */
 body footer section#EGA a {
   color: white;
 }
-/* line 263, ../sass/_main.scss */
+/* line 258, ../sass/_main.scss */
 body footer section#EGA a:hover {
   color: #74C5EB;
 }
-/* line 266, ../sass/_main.scss */
+/* line 261, ../sass/_main.scss */
 body footer section#EU {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: right;
 }
-/* line 272, ../sass/_main.scss */
+/* line 267, ../sass/_main.scss */
 body footer section#EU p {
   max-width: 400px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 278, ../sass/_main.scss */
+/* line 273, ../sass/_main.scss */
 body footer section#EU img {
   height: 30px;
   margin-right: 30px;
