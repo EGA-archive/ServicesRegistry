@@ -11,7 +11,7 @@ services = {
 	},
 	'h3abionet-test-beacon': {
 		'name': 'H3Africa-test Beacon',
-		'address': 'https://beacon2.h3abionet.org'
+		'address': 'https://beacon2.h3abionet.org/api'
 	},
 	'heg-beacon': {
 		'name': 'heg Beacon',
@@ -34,16 +34,25 @@ urls_whitelisted = [r'^/$',
 
 urls_blacklisted = []
 
+# Service Registry info
 service_id = 'eu.crg.services-registry'
-service_name = 'Services Registry'
-service_version = '2.0'
+service_name = 'CRG Services Registry'
+service_version = '1.0'
 api_version = 'v2.0.0-draft.1'
 
-ga4gh_service_info_group = 'org.ga4gh'
-ga4gh_service_info_artifact = 'service-registry'
-# ga4gh_version = '1.0'
+# Elixir
+elixir_service_type_group = 'org.elixir-europe'
+elixir_service_type_artifact = 'service-registry'
+# elixir_service_type_version = api_version
 
-service_types = ['GA4GHRegistry', 'GA4GHBeaconAggregator', 'GA4GHBeacon']
+service_types = ['org.elixir-europe.service-registry',
+				 'org.elixir-europe.beacon-aggregator',
+				 'org.elixir-europe.beacon']
+
+# GA4GH
+ga4gh_service_type_group = 'org.ga4gh'
+ga4gh_service_type_artifact = 'service-registry'
+ga4gh_service_type_version = '1.0'
 
 ga4gh_service_types = [
 	{

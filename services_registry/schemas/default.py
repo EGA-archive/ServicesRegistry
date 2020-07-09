@@ -7,7 +7,7 @@ def service_info_v01(row):
         return {
             'id': conf.service_id,
             'name': conf.service_name,
-            'serviceType': conf.ga4gh_service_info_group + '.' + conf.ga4gh_service_info_artifact,
+            'serviceType': conf.elixir_service_type_group + '.' + conf.elixir_service_type_artifact,
             'apiVersion': conf.api_version,
             'serviceUrl': 'https://cineca-services-registry.ega-archive.org/api', # API
             'entryPoint': False,

@@ -17,11 +17,17 @@ def ga4gh_service_info_v10(row):
     if row is None:
         # Data for this registry
         row = service_info_v01(None)
-        group = conf.ga4gh_service_info_group
-        artifact = conf.ga4gh_service_info_artifact
-        version = conf.api_version
+        group = conf.ga4gh_service_type_group
+        artifact = conf.ga4gh_service_type_artifact
+        version = conf.ga4gh_service_type_version
     else:
         # Data for other services registered
+
+        call_get = getattr(row, "get", None)
+        if not callable(call_get):
+            # e.g. the service is returning an error
+            return row
+
         url = row.get('url')
         version = row.get('apiVersion')
         service_type = row.get('serviceType', None)
