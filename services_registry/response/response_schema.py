@@ -41,7 +41,7 @@ def build_received_request(qparams):
             'requestedSchemas' : build_requested_schemas(qparams),
             'apiVersion' : None,
         },
-        'query': None
+        # 'query': None
     }
     return request
 
@@ -54,7 +54,6 @@ def build_requested_schemas(qparams):
 
     requested_schemas = {}
 
-    # TODO
     if qparams.requestedSchemasServiceInfo[0] or qparams.requestedSchemasServiceInfo[1]:
         requested_schemas['ServiceInfo'] = [s for s, f in qparams.requestedSchemasServiceInfo[0]] + list(
             qparams.requestedSchemasServiceInfo[1])
@@ -108,7 +107,7 @@ def build_response(data, qparams, func):
 
 
     response = {
-            'exists': True if data is None or len(data) > 0 else False,
+            # 'exists': True if data is None or len(data) > 0 else False,
             'results': func(data, qparams),
             'info': None,
             # 'resultsHandover': None, # build_results_handover
