@@ -1,13 +1,10 @@
 import logging
 from aiohttp import web
-import httpx
 
-from .dispatcher import forward_endpoint
 from ..validation.request import RequestParameters, print_qparams
 from ..validation.fields import Field, ChoiceField, SchemasField
 from ..response.response import json_stream
 from ..response.response_schema import build_service_response, build_service_info_response
-from ..schemas import default, alternative, SUPPORTED_SCHEMAS
 from .. import conf
 from ..utils import collect_responses
 
