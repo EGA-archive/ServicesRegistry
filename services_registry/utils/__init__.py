@@ -23,12 +23,16 @@ async def fetch(name, url, method, headers, data, json=True):
     return (name, url, response, error)
 
 
-async def collect_responses(url, method='GET', headers=None, data=None, json=True):
-    '''Return an iterator of (name, url, response, error).'''
+async def collect_responses(url, method='GET', headers=None, data=None, json=True, services_list=None):
+    """Return an iterator of (name, url, response, error)."""
+
+    if services_list is None:
+        services_list = services
+
     if not url or url[0] != '/':
         url = '/' + url
     aws = [fetch(d['name'], d['address'] + url, method, headers, data, json=json)
-           for d in services.values()]
+           for d in services_list.values()]
     return [await coro for coro in asyncio.as_completed(aws)]
 
 
