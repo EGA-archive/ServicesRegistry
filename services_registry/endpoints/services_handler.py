@@ -13,8 +13,6 @@ from .. import conf
 
 LOG = logging.getLogger(__name__)
 
-routes = web.RouteTableDef()
-
 SERVICES = conf.services
 
 
@@ -41,7 +39,6 @@ class ServicesParameters(RequestParameters):
 services_proxy = ServicesParameters()
 
 
-@routes.get('/bn_services')
 async def handler_services(request):
     LOG.info('Running a GET bn_services request')
 
@@ -57,7 +54,6 @@ async def handler_services(request):
     return await forward_and_process_response(request, qparams_db, '/info')
 
 
-@routes.get('/bn_services/{service_id}')
 async def handler_services_by_id(request):
     LOG.info('Running a GET bn_services by ID request')
 
@@ -75,7 +71,6 @@ async def handler_services_by_id(request):
     return await forward_and_process_response(request, qparams_db, '/info', requested_service_id=requested_service_id)
 
 
-@routes.get('/services')
 async def handler_ga4gh_services(request):
     LOG.info('Running a GET GA4GH services request')
 
@@ -83,7 +78,6 @@ async def handler_ga4gh_services(request):
     return web.json_response(list([r async for r in response]))
 
 
-@routes.get('/services/{service_id}')
 async def handler_ga4gh_services_by_id(request):
     LOG.info('Running a GET GA4GH services by ID request')
 
@@ -107,6 +101,7 @@ async def forward_and_process_response(request, qparams_db, path, requested_serv
 async def response_from_services(path, requested_service_id=None, method='GET', post_data=None):
     LOG.info('-------- response_from_services %s', path)
 
+    # TODO fix duplicated code
     # Allow only GET and POST ?
     if requested_service_id is not None:
         service = SERVICES[requested_service_id]

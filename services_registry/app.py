@@ -9,7 +9,7 @@ import yaml
 
 from aiohttp import web
 
-from . import conf
+from . import conf, endpoints
 # from .validator import validator
 from .endpoints import dispatcher, service_info_handler, services_handler
 
@@ -30,10 +30,8 @@ def main(path=None):
     server = web.Application()
 
     # Add the routes
-    # server.add_routes(validator.routes)
-    server.add_routes(service_info_handler.routes)
-    server.add_routes(services_handler.routes)
-    server.add_routes(dispatcher.routes)
+    routes = endpoints.routes
+    server.add_routes(routes)
 
     # .... and cue music!
     LOG.info(f"Start services registry")

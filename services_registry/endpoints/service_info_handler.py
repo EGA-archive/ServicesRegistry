@@ -10,8 +10,6 @@ from .. import conf
 
 LOG = logging.getLogger(__name__)
 
-routes = web.RouteTableDef()
-
 
 # ----------------------------------------------------------------------------------------------------------------------
 #                                         QUERY VALIDATION
@@ -29,8 +27,6 @@ class ServiceInfoParameters(RequestParameters):
 service_info_proxy = ServiceInfoParameters()
 
 
-# TODO add /
-@routes.get('/info')
 async def handler_info(request):
     LOG.info('Running a GET info request')
     _, qparams_db = await service_info_proxy.fetch(request)
@@ -46,7 +42,6 @@ async def handler_info(request):
     return await json_stream(request, response_converted)
 
 
-@routes.get('/service-info')
 async def handler_ga4gh_service_info(request):
     LOG.info('Running a GET service-info request')
 
@@ -54,21 +49,18 @@ async def handler_ga4gh_service_info(request):
 
 
 # Custom endpoint
-@routes.get('/registered_services')
 async def handler_registered_services(request):
     LOG.info('Running a GET registered services request')
 
     return await json_stream(request, conf.services)
 
 
-@routes.get('/services/types')
 async def handler_ga4gh_services_types(request):
     LOG.info('Running a GET GA4GH services types request')
 
     return await json_stream(request, conf.ga4gh_service_types)
 
 
-@routes.get('/bn_service_types')
 async def handler_services_types(request):
     LOG.info('Running a GET services types request')
 
