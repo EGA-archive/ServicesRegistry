@@ -18,11 +18,11 @@ async def forward_endpoint(request):
 
     # Collect the responses
     data = request.post() if request.method == 'POST' else None
-    results = await collect_responses(request.path_qs,
-                                      method=request.method,
-                                      headers=request.headers,
-                                      data=data,
-                                      json=True)
+    results = await forward_responses.collect(request.path_qs,
+                                              method=request.method,
+                                              headers=request.headers,
+                                              data=data,
+                                              json=True)
     responses = [(name, {'request': url, 'response': response})
                  for (name, url, response, error) in results]
 
