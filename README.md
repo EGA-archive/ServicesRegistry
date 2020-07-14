@@ -112,31 +112,31 @@ TODO
 ## API endpoints
 
 #### Service info
-* http://localhost:8000/info
-* http://localhost:8000/bn_service_types
-* http://localhost:8000/bn_services
+* [/info](http://localhost:8000/info)
+* [/bn_service_types](http://localhost:8000/bn_service_types)
+* [/bn_services](http://localhost:8000/bn_services)
 
 #### Requesting alternative schemas
-* http://localhost:8000/info?requestedSchemasServiceInfo=ga4gh-service-info-v1.0
-* http://localhost:8000/bn_services?requestedSchemasServiceInfo=ga4gh-service-info-v1.0
+* [/info?requestedSchemasServiceInfo=ga4gh-service-info-v1.0](http://localhost:8000/info?requestedSchemasServiceInfo=ga4gh-service-info-v1.0)
+* [/bn_services?requestedSchemasServiceInfo=ga4gh-service-info-v1.0](http://localhost:8000/bn_services?requestedSchemasServiceInfo=ga4gh-service-info-v1.0)
 
 #### GA4GH Service-info compatible
-* http://localhost:8000/service-info
-* http://localhost:8000/info?model=ga4gh-service-info-v1.0 
-* http://localhost:8000/services/types
-* http://localhost:8000/services
-* http://localhost:8000/bn_services?model=ga4gh-service-info-v1.0
+* [/service-info](http://localhost:8000/service-info)
+* [/info?model=ga4gh-service-info-v1.0](http://localhost:8000/info?model=ga4gh-service-info-v1.0)
+* [/services/types](http://localhost:8000/services/types)
+* [/services](http://localhost:8000/services)
+* [/bn_services?model=ga4gh-service-info-v1.0](http://localhost:8000/bn_services?model=ga4gh-service-info-v1.0)
 
 #### Call forwarding
 
 Any other value written after `http://localhost:8000` will be automatically forwarded to all the registered services, as long as it is a whitelisted value and it is not blacklisted.
 
-* http://localhost:8000/cohorts
-* http://localhost:8000/datasets
-* http://localhost:8000/query?assemblyId=GRCh37&referenceName=Y&start=2655470&referenceBases=A&alternateBases=C
-* http://localhost:8000/genomic_snp?assemblyId=GRCh37&referenceName=Y&start=2655470&referenceBases=A&alternateBases=C
-* http://localhost:8000/genomic_region?referenceName=Y&assemblyId=GRCh37&start=2655470&end=2655472
-* http://localhost:8000/g_variants?referenceName=Y&start=2655470&referenceBases=A&alternateBases=C
-* http://localhost:8000/g_variants/240763
-* http://localhost:8000/biosamples?start=272&end=273
-* http://localhost:8000/biosamples/SRS6508490
+* [/cohorts](http://localhost:8000/cohorts)
+* [/datasets](http://localhost:8000/datasets)
+* [Query Y: 2655470 A &gt; C](http://localhost:8000/query?assemblyId=GRCh37&referenceName=Y&start=2655470&referenceBases=A&alternateBases=C)
+* [Genomic SNP Y: 2655470 A &gt; C](http://localhost:8000/genomic_snp?assemblyId=GRCh37&referenceName=Y&start=2655470&referenceBases=A&alternateBases=C)
+* [Region 2655470 - 2655472](http://localhost:8000/genomic_region?referenceName=Y&assemblyId=GRCh37&start=2655470&end=2655472)
+* [Variants Y: 2655470 A &gt; C](http://localhost:8000/g_variants?referenceName=Y&start=2655470&referenceBases=A&alternateBases=C)
+* [Variants 240763](http://localhost:8000/g_variants/240763)
+* [BioSamples 272 - 273](http://localhost:8000/biosamples?start=272&end=273)
+* [BioSample SRS6508490](http://localhost:8000/biosamples/SRS6508490)
