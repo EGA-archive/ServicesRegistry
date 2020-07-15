@@ -90,8 +90,14 @@ def main(path=None):
     server.on_startup.append(initialize)
 
     # Add the routes
+    # server.add_routes([web.get('/', index, name='index'),
+    #                    web.post('/', dispatch)])
+
+
+    static_files = Path(__file__).parent.parent / 'static'
     server.add_routes([web.get('/', index, name='index'),
-                       web.post('/', dispatch)])
+                       web.post('/', dispatch),
+                       web.static('/static', str(static_files))])
 
     # .... and cue music!
     LOG.info(f"Start services registry UI")

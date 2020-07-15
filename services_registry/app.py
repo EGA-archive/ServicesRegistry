@@ -3,35 +3,34 @@
 import sys
 import os
 import logging
-from logging.config import dictConfig
 from pathlib import Path
 import yaml
 
 from aiohttp import web
 
 from . import conf, endpoints
-# from .validator import validator
-from .endpoints import dispatcher, service_info_handler, services_handler
 
 LOG = logging.getLogger(__name__)
-LOG_FILE = Path(os.getenv('SERVICES_REGISTRY_LOG', 'logger.yml')).resolve()
 
 
-def main(path=None):
-
-    # Configure basic logging
-    logging.basicConfig(stream=sys.stderr, level=logging.DEBUG, format='[%(levelname)s] %(message)s')
-    # Configure more logging, if found
+# Configure basic logging
+logging.basicConfig(stream=sys.stderr, level=logging.DEBUG, format='[%(levelname)s] %(message)s')
+# Configure more logging, if found
+LOG_FILE = os.getenv('SERVICES_REGISTRY_LOG')
+if LOG_FILE:
+    LOG_FILE = Path(LOG_FILE).resolve()
     if LOG_FILE.exists():
+        from logging.config import dictConfig
         with open(LOG_FILE, 'r') as stream:
             dictConfig(yaml.safe_load(stream))
+
+def main(path=None):
 
     # Create the server
     server = web.Application()
 
     # Add the routes
-    routes = endpoints.routes
-    server.add_routes(routes)
+    server.add_routes(endpoints.routes)
 
     # .... and cue music!
     LOG.info(f"Start services registry")

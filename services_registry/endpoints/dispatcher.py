@@ -2,52 +2,49 @@ import logging
 from aiohttp import web
 import httpx
 
-from services_registry import conf
+from .. import conf
 from ..validation import path_validator
-from ..utils import collect_responses
+from ..utils import Collector
 
 LOG = logging.getLogger(__name__)
 
+collector = Collector(conf.services)
 
-# @routes.get('/{anything:.+}')
-async def forward_endpoint(request):
+async def forward_get(request):
     LOG.info('-------- Aggregator query %s', request.path_qs)
 
     # Validate the path, raise error if fail
     await path_validator.validate(request)
 
     # Collect the responses
-    data = request.post() if request.method == 'POST' else None
-    results = await collect_responses(request.path_qs,
-                                      method=request.method,
-                                      headers=request.headers,
-                                      data=data,
-                                      json=True)
-    responses = [(name, {'request': url, 'response': response})
-                 for (name, url, response, error) in results]
+    results = await collector.get(request.path_qs,
+                                  headers=request.headers,
+                                  json=True)
+    responses = {}
+    for (name, url, response, error) in results:
+        if response: # and not error
+            responses[name] = {'request': url, 'response': response }
+        else:
+            responses[name] = {'request': url, 'error': error }
 
-    res = dict(responses)
-    LOG.debug('==================')
-    LOG.debug('responses: %s', res)
-    return web.json_response(res)  # change that for streaming response
+    return web.json_response(responses)  # change that for streaming response
 
+async def forward_post(request):
+    LOG.info('-------- Aggregator query %s', request.path_qs)
 
-# async def _get_responses_from_path(path):
-#     LOG.debug('get_responses_from_path(%s)', path)
+    # Validate the path, raise error if fail
+    await path_validator.validate(request)
 
-#     if path is None:
-#         raise web.HTTPInternalServerError(reason='path cannot be empty')
+    # Collect the responses
+    results = await collector.post(request.path_qs,
+                                   headers=request.headers,
+                                   data=request.post(), # Not json(), no need to parse+serialize
+                                   json=True)
+    responses = {}
+    for (name, url, response, error) in results:
+        if response: # and not error
+            responses[name] = {'request': url, 'response': response }
+        else:
+            responses[name] = {'request': url, 'error': error }
 
-#     results = await collect_responses(path)
-#     responses = [(name, {'request': url, 'response': response})
-#                  for (name, url, response, error) in results]
-    
-#     return dict(responses)
-
-# async def forward_specific_path(path):
-#     LOG.info('-------- Aggregator query %s', path)
-
-#     # await validator.validate(request) # it will raise an error if path is not valid
-
-#     response = await _get_responses_from_path(path=path)
-#     return web.json_response(dict([r async for r in response]))  # change that for streaming response
+    return web.json_response(responses)  # change that for streaming response

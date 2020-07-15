@@ -6,12 +6,10 @@ from ..validation.fields import Field, ChoiceField, SchemasField
 from ..response.response import json_stream
 from ..response.response_schema import build_service_response, build_service_info_response
 from .. import conf
-from ..utils import collect_responses
+from ..utils import Collector
 
 
 LOG = logging.getLogger(__name__)
-
-SERVICES = conf.services
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -97,9 +95,13 @@ async def forward_and_process_response(request, qparams_db, path, requested_serv
     return await json_stream(request, response_converted)
 
 
+
 async def response_from_services(path, requested_service_id=None, method='GET', post_data=None):
     LOG.info('-------- response_from_services %s', path)
 
-    return await collect_responses(path, services_list={
-        requested_service_id: SERVICES[requested_service_id]
-    } if requested_service_id is not None else SERVICES)
+    _services = {
+        requested_service_id: conf.services[requested_service_id]
+    } if requested_service_id is not None else conf.services
+
+    collector = Collector(_services)
+    return await collector.get(path)
