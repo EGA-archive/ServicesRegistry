@@ -15,11 +15,13 @@ import aiohttp_jinja2
 import jinja2
 
 from . import conf
-from .utils import collect_responses
+
+from .utils import Collector
 
 LOG = logging.getLogger(__name__)
 LOG_FILE = Path(os.getenv('SERVICES_REGISTRY_LOG', 'logger.yml')).resolve()
 
+collector = Collector(conf.services)
 
 async def initialize(app):
     """Initialize HTTP server."""
@@ -60,7 +62,7 @@ def explore_service(name, url, info, error):
 
 @aiohttp_jinja2.template('index.html')
 async def index(request):
-    results = await collect_responses('/') # json=True
+    results = await collector.get('/', json=True)
     services_info = [explore_service(*args) for args in results]
     return { "services": services_info }
 
