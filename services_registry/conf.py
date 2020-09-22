@@ -7,7 +7,7 @@ ssl_context = None
 services = {
 	'ca.distributedgenomics.poc.beaconv2': {
 		'name': 'PseudoCHILD Beacon',
-		'address': 'https://poc.distributedgenomics.ca:5050'
+		'address': 'https://poc.distributedgenomics.ca:5061/api'
 	},
 	'h3abionet-test-beacon': {
 		'name': 'H3Africa-test Beacon',
@@ -15,22 +15,24 @@ services = {
 	},
 	'heg-beacon': {
 		'name': 'heg Beacon',
-		'address': 'http://goldorak.hesge.ch:8890'
+		'address': 'https://beacon.text-analytics.ch/api'
 	},
-	# 'ega-beacon': {
-	# 	'name': 'EGA Beacon',
-	# 	'address': 'https://ega-archive.org/beacon-api'
-	# }
+	'ega-beacon': {
+		'name': 'EGA Beacon - Genome In A Bottle',
+		'address': 'https://beacon-giab-demo.ega-archive.org/api'
+	},
 }
 
-urls_whitelisted = [r'^/$',
-		    r'^/query?.*',
-		    r'^/genomic_snp?.*',
-		    r'^/genomic_region?.*',
-		    r'^/g_variants.*',
-		    r'^/biosamples.*',
-		    r'^/datasets',
-		    r'^/cohorts']
+urls_whitelisted = [r'^/.*']
+
+# urls_whitelisted = [r'^/$',
+# 		    r'^/query?.*',
+# 		    r'^/genomic_snp?.*',
+# 		    r'^/genomic_region?.*',
+# 		    r'^/g_variants.*',
+# 		    r'^/biosamples.*',
+# 		    r'^/datasets',
+# 		    r'^/cohorts']
 
 urls_blacklisted = []
 
