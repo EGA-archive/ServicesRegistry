@@ -17,7 +17,8 @@ async def forward_get(request):
     await path_validator.validate(request)
 
     # Collect the responses
-    results = await collector.get(request.path_qs,
+    path = request.match_info.get('anything', request.path_qs)
+    results = await collector.get(path,
                                   headers=request.headers,
                                   json=True)
     responses = {}
@@ -36,6 +37,7 @@ async def forward_post(request):
     await path_validator.validate(request)
 
     # Collect the responses
+    path = request.match_info.get('anything', request.path_qs)
     results = await collector.post(request.path_qs,
                                    headers=request.headers,
                                    data=request.post(), # Not json(), no need to parse+serialize
