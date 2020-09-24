@@ -23,7 +23,7 @@ services = {
 	},
 }
 
-urls_whitelisted = [r'^/.*']
+urls_whitelisted = [r'^/api/.*'] # anything after /api
 
 # urls_whitelisted = [r'^/$',
 # 		    r'^/query?.*',

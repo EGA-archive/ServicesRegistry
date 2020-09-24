@@ -19,5 +19,5 @@ routes = [
     web.get('/services'                     , services_handler.handler_ga4gh_services),
     web.get('/services/{service_id}'        , services_handler.handler_ga4gh_services_by_id),
     # Dispatcher
-    web.get('/{anything:.+}'               , dispatcher.forward_get),
+    web.get('/api{anything:.+}'                , dispatcher.forward_get),
 ]
