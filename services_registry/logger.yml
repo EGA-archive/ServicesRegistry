@@ -7,12 +7,16 @@ root:
 
 loggers:
   services_registry:
-    level: INFO
+    level: DEBUG
     handlers: [console]
     propagate: True
   # aiohttp:
   #   level: INFO
   #   handlers: [console]
+  # httpx:
+  #   level: DEBUG
+  #   handlers: [console]
+  #   propagate: True
 
 handlers:
   noHandler:

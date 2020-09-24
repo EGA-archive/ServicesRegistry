@@ -12,17 +12,12 @@ from . import conf, endpoints
 
 LOG = logging.getLogger(__name__)
 
-
-# Configure basic logging
-logging.basicConfig(stream=sys.stderr, level=logging.DEBUG, format='[%(levelname)s] %(message)s')
 # Configure more logging, if found
-LOG_FILE = os.getenv('SERVICES_REGISTRY_LOG')
-if LOG_FILE:
-    LOG_FILE = Path(LOG_FILE).resolve()
-    if LOG_FILE.exists():
-        from logging.config import dictConfig
-        with open(LOG_FILE, 'r') as stream:
-            dictConfig(yaml.safe_load(stream))
+LOG_FILE = Path(__file__).parent / "logger.yml"
+if LOG_FILE.exists():
+    from logging.config import dictConfig
+    with open(LOG_FILE, 'r') as stream:
+        dictConfig(yaml.safe_load(stream))
 
 def main(path=None):
 
