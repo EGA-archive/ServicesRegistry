@@ -47,7 +47,7 @@ class Collector():
                 headers = headers or {}
                 headers['if-modified-since'] = last_call_at
                 LOG.debug('---- Sending headers with if-modified-since: %s', last_call_at)
-                            
+
             # Do the call
             #LOG.debug('---- GET %s | headers: %s', url, headers)
             async with httpx.AsyncClient() as client:
@@ -59,7 +59,7 @@ class Collector():
                     response = r.json() if json else r.content
                     error = None
                 else: # error
-                    raise ValueError(f'Error {r.status_code}')
+                    raise ValueError(f'Error {r.status_code}: {r.content}')
         
                 last_call_at = r.headers.get('Last-Modified') or now()
                 # Save to cache
