@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 COPY requirements.txt /tmp/requirements.txt
 
 RUN apt-get update; \
-    apt-get upgrade -y; \
+#    apt-get upgrade -y; \
     apt-get install -y --no-install-recommends \
     ca-certificates pkg-config patch git gcc g++ make \
     bzip2 libssl-dev \
@@ -36,7 +36,7 @@ LABEL org.label-schema.vcs-ref=$COMMIT
 COPY --from=BUILD /usr/local      /usr/local
 
 RUN apt-get update; \
-    apt-get upgrade -y; \
+#    apt-get upgrade -y; \
     apt-get install -y --no-install-recommends \
     nginx; \
     rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/nginx.list; \
