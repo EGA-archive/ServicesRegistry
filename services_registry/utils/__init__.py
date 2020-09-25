@@ -48,8 +48,12 @@ class Collector():
                 headers['if-modified-since'] = last_call_at
                 LOG.debug('---- Sending headers with if-modified-since: %s', last_call_at)
 
+            # Pop the host
+            if headers:
+                headers.pop('Host', None)
+
             # Do the call
-            #LOG.debug('---- GET %s | headers: %s', url, headers)
+            LOG.debug('---- GET %s | headers: %s', url, headers)
             async with httpx.AsyncClient() as client:
                 r = await client.get(url, headers=headers)
                 if r.status_code == 304:
@@ -87,6 +91,9 @@ class Collector():
     async def _post_one(self, client, name, url, headers, data, json):
         LOG.info('POST %s %s | headers: %s | data: %s', name, url, headers, data)
         try:
+            # Pop the host
+            if headers:
+                headers.pop('Host', None)
             r = await client.post(url, headers=headers, data=data, timeout=TIMEOUT)
             response = r.json() if json else r.content
             return (name, url, response, None)
