@@ -38,7 +38,7 @@ COPY --from=BUILD /usr/local      /usr/local
 RUN apt-get update; \
 #    apt-get upgrade -y; \
     apt-get install -y --no-install-recommends \
-    nginx; \
+    ca-certificates nginx; \
     rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/nginx.list; \
     apt-get purge -y --auto-remove
 
