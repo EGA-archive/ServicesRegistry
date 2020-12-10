@@ -28,19 +28,12 @@
             <input type="text"
 		   value=""
 		   name="url"
-		   placeholder="Input a URL you want to dispatch to the available services"
+		   placeholder="Input a URL you want to dispatch to the available services. For example: /api/datasets"
                    title="For example: /query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL" />
             <button type="submit"><i class="fas fa-search"></i></button>
           </form>
 
-          <div id="examples">
-	    Examples: 
-	    <a href="/query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A">Y: 2655179 G &gt; A</a>
-	    <a href="/cohorts">Cohorts</a>
-	    <a href="/datasets">Datasets</a>
-	  </div>
-
-          <div id="cards-container">
+          <div id="cards-container" data-cards="{{ services|length }}">
             {% for service in services %}
             {% if not service.error %}
             <!-- CARD -->
@@ -71,8 +64,14 @@
             </div>
             <!-- END CARD -->
             {% endif %}
+	    {# Couldn't contact: {{ service }} #}
             {% endfor %}
           </div>
+
+          <div id="examples">
+	    {% include 'examples.html' %}
+	  </div>
+
         </main>
 
 	<footer>

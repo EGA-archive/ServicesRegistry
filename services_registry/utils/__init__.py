@@ -29,7 +29,8 @@ class Collector():
 
         aws = [self._get_one(service_id,
                              d['name'],
-                             d['address'].rstrip('/') + '/' + url.lstrip('/'),
+                             #d['address'].rstrip('/') + '/' + url.lstrip('/'),
+                             d['address'].rstrip('/') + url,
                              dict(headers) if headers else None, # copy, and make it usable for each client
                              json)
                for service_id, d in self.services.items()]

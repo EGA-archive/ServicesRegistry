@@ -40,29 +40,41 @@ def explore_service(name, url, info, error):
     # LOG.info("Exploring %s: %s", name, url)
     # LOG.info("==> [error: %s] %s", error, info)
 
+    # import pprint
+    # pprint.pprint(info)
+
     if error:
         return {
             "title": name,
-            "error": error
+            "error": error,
+            "url": url
         }
 
-    org = info["organization"]
-    logo_url = info["organization"]["logoUrl"]
-    return {
-        "title": name,
-        "error": error,
-        "organization_name": org["name"],
-        "name": info["name"],
-        "description": info["description"],
-        "visit_us": org["welcomeUrl"],
-        "beacon_api": info["welcomeUrl"],
-        "contact_us": org["contactUrl"],
-        "logo_url": service_url + logo_url if not logo_url.startswith("http") else logo_url,
-    }
+    try:
+        info = info['response']['results']
+        org = info.get("organization") or {}
+        return {
+            "title": name,
+            "error": error,
+            "organization_name": org.get("name"),
+            "name": info.get("name"),
+            "description": info.get("description"),
+            "visit_us": org.get("welcomeUrl"),
+            "beacon_api": info.get("welcomeUrl"),
+            "contact_us": org.get("contactUrl"),
+            "logo_url": org.get("logoUrl", ''),
+        }
+    except KeyError as e:
+        return {
+            "title": name,
+            "error": str(e),
+            "url": url
+        }
+        
 
 @aiohttp_jinja2.template('index.html')
 async def index(request):
-    results = await collector.get('/', json=True)
+    results = await collector.get('', json=True)
     services_info = [explore_service(*args) for args in results]
     return { "services": services_info }
 
