@@ -71,6 +71,9 @@ body {
 
             display: inline-block;
             margin: 80px auto 0;
+            span.strong {
+                font-weight: 400;
+            }
         }
         form {
             margin: 40px auto 0;
@@ -121,6 +124,23 @@ body {
             }
         }
 
+        div#cohorts-button {
+            margin: 1em 0;
+            background-color:$mediumblue;
+            &:hover { background-color:$blue; }
+            padding: 8px 10px;
+            border-radius: 30px;
+            width: 90px;
+            font-weight: 300;
+            font-size: 80%;
+            cursor: pointer;
+            transition: ease .5s;
+            span {font-weight: 400;}
+            &:active { position:relative; top:1px; }
+            a{text-decoration: none;color: $darkgrey;}
+        }
+
+        
         div#examples {
 	    font-size:0.7em;
 	    display:flex;
@@ -142,11 +162,11 @@ body {
 		text-decoration:none;
 		border-radius:1ex;
 		padding: 0.5ex 1ex;
-		background-color:#ABABD9;
+		background-color:$mediumblue;
 		color:black;
 		outline:none;
 		&:active { position:relative; top:1px; }
-		&:hover { background-color:#8686CA; }
+		&:hover { background-color:$blue; }
 	    }
 	}
 	
@@ -155,7 +175,7 @@ body {
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
-            margin: 3em auto 0;
+            margin-top: 3em;
 
             div.card {
                 width: 475px;
@@ -235,6 +255,41 @@ body {
                     }
                 }
             }
+        }
+
+        div.cohort-card {
+            width: 100%;
+            min-height: 180px;
+
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+
+            box-sizing: border-box;
+            margin: 2em auto 1em;
+
+            padding: 2em;
+            h1 {
+                font-size: 110%;
+                font-weight: bold;
+                font-family: 'Roboto', sans-serif;
+                span.light { font-weight: 300;}
+            }
+            h2 {
+                font-size: 90%;
+                font-weight: 300;
+                margin: 1em 0 8px;
+            }
+            ul {
+                margin: 0 1em;
+                li {
+                    margin: 2px;
+                    font-size: 90%;
+                    span.strong { font-weight: bold;}
+                    span.content { color: $darkgrey;}
+                }
+            }
+            
         }
     }
 

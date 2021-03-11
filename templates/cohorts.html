@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cineca Services Registry</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width, shrink-to-fit=no"/>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+              integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+              crossorigin="anonymous" />
+
+        <link rel="stylesheet"
+	      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" />
+
+        <!-- <link rel="stylesheet" href="../static/css/style.css" /> -->
+        <link rel="stylesheet" href="{{ static('css/style.css') }}" />
+      </head>
+    <body>
+
+        <nav>
+          <a href="{{ url('index') }}">
+	    <img src="{{ static('img/CINECA_logo.png') }}" alt="CINECA" />
+	  </a>
+        </nav>
+
+    <main>
+        <h1>CINECA Services Registry - <span class="strong">Cohorts</span></h1>
+
+        <!-- result per service -->
+        {% for service in cohortsDict.val() %}
+        <div class="cohort-card">
+            
+            <h1>
+                {{service.response.meta.beaconId}} <span class="light">{{service.response.meta.apiVersion}}</span>
+                <a href=""><span class="light">service </span><i class="fas fa-globe"></i></a> 
+                <a href=""><span class="light">web </span><i class="fas fa-share-square"></i></a> 
+            </h1>
+            <!-- cohort per service -->
+            {% for cohort in service.response.response.results %}
+            <h2>Basic attributes</h2>
+            <ul>
+                <li>
+                    <span class="strong">cohortType</span>
+                    <span class="content">{{cohort.cohortType}}</span>
+                </li>
+                <li>
+                    <span class="strong">cohortDesign</span>
+                    <span class="content">{{cohort.cohortDesign}}</span>
+                </li>
+                <li>
+                    <span class="strong">cohortId</span>
+                    <span class="content">{{cohort.cohortId}}</span>
+                </li>
+                <li>
+                    <span class="strong">cohortName</span>
+                    <span class="content">{{cohort.cohortName}}</span>
+                </li>
+                <li>
+                    <span class="strong">cohortInclusionCriteria</span>
+                    <span class="content">{{cohort.cohortInclusionCriteria}}</span>
+                </li>
+                <li>
+                    <span class="strong">cohortExclusionCriteria</span>
+                    <span class="content">{{cohort.cohortExclusionCriteria}}</span>
+                </li>
+                <li>
+                    <span class="strong">cohortLicense</span>
+                    <span class="content">{{cohort.cohortLicense}}</span>
+                </li>
+                <li>
+                    <span class="strong">cohortContact</span>
+                    <span class="content">{{cohort.cohortContact}}</span>
+                </li>
+                <li>
+                    <span class="strong">cohortRights</span>
+                    <span class="content">{{cohort.cohortRights}}</span>
+                </li>
+                <li>
+                    <span class="strong">cohortSize</span>
+                    <span class="content">{{cohort.cohortSize}}</span>
+                </li>
+                <li>
+                    <span class="strong">cohortDataTypes</span>
+                    <span class="content">{{cohort.cohortDataTypes}}</span>
+                </li>
+            </ul>
+            <h2>Collection Events</h2>
+            {% with cohort.collectionEvents[-1] as collectionEvent %}
+            <ul>
+                <li>
+                    <span class="strong">eventDate</span>
+                    <span class="content">{{collectionEvent.eventDate}}</span>
+                </li>
+                <li>
+                    <span class="strong">eventTimeline</span>
+                    <span class="content">{{collectionEvent.eventTimeline.start}}-{{collectionEvent.eventTimeline.end}}</span>
+                </li>
+                <li>
+                    <span class="strong">eventSize</span>
+                    <span class="content">{{collectionEvent.eventSize}}</span>
+                </li>
+                <li>
+                    <span class="strong">eventCases</span>
+                    <span class="content">{{collectionEvent.eventCases}}</span>
+                </li>
+                <li>
+                    <span class="strong">eventControls</span>
+                    <span class="content">{{collectionEvent.eventControls}}</span>
+                </li>
+                {% if collectionEvent.eventLocations.availability %}
+                <li>
+                    <span class="strong">eventLocations</span>
+                    <span class="content">
+                        <ul>
+                            {% for item in eventLocations.distribution %}
+                            <li>
+                                <span class="strong">{{item.type.label}}</span>
+                                <span class="content">{{item.count}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </span>
+                </li>
+                {% endif %}
+                {% if collectionEvent.eventGenders.availability %}
+                <li>
+                    <span class="strong">eventGenders</span>
+                    <span class="content">
+                        <ul>
+                            {% for item in eventGenders.distribution %}
+                            <li>
+                                <span class="strong">{{item.type.label}}</span>
+                                <span class="content">{{item.count}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </span>
+                </li>
+                {% endif %}
+                {% if collectionEvent.eventEthnicities.availability %}
+                <li>
+                    <span class="strong">eventEthnicities</span>
+                    <span class="content">
+                        <ul>
+                            {% for item in eventEthnicities.distribution %}
+                            <li>
+                                <span class="strong">{{item.type.label}}</span>
+                                <span class="content">{{item.count}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </span>
+                </li>
+                {% endif %}
+                {% if collectionEvent.eventAgeRange.availability %}
+                <li>
+                    <span class="strong">eventAgeRange</span>
+                    <span class="content">
+                        <ul>
+                            {% for item in eventAgeRange.distribution %}
+                            <li>
+                                <span class="strong">{{item.type.label}}</span>
+                                <span class="content">{{item.count}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </span>
+                </li>
+                {% endif %}
+                {% if collectionEvent.eventDiseases.availability %}
+                <li>
+                    <span class="strong">eventDiseases</span>
+                    <span class="content">
+                        <ul>
+                            {% for item in eventDiseases.distribution %}
+                            <li>
+                                <span class="strong">{{item.type.label}}</span>
+                                <span class="content">{{item.count}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </span>
+                </li>
+                {% endif %}
+                {% if collectionEvent.eventPhenotypes.availability %}
+                <li>
+                    <span class="strong">eventPhenotypes</span>
+                    <span class="content">
+                        <ul>
+                            {% for item in eventPhenotypes.distribution %}
+                            <li>
+                                <span class="strong">{{item.type.label}}</span>
+                                <span class="content">{{item.count}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </span>
+                </li>
+                {% endif %}
+                {% if collectionEvent.eventDataTypes.availability %}
+                <li>
+                    <span class="strong">eventDataTypes</span>
+                    <span class="content">
+                        <ul>
+                            {% for item in eventDataTypes.distribution %}
+                            <li>
+                                <span class="strong">{{item.type.label}}</span>
+                                <span class="content">{{item.count}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </span>
+                </li>
+                {% endif %}
+            </ul>
+            {% endwith %}
+            <h2>DUO codes</h2>
+            <ul>
+                <li>
+                    <span class="strong">DUO:000000</span>
+                    <span class="content">description</span>
+                </li>
+            </ul>
+            <h2>Handovers</h2>
+            <ul>
+                <li>
+                    <span class="strong"><a href="">Handover1</a></span>
+                    <span class="content">description</span>
+                </li>
+            </ul>
+            <br>
+            {% endfor %}
+            <!-- end cohort per service -->
+        </div>
+        {% endfor %}
+        <!-- end result per service -->
+
+    </main>
+
+	<footer>
+          <section id="EGA">
+            <p>Hosted by the <a href="https://ega-archive.org/">EGA</a></p>
+          </section>
+          <section id="EU">
+            <p>This project has received funding from the European Union's Horizon 2020 Research and Innovation Programme under grant agreement No. 825775.</p>
+            <img src="{{ static('img/eu_white.jpg') }}" alt="EU Logo" />
+          </section>
+          <!-- <p>&copy; Copyright 2020</p> -->
+        </footer>
+
+    </body>
+</html>
