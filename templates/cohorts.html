@@ -40,6 +40,10 @@
             <h2>Basic attributes</h2>
             <ul>
                 <li>
+                    <span class="strong">cohortName</span>
+                    <span class="content">{{cohort.cohortName}}</span>
+                </li>
+                <li>
                     <span class="strong">cohortType</span>
                     <span class="content">{{cohort.cohortType}}</span>
                 </li>
@@ -48,32 +52,8 @@
                     <span class="content">{{cohort.cohortDesign}}</span>
                 </li>
                 <li>
-                    <span class="strong">cohortId</span>
-                    <span class="content">{{cohort.cohortId}}</span>
-                </li>
-                <li>
-                    <span class="strong">cohortName</span>
-                    <span class="content">{{cohort.cohortName}}</span>
-                </li>
-                <li>
                     <span class="strong">cohortInclusionCriteria</span>
                     <span class="content">{{cohort.cohortInclusionCriteria}}</span>
-                </li>
-                <li>
-                    <span class="strong">cohortExclusionCriteria</span>
-                    <span class="content">{{cohort.cohortExclusionCriteria}}</span>
-                </li>
-                <li>
-                    <span class="strong">cohortLicense</span>
-                    <span class="content">{{cohort.cohortLicense}}</span>
-                </li>
-                <li>
-                    <span class="strong">cohortContact</span>
-                    <span class="content">{{cohort.cohortContact}}</span>
-                </li>
-                <li>
-                    <span class="strong">cohortRights</span>
-                    <span class="content">{{cohort.cohortRights}}</span>
                 </li>
                 <li>
                     <span class="strong">cohortSize</span>
@@ -88,24 +68,12 @@
             {% with cohort.collectionEvents[-1] as collectionEvent %}
             <ul>
                 <li>
-                    <span class="strong">eventDate</span>
-                    <span class="content">{{collectionEvent.eventDate}}</span>
-                </li>
-                <li>
                     <span class="strong">eventTimeline</span>
                     <span class="content">{{collectionEvent.eventTimeline.start}}-{{collectionEvent.eventTimeline.end}}</span>
                 </li>
                 <li>
-                    <span class="strong">eventSize</span>
-                    <span class="content">{{collectionEvent.eventSize}}</span>
-                </li>
-                <li>
-                    <span class="strong">eventCases</span>
-                    <span class="content">{{collectionEvent.eventCases}}</span>
-                </li>
-                <li>
-                    <span class="strong">eventControls</span>
-                    <span class="content">{{collectionEvent.eventControls}}</span>
+                    <span class="strong">eventCases and eventControls</span>
+                    <span class="content">{{collectionEvent.eventCases}} and {{collectionEvent.eventControls}}</span>
                 </li>
                 {% if collectionEvent.eventLocations.availability %}
                 <li>
@@ -217,15 +185,12 @@
             <h2>DUO codes</h2>
             <ul>
                 <li>
-                    <span class="strong">DUO:000000</span>
-                    <span class="content">description</span>
+                    <span class="strong">DUO:0000014</span>
+                    <span class="content">obsolete research use only</span>
                 </li>
-            </ul>
-            <h2>Handovers</h2>
-            <ul>
                 <li>
-                    <span class="strong"><a href="">Handover1</a></span>
-                    <span class="content">description</span>
+                    <span class="strong">DUO:0000026</span>
+                    <span class="content">user specific restriction</span>
                 </li>
             </ul>
             <br>
