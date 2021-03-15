@@ -27,178 +27,234 @@
         <h1>CINECA Services Registry - <span class="strong">Cohorts</span></h1>
 
         <!-- result per service -->
-        {% for service in cohortsDict.val() %}
+        {% for service in cohorts %}
+        {% with service_index=loop.index %}
         <div class="cohort-card">
             
-            <h1>
-                {{service.response.meta.beaconId}} <span class="light">{{service.response.meta.apiVersion}}</span>
-                <a href=""><span class="light">service </span><i class="fas fa-globe"></i></a> 
-                <a href=""><span class="light">web </span><i class="fas fa-share-square"></i></a> 
-            </h1>
-            <!-- cohort per service -->
-            {% for cohort in service.response.response.results %}
-            <h2>Basic attributes</h2>
-            <ul>
-                <li>
-                    <span class="strong">cohortName</span>
-                    <span class="content">{{cohort.cohortName}}</span>
-                </li>
-                <li>
-                    <span class="strong">cohortType</span>
-                    <span class="content">{{cohort.cohortType}}</span>
-                </li>
-                <li>
-                    <span class="strong">cohortDesign</span>
-                    <span class="content">{{cohort.cohortDesign}}</span>
-                </li>
-                <li>
-                    <span class="strong">cohortInclusionCriteria</span>
-                    <span class="content">{{cohort.cohortInclusionCriteria}}</span>
-                </li>
-                <li>
-                    <span class="strong">cohortSize</span>
-                    <span class="content">{{cohort.cohortSize}}</span>
-                </li>
-                <li>
-                    <span class="strong">cohortDataTypes</span>
-                    <span class="content">{{cohort.cohortDataTypes}}</span>
-                </li>
-            </ul>
-            <h2>Collection Events</h2>
-            {% with cohort.collectionEvents[-1] as collectionEvent %}
-            <ul>
-                <li>
-                    <span class="strong">eventTimeline</span>
-                    <span class="content">{{collectionEvent.eventTimeline.start}}-{{collectionEvent.eventTimeline.end}}</span>
-                </li>
-                <li>
-                    <span class="strong">eventCases and eventControls</span>
-                    <span class="content">{{collectionEvent.eventCases}} and {{collectionEvent.eventControls}}</span>
-                </li>
-                {% if collectionEvent.eventLocations.availability %}
-                <li>
-                    <span class="strong">eventLocations</span>
-                    <span class="content">
-                        <ul>
-                            {% for item in eventLocations.distribution %}
-                            <li>
-                                <span class="strong">{{item.type.label}}</span>
-                                <span class="content">{{item.count}}</span>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </span>
-                </li>
+            {% if service.response %}
+                <h1>
+                    {{service.name }} <span class="light">{{service.response.meta.beaconId}} {{service.response.meta.apiVersion}}</span>
+                    <a href="{{service.url}}" target="_blank"> <i class="fas fa-share-square"></i></a> 
+                </h1>
+                <!-- cohort per service -->
+                {% for cohort in service.response.response.results %}
+                <h1 class="cohort-name">{{cohort.cohortName}}</h1>
+
+                <h2>Basic attributes</h2>
+                <ul>
+                    <li>
+                        <span class="strong">type</span>
+                        <span class="content">{{cohort.cohortType}}</span>
+                    </li>
+                    <li>
+                        <span class="strong">design</span>
+                        <span class="content">{{cohort.cohortDesign}}</span>
+                    </li>
+                    <li>
+                        <span class="strong">inclusion criteria</span>
+                        <span class="content">{{cohort.cohortInclusionCriteria}}</span>
+                    </li>
+                    <li>
+                        <span class="strong">size</span>
+                        <span class="content">{{cohort.cohortSize}}</span>
+                    </li>
+                    <li>
+                        <span class="strong">data types</span>
+                        <span class="content">{{cohort.cohortDataTypes}}</span>
+                    </li>
+                </ul>
+
+                {% if cohort.collectionEvents %}
+                <h2>Collection Events</h2>
+                {% with collectionEvent=cohort.collectionEvents[-1] %}
+                <ul>
+                    {% if collectionEvent.eventTimeline %}
+                        <li>
+                            <span class="strong">timeline</span>
+                            <span class="content">{{collectionEvent.eventTimeline.start}}-{{collectionEvent.eventTimeline.end}}</span>
+                        </li>
+                    {% endif %}
+                    {% if collectionEvent.eventCases and collectionEvent.eventControls %}
+                        <li>
+                            <span class="strong">cases and controls</span>
+                            <span class="content">{{collectionEvent.eventCases}} and {{collectionEvent.eventControls}}</span>
+                        </li>
+                    {% endif %}
+                    {% if collectionEvent.eventLocations %}
+                        {% if collectionEvent.eventLocations.availability %}
+                        <li>
+                            <span class="strong">locations</span>
+                            <span class="content">
+                                <ul>
+                                    {% for item in collectionEvent.eventLocations.distribution %}
+                                    <li>
+                                        <span class="strong2">{{item.type.label}}</span>
+                                        <span class="content">{{item.count}}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </span>
+                        </li>
+                        {% endif %}
+                    {% endif %}
+                    {% if collectionEvent.eventGenders %}
+                        {% if collectionEvent.eventGenders.availability %}
+                        <li>
+                            <span class="strong">genders</span>
+                            <span class="content">
+                                <ul>
+                                    {% for item in collectionEvent.eventGenders.distribution %}
+                                    <li>
+                                        <span class="strong2">{{item.type.label}}</span>
+                                        <span class="content">{{item.count}}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </span>
+                        </li>
+                        {% endif %}
+                    {% endif %}
+                    {% if collectionEvent.eventEthnicities %}
+                        {% if collectionEvent.eventEthnicities.availability %}
+                        <li>
+                            <span class="strong">ethnicities</span>
+                            <span class="content">
+                                <ul>
+                                    {% for item in collectionEvent.eventEthnicities.distribution %}
+                                    <li>
+                                        <span class="strong2">{{item.type.label}}</span>
+                                        <span class="content">{{item.count}}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </span>
+                        </li>
+                        {% endif %}
+                    {% endif %}
+                    {% if collectionEvent.eventAgeRange %}
+                        {% if collectionEvent.eventAgeRange.availability %}
+                        <li>
+                            <span class="strong">age range</span>
+                            <span class="content">
+                                <ul>
+                                    {% for item in collectionEvent.eventAgeRange.distribution %}
+                                    <li>
+                                        <span class="strong2">{{item.type.label}}</span>
+                                        <span class="content">{{item.count}}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </span>
+                        </li>
+                        {% endif %}
+                    {% endif %}
+                    {% if collectionEvent.eventDiseases %}
+                        {% if collectionEvent.eventDiseases.availability %}
+                        <li>
+                            <span class="strong">diseases</span>
+                            <span class="content">
+                                <ul>
+                                    {% for item in collectionEvent.eventDiseases.distribution %}
+                                    <li>
+                                        <span class="strong2">{{item.type.label}}</span>
+                                        <span class="content">{{item.count}}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </span>
+                        </li>
+                        {% endif %}
+                    {% endif %}
+                    {% if collectionEvent.eventPhenotypes %}
+                        {% if collectionEvent.eventPhenotypes.availability %}
+                        <li>
+                            <span class="strong">phenotypes</span>
+                            <span class="content">
+                                <ul>
+                                    {% for item in collectionEvent.eventPhenotypes.distribution %}
+                                    <li>
+                                        <span class="strong2">{{item.type.label}}</span>
+                                        <span class="content">{{item.count}}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </span>
+                        </li>
+                        {% endif %}
+                    {% endif %}
+                    {% if collectionEvent.eventDataTypes %}
+                        {% if collectionEvent.eventDataTypes.availability %}
+                        <li>
+                            <span class="strong">data types</span>
+                            <span class="content">
+                                <ul>
+                                    {% for item in collectionEvent.eventDataTypes.distribution %}
+                                    <li>
+                                        <span class="strong2">{{item.type.label}}</span>
+                                        <span class="content">{{item.count}}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </span>
+                        </li>
+                        {% endif %}
+                    {% endif %}
+                </ul>
+                {% endwith %}
                 {% endif %}
-                {% if collectionEvent.eventGenders.availability %}
-                <li>
-                    <span class="strong">eventGenders</span>
-                    <span class="content">
-                        <ul>
-                            {% for item in eventGenders.distribution %}
-                            <li>
-                                <span class="strong">{{item.type.label}}</span>
-                                <span class="content">{{item.count}}</span>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </span>
-                </li>
+
+                <h2>DUO codes</h2>
+                <ul>
+                    <li>
+                        <span class="duo">DUO:0000014</span>
+                        <span class="content">obsolete research use only</span>
+                    </li>
+                    <li>
+                        <span class="duo">DUO:0000026</span>
+                        <span class="content">user specific restriction</span>
+                    </li>
+                </ul>
+                {% if datasets[service_index-1].response %}
+                    {% for item in datasets[service_index-1].response.response.results %}
+                        {% if item.handovers%}
+                        <h2>Handovers</h2>
+                            <ul>
+                                {% for handover in item.handovers %}
+                                <li>
+                                    <span class="strong">{{handover.note}}</span>
+                                    <span class="content"><a href="{{handover.url}}">{{handover.url}}</a></span>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endfor%}
                 {% endif %}
-                {% if collectionEvent.eventEthnicities.availability %}
-                <li>
-                    <span class="strong">eventEthnicities</span>
-                    <span class="content">
-                        <ul>
-                            {% for item in eventEthnicities.distribution %}
-                            <li>
-                                <span class="strong">{{item.type.label}}</span>
-                                <span class="content">{{item.count}}</span>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </span>
-                </li>
+                {% if loop.index != service.response.response.results|length %}
+                    <hr>
                 {% endif %}
-                {% if collectionEvent.eventAgeRange.availability %}
-                <li>
-                    <span class="strong">eventAgeRange</span>
-                    <span class="content">
-                        <ul>
-                            {% for item in eventAgeRange.distribution %}
-                            <li>
-                                <span class="strong">{{item.type.label}}</span>
-                                <span class="content">{{item.count}}</span>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </span>
-                </li>
-                {% endif %}
-                {% if collectionEvent.eventDiseases.availability %}
-                <li>
-                    <span class="strong">eventDiseases</span>
-                    <span class="content">
-                        <ul>
-                            {% for item in eventDiseases.distribution %}
-                            <li>
-                                <span class="strong">{{item.type.label}}</span>
-                                <span class="content">{{item.count}}</span>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </span>
-                </li>
-                {% endif %}
-                {% if collectionEvent.eventPhenotypes.availability %}
-                <li>
-                    <span class="strong">eventPhenotypes</span>
-                    <span class="content">
-                        <ul>
-                            {% for item in eventPhenotypes.distribution %}
-                            <li>
-                                <span class="strong">{{item.type.label}}</span>
-                                <span class="content">{{item.count}}</span>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </span>
-                </li>
-                {% endif %}
-                {% if collectionEvent.eventDataTypes.availability %}
-                <li>
-                    <span class="strong">eventDataTypes</span>
-                    <span class="content">
-                        <ul>
-                            {% for item in eventDataTypes.distribution %}
-                            <li>
-                                <span class="strong">{{item.type.label}}</span>
-                                <span class="content">{{item.count}}</span>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </span>
-                </li>
-                {% endif %}
-            </ul>
-            {% endwith %}
-            <h2>DUO codes</h2>
-            <ul>
-                <li>
-                    <span class="strong">DUO:0000014</span>
-                    <span class="content">obsolete research use only</span>
-                </li>
-                <li>
-                    <span class="strong">DUO:0000026</span>
-                    <span class="content">user specific restriction</span>
-                </li>
-            </ul>
-            <br>
-            {% endfor %}
-            <!-- end cohort per service -->
+                {% endfor %}
+                <!-- end cohort per service -->
+   
+            {% else %}
+                <h1>
+                    {{service.name}}
+                    <a href="{{service.url}}" target="_blank"> <i class="fas fa-share-square"></i></a> 
+                </h1>
+                <h1 class="error">Error</h2>
+                <h2>Response</h2>
+                <ul>
+                    <li>
+                        <span class="strong">message</span>
+                        <span class="content">{{service.error}}</span>
+                    </li>
+                </ul>
+                
+            {% endif %}
         </div>
+        {% endwith %}
         {% endfor %}
         <!-- end result per service -->
+
 
     </main>
 

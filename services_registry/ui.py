@@ -78,6 +78,24 @@ async def index(request):
     services_info = [explore_service(*args) for args in results]
     return { "services": services_info }
 
+_keys = ('name', 'url', 'response', 'error')
+
+@aiohttp_jinja2.template('cohorts.html')
+async def cohorts(request):
+
+    collector = Collector(conf.services)
+    cohorts = await collector.post('/cohorts') # it will prepend /api
+    datasets = await collector.get('/datasets')
+
+    # LOG.debug('cohorts: %s', cohorts)
+    # LOG.debug('datasets: %s', datasets)
+    
+    return {
+        'cohorts': [dict(zip(_keys, res)) for res in cohorts],
+        'datasets': [dict(zip(_keys, res)) for res in datasets],
+    }
+
+
 async def dispatch(request):
     data = await request.post()
     LOG.debug('Captured data: %s', data)
@@ -110,6 +128,7 @@ def main(path=None):
 
     static_files = Path(__file__).parent.parent / 'static'
     server.add_routes([web.get('/', index, name='index'),
+                       web.get('/cohorts', cohorts, name='cohorts'),
                        web.post('/', dispatch),
                        web.static('/static', str(static_files))])
 

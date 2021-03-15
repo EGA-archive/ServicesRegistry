@@ -274,22 +274,65 @@ body {
                 font-weight: bold;
                 font-family: 'Roboto', sans-serif;
                 span.light { font-weight: 300;}
+                margin-bottom: 2em;
+                &.cohort-name {
+                    color: white;
+                    margin-bottom: 0;
+                    background-color:$blue;
+                    padding: 4px 8px;
+                    border-radius: 30px;
+                    font-weight: 400;
+                    display:inline-block; 
+                }
+                &.error {
+                    color: white;
+                    margin-bottom: 0;
+                    background-color:$softred;
+                    padding: 4px 8px;
+                    border-radius: 30px;
+                    font-weight: 400;
+                    display:inline-block; 
+                }
             }
             h2 {
                 font-size: 90%;
                 font-weight: 300;
                 margin: 1em 0 8px;
             }
+            h2.error {
+                color: white;
+                margin-bottom: 0;
+                background-color:$softred;
+                padding: 4px 8px;
+                border-radius: 30px;
+                font-weight: 400;
+                display: inline-block; 
+                margin-top: 0;
+            }
             ul {
                 margin: 0 1em;
                 li {
-                    margin: 2px;
+                    margin: 6px;
                     font-size: 90%;
                     span.strong { font-weight: bold;}
+                    span.strong2 { font-weight: 600;}
                     span.content { color: $darkgrey;}
+                    span.duo {
+                        font-weight: 600;
+                        background-color: $duo;
+                        border-radius: 10px;
+                        padding: 0 4px;
+                        color: white;
+                        font-size: 90%;
+                    }
                 }
             }
-            
+            hr {
+                margin: 2em auto;
+            border: none;
+            border-top: 1px solid $darkgrey;
+            width: 60%;
+            }
         }
     }
 
