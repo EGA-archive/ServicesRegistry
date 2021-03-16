@@ -31,12 +31,13 @@
         {% with service_index=loop.index %}
         <div class="cohort-card">
             
-            {% if service.response %}
+            {% if service.response and not service.response.errorCode %}
                 <h1>
                     {{service.name }} <span class="light">{{service.response.meta.beaconId}} {{service.response.meta.apiVersion}}</span>
                     <a href="{{service.url}}" target="_blank"> <i class="fas fa-share-square"></i></a> 
                 </h1>
                 <!-- cohort per service -->
+                {% if service.response.response.results|length > 0 %}
                 {% for cohort in service.response.response.results %}
                 <h1 class="cohort-name">{{cohort.cohortName}}</h1>
 
@@ -233,8 +234,10 @@
                     <hr>
                 {% endif %}
                 {% endfor %}
+                {% else %}
+                     <h2>No cohorts to show</h2>       
+                {% endif %}
                 <!-- end cohort per service -->
-   
             {% else %}
                 <h1>
                     {{service.name}}
@@ -245,7 +248,7 @@
                 <ul>
                     <li>
                         <span class="strong">message</span>
-                        <span class="content">{{service.error}}</span>
+                        <span class="content">{% if service.error %}{{service.error}}{% elif service.response.errorCode %}{{service.response.errorCode}} {{service.response.errorMessage}}{% endif %}</span>
                     </li>
                 </ul>
                 
