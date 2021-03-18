@@ -34,7 +34,10 @@
             {% if service.response and not service.response.errorCode %}
                 <h1>
                     {{service.name }} <span class="light">{{service.response.meta.beaconId}} {{service.response.meta.apiVersion}}</span>
-                    <a href="{{service.url}}" target="_blank"> <i class="fas fa-share-square"></i></a> 
+                    <form action="{{service.url}}" method="post" target="_blank">
+                        <input type="hidden" value="Cohorts">
+                        <button type="submit" ><i class="fas fa-share-square"></i></button>
+                    </form>
                 </h1>
                 <!-- cohort per service -->
                 {% if service.response.response.results|length > 0 %}
@@ -241,7 +244,10 @@
             {% else %}
                 <h1>
                     {{service.name}}
-                    <a href="{{service.url}}" target="_blank"> <i class="fas fa-share-square"></i></a> 
+                    <form action="{{service.url}}" method="post" target="_blank">
+                        <input type="hidden" value="Cohorts">
+                        <button type="submit" ><i class="fas fa-share-square"></i></button>
+                    </form>
                 </h1>
                 <h1 class="error">Error</h2>
                 <h2>Response</h2>

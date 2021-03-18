@@ -332,6 +332,21 @@ body {
             border-top: 1px solid $darkgrey;
             width: 60%;
             }
+            form {
+                margin: 0;
+                width: auto;
+                height: auto;
+                background-color: none;
+                border-radius: 0;
+                display: inline;
+                box-shadow: none;
+                button {
+                    cursor: pointer;
+                    color: $blue;
+                    &:hover {color: $darkblue;}
+                }
+                
+            }
         }
     }
 

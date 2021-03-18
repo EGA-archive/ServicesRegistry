@@ -437,17 +437,36 @@ body main div.cohort-card hr {
   border-top: 1px solid #717578;
   width: 60%;
 }
-/* line 338, ../sass/_main.scss */
+/* line 335, ../sass/_main.scss */
+body main div.cohort-card form {
+  margin: 0;
+  width: auto;
+  height: auto;
+  background-color: none;
+  border-radius: 0;
+  display: inline;
+  box-shadow: none;
+}
+/* line 343, ../sass/_main.scss */
+body main div.cohort-card form button {
+  cursor: pointer;
+  color: #74C5EB;
+}
+/* line 346, ../sass/_main.scss */
+body main div.cohort-card form button:hover {
+  color: #1070B7;
+}
+/* line 353, ../sass/_main.scss */
 body a {
   color: #74C5EB;
   text-decoration: underline;
   transition: ease .5s;
 }
-/* line 342, ../sass/_main.scss */
+/* line 357, ../sass/_main.scss */
 body a:hover {
   color: #1070B7;
 }
-/* line 345, ../sass/_main.scss */
+/* line 360, ../sass/_main.scss */
 body footer {
   width: 100%;
   background-color: #275F90;
@@ -460,7 +479,7 @@ body footer {
   align-items: center;
   justify-content: space-between;
 }
-/* line 359, ../sass/_main.scss */
+/* line 374, ../sass/_main.scss */
 body footer p {
   margin-right: 10px;
   line-height: 15px;
@@ -469,39 +488,39 @@ body footer p {
   transition: ease all 0.5s;
 }
 @media screen and (max-width: 580px) {
-  /* line 359, ../sass/_main.scss */
+  /* line 374, ../sass/_main.scss */
   body footer p {
     font-size: 9px;
     line-height: 10px;
   }
 }
-/* line 373, ../sass/_main.scss */
+/* line 388, ../sass/_main.scss */
 body footer section#EGA {
   margin-left: 30px;
   font-size: 12px;
 }
-/* line 376, ../sass/_main.scss */
+/* line 391, ../sass/_main.scss */
 body footer section#EGA a {
   color: white;
 }
-/* line 378, ../sass/_main.scss */
+/* line 393, ../sass/_main.scss */
 body footer section#EGA a:hover {
   color: #74C5EB;
 }
-/* line 381, ../sass/_main.scss */
+/* line 396, ../sass/_main.scss */
 body footer section#EU {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: right;
 }
-/* line 387, ../sass/_main.scss */
+/* line 402, ../sass/_main.scss */
 body footer section#EU p {
   max-width: 400px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 393, ../sass/_main.scss */
+/* line 408, ../sass/_main.scss */
 body footer section#EU img {
   height: 30px;
   margin-right: 30px;
