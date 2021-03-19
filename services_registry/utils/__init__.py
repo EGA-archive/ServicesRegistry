@@ -82,8 +82,9 @@ class Collector():
         async with httpx.AsyncClient() as client:
             aws = [self._post_one(client,
                                   d['name'],
-                                  d['address'].rstrip('/') + '/' + url.lstrip('/'),
-                                  headers,
+                                    #d['address'].rstrip('/') + '/' + url.lstrip('/'),
+                                  d['address'].rstrip('/') + url,
+                                  dict(headers) if headers else None,
                                   data,
                                   json)
                    for d in self.services.values()]
@@ -96,7 +97,14 @@ class Collector():
             if headers:
                 headers.pop('Host', None)
             r = await client.post(url, headers=headers, data=data, timeout=TIMEOUT)
-            response = r.json() if json else r.content
+            if r.status_code == 304:
+                error = None # and keep the response from the cache
+            elif r.status_code == 200:
+                response = r.json() if json else r.content
+                error = None
+            else: # error
+                raise ValueError(f'Error {r.status_code}: {r.content}')
+
             return (name, url, response, None)
         except Exception as e:
             LOG.error("Invalid response for %s: %s", name, e)

@@ -38,9 +38,9 @@ async def forward_post(request):
 
     # Collect the responses
     path = request.match_info.get('anything', request.path_qs)
-    results = await collector.post(request.path_qs,
+    results = await collector.post(path,
                                    headers=request.headers,
-                                   data=request.post(), # Not json(), no need to parse+serialize
+                                   data=dict(await request.post()), # Not json(), no need to parse+serialize
                                    json=True)
     responses = {}
     for (name, url, response, error) in results:
