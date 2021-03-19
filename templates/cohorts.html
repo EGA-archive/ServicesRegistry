@@ -220,7 +220,7 @@
                 </ul>
                 {% if datasets[service_index-1].response %}
                     {% for item in datasets[service_index-1].response.response.results %}
-                        {% if item.handovers%}
+                        {% if item.id != "GiaB" and item.handovers%}
                         <h2>Handovers</h2>
                             <ul>
                                 {% for handover in item.handovers %}
