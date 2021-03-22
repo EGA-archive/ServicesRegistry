@@ -124,23 +124,26 @@ body {
             }
         }
 
-        div#cohorts-button, div#examples-button {
-            margin: 1em 0;
-            background-color:$mediumblue;
-            &:hover { background-color:$blue; }
-            padding: 8px 10px;
-            border-radius: 30px;
-            width: 90px;
-            font-weight: 300;
-            font-size: 80%;
-            cursor: pointer;
-            transition: ease .5s;
-            span {font-weight: 400;}
-            &:active { position:relative; top:1px; }
-            a{text-decoration: none;color: $darkgrey;}
-            p {
-                display: none;
-                &.active {display: inline;}
+        #button-wrapper {
+            display: flex;
+            flex-flow: row nowrap;
+            div#cohorts-button, div#examples-button {
+                margin: 1em 0.5em 0 0;
+                background-color:$mediumblue;
+                &:hover { background-color:$blue; }
+                padding: 8px 10px;
+                border-radius: 30px;
+                font-weight: 300;
+                font-size: 80%;
+                cursor: pointer;
+                transition: ease .5s;
+                span {font-weight: 400;}
+                &:active { position:relative; top:1px; }
+                a{text-decoration: none;color: $darkgrey;}
+                p {
+                    display: none;
+                    &.active {display: inline;}
+                }
             }
         }
 

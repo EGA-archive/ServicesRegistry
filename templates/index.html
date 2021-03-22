@@ -34,9 +34,20 @@
             <button type="submit"><i class="fas fa-search"></i></button>
           </form>
 
+          <div id="button-wrapper">
             <div id="cohorts-button">
               <a href="{{ url('cohorts') }}">Go to <span>/cohorts</span></a>
             </div>
+            
+            <div id="examples-button">
+              <p class="active"> See examples</p>
+              <p> Hide examples</p>
+            </div>
+          </div>
+          <div id="examples">
+            {% include 'examples.html' %}
+          </div>
+
           <div id="cards-container" data-cards="{{ services|length }}">
             {% for service in services %}
             {% if not service.error %}
@@ -72,13 +83,7 @@
             {% endfor %}
           </div>
 
-          <div id="examples-button">
-            <p class="active"> See examples</p>
-            <p> Hide examples</p>
-          </div>
-          <div id="examples">
-            {% include 'examples.html' %}
-          </div>
+
 
         </main>
 
