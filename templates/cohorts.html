@@ -25,7 +25,6 @@
 
     <main>
         <h1>CINECA Services Registry - <span class="strong">Cohorts</span></h1>
-
         <!-- result per service -->
         {% for service in cohorts %}
         {% with service_index=loop.index %}
@@ -218,8 +217,9 @@
                         <span class="content">user specific restriction</span>
                     </li>
                 </ul>
-                {% if datasets[service_index-1].response %}
-                    {% for item in datasets[service_index-1].response.response.results %}
+                {% for service_datasets in datasets %}
+                {% if service_datasets.name == service.name %}
+                    {% for item in service_datasets.response.response.results %}
                         {% if item.id != "GiaB" and item.handovers%}
                         <h2>Handovers</h2>
                             <ul>
@@ -233,6 +233,7 @@
                         {% endif %}
                     {% endfor%}
                 {% endif %}
+                {% endfor %}
                 {% if loop.index != service.response.response.results|length %}
                     <hr>
                 {% endif %}
