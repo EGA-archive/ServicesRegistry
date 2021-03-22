@@ -186,7 +186,7 @@ body main form button:hover {
   color: #74C5EB;
 }
 /* line 127, ../sass/_main.scss */
-body main div#cohorts-button {
+body main div#cohorts-button, body main div#examples-button {
   margin: 1em 0;
   background-color: #BAE4F6;
   padding: 8px 10px;
@@ -198,43 +198,55 @@ body main div#cohorts-button {
   transition: ease .5s;
 }
 /* line 130, ../sass/_main.scss */
-body main div#cohorts-button:hover {
+body main div#cohorts-button:hover, body main div#examples-button:hover {
   background-color: #74C5EB;
 }
 /* line 138, ../sass/_main.scss */
-body main div#cohorts-button span {
+body main div#cohorts-button span, body main div#examples-button span {
   font-weight: 400;
 }
 /* line 139, ../sass/_main.scss */
-body main div#cohorts-button:active {
+body main div#cohorts-button:active, body main div#examples-button:active {
   position: relative;
   top: 1px;
 }
 /* line 140, ../sass/_main.scss */
-body main div#cohorts-button a {
+body main div#cohorts-button a, body main div#examples-button a {
   text-decoration: none;
   color: #717578;
 }
-/* line 144, ../sass/_main.scss */
-body main div#examples {
-  font-size: 0.7em;
-  display: flex;
-  flex-flow: row nowrap;
+/* line 141, ../sass/_main.scss */
+body main div#cohorts-button p, body main div#examples-button p {
+  display: none;
+}
+/* line 143, ../sass/_main.scss */
+body main div#cohorts-button p.active, body main div#examples-button p.active {
+  display: inline;
 }
 /* line 148, ../sass/_main.scss */
+body main div#examples {
+  display: none;
+  font-size: 0.7em;
+  flex-flow: row nowrap;
+}
+/* line 150, ../sass/_main.scss */
+body main div#examples.active {
+  display: flex;
+}
+/* line 153, ../sass/_main.scss */
 body main div#examples section {
   display: flex;
   flex-flow: column nowrap;
   margin: 0.5em 0.1em;
 }
-/* line 152, ../sass/_main.scss */
+/* line 157, ../sass/_main.scss */
 body main div#examples section::before {
   content: attr(data-heading);
   display: inline-block;
   margin: 0.5em;
   font-size: 1.1em;
 }
-/* line 159, ../sass/_main.scss */
+/* line 164, ../sass/_main.scss */
 body main div#examples a {
   display: inline-block;
   margin: 0.1em 0;
@@ -245,23 +257,23 @@ body main div#examples a {
   color: black;
   outline: none;
 }
-/* line 168, ../sass/_main.scss */
+/* line 173, ../sass/_main.scss */
 body main div#examples a:active {
   position: relative;
   top: 1px;
 }
-/* line 169, ../sass/_main.scss */
+/* line 174, ../sass/_main.scss */
 body main div#examples a:hover {
   background-color: #74C5EB;
 }
-/* line 174, ../sass/_main.scss */
+/* line 179, ../sass/_main.scss */
 body main div#cards-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin-top: 3em;
 }
-/* line 180, ../sass/_main.scss */
+/* line 185, ../sass/_main.scss */
 body main div#cards-container div.card {
   width: 475px;
   height: 180px;
@@ -275,13 +287,13 @@ body main div#cards-container div.card {
   margin: 25px;
 }
 @media screen and (max-width: 550px) {
-  /* line 180, ../sass/_main.scss */
+  /* line 185, ../sass/_main.scss */
   body main div#cards-container div.card {
     width: 350px;
     margin: 25px auto;
   }
 }
-/* line 203, ../sass/_main.scss */
+/* line 208, ../sass/_main.scss */
 body main div#cards-container div.card section.left-part {
   padding: 20px;
   display: flex;
@@ -290,39 +302,39 @@ body main div#cards-container div.card section.left-part {
   align-items: center;
   min-width: 140px;
 }
-/* line 210, ../sass/_main.scss */
+/* line 215, ../sass/_main.scss */
 body main div#cards-container div.card section.left-part img {
   height: 40px;
 }
-/* line 213, ../sass/_main.scss */
+/* line 218, ../sass/_main.scss */
 body main div#cards-container div.card section.left-part img.white-img {
   -webkit-filter: drop-shadow(1px 1px 4px #222);
   filter: drop-shadow(1px 1px 5px rgba(34, 34, 34, 0.5));
 }
-/* line 218, ../sass/_main.scss */
+/* line 223, ../sass/_main.scss */
 body main div#cards-container div.card section.left-part ul {
   font-size: 12px;
 }
-/* line 220, ../sass/_main.scss */
+/* line 225, ../sass/_main.scss */
 body main div#cards-container div.card section.left-part ul li {
   list-style: none;
   padding: 8px;
 }
-/* line 223, ../sass/_main.scss */
+/* line 228, ../sass/_main.scss */
 body main div#cards-container div.card section.left-part ul li a {
   text-decoration: none;
   color: #717578;
   transition: ease .5s;
 }
-/* line 228, ../sass/_main.scss */
+/* line 233, ../sass/_main.scss */
 body main div#cards-container div.card section.left-part ul li a:hover {
   color: #74C5EB;
 }
-/* line 232, ../sass/_main.scss */
+/* line 237, ../sass/_main.scss */
 body main div#cards-container div.card section.left-part ul li a i {
   margin-right: 3px;
 }
-/* line 239, ../sass/_main.scss */
+/* line 244, ../sass/_main.scss */
 body main div#cards-container div.card section.right-part {
   margin: 20px 0;
   padding: 0 20px;
@@ -332,19 +344,20 @@ body main div#cards-container div.card section.right-part {
   align-items: flex-start;
   border-left: 1px solid #74C5EB;
 }
-/* line 248, ../sass/_main.scss */
+/* line 253, ../sass/_main.scss */
 body main div#cards-container div.card section.right-part h1 {
   font-size: 110%;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
-/* line 253, ../sass/_main.scss */
+/* line 258, ../sass/_main.scss */
 body main div#cards-container div.card section.right-part h2, body main div#cards-container div.card section.right-part p {
   font-size: 80%;
 }
-/* line 260, ../sass/_main.scss */
+/* line 265, ../sass/_main.scss */
 body main div.cohort-card {
   width: 100%;
+  min-width: 650px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
@@ -352,18 +365,18 @@ body main div.cohort-card {
   margin: 2em auto 1em;
   padding: 2em;
 }
-/* line 271, ../sass/_main.scss */
+/* line 276, ../sass/_main.scss */
 body main div.cohort-card h1 {
   font-size: 110%;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
   margin-bottom: 2em;
 }
-/* line 275, ../sass/_main.scss */
+/* line 280, ../sass/_main.scss */
 body main div.cohort-card h1 span.light {
   font-weight: 300;
 }
-/* line 277, ../sass/_main.scss */
+/* line 282, ../sass/_main.scss */
 body main div.cohort-card h1.cohort-name {
   color: white;
   margin-bottom: 0;
@@ -373,7 +386,7 @@ body main div.cohort-card h1.cohort-name {
   font-weight: 400;
   display: inline-block;
 }
-/* line 286, ../sass/_main.scss */
+/* line 291, ../sass/_main.scss */
 body main div.cohort-card h1.error {
   color: white;
   margin-bottom: 0;
@@ -383,13 +396,13 @@ body main div.cohort-card h1.error {
   font-weight: 400;
   display: inline-block;
 }
-/* line 296, ../sass/_main.scss */
+/* line 301, ../sass/_main.scss */
 body main div.cohort-card h2 {
   font-size: 90%;
   font-weight: 300;
   margin: 1em 0 8px;
 }
-/* line 301, ../sass/_main.scss */
+/* line 306, ../sass/_main.scss */
 body main div.cohort-card h2.error {
   color: white;
   margin-bottom: 0;
@@ -400,28 +413,28 @@ body main div.cohort-card h2.error {
   display: inline-block;
   margin-top: 0;
 }
-/* line 311, ../sass/_main.scss */
+/* line 316, ../sass/_main.scss */
 body main div.cohort-card ul {
   margin: 0 1em;
 }
-/* line 313, ../sass/_main.scss */
+/* line 318, ../sass/_main.scss */
 body main div.cohort-card ul li {
   margin: 6px;
   font-size: 90%;
 }
-/* line 316, ../sass/_main.scss */
+/* line 321, ../sass/_main.scss */
 body main div.cohort-card ul li span.strong {
   font-weight: bold;
 }
-/* line 317, ../sass/_main.scss */
+/* line 322, ../sass/_main.scss */
 body main div.cohort-card ul li span.strong2 {
   font-weight: 600;
 }
-/* line 318, ../sass/_main.scss */
+/* line 323, ../sass/_main.scss */
 body main div.cohort-card ul li span.content {
   color: #717578;
 }
-/* line 319, ../sass/_main.scss */
+/* line 324, ../sass/_main.scss */
 body main div.cohort-card ul li span.duo {
   font-weight: 600;
   background-color: #EB9661;
@@ -430,14 +443,14 @@ body main div.cohort-card ul li span.duo {
   color: white;
   font-size: 90%;
 }
-/* line 329, ../sass/_main.scss */
+/* line 334, ../sass/_main.scss */
 body main div.cohort-card hr {
   margin: 2em auto;
   border: none;
   border-top: 1px solid #717578;
   width: 60%;
 }
-/* line 335, ../sass/_main.scss */
+/* line 340, ../sass/_main.scss */
 body main div.cohort-card form {
   margin: 0;
   width: auto;
@@ -447,26 +460,57 @@ body main div.cohort-card form {
   display: inline;
   box-shadow: none;
 }
-/* line 343, ../sass/_main.scss */
+/* line 348, ../sass/_main.scss */
 body main div.cohort-card form button {
   cursor: pointer;
   color: #74C5EB;
 }
-/* line 346, ../sass/_main.scss */
+/* line 351, ../sass/_main.scss */
 body main div.cohort-card form button:hover {
   color: #1070B7;
 }
-/* line 353, ../sass/_main.scss */
+/* line 354, ../sass/_main.scss */
+body main div.cohort-card svg.bar-plot {
+  padding-left: 1.5em;
+}
+/* line 356, ../sass/_main.scss */
+body main div.cohort-card svg.bar-plot .bar {
+  fill: #D9D9D9;
+  height: 21px;
+  transition: fill .3s ease;
+}
+/* line 361, ../sass/_main.scss */
+body main div.cohort-card svg.bar-plot .bar text {
+  fill: #717578;
+  font-size: 11px;
+}
+/* line 369, ../sass/_main.scss */
+body main div.cohort-card svg.bar-plot .chart:hover .bar,
+body main div.cohort-card svg.bar-plot .chart:focus .bar {
+  fill: #D9D9D9;
+}
+/* line 374, ../sass/_main.scss */
+body main div.cohort-card svg.bar-plot .bar:hover,
+body main div.cohort-card svg.bar-plot .bar:focus {
+  fill: #74C5EB !important;
+}
+/* line 378, ../sass/_main.scss */
+body main div.cohort-card svg.bar-plot .bar:hover text,
+body main div.cohort-card svg.bar-plot .bar:focus text {
+  fill: #1070B7;
+  font-size: 11px;
+}
+/* line 388, ../sass/_main.scss */
 body a {
   color: #74C5EB;
   text-decoration: underline;
   transition: ease .5s;
 }
-/* line 357, ../sass/_main.scss */
+/* line 392, ../sass/_main.scss */
 body a:hover {
   color: #1070B7;
 }
-/* line 360, ../sass/_main.scss */
+/* line 395, ../sass/_main.scss */
 body footer {
   width: 100%;
   background-color: #275F90;
@@ -479,7 +523,7 @@ body footer {
   align-items: center;
   justify-content: space-between;
 }
-/* line 374, ../sass/_main.scss */
+/* line 409, ../sass/_main.scss */
 body footer p {
   margin-right: 10px;
   line-height: 15px;
@@ -488,39 +532,39 @@ body footer p {
   transition: ease all 0.5s;
 }
 @media screen and (max-width: 580px) {
-  /* line 374, ../sass/_main.scss */
+  /* line 409, ../sass/_main.scss */
   body footer p {
     font-size: 9px;
     line-height: 10px;
   }
 }
-/* line 388, ../sass/_main.scss */
+/* line 423, ../sass/_main.scss */
 body footer section#EGA {
   margin-left: 30px;
   font-size: 12px;
 }
-/* line 391, ../sass/_main.scss */
+/* line 426, ../sass/_main.scss */
 body footer section#EGA a {
   color: white;
 }
-/* line 393, ../sass/_main.scss */
+/* line 428, ../sass/_main.scss */
 body footer section#EGA a:hover {
   color: #74C5EB;
 }
-/* line 396, ../sass/_main.scss */
+/* line 431, ../sass/_main.scss */
 body footer section#EU {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: right;
 }
-/* line 402, ../sass/_main.scss */
+/* line 437, ../sass/_main.scss */
 body footer section#EU p {
   max-width: 400px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 408, ../sass/_main.scss */
+/* line 443, ../sass/_main.scss */
 body footer section#EU img {
   height: 30px;
   margin-right: 30px;

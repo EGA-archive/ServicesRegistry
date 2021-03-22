@@ -124,7 +124,7 @@ body {
             }
         }
 
-        div#cohorts-button {
+        div#cohorts-button, div#examples-button {
             margin: 1em 0;
             background-color:$mediumblue;
             &:hover { background-color:$blue; }
@@ -138,12 +138,17 @@ body {
             span {font-weight: 400;}
             &:active { position:relative; top:1px; }
             a{text-decoration: none;color: $darkgrey;}
+            p {
+                display: none;
+                &.active {display: inline;}
+            }
         }
 
         
         div#examples {
+            display: none;
+            &.active { display: flex;}
 	    font-size:0.7em;
-	    display:flex;
 	    flex-flow: row nowrap;
 	    section {
 		display:flex;
@@ -259,7 +264,7 @@ body {
 
         div.cohort-card {
             width: 100%;
-
+            min-width: 650px;
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 5px 10px rgba(0,0,0,0.05);
@@ -345,8 +350,38 @@ body {
                     color: $blue;
                     &:hover {color: $darkblue;}
                 }
-                
             }
+            svg.bar-plot {
+                padding-left: 1.5em;
+                .bar {
+                    fill: $grey;
+                    height: 21px;
+                    transition: fill .3s ease;
+                    
+                    text {
+                      fill: $darkgrey;
+                      font-size: 11px;
+                    }
+                  }
+                  
+                  .chart:hover,
+                  .chart:focus {
+                    .bar {
+                      fill: $grey;
+                    }
+                  }
+                  
+                  .bar:hover,
+                  .bar:focus {
+                    fill: $blue !important;
+                    
+                    text {
+                      fill: $darkblue;
+                      font-size: 11px;
+                    }
+                  }
+            }
+
         }
     }
 
