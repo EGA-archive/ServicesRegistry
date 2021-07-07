@@ -14,7 +14,7 @@ def now():
     return time.strftime("%a, %d %b %Y %I:%M:%S %Z", time.gmtime())
 
 class Collector():
-    
+
     def __init__(self, services, expire=None):
         self.expire_after = expire
         # Dict with service id mapping to a dict with {'name', 'address' }
@@ -65,7 +65,7 @@ class Collector():
                     error = None
                 else: # error
                     raise ValueError(f'Error {r.status_code}: {r.content}')
-        
+
                 last_call_at = r.headers.get('Last-Modified') or now()
                 # Save to cache
                 self.cache[service_id] = (last_call_at, response, error)
@@ -101,3 +101,41 @@ class Collector():
         except Exception as e:
             LOG.error("Invalid response for %s: %s", name, e)
             return (name, url, None, str(e))
+
+def explore_service(name, url, info, error):
+    """Fetch the interesting information of a service
+    by using its base URL"""
+
+    # LOG.info("Exploring %s: %s", name, url)
+    # LOG.info("==> [error: %s] %s", error, info)
+
+    # import pprint
+    # pprint.pprint(info)
+
+    if error:
+        return {
+            "title": name,
+            "error": error,
+            "url": url
+        }
+
+    try:
+        info = info['response']['results']
+        org = info.get("organization") or {}
+        return {
+            "title": name,
+            "error": error,
+            "organization_name": org.get("name"),
+            "name": info.get("name"),
+            "description": info.get("description"),
+            "visit_us": org.get("welcomeUrl"),
+            "beacon_api": info.get("welcomeUrl"),
+            "contact_us": org.get("contactUrl"),
+            "logo_url": org.get("logoUrl", ''),
+        }
+    except KeyError as e:
+        return {
+            "title": name,
+            "error": str(e),
+            "url": url
+        }

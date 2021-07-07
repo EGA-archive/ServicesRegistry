@@ -1,0 +1,32 @@
+<!-- CARD -->
+<div class="card">
+  {% if remove_enabled %}
+    <button>
+      <i class="fas fa-trash"></i>
+    </button>
+  {% endif %}
+  <section class="left-part">
+    {% if service.logo_url %}
+    <img src="{{ service.logo_url }}" alt="{{ service.name }} Logo" />
+    {% else %}
+    <img src="{{ static('img/beacon_default.png') }}" alt="Default Logo" />
+    {% endif %}
+    <ul>
+      <li>
+        <a href="{{ service.visit_us }}"><i class="fas fa-globe"></i> Visit us</a>
+      </li>
+      <li>
+        <a href="{{ service.beacon_api }}"><i class="fas fa-share-square"></i>Beacon API</a>
+      </li>
+      <li>
+        <a href="{{ service.contact_us }}"><i class="fas fa-envelope"></i>Contact us</a>
+      </li>
+    </ul>
+  </section>
+  <section class="right-part">
+    <h1>{{ service.organization_name|safe }}</h1>
+    <h2>{{ service.name|safe }}</h2>
+    <p>{{ service.description|safe }}</p>
+  </section>
+</div>
+<!-- END CARD -->

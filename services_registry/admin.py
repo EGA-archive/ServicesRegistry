@@ -15,6 +15,7 @@ import aiohttp_jinja2
 import jinja2
 
 from . import conf
+from . import services
 
 from .utils import Collector, explore_service
 
@@ -32,24 +33,18 @@ async def initialize(app):
     app['static_root_url'] = '/static'
     LOG.info("Initialization done.")
 
+@aiohttp_jinja2.template('admin.html')
+async def admin(request):
 
-@aiohttp_jinja2.template('index.html')
-async def index(request):
     results = await collector.get('', json=True)
     services_info = [explore_service(*args) for args in results]
-    return { "services": services_info }
 
-async def dispatch(request):
-    data = await request.post()
-    LOG.debug('Captured data: %s', data)
-    url = data.get('url', '')
-    if not url or url[0] != '/':
-        url = '/' + url
-    LOG.debug('Captured URL: %s', url)
-    raise web.HTTPFound(url)
-    # redirect = quote(url)
-    # LOG.info('Redirect to: %s', redirect)
-    # raise web.HTTPFound(redirect)
+    return {
+        'request': request,
+        "services": services_info,
+        'message': None,
+        'message_type': None
+    }
 
 def main(path=None):
 
@@ -70,12 +65,12 @@ def main(path=None):
 
 
     static_files = Path(__file__).parent.parent / 'static'
-    server.add_routes([web.get('/', index, name='index'),
-                       web.post('/', dispatch),
+    server.add_routes([web.get('/', admin, name='admin'),
+                       web.post('/', admin),
                        web.static('/static', str(static_files))])
 
     # .... and cue music!
-    LOG.info(f"Start services registry UI")
+    LOG.info(f"Start services registry Admin")
     # .... and cue music
     if path:
         if os.path.exists(path):
@@ -84,11 +79,11 @@ def main(path=None):
         web.run_app(server,
                     path=path,
                     shutdown_timeout=0,
-                    ssl_context=getattr(conf, 'ui_ssl_context', None))
+                    ssl_context=getattr(conf, 'admin_ssl_context', None))
     else:
         web.run_app(server,
-                    host=getattr(conf, 'ui_host', '0.0.0.0'),
-                    port=getattr(conf, 'ui_port', 8001),
+                    host=getattr(conf, 'admin_host', '0.0.0.0'),
+                    port=getattr(conf, 'admin_port', 8002),
                     shutdown_timeout=0,
                     ssl_context=getattr(conf, 'ssl_context', None))
 

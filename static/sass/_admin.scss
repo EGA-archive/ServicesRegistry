@@ -1,0 +1,13 @@
+form {
+  div.card {
+    button {
+      position: absolute;
+      right: 0;
+      margin-right: 5px;
+      top: 10px;
+      i {
+        color: $red;
+      }
+    }
+  }
+}
