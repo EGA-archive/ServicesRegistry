@@ -38,6 +38,14 @@
           </div>
 
           <div id="cards-container" data-cards="{{ services|length }}">
+            <div class="card">
+              <section class="right-part">
+                <h1>New Beacon Instance</h1>
+                <input type="text" name="new_url" placeholder="Enter the Beacon Instance URL" />
+                
+                <input type="submit" value="ADD" />
+              </section>
+            </div>
             {% for service in services %}
             {% if not service.error %}
               {% with remove_enabled = True %}

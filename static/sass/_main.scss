@@ -16,6 +16,7 @@ body {
         background-color: white;
         position: fixed;
         top: 0;
+        z-index: 98;
 
         display: flex;
         flex-flow: row nowrap;
@@ -159,11 +160,10 @@ body {
             justify-content: center;
             margin: 3em auto 0;
 
-            div.card {
+            .card {
                 width: 475px;
-                height: 180px;
                 position: relative;
-                
+
                 transition: ease all 0.5s;
 
                 @media screen and (max-width:550px){
@@ -200,9 +200,17 @@ body {
                     }
                     ul {
                         font-size: 12px;
+                        margin-top: 10px;
                         li {
                             list-style: none;
                             padding: 8px;
+                            display: flex;
+                            align-items: baseline;
+
+                            i {
+                                margin-right: 3px;
+                            }
+
                             a {
                                 text-decoration: none;
                                 color: $darkgrey;
@@ -211,12 +219,28 @@ body {
                                 &:hover {
                                     color: $blue;
                                 }
+                            }
+                            progress {
+                              -webkit-appearance: none;
+                              appearance: none;
+                              width: 70px;
+                              height: 8px;
 
-                                i {
-                                    margin-right: 3px;
-                                }
+                              &[value]::-webkit-progress-value {
+                                border-top-left-radius: 10px;
+                                border-bottom-left-radius: 10px;
+                                background: $green;
+                              }
+                              &[value]::-webkit-progress-bar {
+                                border-radius: 10px;
+                                background: $red;
+                              }
                             }
                         }
+                    }
+
+                    + section.right-part {
+                      border-left: 1px solid $blue;
                     }
                 }
                 section.right-part {
@@ -226,17 +250,106 @@ body {
                     flex-flow: column nowrap;
                     justify-content: space-around;
                     align-items: flex-start;
-                    border-left: 1px solid $blue;
 
                     h1 {
                         font-size: 110%;
+                        line-height: initial;
                         font-weight: bold;
                         font-family: 'Roboto', sans-serif;
                     }
                     h2, p {
                         font-size: 80%;
+                        line-height: initial;
                     }
                 }
+
+                details {
+
+                  summary {
+                    display: flex;
+                    align-items: baseline;
+                    cursor: pointer;
+                  }
+
+                  &[open] {
+                    summary:after {
+                      background: black;
+                      position: fixed;
+                      height: 100%;
+                      width: 100%;
+                      content: '';
+                      top: 0;
+                      left: 0;
+                      opacity: 0.5;
+                      z-index: 99;
+                      cursor: default;
+                    }
+                  }
+
+                  div {
+                    position: fixed;
+                    top: 20%;
+                    left: 0;
+                    right: 0;
+                    width: fit-content;
+                    margin: auto;
+                    background: white;
+                    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+                    border-radius: 10px;
+                    z-index: 100;
+
+                    h1 {
+                      font-weight: bold;
+                      font-size: 16px;
+                      text-align: center;
+                      background: $background;
+                      border-top-left-radius: 10px;
+                      border-top-right-radius: 10px;
+                      padding: 10px 25px;
+                      line-height: initial;
+
+                      span {
+                        font-style: italic;
+                        font-weight: normal;
+                      }
+
+                    }
+
+                    h2 {
+                      font-style: italic;
+                      text-align: center;
+                      background: $lightblue;
+                      padding: 5px;
+                    }
+
+                    ul {
+                      display: flex;
+                      flex-wrap: wrap;
+                      padding: 0 25px 25px 25px;
+
+                      li {
+                        width: 50%;
+                        flex-basis: 50%;
+                        display: inline-flex;
+                        box-sizing: border-box;
+
+                        a {
+                          margin-left: 5px;
+                        }
+
+                        &.success {
+                          color: $green;
+                        }
+
+                        &.fail {
+                          color: $red;
+                        }
+                      }
+                    }
+                  }
+
+                }
+
             }
         }
     }

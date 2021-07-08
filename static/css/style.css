@@ -80,6 +80,7 @@ body nav {
   background-color: white;
   position: fixed;
   top: 0;
+  z-index: 98;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -89,23 +90,23 @@ body nav {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   transition: 0.5s;
 }
-/* line 30, ../sass/_main.scss */
+/* line 31, ../sass/_main.scss */
 body nav.small {
   height: 55px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }
-/* line 32, ../sass/_main.scss */
+/* line 33, ../sass/_main.scss */
 body nav.small img {
   height: 30px;
   padding: 5px 0;
 }
-/* line 36, ../sass/_main.scss */
+/* line 37, ../sass/_main.scss */
 body nav img {
   height: 50px;
   padding: 20px 0;
   transition: 0.5s;
 }
-/* line 42, ../sass/_main.scss */
+/* line 43, ../sass/_main.scss */
 body nav button {
   background-color: #1070B7;
   padding: 6px 12px;
@@ -118,11 +119,11 @@ body nav button {
   margin: 10px 30px 10px 0;
   transition: ease .5s;
 }
-/* line 54, ../sass/_main.scss */
+/* line 55, ../sass/_main.scss */
 body nav button:hover {
   background-color: #74C5EB;
 }
-/* line 60, ../sass/_main.scss */
+/* line 61, ../sass/_main.scss */
 body main {
   width: 85%;
   margin: 80px auto 80px;
@@ -130,7 +131,7 @@ body main {
   flex-flow: column nowrap;
   justify-content: center;
 }
-/* line 67, ../sass/_main.scss */
+/* line 68, ../sass/_main.scss */
 body main > h1 {
   color: #a5a8aa;
   font-size: 24px;
@@ -138,13 +139,13 @@ body main > h1 {
   display: inline-block;
   margin: 80px auto 0;
 }
-/* line 75, ../sass/_main.scss */
+/* line 76, ../sass/_main.scss */
 body main form {
   margin: 40px auto 0;
   width: 100%;
   outline: none;
 }
-/* line 80, ../sass/_main.scss */
+/* line 81, ../sass/_main.scss */
 body main form > div:first-child {
   height: 40px;
   background-color: white;
@@ -154,11 +155,11 @@ body main form > div:first-child {
   justify-content: space-between;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }
-/* line 90, ../sass/_main.scss */
+/* line 91, ../sass/_main.scss */
 body main form:focus-within > div:first-child {
   box-shadow: 0 0 10px #74C5EB;
 }
-/* line 95, ../sass/_main.scss */
+/* line 96, ../sass/_main.scss */
 body main form input {
   background-color: transparent;
   border: none;
@@ -168,11 +169,11 @@ body main form input {
   font-family: 'Open Sans', sans-serif;
   color: #717578;
 }
-/* line 105, ../sass/_main.scss */
+/* line 106, ../sass/_main.scss */
 body main form input:focus {
   outline: none;
 }
-/* line 110, ../sass/_main.scss */
+/* line 111, ../sass/_main.scss */
 body main form button {
   background-color: transparent;
   border: none;
@@ -181,30 +182,30 @@ body main form button {
   color: #717578;
   transition: ease .5s;
 }
-/* line 120, ../sass/_main.scss */
+/* line 121, ../sass/_main.scss */
 body main form button:hover {
   color: #74C5EB;
 }
-/* line 126, ../sass/_main.scss */
+/* line 127, ../sass/_main.scss */
 body main div#examples {
   font-size: 0.7em;
   display: flex;
   flex-flow: row nowrap;
 }
-/* line 130, ../sass/_main.scss */
+/* line 131, ../sass/_main.scss */
 body main div#examples section {
   display: flex;
   flex-flow: column nowrap;
   margin: 0.5em 0.1em;
 }
-/* line 134, ../sass/_main.scss */
+/* line 135, ../sass/_main.scss */
 body main div#examples section::before {
   content: attr(data-heading);
   display: inline-block;
   margin: 0.5em;
   font-size: 1.1em;
 }
-/* line 141, ../sass/_main.scss */
+/* line 142, ../sass/_main.scss */
 body main div#examples a {
   display: inline-block;
   margin: 0.1em 0;
@@ -215,26 +216,25 @@ body main div#examples a {
   color: black;
   outline: none;
 }
-/* line 150, ../sass/_main.scss */
+/* line 151, ../sass/_main.scss */
 body main div#examples a:active {
   position: relative;
   top: 1px;
 }
-/* line 151, ../sass/_main.scss */
+/* line 152, ../sass/_main.scss */
 body main div#examples a:hover {
   background-color: #8686CA;
 }
-/* line 156, ../sass/_main.scss */
+/* line 157, ../sass/_main.scss */
 body main div#cards-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin: 3em auto 0;
 }
-/* line 162, ../sass/_main.scss */
-body main div#cards-container div.card {
+/* line 163, ../sass/_main.scss */
+body main div#cards-container .card {
   width: 475px;
-  height: 180px;
   position: relative;
   transition: ease all 0.5s;
   background-color: white;
@@ -246,14 +246,14 @@ body main div#cards-container div.card {
   margin: 25px;
 }
 @media screen and (max-width: 550px) {
-  /* line 162, ../sass/_main.scss */
-  body main div#cards-container div.card {
+  /* line 163, ../sass/_main.scss */
+  body main div#cards-container .card {
     width: 350px;
     margin: 25px auto;
   }
 }
 /* line 186, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part {
+body main div#cards-container .card section.left-part {
   padding: 20px;
   display: flex;
   flex-flow: column nowrap;
@@ -262,68 +262,174 @@ body main div#cards-container div.card section.left-part {
   min-width: 140px;
 }
 /* line 193, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part img {
+body main div#cards-container .card section.left-part img {
   height: 40px;
 }
 /* line 196, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part img.white-img {
+body main div#cards-container .card section.left-part img.white-img {
   -webkit-filter: drop-shadow(1px 1px 4px #222);
   filter: drop-shadow(1px 1px 5px rgba(34, 34, 34, 0.5));
 }
 /* line 201, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part ul {
+body main div#cards-container .card section.left-part ul {
   font-size: 12px;
+  margin-top: 10px;
 }
-/* line 203, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part ul li {
+/* line 204, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li {
   list-style: none;
   padding: 8px;
+  display: flex;
+  align-items: baseline;
 }
-/* line 206, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part ul li a {
+/* line 210, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li i {
+  margin-right: 3px;
+}
+/* line 214, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li a {
   text-decoration: none;
   color: #717578;
   transition: ease .5s;
 }
-/* line 211, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part ul li a:hover {
+/* line 219, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li a:hover {
   color: #74C5EB;
 }
-/* line 215, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part ul li a i {
-  margin-right: 3px;
+/* line 223, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 70px;
+  height: 8px;
 }
-/* line 222, ../sass/_main.scss */
-body main div#cards-container div.card section.right-part {
+/* line 229, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li progress[value]::-webkit-progress-value {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: #7ed321;
+}
+/* line 234, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li progress[value]::-webkit-progress-bar {
+  border-radius: 10px;
+  background: #f0586a;
+}
+/* line 242, ../sass/_main.scss */
+body main div#cards-container .card section.left-part + section.right-part {
+  border-left: 1px solid #74C5EB;
+}
+/* line 246, ../sass/_main.scss */
+body main div#cards-container .card section.right-part {
   margin: 20px 0;
   padding: 0 20px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: flex-start;
-  border-left: 1px solid #74C5EB;
 }
-/* line 231, ../sass/_main.scss */
-body main div#cards-container div.card section.right-part h1 {
+/* line 254, ../sass/_main.scss */
+body main div#cards-container .card section.right-part h1 {
   font-size: 110%;
+  line-height: initial;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
-/* line 236, ../sass/_main.scss */
-body main div#cards-container div.card section.right-part h2, body main div#cards-container div.card section.right-part p {
+/* line 260, ../sass/_main.scss */
+body main div#cards-container .card section.right-part h2, body main div#cards-container .card section.right-part p {
   font-size: 80%;
+  line-height: initial;
 }
-/* line 244, ../sass/_main.scss */
+/* line 268, ../sass/_main.scss */
+body main div#cards-container .card details summary {
+  display: flex;
+  align-items: baseline;
+  cursor: pointer;
+}
+/* line 275, ../sass/_main.scss */
+body main div#cards-container .card details[open] summary:after {
+  background: black;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  content: '';
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: 99;
+  cursor: default;
+}
+/* line 289, ../sass/_main.scss */
+body main div#cards-container .card details div {
+  position: fixed;
+  top: 20%;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin: auto;
+  background: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  z-index: 100;
+}
+/* line 301, ../sass/_main.scss */
+body main div#cards-container .card details div h1 {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  background: #F5F9FA;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px 25px;
+  line-height: initial;
+}
+/* line 311, ../sass/_main.scss */
+body main div#cards-container .card details div h1 span {
+  font-style: italic;
+  font-weight: normal;
+}
+/* line 318, ../sass/_main.scss */
+body main div#cards-container .card details div h2 {
+  font-style: italic;
+  text-align: center;
+  background: #DAF0F9;
+  padding: 5px;
+}
+/* line 325, ../sass/_main.scss */
+body main div#cards-container .card details div ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 25px 25px 25px;
+}
+/* line 330, ../sass/_main.scss */
+body main div#cards-container .card details div ul li {
+  width: 50%;
+  flex-basis: 50%;
+  display: inline-flex;
+  box-sizing: border-box;
+}
+/* line 336, ../sass/_main.scss */
+body main div#cards-container .card details div ul li a {
+  margin-left: 5px;
+}
+/* line 340, ../sass/_main.scss */
+body main div#cards-container .card details div ul li.success {
+  color: #7ed321;
+}
+/* line 344, ../sass/_main.scss */
+body main div#cards-container .card details div ul li.fail {
+  color: #f0586a;
+}
+/* line 357, ../sass/_main.scss */
 body a {
   color: #74C5EB;
   text-decoration: underline;
   transition: ease .5s;
 }
-/* line 248, ../sass/_main.scss */
+/* line 361, ../sass/_main.scss */
 body a:hover {
   color: #1070B7;
 }
-/* line 251, ../sass/_main.scss */
+/* line 364, ../sass/_main.scss */
 body footer {
   width: 100%;
   background-color: #275F90;
@@ -336,7 +442,7 @@ body footer {
   align-items: center;
   justify-content: space-between;
 }
-/* line 265, ../sass/_main.scss */
+/* line 378, ../sass/_main.scss */
 body footer p {
   margin-right: 10px;
   line-height: 15px;
@@ -345,39 +451,39 @@ body footer p {
   transition: ease all 0.5s;
 }
 @media screen and (max-width: 580px) {
-  /* line 265, ../sass/_main.scss */
+  /* line 378, ../sass/_main.scss */
   body footer p {
     font-size: 9px;
     line-height: 10px;
   }
 }
-/* line 279, ../sass/_main.scss */
+/* line 392, ../sass/_main.scss */
 body footer section#EGA {
   margin-left: 30px;
   font-size: 12px;
 }
-/* line 282, ../sass/_main.scss */
+/* line 395, ../sass/_main.scss */
 body footer section#EGA a {
   color: white;
 }
-/* line 284, ../sass/_main.scss */
+/* line 397, ../sass/_main.scss */
 body footer section#EGA a:hover {
   color: #74C5EB;
 }
-/* line 287, ../sass/_main.scss */
+/* line 400, ../sass/_main.scss */
 body footer section#EU {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: right;
 }
-/* line 293, ../sass/_main.scss */
+/* line 406, ../sass/_main.scss */
 body footer section#EU p {
   max-width: 400px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 299, ../sass/_main.scss */
+/* line 412, ../sass/_main.scss */
 body footer section#EU img {
   height: 30px;
   margin-right: 30px;
@@ -392,5 +498,22 @@ form div.card button {
 }
 /* line 8, ../sass/_admin.scss */
 form div.card button i {
-  color: #eb6161;
+  color: #f0586a;
+}
+/* line 13, ../sass/_admin.scss */
+form div.card summary a {
+  margin-left: 3px;
+  background: #717578;
+  border-radius: 10px;
+  text-align: center;
+  padding: 3px;
+}
+/* line 20, ../sass/_admin.scss */
+form div.card summary a:hover {
+  background: #74C5EB;
+}
+/* line 24, ../sass/_admin.scss */
+form div.card summary a i {
+  color: white;
+  margin: 1px 0 0 0 !important;
 }

@@ -25,12 +25,14 @@
         <main>
 	  <h1>CINECA Services Registry</h1>
           <form action="{{ url('index') }}" method="POST" target="_blank">
-            <input type="text"
-		   value=""
-		   name="url"
-		   placeholder="Input a URL you want to dispatch to the available services. For example: /api/datasets"
-                   title="For example: /query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL" />
-            <button type="submit"><i class="fas fa-search"></i></button>
+            <div>
+              <input type="text"
+		                 value=""
+		                 name="url"
+		                 placeholder="Input a URL you want to dispatch to the available services. For example: /api/datasets"
+                     title="For example: /query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL" />
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
           </form>
 
           <div id="cards-container" data-cards="{{ services|length }}">
