@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cineca Services Registry</title>
+        <title>EGA-CRG Services Registry</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width, shrink-to-fit=no"/>
 
@@ -16,14 +16,17 @@
     </head>
     <body>
 
-        <nav>
-          <a href="{{ url('index') }}">
-	    <img src="{{ static('img/CINECA_logo.png') }}" alt="CINECA" />
+        <header>
+          <a href="https://ega-archive.org">
+	    <img src="https://static.ega-archive.org/img/logo.png" alt="EGA logo" />
 	  </a>
-        </nav>
+          <a href="https://crg.eu">
+	    <img src="https://static.ega-archive.org/img/CRG_blue.jpg" alt="CRG logo" />
+	  </a>
+        </header>
 
         <main>
-	  <h1>CINECA Services Registry</h1>
+	  <h1>EGA-CRG Services Registry</h1>
           <form action="{{ url('index') }}" method="POST" target="_blank">
             <input type="text"
 		   value=""
@@ -68,21 +71,14 @@
             {% endfor %}
           </div>
 
-          <div id="examples">
+	  <div id="examples">
 	    {% include 'examples.html' %}
 	  </div>
 
         </main>
 
 	<footer>
-          <section id="EGA">
-            <p>Hosted by the <a href="https://ega-archive.org/">EGA</a></p>
-          </section>
-          <section id="EU">
-            <p>This project has received funding from the European Union's Horizon 2020 Research and Innovation Programme under grant agreement No. 825775.</p>
-            <img src="{{ static('img/eu_white.jpg') }}" alt="EU Logo" />
-          </section>
-          <!-- <p>&copy; Copyright 2020</p> -->
+          <p>Hosted by the <a href="https://ega-archive.org/">EGA</a></p>
         </footer>
 
     </body>

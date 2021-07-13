@@ -17,6 +17,7 @@ import jinja2
 from . import conf
 
 from .utils import Collector
+from .endpoints import dispatcher
 
 LOG = logging.getLogger(__name__)
 LOG_FILE = Path(os.getenv('SERVICES_REGISTRY_LOG', 'logger.yml')).resolve()
@@ -74,7 +75,8 @@ def explore_service(name, url, info, error):
 
 @aiohttp_jinja2.template('index.html')
 async def index(request):
-    results = await collector.get('', json=True)
+    results = await collector.request('GET', '', json=True)
+    #LOG.debug('results: %s', results)
     services_info = [explore_service(*args) for args in results]
     return { "services": services_info }
 
@@ -89,6 +91,24 @@ async def dispatch(request):
     # redirect = quote(url)
     # LOG.info('Redirect to: %s', redirect)
     # raise web.HTTPFound(redirect)
+
+    # results = await collector.request(request.method,
+    #                                   path,
+    #                                   headers=request.headers,
+    #                                   data=data,
+    #                                   json=json)
+    # responses = {}
+    # for (name, url, response, error) in results:
+    #     if response: # and not error
+    #         responses[name] = {'request': request.method + ' ' + url, 'response': response }
+    #     else:
+    #         responses[name] = {'request': request.method + ' ' + url, 'error': error }
+
+    # LOG.info('-------- Aggregator query %s | responses %d', request.path_qs, len(responses))
+    # # d = json.dumps(responses)
+    # # LOG.info('-------- sending %s', d)
+    # # return web.Response(text=d, content_type='application/json')
+    # return web.json_response(responses)  # change that for streaming response
 
 def main(path=None):
 
