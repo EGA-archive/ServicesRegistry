@@ -29,7 +29,6 @@ def main(path=None):
 
     # .... and cue music!
     LOG.info(f"Start services registry")
-    # .... and cue music
     if path:
         if os.path.exists(path):
             os.unlink(path)
