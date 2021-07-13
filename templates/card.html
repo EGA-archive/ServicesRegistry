@@ -5,52 +5,50 @@
         <i class="fas fa-trash"></i>
       </button>
     {% endif %}
-    <section class="left-part">
-      {% if service.logo_url %}
-      <img src="{{ service.logo_url }}" alt="{{ service.name }} Logo" />
-      {% else %}
-      <img src="{{ static('img/beacon_default.png') }}" alt="Default Logo" />
-      {% endif %}
+    <div>
+      <section class="left-part">
+        {% if service.logo_url %}
+        <img src="{{ service.logo_url }}" alt="{{ service.name }} Logo" />
+        {% else %}
+        <img src="{{ static('img/beacon_default.png') }}" alt="Default Logo" />
+        {% endif %}
+        <ul>
+          <li>
+            <a href="{{ service.visit_us }}"><i class="fas fa-globe"></i> Visit us</a>
+          </li>
+          <li>
+            <a href="{{ service.beacon_api }}"><i class="fas fa-share-square"></i>Beacon API</a>
+          </li>
+          <li>
+            <a href="{{ service.contact_us }}"><i class="fas fa-envelope"></i>Contact us</a>
+          </li>
+        </ul>
+      </section>
+      <section class="right-part">
+        <h1>{{ service.organization_name|safe }}</h1>
+        <h2>{{ service.name|safe }}</h2>
+        <p>{{ service.description|safe }}</p>
+      </section>
+    </div>
+    <section class="entities">
+      <h2>Endpoints</h2>
       <ul>
-        <li>
-          <a href="{{ service.visit_us }}"><i class="fas fa-globe"></i> Visit us</a>
-        </li>
-        <li>
-          <a href="{{ service.beacon_api }}"><i class="fas fa-share-square"></i>Beacon API</a>
-        </li>
-        <li>
-          <a href="{{ service.contact_us }}"><i class="fas fa-envelope"></i>Contact us</a>
-        </li>
-        <li>
-          <details>
-            <summary>
-              <i class="fas fa-tachometer-alt"></i>
-              <progress value="32" max="100"> 32% </progress>
-              {% if remove_enabled %}
-                <a href="">
-                  <i class="fas fa-sync-alt"></i>
-                </a>
-              {% endif %}
-            </summary>
-
-            <div>
-              <h1>{{ service.organization_name|safe }}</h1>
-              <h2>Endpoints</h2>
-              <ul>
-                <li class="success"><i class="fas fa-check-circle"></i> Individuals <a href="#"><i class="fas fa-share-square"></i></a></li>
-                <li class="fail"><i class="fas fa-times-circle"></i> Variants <a href="#"><i class="fas fa-share-square"></i></a></li>
-                <li class="success"><i class="fas fa-check-circle"></i> Biosamples <a href="#"><i class="fas fa-share-square"></i></a></li>
-                <li class="null"><i class="fas fa-question-circle"></i> Biosamples <a href="#"><i class="fas fa-share-square"></i></a></li>
-              </ul>
-            </div>
-          </details>
-        </li>
+        <li class="success"><i class="fas fa-check-circle"></i> Individuals</li>
+        <li class="fail"><i class="fas fa-times-circle"></i> Variants</li>
+        <li class="success"><i class="fas fa-check-circle"></i> Biosamples</li>
+        <li class="null"><i class="fas fa-question-circle"></i> Biosamples</li>
+        <li class="success"><i class="fas fa-check-circle"></i> Individuals</li>
+        <li class="fail"><i class="fas fa-times-circle"></i> Variants</li>
+        <li class="success"><i class="fas fa-check-circle"></i> Biosamples</li>
+        <li class="null"><i class="fas fa-question-circle"></i> Biosamples</li>
+        <li class="success"><i class="fas fa-check-circle"></i> Individuals</li>
+        <li class="fail"><i class="fas fa-times-circle"></i> Variants</li>
+        <li class="success"><i class="fas fa-check-circle"></i> Biosamples</li>
+        <li class="null"><i class="fas fa-question-circle"></i> Biosamples</li>
+        <li class="success"><i class="fas fa-check-circle"></i> Individuals</li>
+        <li class="fail"><i class="fas fa-times-circle"></i> Variants</li>
+        <li class="success"><i class="fas fa-check-circle"></i> Biosamples</li>
       </ul>
-    </section>
-    <section class="right-part">
-      <h1>{{ service.organization_name|safe }}</h1>
-      <h2>{{ service.name|safe }}</h2>
-      <p>{{ service.description|safe }}</p>
     </section>
 </div>
 <!-- END CARD -->
