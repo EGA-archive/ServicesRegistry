@@ -16,46 +16,47 @@
     </head>
     <body>
 
-        <header>
-          <a href="https://ega-archive.org">
-	    <img src="https://static.ega-archive.org/img/logo.png" alt="EGA logo" />
-	  </a>
-          <a href="https://crg.eu">
-	    <img src="https://static.ega-archive.org/img/CRG_blue.jpg" alt="CRG logo" />
-	  </a>
-        </header>
+      <header>
+        <a href="https://ega-archive.org">
+          <img src="https://static.ega-archive.org/img/logo.png" alt="EGA logo" />
+        </a>
+        <a href="https://crg.eu">
+    	    <img src="https://static.ega-archive.org/img/CRG_blue.jpg" alt="CRG logo" />
+    	  </a>
+      </header>
 
-        <main>
-	  <h1>EGA-CRG Services Registry</h1>
-          <form action="{{ url('index') }}" method="POST" target="_blank">
-            <div>
-              <input type="text"
-		                 value=""
-		                 name="url"
-		                 placeholder="Input a URL you want to dispatch to the available services. For example: /api/datasets"
-                     title="For example: /query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL" />
-              <button type="submit"><i class="fas fa-search"></i></button>
-            </div>
-          </form>
+      <main>
+        <h1>EGA-CRG Services Registry</h1>
+        <form action="{{ url('index') }}" method="POST" target="_blank">
+          <div>
+            <input type="text"
+	                 value=""
+	                 name="url"
+	                 placeholder="Input a URL you want to dispatch to the available services. For example: /api/datasets"
+                   title="For example: /query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL" />
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+        </form>
 
-          <div id="cards-container" data-cards="{{ services|length }}">
-            {% for service in services %}
+        <details>
+          <summary>Example Queries</summary>
+          {% include 'examples.html' %}
+        </details>
+
+        <div id="cards-container" data-cards="{{ services|length }}">
+          {% for service in services %}
             {% if not service.error %}
               {% include "card.html" %}
             {% endif %}
-	    {# Couldn't contact: {{ service }} #}
-            {% endfor %}
-          </div>
+            {# Couldn't contact: {{ service }} #}
+          {% endfor %}
+        </div>
 
-	  <div id="examples">
-	    {% include 'examples.html' %}
-	  </div>
+      </main>
 
-        </main>
-
-	<footer>
-          <p>Hosted by the <a href="https://ega-archive.org/">EGA</a></p>
-        </footer>
+      <footer>
+        <p>Hosted by the <a href="https://ega-archive.org/">EGA</a></p>
+      </footer>
 
     </body>
 </html>

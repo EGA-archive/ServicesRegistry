@@ -33,21 +33,18 @@
     <section class="entities">
       <h2>Endpoints</h2>
       <ul>
-        <li class="success"><i class="fas fa-check-circle"></i> Individuals</li>
-        <li class="fail"><i class="fas fa-times-circle"></i> Variants</li>
-        <li class="success"><i class="fas fa-check-circle"></i> Biosamples</li>
-        <li class="null"><i class="fas fa-question-circle"></i> Biosamples</li>
-        <li class="success"><i class="fas fa-check-circle"></i> Individuals</li>
-        <li class="fail"><i class="fas fa-times-circle"></i> Variants</li>
-        <li class="success"><i class="fas fa-check-circle"></i> Biosamples</li>
-        <li class="null"><i class="fas fa-question-circle"></i> Biosamples</li>
-        <li class="success"><i class="fas fa-check-circle"></i> Individuals</li>
-        <li class="fail"><i class="fas fa-times-circle"></i> Variants</li>
-        <li class="success"><i class="fas fa-check-circle"></i> Biosamples</li>
-        <li class="null"><i class="fas fa-question-circle"></i> Biosamples</li>
-        <li class="success"><i class="fas fa-check-circle"></i> Individuals</li>
-        <li class="fail"><i class="fas fa-times-circle"></i> Variants</li>
-        <li class="success"><i class="fas fa-check-circle"></i> Biosamples</li>
+        {% for entity in service.entities %}
+          <li class="{{ entity.valid|lower }}">
+            {% if entity.valid == True %}
+              <i class="fas fa-check-circle"></i>
+            {% elif entity.valid == False %}
+              <i class="fas fa-times-circle"></i>
+            {% else %}
+              <i class="fas fa-question-circle"></i>
+            {% endif %}
+            {{ entity.name }}
+          </li>
+        {% endfor %}
       </ul>
     </section>
 </div>
