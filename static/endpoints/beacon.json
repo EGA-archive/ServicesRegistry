@@ -1,0 +1,61 @@
+{
+  "name": "Beacon Instance for Genome In A Bottle",
+  "url": "http://localhost:8000/",
+  "entities": [
+    {
+      "name": "analysis",
+      "url": "http://localhost:8000/analysis",
+      "valid": false
+    },
+    {
+      "name": "biosample",
+      "url": "http://localhost:8000/biosamples",
+      "valid": true
+    },
+    {
+      "name": "cohort",
+      "url": "http://localhost:8000/cohorts",
+      "valid": null
+    },
+    {
+      "name": "dataset",
+      "url": "http://localhost:8000/datasets",
+      "valid": null
+    },
+    {
+      "name": "genomicVariant",
+      "url": "http://localhost:8000/g_variants",
+      "valid": null
+    },
+    {
+      "name": "individual",
+      "url": "http://localhost:8000/individuals",
+      "valid": null
+    },
+    {
+      "name": "interactor",
+      "url": "http://localhost:8000/interactors",
+      "valid": null
+    },
+    {
+      "name": "run",
+      "url": "http://localhost:8000/runs",
+      "valid": null
+    },
+    {
+      "name": "variantAnnotation",
+      "url": "http://localhost:8000/variantAnnotations",
+      "valid": null
+    },
+    {
+      "name": "variantInSample",
+      "url": "http://localhost:8000/variants_in_sample",
+      "valid": null
+    },
+    {
+      "name": "variantInterpretation",
+      "url": "http://localhost:8000/variantInterpretations",
+      "valid": null
+    }
+  ]
+}
