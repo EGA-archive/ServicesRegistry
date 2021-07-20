@@ -13,6 +13,8 @@ import yaml
 from aiohttp import web
 import aiohttp_jinja2
 import jinja2
+import httpx
+
 
 from . import conf
 
@@ -32,6 +34,14 @@ async def initialize(app):
                          loader=jinja2.FileSystemLoader(str(templates_path)))
     app['static_root_url'] = '/static'
     LOG.info("Initialization done.")
+
+def check_logo(url):
+    if not url:
+        return getattr(conf, 'default_logo', '//static/img/no_logo.png')
+    r = httpx.get(url)
+    if r.status_code != 200:
+        return getattr(conf, 'default_logo', '/static/img/no_logo.png')
+    return url
 
 def check_logo(url):
     if not url:
@@ -100,27 +110,7 @@ async def dispatch(request):
         url = '/' + url
     LOG.debug('Captured URL: %s', url)
     raise web.HTTPFound(url)
-    # redirect = quote(url)
-    # LOG.info('Redirect to: %s', redirect)
-    # raise web.HTTPFound(redirect)
 
-    # results = await collector.request(request.method,
-    #                                   path,
-    #                                   headers=request.headers,
-    #                                   data=data,
-    #                                   json=json)
-    # responses = {}
-    # for (name, url, response, error) in results:
-    #     if response: # and not error
-    #         responses[name] = {'request': request.method + ' ' + url, 'response': response }
-    #     else:
-    #         responses[name] = {'request': request.method + ' ' + url, 'error': error }
-
-    # LOG.info('-------- Aggregator query %s | responses %d', request.path_qs, len(responses))
-    # # d = json.dumps(responses)
-    # # LOG.info('-------- sending %s', d)
-    # # return web.Response(text=d, content_type='application/json')
-    # return web.json_response(responses)  # change that for streaming response
 
 def main(path=None):
 
