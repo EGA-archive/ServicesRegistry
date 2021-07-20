@@ -314,45 +314,53 @@ body {
                     }
                 }
 
-                section.entities {
-                  h2 {
-                    font-style: italic;
-                    text-align: center;
-                    background: $background;
-                    padding: 5px;
-                    margin-bottom: 10px;
-                    border-top: solid 1px $lightblue;
-                    border-bottom: solid 1px $lightblue;
+                ul.entities {
+
+                  display: flex;
+                  flex-wrap: wrap;
+                  padding: 15px 20px 20px 20px;
+                  border-bottom-left-radius: 10px;
+                  border-bottom-right-radius: 10px;
+                  background: $background;
+                  position: relative;
+
+                  &:before {
+                    content: '';
+                    height: 8px;
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: rgb(0,0,0);
+                    background: linear-gradient(
+                                180deg
+                                , rgba(0,0,0,1) 0%, rgba(255,255,255,1) 95%);
+                    opacity: 0.1;
                   }
 
-                  ul {
-                    display: flex;
-                    flex-wrap: wrap;
-                    padding: 0 20px 25px 20px;
+                  li {
+                    width: 33%;
+                    flex-basis: 33%;
+                    display: inline-flex;
+                    box-sizing: border-box;
+                    font-size: 75%;
+                    margin: 7px 0;
 
-                    li {
-                      width: 33%;
-                      flex-basis: 33%;
-                      display: inline-flex;
-                      box-sizing: border-box;
-                      font-size: 75%;
-                      margin: 7px 0;
+                    i {
+                      margin-right: 5px;
+                    }
 
-                      i {
-                        margin-right: 5px;
-                      }
+                    a {
+                      margin-left: 5px;
+                    }
 
-                      a {
-                        margin-left: 5px;
-                      }
+                    &.true {
+                      color: $green;
+                    }
 
-                      &.true {
-                        color: $green;
-                      }
-
-                      &.false {
-                        color: $red;
-                      }
+                    &.false {
+                      color: $red;
                     }
                   }
                 }

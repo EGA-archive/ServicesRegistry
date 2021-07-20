@@ -30,22 +30,19 @@
         <p>{{ service.description|safe }}</p>
       </section>
     </div>
-    <section class="entities">
-      <h2>Endpoints</h2>
-      <ul>
-        {% for entity in service.entities %}
-          <li class="{{ entity.valid|lower }}">
-            {% if entity.valid == True %}
-              <i class="fas fa-check-circle"></i>
-            {% elif entity.valid == False %}
-              <i class="fas fa-times-circle"></i>
-            {% else %}
-              <i class="fas fa-question-circle"></i>
-            {% endif %}
-            {{ entity.name }}
-          </li>
-        {% endfor %}
-      </ul>
-    </section>
+    <ul class="entities">
+      {% for entity in service.entities %}
+        <li class="{{ entity.valid|lower }}">
+          {% if entity.valid == True %}
+            <i class="fas fa-check-circle"></i>
+          {% elif entity.valid == False %}
+            <i class="fas fa-times-circle"></i>
+          {% else %}
+            <i class="fas fa-question-circle"></i>
+          {% endif %}
+          {{ entity.name }}
+        </li>
+      {% endfor %}
+    </ul>
 </div>
 <!-- END CARD -->
