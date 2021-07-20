@@ -3,7 +3,7 @@ import asyncio
 import time
 
 import httpx
-import json as json_da
+import json as json_org
 
 from .. import conf
 
@@ -118,8 +118,10 @@ def explore_service(name, url, info, error):
     try:
         info = info['response']['results']
         org = info.get("organization") or {}
-        with open('static/endpoints/beacon.json') as json_file:
-            entities = json_da.load(json_file)
+        beacon_id = info.get('id') or None
+        entities_json_file = f'static/endpoints/{beacon_id}.json';
+        with open(entities_json_file) as json_file:
+            entities = json_org.load(json_file)
         return {
             "title": name,
             "error": error,
