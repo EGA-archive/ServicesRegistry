@@ -4,7 +4,7 @@ from aiohttp.http import SERVER_SOFTWARE
 from aiohttp.web import middleware, StreamResponse
 
 from .. import conf
-from ..utils.json import json_iterencode
+from ..utils.json_stream import json_iterencode
 
 LOG = logging.getLogger(__name__)
 
@@ -19,7 +19,7 @@ async def json_stream(request, data):
     # Running this first, in case it raises an error
     # so we don't start the StreamResponse yet
     content_gen = [chunk async for chunk in json_iterencode(data)]
-    
+
     LOG.debug('HTTP response stream')
     headers = {
         'Content-Type': 'application/json;charset=utf-8',

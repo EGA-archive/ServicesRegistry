@@ -8,9 +8,9 @@
     <div>
       <section class="left-part">
         {% if service.logo_url %}
-        <img src="{{ service.logo_url }}" alt="{{ service.name }} Logo" />
+        <img src="{{ service.logo_url }}" title="{{ service.name }} Logo" />
         {% else %}
-        <img src="{{ static('img/beacon_default.png') }}" alt="Default Logo" />
+        <img src="{{ static('img/no_logo.png') }}" title="Logo Unavailable" />
         {% endif %}
         <ul>
           <li>

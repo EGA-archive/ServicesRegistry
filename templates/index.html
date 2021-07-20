@@ -17,16 +17,21 @@
     <body>
 
       <header>
-        <a href="https://ega-archive.org">
-          <img src="https://static.ega-archive.org/img/logo.png" alt="EGA logo" />
-        </a>
-        <a href="https://crg.eu">
-    	    <img src="https://static.ega-archive.org/img/CRG_blue.jpg" alt="CRG logo" />
-    	  </a>
+        {% if service_logos %}
+          {% for logo in service_logos %}
+            {% if logo.href %}
+              <a href="{{ logo.href }}">
+            {% endif %}
+              <img src="{{ logo.img }}" title="{{ logo.title }}" />
+            {% if logo.href %}
+              </a>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
       </header>
 
       <main>
-        <h1>EGA-CRG Services Registry</h1>
+        <h1>{{ service_title }}</h1>
         <form action="{{ url('index') }}" method="POST" target="_blank">
           <div>
             <input type="text"

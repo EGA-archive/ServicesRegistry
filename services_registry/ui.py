@@ -39,7 +39,11 @@ async def index(request):
     results = await collector.request('GET', '', json=True)
     #LOG.debug('results: %s', results)
     services_info = [explore_service(*args) for args in results]
-    return { "services": services_info }
+    return {
+        "services": services_info,
+        "service_title": getattr(conf, 'service_title', ''),
+        "service_logos": getattr(conf, 'service_logos', None)
+    }
 
 async def dispatch(request):
     data = await request.post()

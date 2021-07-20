@@ -41,6 +41,19 @@ service_id = 'eu.crg.services-registry'
 service_name = 'CRG Services Registry'
 service_version = '1.0'
 api_version = 'v2.0.0-draft.1'
+service_title = 'EGA-CRG Services Registry'
+service_logos = [
+	{
+		'href': 'https://ega-archive.org',
+		'img': 'https://static.ega-archive.org/img/logo.png',
+		'title': 'EGA European Genome-Phenome Archive'
+	},
+	{
+		'href': 'https://crg.eu',
+		'img': 'https://static.ega-archive.org/img/CRG_blue.jpg',
+		'title': 'Centre for Genomic Regulation'
+	}
+]
 
 # Elixir
 elixir_service_type_group = 'org.elixir-europe'

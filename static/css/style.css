@@ -363,7 +363,7 @@ body main div#cards-container .card section.left-part ul li progress[value]::-we
 /* line 285, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li progress[value]::-webkit-progress-bar {
   border-radius: 10px;
-  background: #f0586a;
+  background: #ff7979;
 }
 /* line 293, ../sass/_main.scss */
 body main div#cards-container .card section.left-part + section.right-part {
@@ -425,7 +425,7 @@ body main div#cards-container .card ul.entities li.true {
 }
 /* line 349, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li.false {
-  color: #f0586a;
+  color: #ff7979;
 }
 /* line 357, ../sass/_main.scss */
 body main div#cards-container .card details summary {
@@ -562,7 +562,7 @@ form div.card button {
 }
 /* line 8, ../sass/_admin.scss */
 form div.card button i {
-  color: #f0586a;
+  color: #ff7979;
 }
 /* line 13, ../sass/_admin.scss */
 form div.card summary a {

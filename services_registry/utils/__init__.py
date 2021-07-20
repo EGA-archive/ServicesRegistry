@@ -3,7 +3,7 @@ import asyncio
 import time
 
 import httpx
-import json as json_org
+import json
 
 from .. import conf
 
@@ -115,28 +115,25 @@ def explore_service(name, url, info, error):
             "url": url
         }
 
+    info = info.get('response',{}).get('results',{})
+    org = info.get("organization") or {}
+    beacon_id = info.get('id') or None
+    entities_json_file = f'static/entities/{beacon_id}.json';
+    d = {
+        "title": name,
+        "error": error,
+        "organization_name": org.get("name"),
+        "name": info.get("name"),
+        "description": info.get("description"),
+        "visit_us": org.get("welcomeUrl"),
+        "beacon_api": info.get("welcomeUrl"),
+        "contact_us": org.get("contactUrl"),
+        "logo_url": org.get("logoUrl", '')
+    }
     try:
-        info = info['response']['results']
-        org = info.get("organization") or {}
-        beacon_id = info.get('id') or None
-        entities_json_file = f'static/entities/{beacon_id}.json';
-        with open(entities_json_file) as json_file:
-            entities = json_org.load(json_file)
-        return {
-            "title": name,
-            "error": error,
-            "organization_name": org.get("name"),
-            "name": info.get("name"),
-            "description": info.get("description"),
-            "visit_us": org.get("welcomeUrl"),
-            "beacon_api": info.get("welcomeUrl"),
-            "contact_us": org.get("contactUrl"),
-            "logo_url": org.get("logoUrl", ''),
-            "entities": entities[0]['entities']
-        }
-    except KeyError as e:
-        return {
-            "title": name,
-            "error": str(e),
-            "url": url
-        }
+        with open(entities_json_file) as fh:
+            entities = json.load(fh)
+            d["entities"] = entities[0]['entities']
+    except Exception as e:
+        LOG.error('Error on %s: %s', entities_json_file, e)
+    return d
