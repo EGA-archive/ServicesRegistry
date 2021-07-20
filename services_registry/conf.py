@@ -86,3 +86,5 @@ ga4gh_service_types = [
 		"version": "1.0.0"
 	}
 ]
+
+default_logo = '/static/img/no_logo.png'

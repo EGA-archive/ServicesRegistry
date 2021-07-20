@@ -16,7 +16,7 @@ import jinja2
 
 from . import conf
 
-from .utils import Collector, explore_service
+from .utils import Collector
 from .endpoints import dispatcher
 
 LOG = logging.getLogger(__name__)
@@ -33,6 +33,53 @@ async def initialize(app):
     app['static_root_url'] = '/static'
     LOG.info("Initialization done.")
 
+def check_logo(url):
+    if not url:
+        return getattr(conf, 'default_logo', '//static/img/no_logo.png')
+    r = httpx.get(url)
+    if r.status_code != 200:
+        return getattr(conf, 'default_logo', '/static/img/no_logo.png')
+    return url
+
+def explore_service(name, url, info, error):
+    """Fetch the interesting information of a service
+    by using its base URL"""
+
+    # LOG.info("Exploring %s: %s", name, url)
+    # LOG.info("==> [error: %s] %s", error, info)
+
+    # import pprint
+    # pprint.pprint(info)
+
+    if error:
+        return {
+            "title": name,
+            "error": error,
+            "url": url
+        }
+
+    info = info.get('response',{}).get('results',{})
+    org = info.get("organization") or {}
+    beacon_id = info.get('id') or None
+    entities_json_file = f'static/entities/{beacon_id}.json';
+    d = {
+        "title": name,
+        "error": error,
+        "organization_name": org.get("name"),
+        "name": info.get("name"),
+        "description": info.get("description"),
+        "visit_us": org.get("welcomeUrl"),
+        "beacon_api": info.get("welcomeUrl"),
+        "contact_us": org.get("contactUrl"),
+        "logo_url": check_logo(org.get("logoUrl"))
+    }
+    try:
+        with open(entities_json_file) as fh:
+            entities = json.load(fh)
+            d["entities"] = entities[0]['entities']
+    except Exception as e:
+        LOG.error('Error on %s: %s', entities_json_file, e)
+    return d
 
 @aiohttp_jinja2.template('index.html')
 async def index(request):
