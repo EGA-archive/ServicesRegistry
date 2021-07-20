@@ -2,11 +2,7 @@
 <div class="card">
   <div>
     <section class="left-part">
-      {% if service.logo_url %}
       <img src="{{ service.logo_url }}" title="{{ service.name }} Logo" />
-      {% else %}
-      <img src="{{ static('img/no_logo.png') }}" title="Logo Unavailable" />
-      {% endif %}
       <ul>
         {% if service.visit_us %}
           <li>

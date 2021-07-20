@@ -3,7 +3,6 @@ import asyncio
 import time
 
 import httpx
-import json
 
 from .. import conf
 

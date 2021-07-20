@@ -4,7 +4,7 @@ from aiohttp.http import SERVER_SOFTWARE
 from aiohttp.web import middleware, StreamResponse
 
 from .. import conf
-from ..utils.json_stream import json_iterencode
+from ..utils.json import json_iterencode
 
 LOG = logging.getLogger(__name__)
 
