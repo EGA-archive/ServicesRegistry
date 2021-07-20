@@ -13,6 +13,8 @@ import yaml
 from aiohttp import web
 import aiohttp_jinja2
 import jinja2
+import httpx
+
 
 from . import conf
 
@@ -32,6 +34,14 @@ async def initialize(app):
     app['static_root_url'] = '/static'
     LOG.info("Initialization done.")
 
+
+def check_logo(url):
+    if not url:
+        return getattr(conf, 'default_logo', '//static/img/no_logo.png')
+    r = httpx.get(url)
+    if r.status_code != 200:
+        return getattr(conf, 'default_logo', '/static/img/no_logo.png')
+    return url
 
 def explore_service(name, url, info, error):
     """Fetch the interesting information of a service
@@ -62,7 +72,7 @@ def explore_service(name, url, info, error):
             "visit_us": org.get("welcomeUrl"),
             "beacon_api": info.get("welcomeUrl"),
             "contact_us": org.get("contactUrl"),
-            "logo_url": org.get("logoUrl", ''),
+            "logo_url": check_logo(org.get("logoUrl")),
         }
     except KeyError as e:
         return {

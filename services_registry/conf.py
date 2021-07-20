@@ -48,8 +48,8 @@ elixir_service_type_artifact = 'service-registry'
 # elixir_service_type_version = api_version
 
 service_types = ['org.elixir-europe.service-registry',
-				 'org.elixir-europe.beacon-aggregator',
-				 'org.elixir-europe.beacon']
+		 'org.elixir-europe.beacon-aggregator',
+		 'org.elixir-europe.beacon']
 
 # GA4GH
 ga4gh_service_type_group = 'org.ga4gh'
@@ -73,3 +73,5 @@ ga4gh_service_types = [
 		"version": "1.0.0"
 	}
 ]
+
+default_logo = '/static/img/no_logo.png'
