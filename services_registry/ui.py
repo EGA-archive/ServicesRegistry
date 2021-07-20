@@ -37,15 +37,7 @@ async def initialize(app):
 
 def check_logo(url):
     if not url:
-        return getattr(conf, 'default_logo', '//static/img/no_logo.png')
-    r = httpx.get(url)
-    if r.status_code != 200:
         return getattr(conf, 'default_logo', '/static/img/no_logo.png')
-    return url
-
-def check_logo(url):
-    if not url:
-        return getattr(conf, 'default_logo', '//static/img/no_logo.png')
     r = httpx.get(url)
     if r.status_code != 200:
         return getattr(conf, 'default_logo', '/static/img/no_logo.png')
