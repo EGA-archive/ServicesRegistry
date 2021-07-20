@@ -1,35 +1,43 @@
 <!-- CARD -->
 <div class="card">
-    {% if remove_enabled %}
-      <button>
-        <i class="fas fa-trash"></i>
-      </button>
-    {% endif %}
-    <div>
-      <section class="left-part">
-        {% if service.logo_url %}
-        <img src="{{ service.logo_url }}" title="{{ service.name }} Logo" />
-        {% else %}
-        <img src="{{ static('img/no_logo.png') }}" title="Logo Unavailable" />
-        {% endif %}
-        <ul>
+  <div>
+    <section class="left-part">
+      {% if service.logo_url %}
+      <img src="{{ service.logo_url }}" title="{{ service.name }} Logo" />
+      {% else %}
+      <img src="{{ static('img/no_logo.png') }}" title="Logo Unavailable" />
+      {% endif %}
+      <ul>
+        {% if service.visit_us %}
           <li>
             <a href="{{ service.visit_us }}"><i class="fas fa-globe"></i> Visit us</a>
           </li>
+        {% endif %}
+        {% if service.beacon_api %}
           <li>
             <a href="{{ service.beacon_api }}"><i class="fas fa-share-square"></i>Beacon API</a>
           </li>
+        {% endif %}
+        {% if service.contact_us %}
           <li>
             <a href="{{ service.contact_us }}"><i class="fas fa-envelope"></i>Contact us</a>
           </li>
-        </ul>
-      </section>
-      <section class="right-part">
+        {% endif %}
+      </ul>
+    </section>
+    <section class="right-part">
+      {% if service.organization_name %}
         <h1>{{ service.organization_name|safe }}</h1>
+      {% endif %}
+      {% if service.name %}
         <h2>{{ service.name|safe }}</h2>
+      {% endif %}
+      {% if service.description %}
         <p>{{ service.description|safe }}</p>
-      </section>
-    </div>
+      {% endif %}
+    </section>
+  </div>
+  {% if service.entities %}
     <ul class="entities">
       {% for entity in service.entities %}
         <li class="{{ entity.valid|lower }}">
@@ -44,5 +52,6 @@
         </li>
       {% endfor %}
     </ul>
+  {% endif %}
 </div>
 <!-- END CARD -->
