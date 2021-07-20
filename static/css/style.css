@@ -552,32 +552,3 @@ body footer section#EU img {
   height: 30px;
   margin-right: 30px;
 }
-
-/* line 3, ../sass/_admin.scss */
-form div.card button {
-  position: absolute;
-  right: 0;
-  margin-right: 5px;
-  top: 10px;
-}
-/* line 8, ../sass/_admin.scss */
-form div.card button i {
-  color: #ff7979;
-}
-/* line 13, ../sass/_admin.scss */
-form div.card summary a {
-  margin-left: 3px;
-  background: #717578;
-  border-radius: 10px;
-  text-align: center;
-  padding: 3px;
-}
-/* line 20, ../sass/_admin.scss */
-form div.card summary a:hover {
-  background: #74C5EB;
-}
-/* line 24, ../sass/_admin.scss */
-form div.card summary a i {
-  color: white;
-  margin: 1px 0 0 0 !important;
-}
