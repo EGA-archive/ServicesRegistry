@@ -19,6 +19,7 @@ import httpx
 from . import conf
 
 from .utils import Collector
+from .endpoints import dispatcher
 
 LOG = logging.getLogger(__name__)
 LOG_FILE = Path(os.getenv('SERVICES_REGISTRY_LOG', 'logger.yml')).resolve()
@@ -34,10 +35,9 @@ async def initialize(app):
     app['static_root_url'] = '/static'
     LOG.info("Initialization done.")
 
-
 def check_logo(url):
     if not url:
-        return getattr(conf, 'default_logo', '//static/img/no_logo.png')
+        return getattr(conf, 'default_logo', '/static/img/no_logo.png')
     r = httpx.get(url)
     if r.status_code != 200:
         return getattr(conf, 'default_logo', '/static/img/no_logo.png')
@@ -60,33 +60,39 @@ def explore_service(name, url, info, error):
             "url": url
         }
 
+    info = info.get('response',{}).get('results',{})
+    org = info.get("organization") or {}
+    beacon_id = info.get('id') or None
+    entities_json_file = f'static/entities/{beacon_id}.json';
+    d = {
+        "title": name,
+        "error": error,
+        "organization_name": org.get("name"),
+        "name": info.get("name"),
+        "description": info.get("description"),
+        "visit_us": org.get("welcomeUrl"),
+        "beacon_api": info.get("welcomeUrl"),
+        "contact_us": org.get("contactUrl"),
+        "logo_url": check_logo(org.get("logoUrl"))
+    }
     try:
-        info = info['response']['results']
-        org = info.get("organization") or {}
-        return {
-            "title": name,
-            "error": error,
-            "organization_name": org.get("name"),
-            "name": info.get("name"),
-            "description": info.get("description"),
-            "visit_us": org.get("welcomeUrl"),
-            "beacon_api": info.get("welcomeUrl"),
-            "contact_us": org.get("contactUrl"),
-            "logo_url": check_logo(org.get("logoUrl")),
-        }
-    except KeyError as e:
-        return {
-            "title": name,
-            "error": str(e),
-            "url": url
-        }
-        
+        with open(entities_json_file) as fh:
+            entities = json.load(fh)
+            d["entities"] = entities[0]['entities']
+    except Exception as e:
+        LOG.error('Error on %s: %s', entities_json_file, e)
+    return d
 
 @aiohttp_jinja2.template('index.html')
 async def index(request):
-    results = await collector.get('', json=True)
+    results = await collector.request('GET', '', json=True)
+    #LOG.debug('results: %s', results)
     services_info = [explore_service(*args) for args in results]
-    return { "services": services_info }
+    return {
+        "services": services_info,
+        "service_title": getattr(conf, 'service_title', ''),
+        "service_logos": getattr(conf, 'service_logos', None)
+    }
 
 async def dispatch(request):
     data = await request.post()
@@ -96,9 +102,7 @@ async def dispatch(request):
         url = '/' + url
     LOG.debug('Captured URL: %s', url)
     raise web.HTTPFound(url)
-    # redirect = quote(url)
-    # LOG.info('Redirect to: %s', redirect)
-    # raise web.HTTPFound(redirect)
+
 
 def main(path=None):
 

@@ -1,6 +1,11 @@
 SHELL := /bin/bash
 COMMIT ?= latest
 
+SERVICE=crg-services-registry
+IMG=crg/services-registry:$(COMMIT)
+
+CONTAINER_PORT=18080
+
 .PHONY: build
 
 all: build
@@ -10,53 +15,46 @@ build:
 	       --build-arg REPO=https://github.com/EGA-archive/ServicesRegistry.git \
 	       --build-arg COMMIT=$(COMMIT) \
                --build-arg BUILD_DATE="$(shell date +%Y-%m-%d_%H.%M.%S)" \
-	       -t cineca/services-registry-test:$(COMMIT) .
+	       -t $(IMG) .
 
 up:
 	docker run -d --rm \
-               --name cineca-services-registry-test \
-               -p 5160:8080 \
-	       -v $(shell pwd)/tmp/conf.py:/crg/services_registry/conf.py \
-               cineca/services-registry-test:$(COMMIT)
+               --name "$(SERVICE)" \
+               -p $(CONTAINER_PORT):8080 \
+	       -v $(shell pwd)/services_registry:/crg/services_registry \
+	       -v $(shell pwd)/static:/crg/static \
+	       -v $(shell pwd)/templates:/crg/templates \
+               $(IMG)
 
 down:
-	-docker kill cineca-services-registry-test
-	-docker rm cineca-services-registry-test
+	-docker stop "$(SERVICE)"
+	-docker rm "$(SERVICE)"
+
+ps:
+	docker ps | grep '$(SERVICE)'
+
+wait:
+	@sleep 3
+reboot: down wait up
 
 ####################################################
 # For development
 
+run: ENTRYPOINT=--entrypoint "/bin/sleep"
+run: CMD=365d
 run:
 	docker run -d --rm \
-               --name cineca-services-registry-test \
+               --name $(SERVICE) \
                -p 8000:8000 \
                -p 8001:8001 \
+               -p $(CONTAINER_PORT):8080 \
 	       -v $(shell pwd)/services_registry:/crg/services_registry \
 	       -v $(shell pwd)/static:/crg/static \
 	       -v $(shell pwd)/templates:/crg/templates \
-               --entrypoint "/bin/sleep" \
-               cineca/services-registry-test:$(COMMIT) \
-           1000000000000
+               $(ENTRYPOINT) $(IMG) $(CMD)
 
 
 server: CMD=python -m services_registry
 exec: CMD=bash
 exec server:
-	docker exec -it cineca-services-registry-test $(CMD)
-
-####################################################
-# Cleaning docker images
-
-define remove_dangling
-	docker images $(1) -f "dangling=true" -q | uniq | while read n; do docker rmi -f $$n; done
-endef
-
-erase:
-	@$(call remove_dangling,cineca/services-registry-test)
-
-purge:
-	@$(call remove_dangling,)
-
-
-css:
-	cd static/sass && compass compile
+	docker exec -it $(SERVICE) $(CMD)

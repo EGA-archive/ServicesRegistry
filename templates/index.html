@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cineca Services Registry</title>
+        <title>EGA-CRG Services Registry</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width, shrink-to-fit=no"/>
 
@@ -16,74 +16,52 @@
     </head>
     <body>
 
-        <nav>
-          <a href="{{ url('index') }}">
-	    <img src="{{ static('img/CINECA_logo.png') }}" alt="CINECA" />
-	  </a>
-        </nav>
+      <header>
+        {% if service_logos %}
+          {% for logo in service_logos %}
+            {% if logo.href %}
+              <a href="{{ logo.href }}">
+            {% endif %}
+              <img src="{{ logo.img }}" title="{{ logo.title }}" />
+            {% if logo.href %}
+              </a>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </header>
 
-        <main>
-	  <h1>CINECA Services Registry</h1>
-          <form action="{{ url('index') }}" method="POST" target="_blank">
+      <main>
+        <h1>{{ service_title }}</h1>
+        <form action="{{ url('index') }}" method="POST" target="_blank">
+          <div>
             <input type="text"
-		   value=""
-		   name="url"
-		   placeholder="Input a URL you want to dispatch to the available services. For example: /api/datasets"
+	                 value=""
+	                 name="url"
+	                 placeholder="Input a URL you want to dispatch to the available services. For example: /api/datasets"
                    title="For example: /query?referenceName=Y&start=2655179&assemblyId=GRCh37&referenceBases=G&alternateBases=A&includeDatasetResponses=ALL" />
             <button type="submit"><i class="fas fa-search"></i></button>
-          </form>
-
-          <div id="cards-container" data-cards="{{ services|length }}">
-            {% for service in services %}
-            {% if not service.error %}
-            <!-- CARD -->
-            <div class="card">
-              <section class="left-part">
-                {% if service.logo_url %}
-                <img src="{{ service.logo_url }}" alt="{{ service.name }} Logo" />
-                {% else %}
-                <img src="{{ static('img/beacon_default.png') }}" alt="Default Logo" />
-                {% endif %}
-                <ul>
-                  <li>
-                    <a href="{{ service.visit_us }}"><i class="fas fa-globe"></i> Visit us</a> 
-                  </li>
-                  <li>
-                    <a href="{{ service.beacon_api }}"><i class="fas fa-share-square"></i>Beacon API</a> 
-                  </li>
-                  <li>
-                    <a href="{{ service.contact_us }}"><i class="fas fa-envelope"></i>Contact us</a>
-                  </li>
-                </ul>
-              </section>
-              <section class="right-part">
-                <h1>{{ service.organization_name|safe }}</h1>
-                <h2>{{ service.name|safe }}</h2>
-                <p>{{ service.description|safe }}</p>
-              </section>
-            </div>
-            <!-- END CARD -->
-            {% endif %}
-	    {# Couldn't contact: {{ service }} #}
-            {% endfor %}
           </div>
+        </form>
 
-          <div id="examples">
-	    {% include 'examples.html' %}
-	  </div>
+        <details>
+          <summary>Example Queries</summary>
+          {% include 'examples.html' %}
+        </details>
 
-        </main>
+        <div id="cards-container" data-cards="{{ services|length }}">
+          {% for service in services %}
+            {% if not service.error %}
+              {% include "card.html" %}
+            {% endif %}
+            {# Couldn't contact: {{ service }} #}
+          {% endfor %}
+        </div>
 
-	<footer>
-          <section id="EGA">
-            <p>Hosted by the <a href="https://ega-archive.org/">EGA</a></p>
-          </section>
-          <section id="EU">
-            <p>This project has received funding from the European Union's Horizon 2020 Research and Innovation Programme under grant agreement No. 825775.</p>
-            <img src="{{ static('img/eu_white.jpg') }}" alt="EU Logo" />
-          </section>
-          <!-- <p>&copy; Copyright 2020</p> -->
-        </footer>
+      </main>
+
+      <footer>
+        <p>Hosted by the <a href="https://ega-archive.org/">EGA</a></p>
+      </footer>
 
     </body>
 </html>

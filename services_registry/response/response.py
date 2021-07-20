@@ -19,7 +19,7 @@ async def json_stream(request, data):
     # Running this first, in case it raises an error
     # so we don't start the StreamResponse yet
     content_gen = [chunk async for chunk in json_iterencode(data)]
-    
+
     LOG.debug('HTTP response stream')
     headers = {
         'Content-Type': 'application/json;charset=utf-8',

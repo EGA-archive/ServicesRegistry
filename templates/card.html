@@ -1,0 +1,53 @@
+<!-- CARD -->
+<div class="card">
+  <div>
+    <section class="left-part">
+      <img src="{{ service.logo_url }}" title="{{ service.name }} Logo" />
+      <ul>
+        {% if service.visit_us %}
+          <li>
+            <a href="{{ service.visit_us }}"><i class="fas fa-globe"></i> Visit us</a>
+          </li>
+        {% endif %}
+        {% if service.beacon_api %}
+          <li>
+            <a href="{{ service.beacon_api }}"><i class="fas fa-share-square"></i>Beacon API</a>
+          </li>
+        {% endif %}
+        {% if service.contact_us %}
+          <li>
+            <a href="{{ service.contact_us }}"><i class="fas fa-envelope"></i>Contact us</a>
+          </li>
+        {% endif %}
+      </ul>
+    </section>
+    <section class="right-part">
+      {% if service.organization_name %}
+        <h1>{{ service.organization_name|safe }}</h1>
+      {% endif %}
+      {% if service.name %}
+        <h2>{{ service.name|safe }}</h2>
+      {% endif %}
+      {% if service.description %}
+        <p>{{ service.description|safe }}</p>
+      {% endif %}
+    </section>
+  </div>
+  {% if service.entities %}
+    <ul class="entities">
+      {% for entity in service.entities %}
+        <li class="{{ entity.valid|lower }}">
+          {% if entity.valid == True %}
+            <i class="fas fa-check-circle"></i>
+          {% elif entity.valid == False %}
+            <i class="fas fa-times-circle"></i>
+          {% else %}
+            <i class="fas fa-question-circle"></i>
+          {% endif %}
+          {{ entity.name }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+<!-- END CARD -->

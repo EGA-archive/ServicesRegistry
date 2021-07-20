@@ -65,7 +65,7 @@ async def _compound(o, circulars):
             yield i
     else:
         raise TypeError(f'Unsupported type: {o.__class__.__name__}')
-    
+
 async def _iterencode_list(items, circulars):
     yield '['
     marker = id(items)

@@ -1,4 +1,5 @@
-/* line 5, ../../../../../../../.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../Library/Ruby/Gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 2, ../sass/_reset.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,49 +21,60 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Library/Ruby/Gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../sass/_reset.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Library/Ruby/Gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 29, ../sass/_reset.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Library/Ruby/Gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 34, ../sass/_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Library/Ruby/Gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 40, ../sass/_reset.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Library/Ruby/Gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 47, ../sass/_reset.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+
+/* line 103, ../../../../../../Library/Ruby/Gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 51, ../sass/_reset.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Library/Ruby/Gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 57, ../sass/_reset.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Library/Ruby/Gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 62, ../sass/_reset.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
+/* @import "compass/reset"; */
+/* @import "compass/css3"; */
 /* line 4, ../sass/_main.scss */
 body {
   background-color: #F5F9FA;
@@ -73,13 +85,14 @@ body {
   flex-direction: column;
 }
 /* line 12, ../sass/_main.scss */
-body nav {
+body header {
   width: 100%;
   min-width: 80%;
   height: 80px;
   background-color: white;
   position: fixed;
   top: 0;
+  z-index: 98;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -89,24 +102,25 @@ body nav {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   transition: 0.5s;
 }
-/* line 30, ../sass/_main.scss */
-body nav.small {
+/* line 31, ../sass/_main.scss */
+body header.small {
   height: 55px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }
-/* line 32, ../sass/_main.scss */
-body nav.small img {
+/* line 33, ../sass/_main.scss */
+body header.small img {
   height: 30px;
   padding: 5px 0;
 }
-/* line 36, ../sass/_main.scss */
-body nav img {
+/* line 37, ../sass/_main.scss */
+body header img {
   height: 50px;
   padding: 20px 0;
   transition: 0.5s;
+  margin: 0 10px;
 }
-/* line 42, ../sass/_main.scss */
-body nav button {
+/* line 44, ../sass/_main.scss */
+body header button {
   background-color: #1070B7;
   padding: 6px 12px;
   color: white;
@@ -118,11 +132,11 @@ body nav button {
   margin: 10px 30px 10px 0;
   transition: ease .5s;
 }
-/* line 54, ../sass/_main.scss */
-body nav button:hover {
+/* line 56, ../sass/_main.scss */
+body header button:hover {
   background-color: #74C5EB;
 }
-/* line 60, ../sass/_main.scss */
+/* line 62, ../sass/_main.scss */
 body main {
   width: 85%;
   margin: 80px auto 80px;
@@ -130,18 +144,30 @@ body main {
   flex-flow: column nowrap;
   justify-content: center;
 }
-/* line 67, ../sass/_main.scss */
+/* line 69, ../sass/_main.scss */
 body main > h1 {
   color: #a5a8aa;
   font-size: 24px;
   font-weight: 300;
   display: inline-block;
-  margin: 80px auto 0;
+  margin: 2em auto;
 }
-/* line 75, ../sass/_main.scss */
+/* line 79, ../sass/_main.scss */
+body main details summary {
+  font-size: 70%;
+  text-decoration: underline;
+  margin: 10px 20px 0 0;
+  cursor: pointer;
+  text-align: right;
+}
+/* line 88, ../sass/_main.scss */
 body main form {
-  margin: 40px auto 0;
+  margin: 10px auto 0;
   width: 100%;
+  outline: none;
+}
+/* line 93, ../sass/_main.scss */
+body main form > div:first-child {
   height: 40px;
   background-color: white;
   border-radius: 30px;
@@ -150,11 +176,11 @@ body main form {
   justify-content: space-between;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }
-/* line 88, ../sass/_main.scss */
-body main form:focus-within {
+/* line 103, ../sass/_main.scss */
+body main form:focus-within > div:first-child {
   box-shadow: 0 0 10px #74C5EB;
 }
-/* line 93, ../sass/_main.scss */
+/* line 107, ../sass/_main.scss */
 body main form input {
   background-color: transparent;
   border: none;
@@ -164,11 +190,11 @@ body main form input {
   font-family: 'Open Sans', sans-serif;
   color: #717578;
 }
-/* line 103, ../sass/_main.scss */
+/* line 117, ../sass/_main.scss */
 body main form input:focus {
   outline: none;
 }
-/* line 108, ../sass/_main.scss */
+/* line 122, ../sass/_main.scss */
 body main form button {
   background-color: transparent;
   border: none;
@@ -177,78 +203,108 @@ body main form button {
   color: #717578;
   transition: ease .5s;
 }
-/* line 118, ../sass/_main.scss */
+/* line 132, ../sass/_main.scss */
 body main form button:hover {
   color: #74C5EB;
 }
-/* line 124, ../sass/_main.scss */
+/* line 138, ../sass/_main.scss */
 body main div#examples {
   font-size: 0.7em;
   display: flex;
   flex-flow: row nowrap;
+  padding-top: 10px;
 }
-/* line 128, ../sass/_main.scss */
+/* line 144, ../sass/_main.scss */
 body main div#examples section {
   display: flex;
   flex-flow: column nowrap;
-  margin: 0.5em 0.1em;
+  margin: 0.5em;
+  width: 16%;
 }
-/* line 132, ../sass/_main.scss */
+/* line 150, ../sass/_main.scss */
 body main div#examples section::before {
   content: attr(data-heading);
   display: inline-block;
   margin: 0.5em;
   font-size: 1.1em;
 }
-/* line 139, ../sass/_main.scss */
-body main div#examples a {
+/* line 158, ../sass/_main.scss */
+body main div#examples form {
+  margin: 0;
+}
+/* line 162, ../sass/_main.scss */
+body main div#examples a,
+body main div#examples form button,
+body main div#examples form input[type=submit] {
   display: inline-block;
-  margin: 0.1em 0;
+  margin: 0.2em 0;
   text-decoration: none;
   border-radius: 1ex;
-  padding: 0.5ex 1ex;
+  padding: 0.5em 1em;
   background-color: #ABABD9;
   color: black;
   outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: left;
+  font-size: 100%;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-/* line 148, ../sass/_main.scss */
-body main div#examples a:active {
+/* line 183, ../sass/_main.scss */
+body main div#examples a:active,
+body main div#examples form button:active,
+body main div#examples form input[type=submit]:active {
   position: relative;
   top: 1px;
 }
-/* line 149, ../sass/_main.scss */
-body main div#examples a:hover {
+/* line 184, ../sass/_main.scss */
+body main div#examples a:hover,
+body main div#examples form button:hover,
+body main div#examples form input[type=submit]:hover {
   background-color: #8686CA;
+  white-space: break-spaces;
 }
-/* line 154, ../sass/_main.scss */
+/* line 188, ../sass/_main.scss */
+body main div#examples a:focus,
+body main div#examples form button:focus,
+body main div#examples form input[type=submit]:focus {
+  outline: none;
+}
+/* line 206, ../sass/_main.scss */
 body main div#cards-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin: 3em auto 0;
 }
-/* line 160, ../sass/_main.scss */
-body main div#cards-container div.card {
+/* line 212, ../sass/_main.scss */
+body main div#cards-container .card {
   width: 475px;
-  height: 180px;
+  position: relative;
   transition: ease all 0.5s;
   background-color: white;
   border-radius: 10px;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: stretch;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 25px;
 }
 @media screen and (max-width: 550px) {
-  /* line 160, ../sass/_main.scss */
-  body main div#cards-container div.card {
+  /* line 212, ../sass/_main.scss */
+  body main div#cards-container .card {
     width: 350px;
     margin: 25px auto;
   }
 }
-/* line 183, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part {
+/* line 231, ../sass/_main.scss */
+body main div#cards-container .card div {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+}
+/* line 237, ../sass/_main.scss */
+body main div#cards-container .card section.left-part {
   padding: 20px;
   display: flex;
   flex-flow: column nowrap;
@@ -256,123 +312,242 @@ body main div#cards-container div.card section.left-part {
   align-items: center;
   min-width: 140px;
 }
-/* line 190, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part img {
+/* line 244, ../sass/_main.scss */
+body main div#cards-container .card section.left-part img {
   height: 40px;
 }
-/* line 193, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part img.white-img {
+/* line 247, ../sass/_main.scss */
+body main div#cards-container .card section.left-part img.white-img {
   -webkit-filter: drop-shadow(1px 1px 4px #222);
   filter: drop-shadow(1px 1px 5px rgba(34, 34, 34, 0.5));
 }
-/* line 198, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part ul {
+/* line 252, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul {
   font-size: 12px;
+  margin-top: 10px;
 }
-/* line 200, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part ul li {
+/* line 255, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li {
   list-style: none;
   padding: 8px;
+  display: flex;
+  align-items: baseline;
 }
-/* line 203, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part ul li a {
+/* line 261, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li i {
+  margin-right: 3px;
+}
+/* line 265, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li a {
   text-decoration: none;
   color: #717578;
   transition: ease .5s;
 }
-/* line 208, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part ul li a:hover {
+/* line 270, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li a:hover {
   color: #74C5EB;
 }
-/* line 212, ../sass/_main.scss */
-body main div#cards-container div.card section.left-part ul li a i {
-  margin-right: 3px;
+/* line 274, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 70px;
+  height: 8px;
 }
-/* line 219, ../sass/_main.scss */
-body main div#cards-container div.card section.right-part {
+/* line 280, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li progress[value]::-webkit-progress-value {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: #7ed321;
+}
+/* line 285, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li progress[value]::-webkit-progress-bar {
+  border-radius: 10px;
+  background: #ff7979;
+}
+/* line 293, ../sass/_main.scss */
+body main div#cards-container .card section.left-part + section.right-part {
+  border-left: 1px solid #74C5EB;
+}
+/* line 297, ../sass/_main.scss */
+body main div#cards-container .card section.right-part {
   margin: 20px 0;
   padding: 0 20px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: flex-start;
-  border-left: 1px solid #74C5EB;
 }
-/* line 228, ../sass/_main.scss */
-body main div#cards-container div.card section.right-part h1 {
+/* line 305, ../sass/_main.scss */
+body main div#cards-container .card section.right-part h1 {
   font-size: 110%;
+  line-height: initial;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
-/* line 233, ../sass/_main.scss */
-body main div#cards-container div.card section.right-part h2, body main div#cards-container div.card section.right-part p {
+/* line 311, ../sass/_main.scss */
+body main div#cards-container .card section.right-part h2, body main div#cards-container .card section.right-part p {
   font-size: 80%;
+  line-height: initial;
 }
-/* line 241, ../sass/_main.scss */
+/* line 317, ../sass/_main.scss */
+body main div#cards-container .card ul.entities {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 20px 20px 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #275F90;
+  position: relative;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+/* line 329, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li {
+  width: 33%;
+  flex-basis: 33%;
+  display: inline-flex;
+  box-sizing: border-box;
+  font-size: 75%;
+  margin: 7px 0;
+}
+/* line 337, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li i {
+  margin-right: 5px;
+}
+/* line 341, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li a {
+  margin-left: 5px;
+}
+/* line 345, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li.true {
+  color: #7ed321;
+}
+/* line 349, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li.false {
+  color: #ff7979;
+}
+/* line 357, ../sass/_main.scss */
+body main div#cards-container .card details summary {
+  display: flex;
+  align-items: baseline;
+  cursor: pointer;
+}
+/* line 364, ../sass/_main.scss */
+body main div#cards-container .card details[open] summary:after {
+  background: black;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  content: '';
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: 99;
+  cursor: default;
+}
+/* line 378, ../sass/_main.scss */
+body main div#cards-container .card details div {
+  position: fixed;
+  top: 20%;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin: auto;
+  background: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  z-index: 100;
+}
+/* line 390, ../sass/_main.scss */
+body main div#cards-container .card details div h1 {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  background: #F5F9FA;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px 25px;
+  line-height: initial;
+}
+/* line 400, ../sass/_main.scss */
+body main div#cards-container .card details div h1 span {
+  font-style: italic;
+  font-weight: normal;
+}
+/* line 415, ../sass/_main.scss */
 body a {
   color: #74C5EB;
   text-decoration: underline;
   transition: ease .5s;
 }
-/* line 245, ../sass/_main.scss */
+/* line 419, ../sass/_main.scss */
 body a:hover {
   color: #1070B7;
 }
-/* line 248, ../sass/_main.scss */
+/* line 422, ../sass/_main.scss */
 body footer {
   width: 100%;
-  background-color: #275F90;
+  background-color: white;
   min-height: 55px;
   margin-top: auto;
-  color: white;
+  border-top: solid 1px #DAF0F9;
   font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
-/* line 262, ../sass/_main.scss */
+/* line 436, ../sass/_main.scss */
 body footer p {
-  margin-right: 10px;
   line-height: 15px;
   font-weight: 300;
   font-size: 11px;
   transition: ease all 0.5s;
 }
 @media screen and (max-width: 580px) {
-  /* line 262, ../sass/_main.scss */
+  /* line 436, ../sass/_main.scss */
   body footer p {
     font-size: 9px;
     line-height: 10px;
   }
 }
-/* line 276, ../sass/_main.scss */
+/* line 449, ../sass/_main.scss */
+body footer a {
+  color: #275F90;
+}
+/* line 451, ../sass/_main.scss */
+body footer a:hover {
+  color: #275F90;
+  text-decoration: none;
+}
+/* line 457, ../sass/_main.scss */
 body footer section#EGA {
   margin-left: 30px;
   font-size: 12px;
 }
-/* line 279, ../sass/_main.scss */
+/* line 460, ../sass/_main.scss */
 body footer section#EGA a {
   color: white;
 }
-/* line 281, ../sass/_main.scss */
+/* line 462, ../sass/_main.scss */
 body footer section#EGA a:hover {
   color: #74C5EB;
 }
-/* line 284, ../sass/_main.scss */
+/* line 465, ../sass/_main.scss */
 body footer section#EU {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: right;
 }
-/* line 290, ../sass/_main.scss */
+/* line 471, ../sass/_main.scss */
 body footer section#EU p {
   max-width: 400px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 296, ../sass/_main.scss */
+/* line 477, ../sass/_main.scss */
 body footer section#EU img {
   height: 30px;
   margin-right: 30px;
