@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Beacon Test Instance",
+    "url": "https://poc.distributedgenomics.ca:5061/api",
+    "entities": [
+      {
+        "name": "Configuration",
+        "url": "https://poc.distributedgenomics.ca:5061/api/configuration",
+        "valid": null
+      },
+      {
+        "name": "BeaconMap",
+        "url": "https://poc.distributedgenomics.ca:5061/api/map",
+        "valid": null
+      },
+      {
+        "name": "EntryTypes",
+        "url": "https://poc.distributedgenomics.ca:5061/api/entry_types",
+        "valid": null
+      },
+      {
+        "name": "analysis",
+        "url": "https://poc.distributedgenomics.ca:5061/api/analysis",
+        "valid": false
+      },
+      {
+        "name": "biosample",
+        "url": "https://poc.distributedgenomics.ca:5061/api/biosamples",
+        "valid": null
+      },
+      {
+        "name": "cohort",
+        "url": "https://poc.distributedgenomics.ca:5061/api/cohorts",
+        "valid": null
+      },
+      {
+        "name": "dataset",
+        "url": "https://poc.distributedgenomics.ca:5061/api/datasets",
+        "valid": true
+      },
+      {
+        "name": "genomicVariant",
+        "url": "https://poc.distributedgenomics.ca:5061/api/g_variants",
+        "valid": null
+      },
+      {
+        "name": "individual",
+        "url": "https://poc.distributedgenomics.ca:5061/api/individuals",
+        "valid": null
+      },
+      {
+        "name": "interactor",
+        "url": "https://poc.distributedgenomics.ca:5061/api/interactors",
+        "valid": false
+      },
+      {
+        "name": "run",
+        "url": "https://poc.distributedgenomics.ca:5061/api/runs",
+        "valid": false
+      },
+      {
+        "name": "variantAnnotation",
+        "url": "https://poc.distributedgenomics.ca:5061/api/variantAnnotations",
+        "valid": false
+      },
+      {
+        "name": "variantInSample",
+        "url": "https://poc.distributedgenomics.ca:5061/api/variants_in_sample",
+        "valid": false
+      },
+      {
+        "name": "variantInterpretation",
+        "url": "https://poc.distributedgenomics.ca:5061/api/variantInterpretations",
+        "valid": false
+      }
+    ]
+  }
+]

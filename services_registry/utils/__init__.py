@@ -119,7 +119,7 @@ def explore_service(name, url, info, error):
         info = info['response']['results']
         org = info.get("organization") or {}
         beacon_id = info.get('id') or None
-        entities_json_file = f'static/endpoints/{beacon_id}.json';
+        entities_json_file = f'static/entities/{beacon_id}.json';
         with open(entities_json_file) as json_file:
             entities = json_org.load(json_file)
         return {
@@ -132,7 +132,7 @@ def explore_service(name, url, info, error):
             "beacon_api": info.get("welcomeUrl"),
             "contact_us": org.get("contactUrl"),
             "logo_url": org.get("logoUrl", ''),
-            "entities": entities['entities']
+            "entities": entities[0]['entities']
         }
     except KeyError as e:
         return {
