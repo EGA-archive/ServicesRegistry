@@ -312,6 +312,13 @@ body {
                         font-size: 80%;
                         line-height: initial;
                     }
+
+                    p {
+                      overflow: hidden;
+                      -webkit-line-clamp: 2;
+                      -webkit-box-orient: vertical;
+                      display: -webkit-box;
+                    }
                 }
 
                 ul.entities {

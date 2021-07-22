@@ -59,10 +59,11 @@ def explore_service(name, url, info, error):
             "error": error,
             "url": url
         }
-
-    info = info.get('response',{}).get('results',{})
+    info = info.get('response')
+    if info.get('results'):
+        info = info.get('results', {})
     org = info.get("organization") or {}
-    beacon_id = info.get('id') or None
+    beacon_id = info.get('id') or info.get('beaconId') or None
     entities_json_file = f'static/entities/{beacon_id}.json';
     d = {
         "title": name,

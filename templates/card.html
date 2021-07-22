@@ -29,7 +29,7 @@
         <h2>{{ service.name|safe }}</h2>
       {% endif %}
       {% if service.description %}
-        <p>{{ service.description|safe }}</p>
+        <p title="{{ service.description|safe }}">{{ service.description|safe }}</p>
       {% endif %}
     </section>
   </div>
