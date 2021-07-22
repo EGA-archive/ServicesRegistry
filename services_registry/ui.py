@@ -59,10 +59,8 @@ def explore_service(name, url, info, error):
             "error": error,
             "url": url
         }
-    info = info.get('response')
-    # Quick fix for supporting the new JSON format.
-    if info.get('results'):
-        info = info.get('results', {})
+    response = info.get('response')
+    info = response.get('results') if response.get('results') else response
     org = info.get("organization") or {}
     beacon_id = info.get('id') or info.get('beaconId')
     entities_json_file = f'static/entities/{beacon_id}.json';
