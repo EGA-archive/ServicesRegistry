@@ -1,77 +1,77 @@
 [
   {
     "name": "Progenetix Cancer Genomics Beacon+",
-    "url": "https://progenetix.org/beacon/",
+    "url": "https://progenetix.org/beacon/info",
     "entities": [
       {
         "name": "Configuration",
-        "url": "https://progenetix.org/beacon/configuration",
-        "valid": true
+        "url": "https://progenetix.org/beacon/info/configuration",
+        "valid": false
       },
       {
         "name": "BeaconMap",
-        "url": "https://progenetix.org/beacon/map",
+        "url": "https://progenetix.org/beacon/info/map",
         "valid": false
       },
       {
         "name": "EntryTypes",
-        "url": "https://progenetix.org/beacon/entry_types",
-        "valid": null
+        "url": "https://progenetix.org/beacon/info/entry_types",
+        "valid": false
       },
       {
         "name": "analysis",
-        "url": "https://progenetix.org/beacon/analyses",
+        "url": "https://progenetix.org/beacon/info/analysis",
         "valid": false
       },
       {
         "name": "biosample",
-        "url": "https://progenetix.org/beacon/biosamples",
+        "url": "https://progenetix.org/beacon/info/biosamples",
         "valid": false
       },
       {
         "name": "cohort",
-        "url": "https://progenetix.org/beacon/cohorts",
-        "valid": null
+        "url": "https://progenetix.org/beacon/info/cohorts",
+        "valid": false
       },
       {
         "name": "dataset",
-        "url": "https://progenetix.org/beacon/datasets",
+        "url": "https://progenetix.org/beacon/info/datasets",
         "valid": false
       },
       {
         "name": "genomicVariant",
-        "url": "https://progenetix.org/beacon/g_variants",
+        "url": "https://progenetix.org/beacon/info/g_variants",
         "valid": false
       },
       {
         "name": "individual",
-        "url": "https://progenetix.org/beacon/individuals",
+        "url": "https://progenetix.org/beacon/info/individuals",
         "valid": false
       },
       {
         "name": "interactor",
-        "url": "https://progenetix.org/beacon/interactors",
-        "valid": null
+        "url": "https://progenetix.org/beacon/info/interactors",
+        "valid": false
       },
       {
         "name": "run",
-        "url": "https://progenetix.org/beacon/runs",
-        "valid": null
+        "url": "https://progenetix.org/beacon/info/runs",
+        "valid": false
       },
       {
         "name": "variantAnnotation",
-        "url": "https://progenetix.org/beacon/variantAnnotations",
-        "valid": null
+        "url": "https://progenetix.org/beacon/info/variantAnnotations",
+        "valid": false
       },
       {
         "name": "variantInSample",
-        "url": "https://progenetix.org/beacon/variants_in_sample",
+        "url": "https://progenetix.org/beacon/info/variants_in_sample",
         "valid": false
       },
       {
         "name": "variantInterpretation",
-        "url": "https://progenetix.org/beacon/variantInterpretations",
-        "valid": null
+        "url": "https://progenetix.org/beacon/info/variantInterpretations",
+        "valid": false
       }
     ]
   }

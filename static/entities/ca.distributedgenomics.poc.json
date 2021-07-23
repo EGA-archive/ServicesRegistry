@@ -1,6 +1,6 @@
 [
   {
-    "name": "Beacon Test Instance",
+    "name": "Unknown name",
     "url": "https://poc.distributedgenomics.ca:5061/api",
     "entities": [
       {
@@ -36,7 +36,7 @@
       {
         "name": "dataset",
         "url": "https://poc.distributedgenomics.ca:5061/api/datasets",
-        "valid": true
+        "valid": false
       },
       {
         "name": "genomicVariant",

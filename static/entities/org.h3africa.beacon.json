@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Unknown name",
+    "url": "https://beacon2.h3abionet.org/api",
+    "entities": [
+      {
+        "name": "Configuration",
+        "url": "https://beacon2.h3abionet.org/api/configuration",
+        "valid": null
+      },
+      {
+        "name": "BeaconMap",
+        "url": "https://beacon2.h3abionet.org/api/map",
+        "valid": null
+      },
+      {
+        "name": "EntryTypes",
+        "url": "https://beacon2.h3abionet.org/api/entry_types",
+        "valid": null
+      },
+      {
+        "name": "analysis",
+        "url": "https://beacon2.h3abionet.org/api/analysis",
+        "valid": false
+      },
+      {
+        "name": "biosample",
+        "url": "https://beacon2.h3abionet.org/api/biosamples",
+        "valid": null
+      },
+      {
+        "name": "cohort",
+        "url": "https://beacon2.h3abionet.org/api/cohorts",
+        "valid": null
+      },
+      {
+        "name": "dataset",
+        "url": "https://beacon2.h3abionet.org/api/datasets",
+        "valid": false
+      },
+      {
+        "name": "genomicVariant",
+        "url": "https://beacon2.h3abionet.org/api/g_variants",
+        "valid": null
+      },
+      {
+        "name": "individual",
+        "url": "https://beacon2.h3abionet.org/api/individuals",
+        "valid": null
+      },
+      {
+        "name": "interactor",
+        "url": "https://beacon2.h3abionet.org/api/interactors",
+        "valid": false
+      },
+      {
+        "name": "run",
+        "url": "https://beacon2.h3abionet.org/api/runs",
+        "valid": false
+      },
+      {
+        "name": "variantAnnotation",
+        "url": "https://beacon2.h3abionet.org/api/variantAnnotations",
+        "valid": false
+      },
+      {
+        "name": "variantInSample",
+        "url": "https://beacon2.h3abionet.org/api/variants_in_sample",
+        "valid": false
+      },
+      {
+        "name": "variantInterpretation",
+        "url": "https://beacon2.h3abionet.org/api/variantInterpretations",
+        "valid": false
+      }
+    ]
+  }
+]
