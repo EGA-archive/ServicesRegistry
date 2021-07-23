@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Unknown name",
+    "url": "https://beacon-giab-demo.ega-archive.org/api",
+    "entities": [
+      {
+        "name": "Configuration",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/configuration",
+        "valid": null
+      },
+      {
+        "name": "BeaconMap",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/map",
+        "valid": null
+      },
+      {
+        "name": "EntryTypes",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/entry_types",
+        "valid": null
+      },
+      {
+        "name": "analysis",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/analysis",
+        "valid": false
+      },
+      {
+        "name": "biosample",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples",
+        "valid": null
+      },
+      {
+        "name": "cohort",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts",
+        "valid": null
+      },
+      {
+        "name": "dataset",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/datasets",
+        "valid": false
+      },
+      {
+        "name": "genomicVariant",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants",
+        "valid": null
+      },
+      {
+        "name": "individual",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/individuals",
+        "valid": null
+      },
+      {
+        "name": "interactor",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/interactors",
+        "valid": false
+      },
+      {
+        "name": "run",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/runs",
+        "valid": false
+      },
+      {
+        "name": "variantAnnotation",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/variantAnnotations",
+        "valid": false
+      },
+      {
+        "name": "variantInSample",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/variants_in_sample",
+        "valid": false
+      },
+      {
+        "name": "variantInterpretation",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/variantInterpretations",
+        "valid": false
+      }
+    ]
+  }
+]

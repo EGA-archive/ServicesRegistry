@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Unknown name",
+    "url": "https://playground.rd-connect.eu/beacon2/api",
+    "entities": [
+      {
+        "name": "Configuration",
+        "url": "https://playground.rd-connect.eu/beacon2/api/configuration",
+        "valid": null
+      },
+      {
+        "name": "BeaconMap",
+        "url": "https://playground.rd-connect.eu/beacon2/api/map",
+        "valid": null
+      },
+      {
+        "name": "EntryTypes",
+        "url": "https://playground.rd-connect.eu/beacon2/api/entry_types",
+        "valid": null
+      },
+      {
+        "name": "analysis",
+        "url": "https://playground.rd-connect.eu/beacon2/api/analyses",
+        "valid": null
+      },
+      {
+        "name": "biosample",
+        "url": "https://playground.rd-connect.eu/beacon2/api/biosamples",
+        "valid": null
+      },
+      {
+        "name": "cohort",
+        "url": "https://playground.rd-connect.eu/beacon2/api/cohorts",
+        "valid": null
+      },
+      {
+        "name": "dataset",
+        "url": "https://playground.rd-connect.eu/beacon2/api/datasets",
+        "valid": null
+      },
+      {
+        "name": "genomicVariant",
+        "url": "https://playground.rd-connect.eu/beacon2/api/g_variants",
+        "valid": null
+      },
+      {
+        "name": "individual",
+        "url": "https://playground.rd-connect.eu/beacon2/api/individuals",
+        "valid": null
+      },
+      {
+        "name": "interactor",
+        "url": "https://playground.rd-connect.eu/beacon2/api/interactors",
+        "valid": null
+      },
+      {
+        "name": "run",
+        "url": "https://playground.rd-connect.eu/beacon2/api/runs",
+        "valid": null
+      },
+      {
+        "name": "variantAnnotation",
+        "url": "https://playground.rd-connect.eu/beacon2/api/variantAnnotations",
+        "valid": null
+      },
+      {
+        "name": "variantInSample",
+        "url": "https://playground.rd-connect.eu/beacon2/api/variants_in_sample",
+        "valid": null
+      },
+      {
+        "name": "variantInterpretation",
+        "url": "https://playground.rd-connect.eu/beacon2/api/variantInterpretations",
+        "valid": null
+      }
+    ]
+  }
+]

@@ -9,10 +9,10 @@ services = {
 		'name': 'PseudoCHILD Beacon',
 		'address': 'https://poc.distributedgenomics.ca:5061/api'
 	},
-	# 'h3abionet-test-beacon': {
-	# 	'name': 'H3Africa-test Beacon',
-	# 	'address': 'https://beacon2.h3abionet.org/api'
-	# },
+	'h3abionet-test-beacon': {
+		'name': 'H3Africa-test Beacon',
+		'address': 'https://beacon2.h3abionet.org/api'
+	},
 	'heg-beacon': {
 		'name': 'heg Beacon',
 		'address': 'https://beacon.text-analytics.ch/api'
@@ -21,6 +21,14 @@ services = {
 		'name': 'EGA Beacon - Genome In A Bottle',
 		'address': 'https://beacon-giab-demo.ega-archive.org/api'
 	},
+	'progenetix-beacon': {
+		'name': 'Progenetix Cancer Genomics Beacon+',
+		'address': 'https://progenetix.org/beacon/info'
+	},
+	'rdconnect-beacon': {
+		'name': 'Beacon @ RD-Connect',
+		'address': 'https://playground.rd-connect.eu/beacon2/api'
+	}
 }
 
 urls_whitelisted = [r'^/api/.*'] # anything after /api

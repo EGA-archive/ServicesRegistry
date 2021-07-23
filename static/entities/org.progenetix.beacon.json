@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Progenetix Cancer Genomics Beacon+",
+    "url": "https://progenetix.org/beacon/",
+    "entities": [
+      {
+        "name": "Configuration",
+        "url": "https://progenetix.org/beacon/configuration",
+        "valid": true
+      },
+      {
+        "name": "BeaconMap",
+        "url": "https://progenetix.org/beacon/map",
+        "valid": false
+      },
+      {
+        "name": "EntryTypes",
+        "url": "https://progenetix.org/beacon/entry_types",
+        "valid": null
+      },
+      {
+        "name": "analysis",
+        "url": "https://progenetix.org/beacon/analyses",
+        "valid": false
+      },
+      {
+        "name": "biosample",
+        "url": "https://progenetix.org/beacon/biosamples",
+        "valid": false
+      },
+      {
+        "name": "cohort",
+        "url": "https://progenetix.org/beacon/cohorts",
+        "valid": null
+      },
+      {
+        "name": "dataset",
+        "url": "https://progenetix.org/beacon/datasets",
+        "valid": false
+      },
+      {
+        "name": "genomicVariant",
+        "url": "https://progenetix.org/beacon/g_variants",
+        "valid": false
+      },
+      {
+        "name": "individual",
+        "url": "https://progenetix.org/beacon/individuals",
+        "valid": false
+      },
+      {
+        "name": "interactor",
+        "url": "https://progenetix.org/beacon/interactors",
+        "valid": null
+      },
+      {
+        "name": "run",
+        "url": "https://progenetix.org/beacon/runs",
+        "valid": null
+      },
+      {
+        "name": "variantAnnotation",
+        "url": "https://progenetix.org/beacon/variantAnnotations",
+        "valid": null
+      },
+      {
+        "name": "variantInSample",
+        "url": "https://progenetix.org/beacon/variants_in_sample",
+        "valid": false
+      },
+      {
+        "name": "variantInterpretation",
+        "url": "https://progenetix.org/beacon/variantInterpretations",
+        "valid": null
+      }
+    ]
+  }
+]

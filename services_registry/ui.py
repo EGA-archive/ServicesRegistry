@@ -47,12 +47,6 @@ def explore_service(name, url, info, error):
     """Fetch the interesting information of a service
     by using its base URL"""
 
-    # LOG.info("Exploring %s: %s", name, url)
-    # LOG.info("==> [error: %s] %s", error, info)
-
-    # import pprint
-    # pprint.pprint(info)
-
     if error:
         return {
             "title": name,
@@ -60,18 +54,20 @@ def explore_service(name, url, info, error):
             "url": url
         }
 
-    info = info.get('response',{}).get('results',{})
-    org = info.get("organization") or {}
-    beacon_id = info.get('id') or None
+    response = info.get('response', {})
+    results = response.get('results')
+    if results:
+        response = results # Supporting the old format
+    org = response.get("organization", {})
+    beacon_id = response.get('id') or response.get('beaconId')
     entities_json_file = f'static/entities/{beacon_id}.json';
     d = {
         "title": name,
-        "error": error,
         "organization_name": org.get("name"),
-        "name": info.get("name"),
-        "description": info.get("description"),
+        "name": response.get("name"),
+        "description": response.get("description"),
         "visit_us": org.get("welcomeUrl"),
-        "beacon_api": info.get("welcomeUrl"),
+        "beacon_api": response.get("welcomeUrl"),
         "contact_us": org.get("contactUrl"),
         "logo_url": check_logo(org.get("logoUrl"))
     }

@@ -203,6 +203,40 @@ body {
         // }
 
 
+        ul {
+          li {
+            &.true {
+              color: $green;
+            }
+
+            &.false {
+              color: $red;
+            }
+          }
+        }
+
+        ul.legend {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          position: sticky;
+          bottom: 0;
+          padding: 20px 0;
+          background: $background;
+
+          li {
+            white-space: nowrap;
+            font-size: 70%;
+            flex-basis: auto;
+            width: auto;
+            margin-right: 20px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
         div#cards-container {
             display: flex;
             flex-flow: row wrap;
@@ -312,6 +346,13 @@ body {
                         font-size: 80%;
                         line-height: initial;
                     }
+
+                    p {
+                      overflow: hidden;
+                      -webkit-line-clamp: 2;
+                      -webkit-box-orient: vertical;
+                      display: -webkit-box;
+                    }
                 }
 
                 ul.entities {
@@ -327,8 +368,8 @@ body {
                   color: white;
 
                   li {
-                    width: 33%;
-                    flex-basis: 33%;
+                    width: 33.3%;
+                    flex-basis: 33.3%;
                     display: inline-flex;
                     box-sizing: border-box;
                     font-size: 75%;
@@ -340,14 +381,6 @@ body {
 
                     a {
                       margin-left: 5px;
-                    }
-
-                    &.true {
-                      color: $green;
-                    }
-
-                    &.false {
-                      color: $red;
                     }
                   }
                 }
