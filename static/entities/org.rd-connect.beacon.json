@@ -20,7 +20,7 @@
       },
       {
         "name": "analysis",
-        "url": "https://playground.rd-connect.eu/beacon2/api/analyses",
+        "url": "https://playground.rd-connect.eu/beacon2/api/analysis",
         "valid": null
       },
       {
