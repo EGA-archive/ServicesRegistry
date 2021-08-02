@@ -143,7 +143,7 @@ Any other value written after `http://localhost:8000` will be automatically forw
 
 ## Adding / Updating the Beacon List
 
-# Adding a new Beacon / Editing a Beacon
+### Adding a new Beacon / Editing a Beacon
 
 Add a new line or edit existing beacons services dictionary on services_registry/conf.py
 
@@ -154,12 +154,12 @@ Add a new line or edit existing beacons services dictionary on services_registry
 },
 ```
 
-# Adding / Updating Entities of a Beacon with Beacon Verifier
+### Adding / Updating Entities of a Beacon with Beacon Verifier
 
-* Installing the beacon_verifier (https://github.com/ga4gh-beacon/beacon-verifier#installation)
+* Install the beacon_verifier (https://github.com/ga4gh-beacon/beacon-verifier#installation)
 
-* Execute the beacon-verifier for every Beacon like this command:
+* Execute the beacon-verifier and save the file as a json inside the static folder for every Beacon with this command:
 
 ```
-beacon-verifier https://beacon_url > static/beaconId.json
+beacon-verifier https://beacon_url > static/entities/beaconId.json
 ```
