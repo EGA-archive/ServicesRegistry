@@ -8,7 +8,7 @@ Registry for dispatching HTTP requests to a fixed list of services.
 The main configuration file is located at: `services_registry/conf.py`
 
 It contains the following:
-* list of services registered in this SR as a Python dictionary. 
+* list of services registered in this SR as a Python dictionary.
 
     It uses the service Id as the key and contains the service name and URL:
 ```python
@@ -19,7 +19,7 @@ services = {
     },
 }
 ```
-  
+
 * list of URLs whitelisted and/or blacklisted:
 ```python
 urls_whitelisted = [r'^/$',
@@ -47,8 +47,8 @@ api_version = 'v2.0.0-draft.1'
 elixir_service_type_group = 'org.elixir-europe'
 elixir_service_type_artifact = 'service-registry'
 
-service_types = ['org.elixir-europe.service-registry', 
-				 'org.elixir-europe.beacon-aggregator', 
+service_types = ['org.elixir-europe.service-registry',
+				 'org.elixir-europe.beacon-aggregator',
 				 'org.elixir-europe.beacon']
 ```
 
@@ -86,14 +86,14 @@ ga4gh_service_types = [
 
 ```
 
-TODO: 
+TODO:
 * How to inject the config file
 * How to deploy the server
 * How to deploy the UI
 
 ### Server development
 
-The SR is deployed in port `8000` by default. To change it, edit the variable called `port` in `conf.py`. You can also change the host with variable `host`. 
+The SR is deployed in port `8000` by default. To change it, edit the variable called `port` in `conf.py`. You can also change the host with variable `host`.
 
 Run the following commands to start the server:
 ```shell script
@@ -105,7 +105,7 @@ After changing some code, kill it and start it again running `make server`.
 
 ### UI development
 
-The UI is deployed in port `TODO` by default. 
+The UI is deployed in port `TODO` by default.
 
 TODO
 
@@ -140,3 +140,26 @@ Any other value written after `http://localhost:8000` will be automatically forw
 * [Variants 240763](http://localhost:8000/g_variants/240763)
 * [BioSamples 272 - 273](http://localhost:8000/biosamples?start=272&end=273)
 * [BioSample SRS6508490](http://localhost:8000/biosamples/SRS6508490)
+
+## Adding / Updating the Beacon List
+
+# Adding a new Beacon / Editing a Beacon
+
+Add a new line or edit existing beacons services dictionary on services_registry/conf.py
+
+```
+'beaconId': {
+  'name': 'Beacon Name',
+  'address': 'https://beacon_url'
+},
+```
+
+# Adding / Updating Entities of a Beacon with Beacon Verifier
+
+* Installing the beacon_verifier (https://github.com/ga4gh-beacon/beacon-verifier#installation)
+
+* Execute the beacon-verifier for every Beacon like this command:
+
+```
+beacon-verifier https://beacon_url > static/beaconId.json
+```
