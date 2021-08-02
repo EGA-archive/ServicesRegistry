@@ -145,7 +145,7 @@ Any other value written after `http://localhost:8000` will be automatically forw
 
 ### Adding a new Beacon / Editing a Beacon
 
-Add a new line or edit existing beacons services dictionary on services_registry/conf.py
+Add a new line or edit existing beacons in services dictionary on services_registry/conf.py
 
 ```
 'beaconId': {
