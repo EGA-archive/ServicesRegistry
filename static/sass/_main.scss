@@ -375,6 +375,20 @@ body {
                     font-size: 75%;
                     margin: 7px 0;
 
+                    &[data-tooltip] {
+                      cursor: help;
+
+                      &:hover:before {
+                        content: attr(data-tooltip);
+                        position: absolute;
+                        background: $verydarkgrey;
+                        padding: 5px;
+                        margin-top: -25px;
+                        border-radius: 5px;
+                        margin-left: 14px;
+                      }
+                    }
+
                     i {
                       margin-right: 5px;
                     }
