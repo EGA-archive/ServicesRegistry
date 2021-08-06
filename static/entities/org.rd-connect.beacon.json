@@ -1,77 +1,91 @@
 [
   {
-    "name": "Unknown name",
+    "name": "Unknown name (bad /info)",
     "url": "https://playground.rd-connect.eu/beacon2/api",
     "entities": [
       {
         "name": "Configuration",
         "url": "https://playground.rd-connect.eu/beacon2/api/configuration",
-        "valid": null
+        "valid": false,
+        "error": "Response does not match the schema: \"meta\" is a required property\n\"response\" is a required property\n"
       },
       {
         "name": "BeaconMap",
         "url": "https://playground.rd-connect.eu/beacon2/api/map",
-        "valid": null
+        "valid": false,
+        "error": "Response does not match the schema: \"meta\" is a required property\n\"response\" is a required property\n"
       },
       {
         "name": "EntryTypes",
         "url": "https://playground.rd-connect.eu/beacon2/api/entry_types",
-        "valid": null
+        "valid": true,
+        "error": null
       },
       {
         "name": "analysis",
-        "url": "https://playground.rd-connect.eu/beacon2/api/analysis",
-        "valid": null
+        "url": "https://playground.rd-connect.eu/beacon2/api/analyses",
+        "valid": null,
+        "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/analyses did not respond"
       },
       {
         "name": "biosample",
         "url": "https://playground.rd-connect.eu/beacon2/api/biosamples",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/biosamples did not respond"
       },
       {
         "name": "cohort",
         "url": "https://playground.rd-connect.eu/beacon2/api/cohorts",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/cohorts did not respond"
       },
       {
         "name": "dataset",
         "url": "https://playground.rd-connect.eu/beacon2/api/datasets",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/datasets did not respond"
       },
       {
         "name": "genomicVariant",
         "url": "https://playground.rd-connect.eu/beacon2/api/g_variants",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/g_variants did not respond"
       },
       {
         "name": "individual",
         "url": "https://playground.rd-connect.eu/beacon2/api/individuals",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/individuals did not respond"
       },
       {
         "name": "interactor",
         "url": "https://playground.rd-connect.eu/beacon2/api/interactors",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/interactors did not respond"
       },
       {
         "name": "run",
         "url": "https://playground.rd-connect.eu/beacon2/api/runs",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/runs did not respond"
       },
       {
         "name": "variantAnnotation",
         "url": "https://playground.rd-connect.eu/beacon2/api/variantAnnotations",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/variantAnnotations did not respond"
       },
       {
         "name": "variantInSample",
         "url": "https://playground.rd-connect.eu/beacon2/api/variants_in_sample",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/variants_in_sample did not respond"
       },
       {
         "name": "variantInterpretation",
         "url": "https://playground.rd-connect.eu/beacon2/api/variantInterpretations",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/variantInterpretations did not respond"
       }
     ]
   }

@@ -1,77 +1,91 @@
 [
   {
-    "name": "Unknown name",
+    "name": "Unknown name (bad /info)",
     "url": "https://poc.distributedgenomics.ca:5061/api",
     "entities": [
       {
         "name": "Configuration",
         "url": "https://poc.distributedgenomics.ca:5061/api/configuration",
-        "valid": null
+        "valid": null,
+        "error": "IO Error"
       },
       {
         "name": "BeaconMap",
         "url": "https://poc.distributedgenomics.ca:5061/api/map",
-        "valid": null
+        "valid": null,
+        "error": "IO Error"
       },
       {
         "name": "EntryTypes",
         "url": "https://poc.distributedgenomics.ca:5061/api/entry_types",
-        "valid": null
+        "valid": null,
+        "error": "IO Error"
       },
       {
         "name": "analysis",
-        "url": "https://poc.distributedgenomics.ca:5061/api/analysis",
-        "valid": false
+        "url": "https://poc.distributedgenomics.ca:5061/api/analyses",
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       },
       {
         "name": "biosample",
         "url": "https://poc.distributedgenomics.ca:5061/api/biosamples",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://poc.distributedgenomics.ca:5061/api/biosamples did not respond"
       },
       {
         "name": "cohort",
         "url": "https://poc.distributedgenomics.ca:5061/api/cohorts",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://poc.distributedgenomics.ca:5061/api/cohorts did not respond"
       },
       {
         "name": "dataset",
         "url": "https://poc.distributedgenomics.ca:5061/api/datasets",
-        "valid": false
+        "valid": false,
+        "error": "No resultsSets property in the response"
       },
       {
         "name": "genomicVariant",
         "url": "https://poc.distributedgenomics.ca:5061/api/g_variants",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://poc.distributedgenomics.ca:5061/api/g_variants did not respond"
       },
       {
         "name": "individual",
         "url": "https://poc.distributedgenomics.ca:5061/api/individuals",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://poc.distributedgenomics.ca:5061/api/individuals did not respond"
       },
       {
         "name": "interactor",
         "url": "https://poc.distributedgenomics.ca:5061/api/interactors",
-        "valid": false
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       },
       {
         "name": "run",
         "url": "https://poc.distributedgenomics.ca:5061/api/runs",
-        "valid": false
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       },
       {
         "name": "variantAnnotation",
         "url": "https://poc.distributedgenomics.ca:5061/api/variantAnnotations",
-        "valid": false
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       },
       {
         "name": "variantInSample",
         "url": "https://poc.distributedgenomics.ca:5061/api/variants_in_sample",
-        "valid": false
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       },
       {
         "name": "variantInterpretation",
         "url": "https://poc.distributedgenomics.ca:5061/api/variantInterpretations",
-        "valid": false
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       }
     ]
   }

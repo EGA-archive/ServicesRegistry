@@ -38,7 +38,7 @@ body {
             height: 50px;
             padding: 20px 0;
             transition: 0.5s;
-	    margin: 0 10px;
+	          margin: 0 10px;
         }
 
         button {
@@ -374,6 +374,26 @@ body {
                     box-sizing: border-box;
                     font-size: 75%;
                     margin: 7px 0;
+                    position: relative;
+
+                    &[data-tooltip] {
+                      cursor: help;
+
+                      &:hover:before {
+                        content: attr(data-tooltip);
+                        position: absolute;
+                        background: $verydarkgrey;
+                        padding: 5px;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        color: white;
+                        white-space: pre;
+                        left: 12px;
+                        bottom: 15px;
+                        z-index: 10000;
+                      }
+                    }
 
                     i {
                       margin-right: 5px;
