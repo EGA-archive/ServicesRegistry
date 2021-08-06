@@ -5,7 +5,7 @@ port = 8000
 ssl_context = None
 
 services = {
-	'ca.distributedgenomics.poc.beaconv2': {
+	'ca.distributedgenomics.poc': {
 		'name': 'PseudoCHILD Beacon',
 		'address': 'https://poc.distributedgenomics.ca:5061/api'
 	},
@@ -13,19 +13,19 @@ services = {
 		'name': 'heg Beacon',
 		'address': 'https://beacon.text-analytics.ch/api'
 	},
-	'ega-beacon': {
+	'org.ega-archive.beacon-giab-demo': {
 		'name': 'EGA Beacon - Genome In A Bottle',
 		'address': 'https://beacon-giab-demo.ega-archive.org/api'
 	},
-	'progenetix-beacon': {
+	'org.progenetix.beacon': {
 		'name': 'Progenetix Cancer Genomics Beacon+',
 		'address': 'https://progenetix.org/beacon/info'
 	},
-	'rdconnect-beacon': {
+	'org.rd-connect.beacon': {
 		'name': 'Beacon @ RD-Connect',
 		'address': 'https://playground.rd-connect.eu/beacon2/api'
 	},
-	'beacon-giab-test': {
+	'org.ega-archive.beacon': {
 		'name': 'Beacon Test Instance',
 		'address': 'https://beacon-giab-test.ega-archive.org/api'
 	}

@@ -447,36 +447,42 @@ body main div#cards-container .card ul.entities li {
   box-sizing: border-box;
   font-size: 75%;
   margin: 7px 0;
+  position: relative;
 }
-/* line 378, ../sass/_main.scss */
+/* line 379, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li[data-tooltip] {
   cursor: help;
 }
-/* line 381, ../sass/_main.scss */
+/* line 382, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li[data-tooltip]:hover:before {
   content: attr(data-tooltip);
   position: absolute;
-  background: #717578;
+  background: #333333;
   padding: 5px;
-  margin-top: -25px;
-  border-radius: 5px;
-  margin-left: 14px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+  white-space: pre;
+  left: 12px;
+  bottom: 15px;
+  z-index: 10000;
 }
-/* line 392, ../sass/_main.scss */
+/* line 398, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li i {
   margin-right: 5px;
 }
-/* line 396, ../sass/_main.scss */
+/* line 402, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li a {
   margin-left: 5px;
 }
-/* line 404, ../sass/_main.scss */
+/* line 410, ../sass/_main.scss */
 body main div#cards-container .card details summary {
   display: flex;
   align-items: baseline;
   cursor: pointer;
 }
-/* line 411, ../sass/_main.scss */
+/* line 417, ../sass/_main.scss */
 body main div#cards-container .card details[open] summary:after {
   background: black;
   position: fixed;
@@ -489,7 +495,7 @@ body main div#cards-container .card details[open] summary:after {
   z-index: 99;
   cursor: default;
 }
-/* line 425, ../sass/_main.scss */
+/* line 431, ../sass/_main.scss */
 body main div#cards-container .card details div {
   position: fixed;
   top: 20%;
@@ -502,7 +508,7 @@ body main div#cards-container .card details div {
   border-radius: 10px;
   z-index: 100;
 }
-/* line 437, ../sass/_main.scss */
+/* line 443, ../sass/_main.scss */
 body main div#cards-container .card details div h1 {
   font-weight: bold;
   font-size: 16px;
@@ -513,22 +519,22 @@ body main div#cards-container .card details div h1 {
   padding: 10px 25px;
   line-height: initial;
 }
-/* line 447, ../sass/_main.scss */
+/* line 453, ../sass/_main.scss */
 body main div#cards-container .card details div h1 span {
   font-style: italic;
   font-weight: normal;
 }
-/* line 462, ../sass/_main.scss */
+/* line 468, ../sass/_main.scss */
 body a {
   color: #74C5EB;
   text-decoration: underline;
   transition: ease .5s;
 }
-/* line 466, ../sass/_main.scss */
+/* line 472, ../sass/_main.scss */
 body a:hover {
   color: #1070B7;
 }
-/* line 469, ../sass/_main.scss */
+/* line 475, ../sass/_main.scss */
 body footer {
   width: 100%;
   background-color: white;
@@ -541,7 +547,7 @@ body footer {
   align-items: center;
   justify-content: center;
 }
-/* line 483, ../sass/_main.scss */
+/* line 489, ../sass/_main.scss */
 body footer p {
   line-height: 15px;
   font-weight: 300;
@@ -549,48 +555,48 @@ body footer p {
   transition: ease all 0.5s;
 }
 @media screen and (max-width: 580px) {
-  /* line 483, ../sass/_main.scss */
+  /* line 489, ../sass/_main.scss */
   body footer p {
     font-size: 9px;
     line-height: 10px;
   }
 }
-/* line 496, ../sass/_main.scss */
+/* line 502, ../sass/_main.scss */
 body footer a {
   color: #275F90;
 }
-/* line 498, ../sass/_main.scss */
+/* line 504, ../sass/_main.scss */
 body footer a:hover {
   color: #275F90;
   text-decoration: none;
 }
-/* line 504, ../sass/_main.scss */
+/* line 510, ../sass/_main.scss */
 body footer section#EGA {
   margin-left: 30px;
   font-size: 12px;
 }
-/* line 507, ../sass/_main.scss */
+/* line 513, ../sass/_main.scss */
 body footer section#EGA a {
   color: white;
 }
-/* line 509, ../sass/_main.scss */
+/* line 515, ../sass/_main.scss */
 body footer section#EGA a:hover {
   color: #74C5EB;
 }
-/* line 512, ../sass/_main.scss */
+/* line 518, ../sass/_main.scss */
 body footer section#EU {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: right;
 }
-/* line 518, ../sass/_main.scss */
+/* line 524, ../sass/_main.scss */
 body footer section#EU p {
   max-width: 400px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 524, ../sass/_main.scss */
+/* line 530, ../sass/_main.scss */
 body footer section#EU img {
   height: 30px;
   margin-right: 30px;

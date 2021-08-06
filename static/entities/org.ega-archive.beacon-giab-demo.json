@@ -1,77 +1,91 @@
 [
   {
-    "name": "Unknown name",
+    "name": "Unknown name (bad /info)",
     "url": "https://beacon-giab-demo.ega-archive.org/api",
     "entities": [
       {
         "name": "Configuration",
         "url": "https://beacon-giab-demo.ega-archive.org/api/configuration",
-        "valid": null
+        "valid": null,
+        "error": "IO Error"
       },
       {
         "name": "BeaconMap",
         "url": "https://beacon-giab-demo.ega-archive.org/api/map",
-        "valid": null
+        "valid": null,
+        "error": "IO Error"
       },
       {
         "name": "EntryTypes",
         "url": "https://beacon-giab-demo.ega-archive.org/api/entry_types",
-        "valid": null
+        "valid": null,
+        "error": "IO Error"
       },
       {
         "name": "analysis",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/analysis",
-        "valid": false
+        "url": "https://beacon-giab-demo.ega-archive.org/api/analyses",
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       },
       {
         "name": "biosample",
         "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://beacon-giab-demo.ega-archive.org/api/biosamples did not respond"
       },
       {
         "name": "cohort",
         "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://beacon-giab-demo.ega-archive.org/api/cohorts did not respond"
       },
       {
         "name": "dataset",
         "url": "https://beacon-giab-demo.ega-archive.org/api/datasets",
-        "valid": false
+        "valid": false,
+        "error": "No resultsSets property in the response"
       },
       {
         "name": "genomicVariant",
         "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://beacon-giab-demo.ega-archive.org/api/g_variants did not respond"
       },
       {
         "name": "individual",
         "url": "https://beacon-giab-demo.ega-archive.org/api/individuals",
-        "valid": null
+        "valid": null,
+        "error": "Endpoint https://beacon-giab-demo.ega-archive.org/api/individuals did not respond"
       },
       {
         "name": "interactor",
         "url": "https://beacon-giab-demo.ega-archive.org/api/interactors",
-        "valid": false
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       },
       {
         "name": "run",
         "url": "https://beacon-giab-demo.ega-archive.org/api/runs",
-        "valid": false
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       },
       {
         "name": "variantAnnotation",
         "url": "https://beacon-giab-demo.ega-archive.org/api/variantAnnotations",
-        "valid": false
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       },
       {
         "name": "variantInSample",
         "url": "https://beacon-giab-demo.ega-archive.org/api/variants_in_sample",
-        "valid": false
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       },
       {
         "name": "variantInterpretation",
         "url": "https://beacon-giab-demo.ega-archive.org/api/variantInterpretations",
-        "valid": false
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
       }
     ]
   }
