@@ -1,91 +1,91 @@
 [
   {
     "name": "Progenetix Cancer Genomics Beacon+",
-    "url": "https://progenetix.org/beacon/info",
+    "url": "https://progenetix.org/beacon/",
     "entities": [
       {
         "name": "Configuration",
-        "url": "https://progenetix.org/beacon/info/configuration",
-        "valid": false,
-        "error": "Response does not match the schema: \"$schema\" is a required property\n\"maturityAttributes\" is a required property\n\"entryTypes\" is a required property\n"
+        "url": "https://progenetix.org/beacon/configuration",
+        "valid": true,
+        "error": null
       },
       {
         "name": "BeaconMap",
-        "url": "https://progenetix.org/beacon/info/map",
-        "valid": false,
-        "error": "Response does not match the schema: \"$schema\" is a required property\n\"endpointSets\" is a required property\n"
+        "url": "https://progenetix.org/beacon/map",
+        "valid": true,
+        "error": null
       },
       {
         "name": "EntryTypes",
-        "url": "https://progenetix.org/beacon/info/entry_types",
-        "valid": false,
-        "error": "Response does not match the schema: \"entryTypes\" is a required property\n"
+        "url": "https://progenetix.org/beacon/entry_types",
+        "valid": null,
+        "error": "Unexpected HTTP status code"
       },
       {
         "name": "analysis",
-        "url": "https://progenetix.org/beacon/info/analyses",
-        "valid": false,
-        "error": "No resultsSets property in the response"
+        "url": "https://progenetix.org/beacon/analyses",
+        "valid": true,
+        "error": null
       },
       {
         "name": "biosample",
-        "url": "https://progenetix.org/beacon/info/biosamples",
-        "valid": false,
-        "error": "No resultsSets property in the response"
+        "url": "https://progenetix.org/beacon/biosamples",
+        "valid": true,
+        "error": null
       },
       {
         "name": "cohort",
-        "url": "https://progenetix.org/beacon/info/cohorts",
-        "valid": false,
-        "error": "No resultsSets property in the response"
+        "url": "https://progenetix.org/beacon/cohorts",
+        "valid": null,
+        "error": "Endpoint https://progenetix.org/beacon/cohorts did not respond"
       },
       {
         "name": "dataset",
-        "url": "https://progenetix.org/beacon/info/datasets",
-        "valid": false,
-        "error": "No resultsSets property in the response"
+        "url": "https://progenetix.org/beacon/datasets",
+        "valid": true,
+        "error": null
       },
       {
         "name": "genomicVariant",
-        "url": "https://progenetix.org/beacon/info/g_variants",
-        "valid": false,
-        "error": "No resultsSets property in the response"
+        "url": "https://progenetix.org/beacon/g_variants",
+        "valid": true,
+        "error": null
       },
       {
         "name": "individual",
-        "url": "https://progenetix.org/beacon/info/individuals",
-        "valid": false,
-        "error": "No resultsSets property in the response"
+        "url": "https://progenetix.org/beacon/individuals",
+        "valid": true,
+        "error": null
       },
       {
         "name": "interactor",
-        "url": "https://progenetix.org/beacon/info/interactors",
-        "valid": false,
-        "error": "No resultsSets property in the response"
+        "url": "https://progenetix.org/beacon/interactors",
+        "valid": null,
+        "error": "Endpoint https://progenetix.org/beacon/interactors did not respond"
       },
       {
         "name": "run",
-        "url": "https://progenetix.org/beacon/info/runs",
-        "valid": false,
-        "error": "No resultsSets property in the response"
+        "url": "https://progenetix.org/beacon/runs",
+        "valid": null,
+        "error": "Endpoint https://progenetix.org/beacon/runs did not respond"
       },
       {
         "name": "variantAnnotation",
-        "url": "https://progenetix.org/beacon/info/variantAnnotations",
-        "valid": false,
-        "error": "No resultsSets property in the response"
+        "url": "https://progenetix.org/beacon/variantAnnotations",
+        "valid": null,
+        "error": "Endpoint https://progenetix.org/beacon/variantAnnotations did not respond"
       },
       {
         "name": "variantInSample",
-        "url": "https://progenetix.org/beacon/info/variants_in_sample",
-        "valid": false,
-        "error": "No resultsSets property in the response"
+        "url": "https://progenetix.org/beacon/variants_in_sample",
+        "valid": true,
+        "error": null
       },
       {
         "name": "variantInterpretation",
-        "url": "https://progenetix.org/beacon/info/variantInterpretations",
-        "valid": false,
-        "error": "No resultsSets property in the response"
+        "url": "https://progenetix.org/beacon/variantInterpretations",
+        "valid": null,
+        "error": "Endpoint https://progenetix.org/beacon/variantInterpretations did not respond"
       }
     ]
   }
