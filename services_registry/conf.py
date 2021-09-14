@@ -23,7 +23,7 @@ services = {
 	},
 	'org.rd-connect.beacon': {
 		'name': 'Beacon @ RD-Connect',
-		'address': 'https://playground.rd-connect.eu/beacon2/api/info'
+		'address': 'https://playground.rd-connect.eu/beacon2/api'
 	},
 	'org.ega-archive.beacon': {
 		'name': 'Beacon Test Instance',
