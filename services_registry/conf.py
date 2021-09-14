@@ -5,25 +5,25 @@ port = 8000
 ssl_context = None
 
 services = {
-	'ca.distributedgenomics.poc': {
-		'name': 'PseudoCHILD Beacon',
-		'address': 'https://poc.distributedgenomics.ca:5061/api'
-	},
+	# 'ca.distributedgenomics.poc': {
+	# 	'name': 'PseudoCHILD Beacon',
+	# 	'address': 'https://poc.distributedgenomics.ca:5061/api'
+	# },
 	'heg-beacon': {
 		'name': 'heg Beacon',
 		'address': 'https://beacon.text-analytics.ch/api'
 	},
-	'org.ega-archive.beacon-giab-demo': {
-		'name': 'EGA Beacon - Genome In A Bottle',
-		'address': 'https://beacon-giab-demo.ega-archive.org/api'
-	},
+	# 'org.ega-archive.beacon-giab-demo': {
+	# 	'name': 'EGA Beacon - Genome In A Bottle',
+	# 	'address': 'https://beacon-giab-demo.ega-archive.org/api'
+	# },
 	'org.progenetix.beacon': {
 		'name': 'Progenetix Cancer Genomics Beacon+',
 		'address': 'https://progenetix.org/beacon/info'
 	},
 	'org.rd-connect.beacon': {
 		'name': 'Beacon @ RD-Connect',
-		'address': 'https://playground.rd-connect.eu/beacon2/api'
+		'address': 'https://playground.rd-connect.eu/beacon2/api/info'
 	},
 	'org.ega-archive.beacon': {
 		'name': 'Beacon Test Instance',
@@ -49,7 +49,7 @@ service_id = 'eu.crg.services-registry'
 service_name = 'CRG Services Registry'
 service_version = '1.0'
 api_version = 'v2.0.0-draft.1'
-service_title = 'EGA-CRG Services Registry'
+service_title = 'GA4GH approval Service Registry'
 service_logos = [
 	{
 		'href': 'https://ega-archive.org',
