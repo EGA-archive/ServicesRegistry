@@ -9,26 +9,26 @@ services = {
 		'name': 'PseudoCHILD Beacon',
 		'address': 'https://poc.distributedgenomics.ca:5061/api'
 	},
-	'heg-beacon': {
-		'name': 'heg Beacon',
-		'address': 'https://beacon.text-analytics.ch/api'
-	},
-	'org.ega-archive.beacon-giab-demo': {
-		'name': 'EGA Beacon - Genome In A Bottle',
-		'address': 'https://beacon-giab-demo.ega-archive.org/api'
-	},
-	'org.progenetix.beacon': {
-		'name': 'Progenetix Cancer Genomics Beacon+',
-		'address': 'https://progenetix.org/beacon/info'
-	},
-	'org.rd-connect.beacon': {
-		'name': 'Beacon @ RD-Connect',
-		'address': 'https://playground.rd-connect.eu/beacon2/api'
-	},
-	'org.ega-archive.beacon': {
-		'name': 'Beacon Test Instance',
-		'address': 'https://beacon-giab-test.ega-archive.org/api'
-	}
+	# 'heg-beacon': {
+	# 	'name': 'heg Beacon',
+	# 	'address': 'https://beacon.text-analytics.ch/api'
+	# },
+	# 'org.ega-archive.beacon-giab-demo': {
+	# 	'name': 'EGA Beacon - Genome In A Bottle',
+	# 	'address': 'https://beacon-giab-demo.ega-archive.org/api'
+	# },
+	# 'org.progenetix.beacon': {
+	# 	'name': 'Progenetix Cancer Genomics Beacon+',
+	# 	'address': 'https://progenetix.org/beacon/info'
+	# },
+	# 'org.rd-connect.beacon': {
+	# 	'name': 'Beacon @ RD-Connect',
+	# 	'address': 'https://playground.rd-connect.eu/beacon2/api'
+	# },
+	# 'org.ega-archive.beacon': {
+	# 	'name': 'Beacon Test Instance',
+	# 	'address': 'https://beacon-giab-test.ega-archive.org/api'
+	# }
 }
 
 urls_whitelisted = [r'^/api/.*'] # anything after /api
