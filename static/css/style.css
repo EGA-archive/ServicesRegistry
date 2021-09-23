@@ -471,15 +471,15 @@ body main div#cards-container .card ul.entities li details summary {
   color: white;
   white-space: nowrap;
   align-items: center;
+  justify-content: space-between;
 }
-/* line 405, ../sass/_main.scss */
+/* line 406, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details span {
-  width: 100%;
+  width: 70%;
   background: #ff7979;
   height: 5px;
   border-radius: 10px;
   position: relative;
-  margin-left: 10px;
 }
 /* line 412, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details span:before {

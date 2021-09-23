@@ -400,15 +400,15 @@ body {
                         color: white;
                         white-space: nowrap;
                         align-items: center;
+                        justify-content: space-between;
                       }
 
                       span {
-                        width: 100%;
+                        width: 70%;
                         background: $red;
                         height: 5px;
                         border-radius: 10px;
                         position: relative;
-                        margin-left: 10px;
                         &:before {
                           content: '';
                           position: absolute;
