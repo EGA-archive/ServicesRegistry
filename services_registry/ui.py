@@ -67,7 +67,8 @@ def explore_service(name, url, info, error):
         "name": response.get("name"),
         "description": response.get("description"),
         "visit_us": org.get("welcomeUrl"),
-        "beacon_api": response.get("welcomeUrl"),
+        "beacon_ui": response.get("welcomeUrl"),
+        "beacon_api": url,
         "contact_us": org.get("contactUrl"),
         "logo_url": check_logo(org.get("logoUrl"))
     }
