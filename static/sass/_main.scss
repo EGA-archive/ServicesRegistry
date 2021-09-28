@@ -241,13 +241,16 @@ body {
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
-            margin: 3em auto 0;
+            // margin: 3em auto 0; // add this one when we enable the form.
+            margin: 0 auto 0;
 
             .card {
                 width: 475px;
                 position: relative;
 
                 transition: ease all 0.5s;
+
+                order: var(--order);
 
                 @media screen and (max-width:550px){
                     width: 350px;

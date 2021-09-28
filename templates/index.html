@@ -32,7 +32,7 @@
 
       <main>
         <h1>{{ service_title }}</h1>
-        <form action="{{ url('index') }}" method="POST" target="_blank">
+        <!-- <form action="{{ url('index') }}" method="POST" target="_blank">
           <div>
             <input type="text"
 	                 value=""
@@ -46,7 +46,7 @@
         <details>
           <summary>Example Queries</summary>
           {% include 'examples.html' %}
-        </details>
+        </details> -->
 
         <div id="cards-container" data-cards="{{ services|length }}">
           {% for service in services %}

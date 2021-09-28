@@ -43,7 +43,7 @@ def check_logo(url):
         return getattr(conf, 'default_logo', '/static/img/no_logo.png')
     return url
 
-def explore_service(name, url, info, error):
+def explore_service(name, url, order, info, error):
     """Fetch the interesting information of a service
     by using its base URL"""
 
@@ -70,7 +70,8 @@ def explore_service(name, url, info, error):
         "beacon_ui": response.get("welcomeUrl"),
         "beacon_api": url,
         "contact_us": org.get("contactUrl"),
-        "logo_url": check_logo(org.get("logoUrl"))
+        "logo_url": check_logo(org.get("logoUrl")),
+        "order": order
     }
     try:
         with open(entities_json_file) as fh:

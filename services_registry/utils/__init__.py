@@ -51,13 +51,14 @@ class Collector():
                                  d['name'],
                                  #d['address'].rstrip('/') + '/' + url.lstrip('/'),
                                  d['address'].rstrip('/') + url,
+                                 d['order'],
                                  headers,
                                  data,
                                  json)
                for service_id, d in self.services.items()]
         return [(await coro) for coro in asyncio.as_completed(aws)]
 
-    async def _request_one(self, method, service_id, name, url, headers, data, json):
+    async def _request_one(self, method, service_id, name, url, order, headers, data, json):
         LOG.info('CONTACT %s %s', name, url)
         try:
             # Check the cache
@@ -88,11 +89,11 @@ class Collector():
                 last_call_at = r.headers.get('Last-Modified') or now()
                 # Save to cache
                 self.cache[service_id] = (last_call_at, response, error)
-                return (name, url, response, error)
+                return (name, url, order, response, error)
 
         except httpx.TimeoutException as e:
             LOG.error("Connection Timeout %s: %r", name, e)
-            return (name, url, None, "Service not available")
+            return (name, url, order, None, "Service not available")
         except Exception as e:
             LOG.error("Invalid response for %s: %r", name, e)
-            return (name, url, None, repr(e))
+            return (name, url, order, None, repr(e))
