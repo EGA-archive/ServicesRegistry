@@ -1,92 +1,106 @@
 [
-  {
-    "name": "Progenetix Cancer Genomics Beacon+",
-    "url": "https://progenetix.org/beacon/",
-    "entities": [
-      {
-        "name": "Configuration",
-        "url": "https://progenetix.org/beacon/configuration",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "BeaconMap",
-        "url": "https://progenetix.org/beacon/map",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "EntryTypes",
-        "url": "https://progenetix.org/beacon/entry_types",
-        "valid": null,
-        "error": "Unexpected HTTP status code"
-      },
-      {
-        "name": "analysis",
-        "url": "https://progenetix.org/beacon/analyses",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "biosample",
-        "url": "https://progenetix.org/beacon/biosamples",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "cohort",
-        "url": "https://progenetix.org/beacon/cohorts",
-        "valid": null,
-        "error": "Endpoint https://progenetix.org/beacon/cohorts did not respond"
-      },
-      {
-        "name": "dataset",
-        "url": "https://progenetix.org/beacon/datasets",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "genomicVariant",
-        "url": "https://progenetix.org/beacon/g_variants",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "individual",
-        "url": "https://progenetix.org/beacon/individuals",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "interactor",
-        "url": "https://progenetix.org/beacon/interactors",
-        "valid": null,
-        "error": "Endpoint https://progenetix.org/beacon/interactors did not respond"
-      },
-      {
-        "name": "run",
-        "url": "https://progenetix.org/beacon/runs",
-        "valid": null,
-        "error": "Endpoint https://progenetix.org/beacon/runs did not respond"
-      },
-      {
-        "name": "variantAnnotation",
-        "url": "https://progenetix.org/beacon/variantAnnotations",
-        "valid": null,
-        "error": "Endpoint https://progenetix.org/beacon/variantAnnotations did not respond"
-      },
-      {
-        "name": "variantInSample",
-        "url": "https://progenetix.org/beacon/variants_in_sample",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "variantInterpretation",
-        "url": "https://progenetix.org/beacon/variantInterpretations",
-        "valid": null,
-        "error": "Endpoint https://progenetix.org/beacon/variantInterpretations did not respond"
-      }
-    ]
-  }
+    {
+        "name": "Beacon Name",
+        "url": "https://...",
+        "entities": {
+          "Analyses": [
+              {
+                  "name": "Individuals",
+                  "url": "https://.../individuals",
+                  "valid": true,
+                  "error": null
+              },
+              {
+                  "name": "Individuals single entity",
+                  "url": "https://.../individuals/{id}",
+                  "valid": true,
+                  "error": null
+              }
+          ],
+          "Biosamples": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Cohorts": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Datasets": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Genomic Variants": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Individuals": [
+              {
+                  "name": "Individuals",
+                  "url": "https://.../individuals",
+                  "valid": true,
+                  "error": null
+              },
+              {
+                  "name": "Individuals single entity",
+                  "url": "https://.../individuals/{id}",
+                  "valid": true,
+                  "error": null
+              }
+          ],
+          "Runs": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ]
+        }
+    }
 ]

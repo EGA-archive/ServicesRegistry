@@ -1,92 +1,106 @@
 [
-  {
-    "name": "Unknown name (bad /info)",
-    "url": "https://beacon-giab-demo.ega-archive.org/api",
-    "entities": [
-      {
-        "name": "Configuration",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/configuration",
-        "valid": null,
-        "error": "IO Error"
-      },
-      {
-        "name": "BeaconMap",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/map",
-        "valid": null,
-        "error": "IO Error"
-      },
-      {
-        "name": "EntryTypes",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/entry_types",
-        "valid": null,
-        "error": "IO Error"
-      },
-      {
-        "name": "analysis",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/analyses",
-        "valid": false,
-        "error": "Bad response format (JSON could not be parsed)"
-      },
-      {
-        "name": "biosample",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples",
-        "valid": null,
-        "error": "Endpoint https://beacon-giab-demo.ega-archive.org/api/biosamples did not respond"
-      },
-      {
-        "name": "cohort",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts",
-        "valid": null,
-        "error": "Endpoint https://beacon-giab-demo.ega-archive.org/api/cohorts did not respond"
-      },
-      {
-        "name": "dataset",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/datasets",
-        "valid": false,
-        "error": "No resultsSets property in the response"
-      },
-      {
-        "name": "genomicVariant",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants",
-        "valid": null,
-        "error": "Endpoint https://beacon-giab-demo.ega-archive.org/api/g_variants did not respond"
-      },
-      {
-        "name": "individual",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/individuals",
-        "valid": null,
-        "error": "Endpoint https://beacon-giab-demo.ega-archive.org/api/individuals did not respond"
-      },
-      {
-        "name": "interactor",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/interactors",
-        "valid": false,
-        "error": "Bad response format (JSON could not be parsed)"
-      },
-      {
-        "name": "run",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/runs",
-        "valid": false,
-        "error": "Bad response format (JSON could not be parsed)"
-      },
-      {
-        "name": "variantAnnotation",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/variantAnnotations",
-        "valid": false,
-        "error": "Bad response format (JSON could not be parsed)"
-      },
-      {
-        "name": "variantInSample",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/variants_in_sample",
-        "valid": false,
-        "error": "Bad response format (JSON could not be parsed)"
-      },
-      {
-        "name": "variantInterpretation",
-        "url": "https://beacon-giab-demo.ega-archive.org/api/variantInterpretations",
-        "valid": false,
-        "error": "Bad response format (JSON could not be parsed)"
-      }
-    ]
-  }
+    {
+        "name": "Beacon Name",
+        "url": "https://...",
+        "entities": {
+          "Analyses": [
+              {
+                  "name": "Individuals",
+                  "url": "https://.../individuals",
+                  "valid": true,
+                  "error": null
+              },
+              {
+                  "name": "Individuals single entity",
+                  "url": "https://.../individuals/{id}",
+                  "valid": false,
+                  "error": "null"
+              }
+          ],
+          "Biosamples": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Cohorts": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Datasets": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Genomic Variants": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Individuals": [
+              {
+                  "name": "Individuals",
+                  "url": "https://.../individuals",
+                  "valid": true,
+                  "error": null
+              },
+              {
+                  "name": "Individuals single entity",
+                  "url": "https://.../individuals/{id}",
+                  "valid": true,
+                  "error": null
+              }
+          ],
+          "Runs": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ]
+        }
+    }
 ]

@@ -1,92 +1,106 @@
 [
-  {
-    "name": "Beacon Test Instance",
-    "url": "https://beacon-giab-test.ega-archive.org/api",
-    "entities": [
-      {
-        "name": "Configuration",
-        "url": "https://beacon-giab-test.ega-archive.org/api/configuration",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "BeaconMap",
-        "url": "https://beacon-giab-test.ega-archive.org/api/map",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "EntryTypes",
-        "url": "https://beacon-giab-test.ega-archive.org/api/entry_types",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "analysis",
-        "url": "https://beacon-giab-test.ega-archive.org/api/analyses",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "biosample",
-        "url": "https://beacon-giab-test.ega-archive.org/api/biosamples",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "cohort",
-        "url": "https://beacon-giab-test.ega-archive.org/api/cohorts",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "dataset",
-        "url": "https://beacon-giab-test.ega-archive.org/api/datasets",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "genomicVariant",
-        "url": "https://beacon-giab-test.ega-archive.org/api/g_variants",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "individual",
-        "url": "https://beacon-giab-test.ega-archive.org/api/individuals",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "interactor",
-        "url": "https://beacon-giab-test.ega-archive.org/api/interactors",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "run",
-        "url": "https://beacon-giab-test.ega-archive.org/api/runs",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "variantAnnotation",
-        "url": "https://beacon-giab-test.ega-archive.org/api/variantAnnotations",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "variantInSample",
-        "url": "https://beacon-giab-test.ega-archive.org/api/variants_in_sample",
-        "valid": true,
-        "error": null
-      },
-      {
-        "name": "variantInterpretation",
-        "url": "https://beacon-giab-test.ega-archive.org/api/variantInterpretations",
-        "valid": true,
-        "error": null
-      }
-    ]
-  }
+    {
+        "name": "Beacon Name",
+        "url": "https://...",
+        "entities": {
+          "Analyses": [
+              {
+                  "name": "Individuals",
+                  "url": "https://.../individuals",
+                  "valid": true,
+                  "error": null
+              },
+              {
+                  "name": "Individuals single entity",
+                  "url": "https://.../individuals/{id}",
+                  "valid": true,
+                  "error": null
+              }
+          ],
+          "Biosamples": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Cohorts": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Datasets": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Genomic Variants": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ],
+          "Individuals": [
+              {
+                  "name": "Individuals",
+                  "url": "https://.../individuals",
+                  "valid": true,
+                  "error": null
+              },
+              {
+                  "name": "Individuals single entity",
+                  "url": "https://.../individuals/{id}",
+                  "valid": true,
+                  "error": null
+              }
+          ],
+          "Runs": [
+              {
+                  "name": "Biosamples",
+                  "url": "https://.../biosamples",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              },
+              {
+                  "name": "Biosamples single entity",
+                  "url": "https://.../biosamples/{id}",
+                  "valid": null,
+                  "error": "Unresponsive endpoint"
+              }
+          ]
+        }
+    }
 ]

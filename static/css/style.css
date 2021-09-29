@@ -153,7 +153,7 @@ body main > h1 {
   margin: 2em auto;
 }
 /* line 79, ../sass/_main.scss */
-body main details summary {
+body main > details summary {
   font-size: 70%;
   text-decoration: underline;
   margin: 10px 20px 0 0;
@@ -290,8 +290,9 @@ body main ul.legend {
   bottom: 0;
   padding: 20px 0;
   background: #F5F9FA;
+  z-index: 1000;
 }
-/* line 227, ../sass/_main.scss */
+/* line 228, ../sass/_main.scss */
 body main ul.legend li {
   white-space: nowrap;
   font-size: 70%;
@@ -299,11 +300,11 @@ body main ul.legend li {
   width: auto;
   margin-right: 20px;
 }
-/* line 234, ../sass/_main.scss */
+/* line 235, ../sass/_main.scss */
 body main ul.legend li:last-child {
   margin-right: 0;
 }
-/* line 240, ../sass/_main.scss */
+/* line 241, ../sass/_main.scss */
 body main div#cards-container {
   display: flex;
   flex-flow: row wrap;
@@ -314,6 +315,7 @@ body main div#cards-container {
 body main div#cards-container .card {
   width: 475px;
   position: relative;
+  height: max-content;
   transition: ease all 0.5s;
   order: var(--order);
   background-color: white;
@@ -328,13 +330,21 @@ body main div#cards-container .card {
     margin: 25px auto;
   }
 }
+<<<<<<< HEAD
 /* line 268, ../sass/_main.scss */
+=======
+/* line 267, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card div {
   display: flex;
   flex-flow: row nowrap;
   align-items: stretch;
 }
+<<<<<<< HEAD
 /* line 274, ../sass/_main.scss */
+=======
+/* line 273, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.left-part {
   padding: 20px;
   display: flex;
@@ -343,64 +353,112 @@ body main div#cards-container .card section.left-part {
   align-items: center;
   min-width: 140px;
 }
+<<<<<<< HEAD
 /* line 281, ../sass/_main.scss */
 body main div#cards-container .card section.left-part img {
   height: 40px;
 }
 /* line 284, ../sass/_main.scss */
+=======
+/* line 280, ../sass/_main.scss */
+body main div#cards-container .card section.left-part img {
+  height: 40px;
+}
+/* line 283, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.left-part img.white-img {
   -webkit-filter: drop-shadow(1px 1px 4px #222);
   filter: drop-shadow(1px 1px 5px rgba(34, 34, 34, 0.5));
 }
+<<<<<<< HEAD
 /* line 289, ../sass/_main.scss */
+=======
+/* line 288, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.left-part ul {
   font-size: 12px;
   margin-top: 10px;
 }
+<<<<<<< HEAD
 /* line 292, ../sass/_main.scss */
+=======
+/* line 291, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.left-part ul li {
   list-style: none;
   padding: 8px;
   display: flex;
   align-items: baseline;
 }
+<<<<<<< HEAD
 /* line 298, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li i {
   margin-right: 3px;
 }
 /* line 302, ../sass/_main.scss */
+=======
+/* line 297, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li i {
+  margin-right: 3px;
+}
+/* line 301, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.left-part ul li a {
   text-decoration: none;
   color: #717578;
   transition: ease .5s;
 }
+<<<<<<< HEAD
 /* line 307, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li a:hover {
   color: #74C5EB;
 }
 /* line 311, ../sass/_main.scss */
+=======
+/* line 306, ../sass/_main.scss */
+body main div#cards-container .card section.left-part ul li a:hover {
+  color: #74C5EB;
+}
+/* line 310, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.left-part ul li progress {
   -webkit-appearance: none;
   appearance: none;
   width: 70px;
   height: 8px;
 }
+<<<<<<< HEAD
 /* line 317, ../sass/_main.scss */
+=======
+/* line 316, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.left-part ul li progress[value]::-webkit-progress-value {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   background: #7ed321;
 }
+<<<<<<< HEAD
 /* line 322, ../sass/_main.scss */
+=======
+/* line 321, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.left-part ul li progress[value]::-webkit-progress-bar {
   border-radius: 10px;
   background: #ff7979;
 }
+<<<<<<< HEAD
 /* line 330, ../sass/_main.scss */
 body main div#cards-container .card section.left-part + section.right-part {
   border-left: 1px solid #74C5EB;
 }
 /* line 334, ../sass/_main.scss */
+=======
+/* line 329, ../sass/_main.scss */
+body main div#cards-container .card section.left-part + section.right-part {
+  border-left: 1px solid #74C5EB;
+}
+/* line 333, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.right-part {
   margin: 20px 0;
   padding: 0 20px;
@@ -409,53 +467,148 @@ body main div#cards-container .card section.right-part {
   justify-content: space-around;
   align-items: flex-start;
 }
+<<<<<<< HEAD
 /* line 342, ../sass/_main.scss */
+=======
+/* line 341, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.right-part h1 {
   font-size: 110%;
   line-height: initial;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
+<<<<<<< HEAD
 /* line 348, ../sass/_main.scss */
+=======
+/* line 347, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.right-part h2, body main div#cards-container .card section.right-part p {
   font-size: 80%;
   line-height: initial;
 }
+<<<<<<< HEAD
 /* line 353, ../sass/_main.scss */
+=======
+/* line 352, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card section.right-part p {
   overflow: hidden;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   display: -webkit-box;
 }
+<<<<<<< HEAD
 /* line 361, ../sass/_main.scss */
+=======
+/* line 360, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body main div#cards-container .card ul.entities {
   display: flex;
   flex-wrap: wrap;
-  padding: 15px 20px 20px 20px;
+  position: relative;
+  color: white;
+  background: #1070B7;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background: #275F90;
-  position: relative;
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+/* line 371, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li {
+  width: 100%;
+}
+/* line 375, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li:first-child details {
+  padding-top: 5px;
+}
+/* line 381, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li:last-child details {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-bottom: 5px;
+}
+/* line 388, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li details {
+  position: relative;
+  width: auto;
+  z-index: 10;
+  height: auto;
+}
+/* line 394, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li details summary {
+  cursor: pointer;
+  font-size: 90%;
+  padding: 10px 15px;
+  color: #717578;
+  display: flex;
+  color: white;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+/* line 406, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li details span {
+  width: 70%;
+  background: #ff7979;
+  height: 5px;
+  border-radius: 10px;
+  position: relative;
+}
+/* line 412, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li details span:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: var(--valid-percentage);
+  display: block;
+  background: #7ed321;
+  border-radius: 10px;
+}
+/* line 425, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li details[open] {
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+  background: #275F90;
+}
+/* line 430, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li details ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 20px 15px 20px;
+  position: relative;
   color: white;
 }
+<<<<<<< HEAD
 /* line 373, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li {
+=======
+/* line 437, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li details ul li {
+>>>>>>> grouped_entites_2
   width: 33.3%;
   flex-basis: 33.3%;
   display: inline-flex;
   box-sizing: border-box;
-  font-size: 75%;
+  font-size: 70%;
   margin: 7px 0;
   position: relative;
 }
+<<<<<<< HEAD
 /* line 382, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li[data-tooltip] {
   cursor: help;
 }
 /* line 385, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li[data-tooltip]:hover:before {
+=======
+/* line 446, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li details ul li[data-tooltip] {
+  cursor: help;
+}
+/* line 449, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li details ul li[data-tooltip]:hover:before {
+>>>>>>> grouped_entites_2
   content: attr(data-tooltip);
   position: absolute;
   background: #333333;
@@ -469,6 +622,7 @@ body main div#cards-container .card ul.entities li[data-tooltip]:hover:before {
   bottom: 15px;
   z-index: 10000;
 }
+<<<<<<< HEAD
 /* line 401, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li i {
   margin-right: 5px;
@@ -526,16 +680,35 @@ body main div#cards-container .card details div h1 span {
   font-weight: normal;
 }
 /* line 471, ../sass/_main.scss */
+=======
+/* line 465, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li details ul li i {
+  margin-right: 5px;
+}
+/* line 469, ../sass/_main.scss */
+body main div#cards-container .card ul.entities li details ul li a {
+  margin-left: 5px;
+}
+/* line 542, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body a {
   color: #74C5EB;
   text-decoration: underline;
   transition: ease .5s;
 }
+<<<<<<< HEAD
 /* line 475, ../sass/_main.scss */
 body a:hover {
   color: #1070B7;
 }
 /* line 478, ../sass/_main.scss */
+=======
+/* line 546, ../sass/_main.scss */
+body a:hover {
+  color: #1070B7;
+}
+/* line 549, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body footer {
   width: 100%;
   background-color: white;
@@ -548,7 +721,11 @@ body footer {
   align-items: center;
   justify-content: center;
 }
+<<<<<<< HEAD
 /* line 492, ../sass/_main.scss */
+=======
+/* line 563, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body footer p {
   line-height: 15px;
   font-weight: 300;
@@ -556,26 +733,43 @@ body footer p {
   transition: ease all 0.5s;
 }
 @media screen and (max-width: 580px) {
+<<<<<<< HEAD
   /* line 492, ../sass/_main.scss */
+=======
+  /* line 563, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
   body footer p {
     font-size: 9px;
     line-height: 10px;
   }
 }
+<<<<<<< HEAD
 /* line 505, ../sass/_main.scss */
 body footer a {
   color: #275F90;
 }
 /* line 507, ../sass/_main.scss */
+=======
+/* line 576, ../sass/_main.scss */
+body footer a {
+  color: #275F90;
+}
+/* line 578, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body footer a:hover {
   color: #275F90;
   text-decoration: none;
 }
+<<<<<<< HEAD
 /* line 513, ../sass/_main.scss */
+=======
+/* line 584, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body footer section#EGA {
   margin-left: 30px;
   font-size: 12px;
 }
+<<<<<<< HEAD
 /* line 516, ../sass/_main.scss */
 body footer section#EGA a {
   color: white;
@@ -585,19 +779,38 @@ body footer section#EGA a:hover {
   color: #74C5EB;
 }
 /* line 521, ../sass/_main.scss */
+=======
+/* line 587, ../sass/_main.scss */
+body footer section#EGA a {
+  color: white;
+}
+/* line 589, ../sass/_main.scss */
+body footer section#EGA a:hover {
+  color: #74C5EB;
+}
+/* line 592, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body footer section#EU {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: right;
 }
+<<<<<<< HEAD
 /* line 527, ../sass/_main.scss */
+=======
+/* line 598, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body footer section#EU p {
   max-width: 400px;
   text-align: right;
   margin-right: 10px;
 }
+<<<<<<< HEAD
 /* line 533, ../sass/_main.scss */
+=======
+/* line 604, ../sass/_main.scss */
+>>>>>>> grouped_entites_2
 body footer section#EU img {
   height: 30px;
   margin-right: 30px;
