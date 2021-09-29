@@ -20,7 +20,7 @@ services = {
 	},
 	'org.progenetix.beacon': {
 		'name': 'Progenetix Cancer Genomics Beacon+',
-		'address': 'https://progenetix.org/beacon/info',
+		'address': 'https://progenetix.org/beacon/',
 		'order': '2'
 	},
 	'org.rd-connect.beacon': {
