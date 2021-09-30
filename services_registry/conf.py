@@ -20,7 +20,7 @@ services = {
 	},
 	'org.progenetix.beacon': {
 		'name': 'Progenetix Cancer Genomics Beacon+',
-		'address': 'https://progenetix.org/beacon/',
+		'address': 'https://progenetix.org/beacon/info',
 		'order': '2'
 	},
 	'org.rd-connect.beacon': {
@@ -52,7 +52,7 @@ service_id = 'eu.crg.services-registry'
 service_name = 'CRG Services Registry'
 service_version = '1.0'
 api_version = 'v2.0.0-draft.1'
-service_title = 'EGA-CRG Services Registry'
+service_title = 'Beacon v2 GA4GH Approval Registry'
 service_logos = [
 	{
 		'href': 'https://ega-archive.org',

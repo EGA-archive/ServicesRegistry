@@ -43,6 +43,9 @@ def check_logo(url):
         return getattr(conf, 'default_logo', '/static/img/no_logo.png')
     return url
 
+def valid_filter(dic, valid_type):
+    return dic['valid'] is valid_type
+
 def explore_service(name, url, order, info, error):
     """Fetch the interesting information of a service
     by using its base URL"""
@@ -77,6 +80,17 @@ def explore_service(name, url, order, info, error):
         with open(entities_json_file) as fh:
             entities = json.load(fh)
             d["entities"] = entities[0]['entities']
+            d["entities_count"] = {}
+            for group_name, entity in d["entities"].items():
+                count_all = len(entity)
+                count_valid = len([d for d in entity if valid_filter(d, True)])
+                count_error = len([d for d in entity if valid_filter(d, False)])
+                percentage_valid = (100*count_valid)/count_all
+                percentage_error = (100*count_error)/count_all
+                d["entities_count"][group_name] = {
+                    'valid_percentage': percentage_valid,
+                    'error_percentage': percentage_error
+                }
     except Exception as e:
         LOG.error('Error on %s: %s', entities_json_file, e)
     return d

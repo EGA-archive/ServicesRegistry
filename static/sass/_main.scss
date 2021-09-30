@@ -205,12 +205,14 @@ body {
 
         ul {
           li {
+            color: $lightblue;
+
             &.true {
-              color: $green;
+              color: $green !important;
             }
 
             &.false {
-              color: $red;
+              color: $red !important;
             }
           }
         }
@@ -226,6 +228,7 @@ body {
           z-index:1000;
 
           li {
+            color: $darkgrey;
             white-space: nowrap;
             font-size: 70%;
             flex-basis: auto;
@@ -408,10 +411,11 @@ body {
 
                       span {
                         width: 70%;
-                        background: $red;
+                        background: $lightblue;
                         height: 5px;
                         border-radius: 10px;
                         position: relative;
+                        overflow: hidden;
                         &:before {
                           content: '';
                           position: absolute;
@@ -421,7 +425,16 @@ body {
                           width: var(--valid-percentage);
                           display: block;
                           background: $green;
-                          border-radius: 10px;
+                        }
+                        &:after {
+                          content: '';
+                          position: absolute;
+                          left: var(--valid-percentage);
+                          top: 0;
+                          height: 100%;
+                          width: var(--error-percentage);
+                          display: block;
+                          background: $red;
                         }
                       }
 
@@ -445,6 +458,8 @@ body {
                           font-size: 70%;
                           margin: 7px 0;
                           position: relative;
+                          padding: 0 7px;
+                          line-height: 16px;
 
                           &[data-tooltip] {
                             cursor: help;
@@ -459,14 +474,14 @@ body {
                               border-bottom-right-radius: 5px;
                               color: white;
                               white-space: pre;
-                              left: 12px;
-                              bottom: 15px;
+                              left: 20px;
+                              top: -25px;
                               z-index: 10000;
                             }
                           }
 
                           i {
-                            margin-right: 5px;
+                            margin: 2px 5px 0 0;
                           }
 
                           a {

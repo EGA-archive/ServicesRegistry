@@ -42,23 +42,23 @@
     <ul class="entities">
       {% for group_name, entities in service.entities.items() %}
         <li>
-          <details style="--valid-percentage:{{range(0, 100)|random}}%;">
+          <details style="--valid-percentage:{{ service.entities_count.get(group_name).valid_percentage }}%; --error-percentage:{{ service.entities_count.get(group_name).error_percentage }}%">
             <summary>
               {{ group_name }}
               <span></span>
             </summary>
             <ul>
               {% for entity in entities %}
-              <li class="{{ entity.valid|lower }}" {% if entity.error %}data-tooltip="{{ entity.error }}"{% endif %}>
-                {% if entity.valid == True %}
-                  <i class="fas fa-check-circle"></i>
-                {% elif entity.valid == False %}
-                  <i class="fas fa-times-circle"></i>
-                {% else %}
-                  <i class="fas fa-question-circle"></i>
-                {% endif %}
-                {{ entity.name }}
-              </li>
+                <li class="{{ entity.valid|lower }}" {% if entity.error %}data-tooltip="{{ entity.error }}"{% endif %}>
+                  {% if entity.valid == True %}
+                    <i class="fas fa-check-circle"></i>
+                  {% elif entity.valid == False %}
+                    <i class="fas fa-times-circle"></i>
+                  {% else %}
+                    <i class="fas fa-question-circle"></i>
+                  {% endif %}
+                  {{ entity.name }}
+                </li>
               {% endfor %}
             </ul>
           </details>

@@ -1,106 +1,274 @@
 [
-    {
-        "name": "Beacon Name",
-        "url": "https://...",
-        "entities": {
-          "Analyses": [
-              {
-                  "name": "Individuals",
-                  "url": "https://.../individuals",
-                  "valid": true,
-                  "error": null
-              },
-              {
-                  "name": "Individuals single entity",
-                  "url": "https://.../individuals/{id}",
-                  "valid": true,
-                  "error": null
-              }
-          ],
-          "Biosamples": [
-              {
-                  "name": "Biosamples",
-                  "url": "https://.../biosamples",
-                  "valid": null,
-                  "error": "Unresponsive endpoint"
-              },
-              {
-                  "name": "Biosamples single entity",
-                  "url": "https://.../biosamples/{id}",
-                  "valid": null,
-                  "error": "Unresponsive endpoint"
-              }
-          ],
-          "Cohorts": [
-              {
-                  "name": "Biosamples",
-                  "url": "https://.../biosamples",
-                  "valid": null,
-                  "error": "Unresponsive endpoint"
-              },
-              {
-                  "name": "Biosamples single entity",
-                  "url": "https://.../biosamples/{id}",
-                  "valid": null,
-                  "error": "Unresponsive endpoint"
-              }
-          ],
-          "Datasets": [
-              {
-                  "name": "Biosamples",
-                  "url": "https://.../biosamples",
-                  "valid": null,
-                  "error": "Unresponsive endpoint"
-              },
-              {
-                  "name": "Biosamples single entity",
-                  "url": "https://.../biosamples/{id}",
-                  "valid": null,
-                  "error": "Unresponsive endpoint"
-              }
-          ],
-          "Genomic Variants": [
-              {
-                  "name": "Biosamples",
-                  "url": "https://.../biosamples",
-                  "valid": null,
-                  "error": "Unresponsive endpoint"
-              },
-              {
-                  "name": "Biosamples single entity",
-                  "url": "https://.../biosamples/{id}",
-                  "valid": null,
-                  "error": "Unresponsive endpoint"
-              }
-          ],
-          "Individuals": [
-              {
-                  "name": "Individuals",
-                  "url": "https://.../individuals",
-                  "valid": true,
-                  "error": null
-              },
-              {
-                  "name": "Individuals single entity",
-                  "url": "https://.../individuals/{id}",
-                  "valid": true,
-                  "error": null
-              }
-          ],
-          "Runs": [
-              {
-                  "name": "Biosamples",
-                  "url": "https://.../biosamples",
-                  "valid": null,
-                  "error": "Unresponsive endpoint"
-              },
-              {
-                  "name": "Biosamples single entity",
-                  "url": "https://.../biosamples/{id}",
-                  "valid": null,
-                  "error": "Unresponsive endpoint"
-              }
-          ]
+  {
+    "name": "Unknown name (bad /info)",
+    "url": "https://playground.rd-connect.eu/beacon2/api",
+    "entities": {
+      "genomicVariant": [
+        {
+          "name": "genomicVariant all entries",
+          "url": "https://playground.rd-connect.eu/beacon2/api/g_variants",
+          "valid": null,
+          "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/g_variants did not respond"
+        },
+        {
+          "name": "genomicVariant single entry",
+          "url": "https://playground.rd-connect.eu/beacon2/api/g_variants/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "biosample related with a single entry of genomicVariant",
+          "url": "https://playground.rd-connect.eu/beacon2/api/g_variants/_id_/biosamples",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "individual related with a single entry of genomicVariant",
+          "url": "https://playground.rd-connect.eu/beacon2/api/g_variants/_id_/individuals",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "analysis related with a single entry of genomicVariant",
+          "url": "https://playground.rd-connect.eu/beacon2/api/g_variants/_id_/analyses",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "run related with a single entry of genomicVariant",
+          "url": "https://playground.rd-connect.eu/beacon2/api/g_variants/_id_/runs",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
         }
+      ],
+      "dataset": [
+        {
+          "name": "dataset all entries",
+          "url": "https://playground.rd-connect.eu/beacon2/api/datasets",
+          "valid": false,
+          "error": "No resultsSets property in the response"
+        },
+        {
+          "name": "dataset single entry",
+          "url": "https://playground.rd-connect.eu/beacon2/api/datasets/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "individual related with a single entry of dataset",
+          "url": "https://playground.rd-connect.eu/beacon2/api/datasets/_id_/individuals",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "run related with a single entry of dataset",
+          "url": "https://playground.rd-connect.eu/beacon2/api/datasets/_id_/runs",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "analysis related with a single entry of dataset",
+          "url": "https://playground.rd-connect.eu/beacon2/api/datasets/_id_/analyses",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "genomicVariant related with a single entry of dataset",
+          "url": "https://playground.rd-connect.eu/beacon2/api/datasets/_id_/g_variants",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "biosample related with a single entry of dataset",
+          "url": "https://playground.rd-connect.eu/beacon2/api/datasets/_id_/biosamples",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        }
+      ],
+      "biosample": [
+        {
+          "name": "biosample all entries",
+          "url": "https://playground.rd-connect.eu/beacon2/api/biosamples",
+          "valid": false,
+          "error": "No resultsSets property in the response"
+        },
+        {
+          "name": "biosample single entry",
+          "url": "https://playground.rd-connect.eu/beacon2/api/biosamples/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "genomicVariant related with a single entry of biosample",
+          "url": "https://playground.rd-connect.eu/beacon2/api/biosamples/_id_/g_variants",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "run related with a single entry of biosample",
+          "url": "https://playground.rd-connect.eu/beacon2/api/biosamples/_id_/runs",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "analysis related with a single entry of biosample",
+          "url": "https://playground.rd-connect.eu/beacon2/api/biosamples/_id_/analyses",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        }
+      ],
+      "cohort": [
+        {
+          "name": "cohort all entries",
+          "url": "https://playground.rd-connect.eu/beacon2/api/cohorts",
+          "valid": null,
+          "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/cohorts did not respond"
+        },
+        {
+          "name": "cohort single entry",
+          "url": "https://playground.rd-connect.eu/beacon2/api/cohorts/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "analysis related with a single entry of cohort",
+          "url": "https://playground.rd-connect.eu/beacon2/api/cohorts/_id_/analyses",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "genomicVariant related with a single entry of cohort",
+          "url": "https://playground.rd-connect.eu/beacon2/api/cohorts/_id_/g_variants",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "run related with a single entry of cohort",
+          "url": "https://playground.rd-connect.eu/beacon2/api/cohorts/_id_/runs",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "biosample related with a single entry of cohort",
+          "url": "https://playground.rd-connect.eu/beacon2/api/cohorts/_id_/biosamples",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "individual related with a single entry of cohort",
+          "url": "https://playground.rd-connect.eu/beacon2/api/cohorts/_id_/individuals",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        }
+      ],
+      "run": [
+        {
+          "name": "run all entries",
+          "url": "https://playground.rd-connect.eu/beacon2/api/runs",
+          "valid": null,
+          "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/runs did not respond"
+        },
+        {
+          "name": "run single entry",
+          "url": "https://playground.rd-connect.eu/beacon2/api/runs/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "analysis related with a single entry of run",
+          "url": "https://playground.rd-connect.eu/beacon2/api/runs/_id_/analyses",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "genomicVariant related with a single entry of run",
+          "url": "https://playground.rd-connect.eu/beacon2/api/runs/_id_/g_variants",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        }
+      ],
+      "individual": [
+        {
+          "name": "individual all entries",
+          "url": "https://playground.rd-connect.eu/beacon2/api/individuals",
+          "valid": false,
+          "error": "No resultsSets property in the response"
+        },
+        {
+          "name": "individual single entry",
+          "url": "https://playground.rd-connect.eu/beacon2/api/individuals/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "analysis related with a single entry of individual",
+          "url": "https://playground.rd-connect.eu/beacon2/api/individuals/_id_/analyses",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "run related with a single entry of individual",
+          "url": "https://playground.rd-connect.eu/beacon2/api/individuals/_id_/runs",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "biosample related with a single entry of individual",
+          "url": "https://playground.rd-connect.eu/beacon2/api/individuals/_id_/biosamples",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "genomicVariant related with a single entry of individual",
+          "url": "https://playground.rd-connect.eu/beacon2/api/individuals/_id_/g_variants",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        }
+      ],
+      "analysis": [
+        {
+          "name": "analysis all entries",
+          "url": "https://playground.rd-connect.eu/beacon2/api/analyses",
+          "valid": null,
+          "error": "Endpoint https://playground.rd-connect.eu/beacon2/api/analyses did not respond"
+        },
+        {
+          "name": "analysis single entry",
+          "url": "https://playground.rd-connect.eu/beacon2/api/analyses/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "genomicVariant related with a single entry of analysis",
+          "url": "https://playground.rd-connect.eu/beacon2/api/analyses/_id_/g_variants",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        }
+      ],
+      "Configuration": [
+        {
+          "name": "Configuration",
+          "url": "https://playground.rd-connect.eu/beacon2/api/configuration",
+          "valid": false,
+          "error": "Response does not match the schema: \"development/v2.0.0-draft.4\" is not one of [\"DEV\",\"TEST\",\"PROD\"]\n"
+        }
+      ],
+      "EntryTypes": [
+        {
+          "name": "EntryTypes",
+          "url": "https://playground.rd-connect.eu/beacon2/api/entry_types",
+          "valid": true,
+          "error": null
+        }
+      ],
+      "BeaconMap": [
+        {
+          "name": "BeaconMap",
+          "url": "https://playground.rd-connect.eu/beacon2/api/map",
+          "valid": true,
+          "error": null
+        }
+      ]
     }
+  }
 ]
