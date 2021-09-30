@@ -3,50 +3,6 @@
     "name": "Progenetix Cancer Genomics Beacon+",
     "url": "https://progenetix.org/beacon/",
     "entities": {
-      "cohort": [
-        {
-          "name": "cohort all entries",
-          "url": "https://progenetix.org/beacon/cohorts",
-          "valid": null,
-          "error": "Endpoint https://progenetix.org/beacon/cohorts did not respond"
-        },
-        {
-          "name": "cohort single entry",
-          "url": "https://progenetix.org/beacon/cohorts/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "biosample related with a single entry of cohort",
-          "url": "https://progenetix.org/beacon/cohorts/_id_/biosamples",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "genomicVariant related with a single entry of cohort",
-          "url": "https://progenetix.org/beacon/cohorts/_id_/g_variants",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "individual related with a single entry of cohort",
-          "url": "https://progenetix.org/beacon/cohorts/_id_/individuals",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "run related with a single entry of cohort",
-          "url": "https://progenetix.org/beacon/cohorts/_id_/runs",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "analysis related with a single entry of cohort",
-          "url": "https://progenetix.org/beacon/cohorts/_id_/analyses",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        }
-      ],
       "BeaconMap": [
         {
           "name": "BeaconMap",
@@ -55,164 +11,98 @@
           "error": null
         }
       ],
-      "individual": [
+      "Bioinformatics analysis": [
         {
-          "name": "individual all entries",
-          "url": "https://progenetix.org/beacon/individuals",
-          "valid": false,
-          "error": "No resultsSets property in the response"
-        },
-        {
-          "name": "individual single entry",
-          "url": "https://progenetix.org/beacon/individuals/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "analysis related with a single entry of individual",
-          "url": "https://progenetix.org/beacon/individuals/_id_/analyses",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "biosample related with a single entry of individual",
-          "url": "https://progenetix.org/beacon/individuals/_id_/biosamples",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "run related with a single entry of individual",
-          "url": "https://progenetix.org/beacon/individuals/_id_/runs",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "genomicVariant related with a single entry of individual",
-          "url": "https://progenetix.org/beacon/individuals/_id_/g_variants",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        }
-      ],
-      "analysis": [
-        {
-          "name": "analysis all entries",
+          "name": "Bioinformatics analysis all entries",
           "url": "https://progenetix.org/beacon/analyses",
           "valid": false,
           "error": "No resultsSets property in the response"
         },
         {
-          "name": "analysis single entry",
+          "name": "Bioinformatics analysis single entry",
           "url": "https://progenetix.org/beacon/analyses/_id_",
           "valid": null,
           "error": "No ids were extracted from the main entity endpoint"
         },
         {
-          "name": "genomicVariant related with a single entry of analysis",
+          "name": "Genomic Variants related with a Bioinformatics analysis",
           "url": "https://progenetix.org/beacon/analyses/_id_/g_variants",
           "valid": null,
           "error": "No ids were extracted from the main entity endpoint"
         }
       ],
-      "genomicVariant": [
+      "Biological Sample": [
         {
-          "name": "genomicVariant all entries",
-          "url": "https://progenetix.org/beacon/g_variants",
-          "valid": false,
-          "error": "No resultsSets property in the response"
-        },
-        {
-          "name": "genomicVariant single entry",
-          "url": "https://progenetix.org/beacon/g_variants/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "biosample related with a single entry of genomicVariant",
-          "url": "https://progenetix.org/beacon/g_variants/_id_/biosamples",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "analysis related with a single entry of genomicVariant",
-          "url": "https://progenetix.org/beacon/g_variants/_id_/analyses",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "run related with a single entry of genomicVariant",
-          "url": "https://progenetix.org/beacon/g_variants/_id_/runs",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "individual related with a single entry of genomicVariant",
-          "url": "https://progenetix.org/beacon/g_variants/_id_/individuals",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        }
-      ],
-      "run": [
-        {
-          "name": "run all entries",
-          "url": "https://progenetix.org/beacon/runs",
-          "valid": null,
-          "error": "Endpoint https://progenetix.org/beacon/runs did not respond"
-        },
-        {
-          "name": "run single entry",
-          "url": "https://progenetix.org/beacon/runs/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "genomicVariant related with a single entry of run",
-          "url": "https://progenetix.org/beacon/runs/_id_/g_variants",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "analysis related with a single entry of run",
-          "url": "https://progenetix.org/beacon/runs/_id_/analyses",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        }
-      ],
-      "EntryTypes": [
-        {
-          "name": "EntryTypes",
-          "url": "https://progenetix.org/beacon/entry_types",
-          "valid": null,
-          "error": "Unexpected HTTP status code"
-        }
-      ],
-      "biosample": [
-        {
-          "name": "biosample all entries",
-          "url": "https://progenetix.org/beacon/biosamples",
-          "valid": false,
-          "error": "No resultsSets property in the response"
-        },
-        {
-          "name": "biosample single entry",
-          "url": "https://progenetix.org/beacon/biosamples/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "analysis related with a single entry of biosample",
+          "name": "Bioinformatics analysis related with a Biological Sample",
           "url": "https://progenetix.org/beacon/biosamples/_id_/analyses",
           "valid": null,
           "error": "No ids were extracted from the main entity endpoint"
         },
         {
-          "name": "genomicVariant related with a single entry of biosample",
+          "name": "Biological Sample all entries",
+          "url": "https://progenetix.org/beacon/biosamples",
+          "valid": false,
+          "error": "No resultsSets property in the response"
+        },
+        {
+          "name": "Biological Sample single entry",
+          "url": "https://progenetix.org/beacon/biosamples/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Genomic Variants related with a Biological Sample",
           "url": "https://progenetix.org/beacon/biosamples/_id_/g_variants",
           "valid": null,
           "error": "No ids were extracted from the main entity endpoint"
         },
         {
-          "name": "run related with a single entry of biosample",
+          "name": "Sequencing run related with a Biological Sample",
           "url": "https://progenetix.org/beacon/biosamples/_id_/runs",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        }
+      ],
+      "Cohort": [
+        {
+          "name": "Bioinformatics analysis related with a Cohort",
+          "url": "https://progenetix.org/beacon/cohorts/_id_/analyses",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Biological Sample related with a Cohort",
+          "url": "https://progenetix.org/beacon/cohorts/_id_/biosamples",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Cohort all entries",
+          "url": "https://progenetix.org/beacon/cohorts",
+          "valid": false,
+          "error": "Bad response format (JSON could not be parsed)"
+        },
+        {
+          "name": "Cohort single entry",
+          "url": "https://progenetix.org/beacon/cohorts/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Genomic Variants related with a Cohort",
+          "url": "https://progenetix.org/beacon/cohorts/_id_/g_variants",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Individual related with a Cohort",
+          "url": "https://progenetix.org/beacon/cohorts/_id_/individuals",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Sequencing run related with a Cohort",
+          "url": "https://progenetix.org/beacon/cohorts/_id_/runs",
           "valid": null,
           "error": "No ids were extracted from the main entity endpoint"
         }
@@ -225,46 +115,156 @@
           "error": null
         }
       ],
-      "dataset": [
+      "Dataset": [
         {
-          "name": "dataset all entries",
-          "url": "https://progenetix.org/beacon/datasets",
-          "valid": false,
-          "error": "No resultsSets property in the response"
-        },
-        {
-          "name": "dataset single entry",
-          "url": "https://progenetix.org/beacon/datasets/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "biosample related with a single entry of dataset",
-          "url": "https://progenetix.org/beacon/datasets/_id_/biosamples",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "analysis related with a single entry of dataset",
+          "name": "Bioinformatics analysis related with a Dataset",
           "url": "https://progenetix.org/beacon/datasets/_id_/analyses",
           "valid": null,
           "error": "No ids were extracted from the main entity endpoint"
         },
         {
-          "name": "genomicVariant related with a single entry of dataset",
+          "name": "Biological Sample related with a Dataset",
+          "url": "https://progenetix.org/beacon/datasets/_id_/biosamples",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Dataset all entries",
+          "url": "https://progenetix.org/beacon/datasets",
+          "valid": false,
+          "error": "No resultsSets property in the response"
+        },
+        {
+          "name": "Dataset single entry",
+          "url": "https://progenetix.org/beacon/datasets/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Genomic Variants related with a Dataset",
           "url": "https://progenetix.org/beacon/datasets/_id_/g_variants",
           "valid": null,
           "error": "No ids were extracted from the main entity endpoint"
         },
         {
-          "name": "individual related with a single entry of dataset",
+          "name": "Individual related with a Dataset",
           "url": "https://progenetix.org/beacon/datasets/_id_/individuals",
           "valid": null,
           "error": "No ids were extracted from the main entity endpoint"
         },
         {
-          "name": "run related with a single entry of dataset",
+          "name": "Sequencing run related with a Dataset",
           "url": "https://progenetix.org/beacon/datasets/_id_/runs",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        }
+      ],
+      "EntryTypes": [
+        {
+          "name": "EntryTypes",
+          "url": "https://progenetix.org/beacon/entry_types",
+          "valid": null,
+          "error": "Bad json"
+        }
+      ],
+      "Genomic Variants": [
+        {
+          "name": "Bioinformatics analysis related with a Genomic Variants",
+          "url": "https://progenetix.org/beacon/g_variants/_id_/analyses",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Biological Sample related with a Genomic Variants",
+          "url": "https://progenetix.org/beacon/g_variants/_id_/biosamples",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Genomic Variants all entries",
+          "url": "https://progenetix.org/beacon/g_variants",
+          "valid": false,
+          "error": "No resultsSets property in the response"
+        },
+        {
+          "name": "Genomic Variants single entry",
+          "url": "https://progenetix.org/beacon/g_variants/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Individual related with a Genomic Variants",
+          "url": "https://progenetix.org/beacon/g_variants/_id_/individuals",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Sequencing run related with a Genomic Variants",
+          "url": "https://progenetix.org/beacon/g_variants/_id_/runs",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        }
+      ],
+      "Individual": [
+        {
+          "name": "Bioinformatics analysis related with a Individual",
+          "url": "https://progenetix.org/beacon/individuals/_id_/analyses",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Biological Sample related with a Individual",
+          "url": "https://progenetix.org/beacon/individuals/_id_/biosamples",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Genomic Variants related with a Individual",
+          "url": "https://progenetix.org/beacon/individuals/_id_/g_variants",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Individual all entries",
+          "url": "https://progenetix.org/beacon/individuals",
+          "valid": false,
+          "error": "No resultsSets property in the response"
+        },
+        {
+          "name": "Individual single entry",
+          "url": "https://progenetix.org/beacon/individuals/_id_",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Sequencing run related with a Individual",
+          "url": "https://progenetix.org/beacon/individuals/_id_/runs",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        }
+      ],
+      "Sequencing run": [
+        {
+          "name": "Bioinformatics analysis related with a Sequencing run",
+          "url": "https://progenetix.org/beacon/runs/_id_/analyses",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Genomic Variants related with a Sequencing run",
+          "url": "https://progenetix.org/beacon/runs/_id_/g_variants",
+          "valid": null,
+          "error": "No ids were extracted from the main entity endpoint"
+        },
+        {
+          "name": "Sequencing run all entries",
+          "url": "https://progenetix.org/beacon/runs",
+          "valid": false,
+          "error": "Bad response format (JSON could not be parsed)"
+        },
+        {
+          "name": "Sequencing run single entry",
+          "url": "https://progenetix.org/beacon/runs/_id_",
           "valid": null,
           "error": "No ids were extracted from the main entity endpoint"
         }
