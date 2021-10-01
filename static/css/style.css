@@ -481,7 +481,7 @@ body main div#cards-container .card ul.entities li details summary {
 }
 /* line 412, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details span {
-  width: 70%;
+  width: 60%;
   background: #DAF0F9;
   height: 5px;
   border-radius: 10px;
