@@ -1,274 +1,273 @@
-[
-  {
-    "name": "Unknown name (bad /info)",
-    "url": "https://beacon-giab-demo.ega-archive.org/api",
-    "entities": {
-      "BeaconMap": [
-        {
-          "name": "BeaconMap",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/map",
-          "valid": null,
-          "error": "Bad json"
-        }
-      ],
-      "Bioinformatics analysis": [
-        {
-          "name": "Bioinformatics analysis all entries",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/analyses",
-          "valid": false,
-          "error": "Bad response format (JSON could not be parsed)"
-        },
-        {
-          "name": "Bioinformatics analysis single entry",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/analyses/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Genomic Variants related with a Bioinformatics analysis",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/analyses/_id_/g_variants",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        }
-      ],
-      "Biological Sample": [
-        {
-          "name": "Bioinformatics analysis related with a Biological Sample",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples/_id_/analyses",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Biological Sample all entries",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples",
-          "valid": false,
-          "error": "Bad response format (JSON could not be parsed)"
-        },
-        {
-          "name": "Biological Sample single entry",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Genomic Variants related with a Biological Sample",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples/_id_/g_variants",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Sequencing run related with a Biological Sample",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples/_id_/runs",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        }
-      ],
-      "Cohort": [
-        {
-          "name": "Bioinformatics analysis related with a Cohort",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_/analyses",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Biological Sample related with a Cohort",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_/biosamples",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Cohort all entries",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts",
-          "valid": false,
-          "error": "Bad response format (JSON could not be parsed)"
-        },
-        {
-          "name": "Cohort single entry",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Genomic Variants related with a Cohort",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_/g_variants",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Individual related with a Cohort",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_/individuals",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Sequencing run related with a Cohort",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_/runs",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        }
-      ],
-      "Configuration": [
-        {
-          "name": "Configuration",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/configuration",
-          "valid": null,
-          "error": "Bad json"
-        }
-      ],
-      "Dataset": [
-        {
-          "name": "Bioinformatics analysis related with a Dataset",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_/analyses",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Biological Sample related with a Dataset",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_/biosamples",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Dataset all entries",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/datasets",
-          "valid": false,
-          "error": "No resultsSets property in the response"
-        },
-        {
-          "name": "Dataset single entry",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Genomic Variants related with a Dataset",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_/g_variants",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Individual related with a Dataset",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_/individuals",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Sequencing run related with a Dataset",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_/runs",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        }
-      ],
-      "EntryTypes": [
-        {
-          "name": "EntryTypes",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/entry_types",
-          "valid": null,
-          "error": "Bad json"
-        }
-      ],
-      "Genomic Variants": [
-        {
-          "name": "Bioinformatics analysis related with a Genomic Variants",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants/_id_/analyses",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Biological Sample related with a Genomic Variants",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants/_id_/biosamples",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Genomic Variants all entries",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants",
-          "valid": false,
-          "error": "Bad response format (JSON could not be parsed)"
-        },
-        {
-          "name": "Genomic Variants single entry",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Individual related with a Genomic Variants",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants/_id_/individuals",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Sequencing run related with a Genomic Variants",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants/_id_/runs",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        }
-      ],
-      "Individual": [
-        {
-          "name": "Bioinformatics analysis related with a Individual",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/individuals/_id_/analyses",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Biological Sample related with a Individual",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/individuals/_id_/biosamples",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Genomic Variants related with a Individual",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/individuals/_id_/g_variants",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Individual all entries",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/individuals",
-          "valid": false,
-          "error": "Bad response format (JSON could not be parsed)"
-        },
-        {
-          "name": "Individual single entry",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/individuals/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Sequencing run related with a Individual",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/individuals/_id_/runs",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        }
-      ],
-      "Sequencing run": [
-        {
-          "name": "Bioinformatics analysis related with a Sequencing run",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/runs/_id_/analyses",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Genomic Variants related with a Sequencing run",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/runs/_id_/g_variants",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        },
-        {
-          "name": "Sequencing run all entries",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/runs",
-          "valid": false,
-          "error": "Bad response format (JSON could not be parsed)"
-        },
-        {
-          "name": "Sequencing run single entry",
-          "url": "https://beacon-giab-demo.ega-archive.org/api/runs/_id_",
-          "valid": null,
-          "error": "No ids were extracted from the main entity endpoint"
-        }
-      ]
-    }
+{
+  "name": "Unknown name (bad /info)",
+  "url": "https://beacon-giab-demo.ega-archive.org/api",
+  "last_updated": "2021-10-04T14:01:18.289339",
+  "entities": {
+    "BeaconMap": [
+      {
+        "name": "BeaconMap",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/map",
+        "valid": null,
+        "error": "Bad json"
+      }
+    ],
+    "Bioinformatics analysis": [
+      {
+        "name": "Bioinformatics analysis all entries",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/analyses",
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
+      },
+      {
+        "name": "Bioinformatics analysis single entry",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/analyses/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Bioinformatics analysis",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/analyses/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "Biological Sample": [
+      {
+        "name": "Bioinformatics analysis related with a Biological Sample",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Biological Sample all entries",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples",
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
+      },
+      {
+        "name": "Biological Sample single entry",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Biological Sample",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run related with a Biological Sample",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/biosamples/_id_/runs",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "Cohort": [
+      {
+        "name": "Bioinformatics analysis related with a Cohort",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Biological Sample related with a Cohort",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_/biosamples",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Cohort all entries",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts",
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
+      },
+      {
+        "name": "Cohort single entry",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Cohort",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Individual related with a Cohort",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_/individuals",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run related with a Cohort",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/cohorts/_id_/runs",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "Configuration": [
+      {
+        "name": "Configuration",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/configuration",
+        "valid": null,
+        "error": "Bad json"
+      }
+    ],
+    "Dataset": [
+      {
+        "name": "Bioinformatics analysis related with a Dataset",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Biological Sample related with a Dataset",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_/biosamples",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Dataset all entries",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/datasets",
+        "valid": false,
+        "error": "No resultsSets property in the response"
+      },
+      {
+        "name": "Dataset single entry",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Dataset",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Individual related with a Dataset",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_/individuals",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run related with a Dataset",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/datasets/_id_/runs",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "EntryTypes": [
+      {
+        "name": "EntryTypes",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/entry_types",
+        "valid": null,
+        "error": "Bad json"
+      }
+    ],
+    "Genomic Variants": [
+      {
+        "name": "Bioinformatics analysis related with a Genomic Variants",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Biological Sample related with a Genomic Variants",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants/_id_/biosamples",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants all entries",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants",
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
+      },
+      {
+        "name": "Genomic Variants single entry",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Individual related with a Genomic Variants",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants/_id_/individuals",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run related with a Genomic Variants",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/g_variants/_id_/runs",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "Individual": [
+      {
+        "name": "Bioinformatics analysis related with a Individual",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/individuals/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Biological Sample related with a Individual",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/individuals/_id_/biosamples",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Individual",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/individuals/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Individual all entries",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/individuals",
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
+      },
+      {
+        "name": "Individual single entry",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/individuals/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run related with a Individual",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/individuals/_id_/runs",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "Sequencing run": [
+      {
+        "name": "Bioinformatics analysis related with a Sequencing run",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/runs/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Sequencing run",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/runs/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run all entries",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/runs",
+        "valid": false,
+        "error": "Bad response format (JSON could not be parsed)"
+      },
+      {
+        "name": "Sequencing run single entry",
+        "url": "https://beacon-giab-demo.ega-archive.org/api/runs/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ]
   }
-]
+}

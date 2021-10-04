@@ -66,6 +66,29 @@ body {
         flex-flow: column nowrap;
         justify-content: center;
 
+        [data-tooltip] {
+          cursor: help;
+          position: relative;
+
+          &:hover:after {
+            content: attr(data-tooltip);
+            position: absolute;
+            background: $verydarkgrey;
+            padding: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            color: white;
+            white-space: pre;
+            left: 15px;
+            top: -25px;
+            z-index: 10000;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 12px;
+            font-weight: normal;
+          }
+        }
+
         > h1 {
             color: lighten($darkgrey, 20%) ;
             font-size: 24px;
@@ -274,6 +297,21 @@ body {
                   display: flex;
                   flex-flow: row nowrap;
                   align-items: stretch;
+                  position: relative;
+
+                  >i {
+                    position: absolute;
+                    right: 7px;
+                    bottom: 7px;
+
+                    &[data-tooltip]:hover:after {
+                      right: 15px;
+                      left: auto;
+                      border-bottom-right-radius: 0;
+                      border-bottom-left-radius: 5px;
+                    }
+                  }
+
                 }
 
                 section.left-part {
@@ -401,12 +439,15 @@ body {
                         cursor: pointer;
                         font-size: 90%;
                         padding: 10px 15px;
-                        color: $darkgrey;
                         display: flex;
                         color: white;
                         white-space: nowrap;
                         align-items: center;
                         justify-content: space-between;
+
+                        &::-webkit-details-marker {
+                          display: none;
+                        }
                       }
 
                       span {
@@ -446,7 +487,7 @@ body {
                       ul {
                         display: flex;
                         flex-wrap: wrap;
-                        padding: 5px 20px 15px 20px;
+                        padding: 0 15px 10px 15px;
                         position: relative;
                         color: white;
 
@@ -461,23 +502,12 @@ body {
                           padding: 0 7px;
                           line-height: 16px;
 
-                          &[data-tooltip] {
-                            cursor: help;
+                          &:nth-child(3n+1) {
+                            padding-left: 0;
+                          }
 
-                            &:hover:before {
-                              content: attr(data-tooltip);
-                              position: absolute;
-                              background: $verydarkgrey;
-                              padding: 5px;
-                              border-top-left-radius: 5px;
-                              border-top-right-radius: 5px;
-                              border-bottom-right-radius: 5px;
-                              color: white;
-                              white-space: pre;
-                              left: 20px;
-                              top: -25px;
-                              z-index: 10000;
-                            }
+                          &:nth-child(3n) {
+                            padding-right: 0;
                           }
 
                           i {

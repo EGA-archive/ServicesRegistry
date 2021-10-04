@@ -8,6 +8,8 @@ from pathlib import Path
 import asyncio
 from urllib.parse import quote
 import json
+from datetime import datetime
+from humanize import naturaltime
 
 import yaml
 from aiohttp import web
@@ -79,7 +81,10 @@ def explore_service(name, url, order, info, error):
     try:
         with open(entities_json_file) as fh:
             entities = json.load(fh)
-            d["entities"] = entities[0]['entities']
+            now = datetime.now()
+            last_updated = datetime.strptime(entities['last_updated'], '%Y-%m-%dT%H:%M:%S.%f')
+            d["last_updated"] = naturaltime(now-last_updated)
+            d["entities"] = entities['entities']
             d["entities_count"] = {}
             for group_name, entity in d["entities"].items():
                 count_all = len(entity)

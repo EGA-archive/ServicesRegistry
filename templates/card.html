@@ -1,6 +1,9 @@
 <!-- CARD -->
 <div class="card" style="--order:{{ service.order }}">
   <div>
+    {% if service.last_updated %}
+      <i class="fas fa-history" data-tooltip="Last updated {{ service.last_updated }}"></i>
+    {% endif %}
     <section class="left-part">
       <img src="{{ service.logo_url }}" title="{{ service.name }} Logo" />
       <ul>
