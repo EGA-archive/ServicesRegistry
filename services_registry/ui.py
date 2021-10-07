@@ -67,6 +67,7 @@ def explore_service(name, url, order, info, error):
     beacon_id = response.get('id') or response.get('beaconId')
     entities_json_file = f'static/entities/{beacon_id}.json';
     d = {
+        "beaconId": beacon_id,
         "title": name,
         "organization_name": org.get("name"),
         "name": response.get("name"),

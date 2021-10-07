@@ -90,7 +90,6 @@ body header {
   min-width: 80%;
   height: 80px;
   background-color: white;
-  position: fixed;
   top: 0;
   z-index: 98;
   display: flex;
@@ -102,24 +101,24 @@ body header {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   transition: 0.5s;
 }
-/* line 31, ../sass/_main.scss */
+/* line 30, ../sass/_main.scss */
 body header.small {
   height: 55px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }
-/* line 33, ../sass/_main.scss */
+/* line 32, ../sass/_main.scss */
 body header.small img {
   height: 30px;
   padding: 5px 0;
 }
-/* line 37, ../sass/_main.scss */
+/* line 36, ../sass/_main.scss */
 body header img {
   height: 50px;
   padding: 20px 0;
   transition: 0.5s;
   margin: 0 10px;
 }
-/* line 44, ../sass/_main.scss */
+/* line 43, ../sass/_main.scss */
 body header button {
   background-color: #1070B7;
   padding: 6px 12px;
@@ -132,24 +131,61 @@ body header button {
   margin: 10px 30px 10px 0;
   transition: ease .5s;
 }
-/* line 56, ../sass/_main.scss */
+/* line 55, ../sass/_main.scss */
 body header button:hover {
   background-color: #74C5EB;
 }
-/* line 62, ../sass/_main.scss */
+/* line 61, ../sass/_main.scss */
 body main {
-  width: 85%;
-  margin: 80px auto 80px;
+  margin: 0 auto 80px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
 }
-/* line 69, ../sass/_main.scss */
+/* line 67, ../sass/_main.scss */
+body main nav {
+  display: flex;
+  background: #F5F9FA;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1576px) {
+  /* line 67, ../sass/_main.scss */
+  body main nav {
+    display: none;
+  }
+}
+/* line 78, ../sass/_main.scss */
+body main nav strong {
+  font-weight: bold;
+  margin-right: 5px;
+}
+/* line 82, ../sass/_main.scss */
+body main nav a {
+  display: flex;
+  order: var(--order);
+  border-radius: 5px;
+  background: white;
+  padding: 7px;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 0 5px;
+}
+/* line 91, ../sass/_main.scss */
+body main nav a img {
+  height: 30px;
+}
+/* line 94, ../sass/_main.scss */
+body main nav a:hover {
+  opacity: .5;
+}
+/* line 100, ../sass/_main.scss */
 body main [data-tooltip] {
   cursor: help;
   position: relative;
 }
-/* line 73, ../sass/_main.scss */
+/* line 104, ../sass/_main.scss */
 body main [data-tooltip]:hover:after {
   content: attr(data-tooltip);
   position: absolute;
@@ -167,7 +203,7 @@ body main [data-tooltip]:hover:after {
   font-size: 12px;
   font-weight: normal;
 }
-/* line 92, ../sass/_main.scss */
+/* line 123, ../sass/_main.scss */
 body main > h1 {
   color: #a5a8aa;
   font-size: 24px;
@@ -175,7 +211,7 @@ body main > h1 {
   display: inline-block;
   margin: 2em auto;
 }
-/* line 102, ../sass/_main.scss */
+/* line 133, ../sass/_main.scss */
 body main > details summary {
   font-size: 70%;
   text-decoration: underline;
@@ -183,13 +219,13 @@ body main > details summary {
   cursor: pointer;
   text-align: right;
 }
-/* line 111, ../sass/_main.scss */
+/* line 142, ../sass/_main.scss */
 body main form {
   margin: 10px auto 0;
   width: 100%;
   outline: none;
 }
-/* line 116, ../sass/_main.scss */
+/* line 147, ../sass/_main.scss */
 body main form > div:first-child {
   height: 40px;
   background-color: white;
@@ -199,11 +235,11 @@ body main form > div:first-child {
   justify-content: space-between;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }
-/* line 126, ../sass/_main.scss */
+/* line 157, ../sass/_main.scss */
 body main form:focus-within > div:first-child {
   box-shadow: 0 0 10px #74C5EB;
 }
-/* line 130, ../sass/_main.scss */
+/* line 161, ../sass/_main.scss */
 body main form input {
   background-color: transparent;
   border: none;
@@ -213,11 +249,11 @@ body main form input {
   font-family: 'Open Sans', sans-serif;
   color: #717578;
 }
-/* line 140, ../sass/_main.scss */
+/* line 171, ../sass/_main.scss */
 body main form input:focus {
   outline: none;
 }
-/* line 145, ../sass/_main.scss */
+/* line 176, ../sass/_main.scss */
 body main form button {
   background-color: transparent;
   border: none;
@@ -226,36 +262,36 @@ body main form button {
   color: #717578;
   transition: ease .5s;
 }
-/* line 155, ../sass/_main.scss */
+/* line 186, ../sass/_main.scss */
 body main form button:hover {
   color: #74C5EB;
 }
-/* line 161, ../sass/_main.scss */
+/* line 192, ../sass/_main.scss */
 body main div#examples {
   font-size: 0.7em;
   display: flex;
   flex-flow: row nowrap;
   padding-top: 10px;
 }
-/* line 167, ../sass/_main.scss */
+/* line 198, ../sass/_main.scss */
 body main div#examples section {
   display: flex;
   flex-flow: column nowrap;
   margin: 0.5em;
   width: 16%;
 }
-/* line 173, ../sass/_main.scss */
+/* line 204, ../sass/_main.scss */
 body main div#examples section::before {
   content: attr(data-heading);
   display: inline-block;
   margin: 0.5em;
   font-size: 1.1em;
 }
-/* line 181, ../sass/_main.scss */
+/* line 212, ../sass/_main.scss */
 body main div#examples form {
   margin: 0;
 }
-/* line 185, ../sass/_main.scss */
+/* line 216, ../sass/_main.scss */
 body main div#examples a,
 body main div#examples form button,
 body main div#examples form input[type=submit] {
@@ -276,39 +312,39 @@ body main div#examples form input[type=submit] {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-/* line 206, ../sass/_main.scss */
+/* line 237, ../sass/_main.scss */
 body main div#examples a:active,
 body main div#examples form button:active,
 body main div#examples form input[type=submit]:active {
   position: relative;
   top: 1px;
 }
-/* line 207, ../sass/_main.scss */
+/* line 238, ../sass/_main.scss */
 body main div#examples a:hover,
 body main div#examples form button:hover,
 body main div#examples form input[type=submit]:hover {
   background-color: #8686CA;
   white-space: break-spaces;
 }
-/* line 211, ../sass/_main.scss */
+/* line 242, ../sass/_main.scss */
 body main div#examples a:focus,
 body main div#examples form button:focus,
 body main div#examples form input[type=submit]:focus {
   outline: none;
 }
-/* line 230, ../sass/_main.scss */
+/* line 261, ../sass/_main.scss */
 body main ul li {
   color: #DAF0F9;
 }
-/* line 233, ../sass/_main.scss */
+/* line 264, ../sass/_main.scss */
 body main ul li.true {
   color: #7ed321 !important;
 }
-/* line 237, ../sass/_main.scss */
+/* line 268, ../sass/_main.scss */
 body main ul li.false {
   color: #ff7979 !important;
 }
-/* line 243, ../sass/_main.scss */
+/* line 274, ../sass/_main.scss */
 body main ul.legend {
   display: flex;
   width: 100%;
@@ -319,7 +355,7 @@ body main ul.legend {
   background: #F5F9FA;
   z-index: 1000;
 }
-/* line 253, ../sass/_main.scss */
+/* line 284, ../sass/_main.scss */
 body main ul.legend li {
   color: #717578;
   white-space: nowrap;
@@ -328,18 +364,18 @@ body main ul.legend li {
   width: auto;
   margin-right: 20px;
 }
-/* line 261, ../sass/_main.scss */
+/* line 292, ../sass/_main.scss */
 body main ul.legend li:last-child {
   margin-right: 0;
 }
-/* line 267, ../sass/_main.scss */
+/* line 298, ../sass/_main.scss */
 body main div#cards-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin: 0 auto 0;
 }
-/* line 274, ../sass/_main.scss */
+/* line 305, ../sass/_main.scss */
 body main div#cards-container .card {
   width: 475px;
   position: relative;
@@ -352,33 +388,33 @@ body main div#cards-container .card {
   margin: 25px;
 }
 @media screen and (max-width: 550px) {
-  /* line 274, ../sass/_main.scss */
+  /* line 305, ../sass/_main.scss */
   body main div#cards-container .card {
     width: 350px;
     margin: 25px auto;
   }
 }
-/* line 296, ../sass/_main.scss */
+/* line 327, ../sass/_main.scss */
 body main div#cards-container .card div {
   display: flex;
   flex-flow: row nowrap;
   align-items: stretch;
   position: relative;
 }
-/* line 302, ../sass/_main.scss */
+/* line 333, ../sass/_main.scss */
 body main div#cards-container .card div > i {
   position: absolute;
   right: 7px;
   bottom: 7px;
 }
-/* line 307, ../sass/_main.scss */
+/* line 338, ../sass/_main.scss */
 body main div#cards-container .card div > i[data-tooltip]:hover:after {
   right: 15px;
   left: auto;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 5px;
 }
-/* line 317, ../sass/_main.scss */
+/* line 348, ../sass/_main.scss */
 body main div#cards-container .card section.left-part {
   padding: 20px;
   display: flex;
@@ -387,64 +423,64 @@ body main div#cards-container .card section.left-part {
   align-items: center;
   min-width: 140px;
 }
-/* line 324, ../sass/_main.scss */
+/* line 355, ../sass/_main.scss */
 body main div#cards-container .card section.left-part img {
   height: 40px;
 }
-/* line 327, ../sass/_main.scss */
+/* line 358, ../sass/_main.scss */
 body main div#cards-container .card section.left-part img.white-img {
   -webkit-filter: drop-shadow(1px 1px 4px #222);
   filter: drop-shadow(1px 1px 5px rgba(34, 34, 34, 0.5));
 }
-/* line 332, ../sass/_main.scss */
+/* line 363, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul {
   font-size: 12px;
   margin-top: 10px;
 }
-/* line 335, ../sass/_main.scss */
+/* line 366, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li {
   list-style: none;
   padding: 8px;
   display: flex;
   align-items: baseline;
 }
-/* line 341, ../sass/_main.scss */
+/* line 372, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li i {
   margin-right: 3px;
 }
-/* line 345, ../sass/_main.scss */
+/* line 376, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li a {
   text-decoration: none;
   color: #717578;
   transition: ease .5s;
 }
-/* line 350, ../sass/_main.scss */
+/* line 381, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li a:hover {
   color: #74C5EB;
 }
-/* line 354, ../sass/_main.scss */
+/* line 385, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li progress {
   -webkit-appearance: none;
   appearance: none;
   width: 70px;
   height: 8px;
 }
-/* line 360, ../sass/_main.scss */
+/* line 391, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li progress[value]::-webkit-progress-value {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   background: #7ed321;
 }
-/* line 365, ../sass/_main.scss */
+/* line 396, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li progress[value]::-webkit-progress-bar {
   border-radius: 10px;
   background: #ff7979;
 }
-/* line 373, ../sass/_main.scss */
+/* line 404, ../sass/_main.scss */
 body main div#cards-container .card section.left-part + section.right-part {
   border-left: 1px solid #74C5EB;
 }
-/* line 377, ../sass/_main.scss */
+/* line 408, ../sass/_main.scss */
 body main div#cards-container .card section.right-part {
   margin: 20px 0;
   padding: 0 20px;
@@ -453,26 +489,26 @@ body main div#cards-container .card section.right-part {
   justify-content: space-around;
   align-items: flex-start;
 }
-/* line 385, ../sass/_main.scss */
+/* line 416, ../sass/_main.scss */
 body main div#cards-container .card section.right-part h1 {
   font-size: 110%;
   line-height: initial;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
-/* line 391, ../sass/_main.scss */
+/* line 422, ../sass/_main.scss */
 body main div#cards-container .card section.right-part h2, body main div#cards-container .card section.right-part p {
   font-size: 80%;
   line-height: initial;
 }
-/* line 396, ../sass/_main.scss */
+/* line 427, ../sass/_main.scss */
 body main div#cards-container .card section.right-part p {
   overflow: hidden;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   display: -webkit-box;
 }
-/* line 404, ../sass/_main.scss */
+/* line 435, ../sass/_main.scss */
 body main div#cards-container .card ul.entities {
   display: flex;
   flex-wrap: wrap;
@@ -483,28 +519,28 @@ body main div#cards-container .card ul.entities {
   border-bottom-right-radius: 10px;
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
 }
-/* line 415, ../sass/_main.scss */
+/* line 446, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li {
   width: 100%;
 }
-/* line 419, ../sass/_main.scss */
+/* line 450, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li:first-child details {
   padding-top: 5px;
 }
-/* line 425, ../sass/_main.scss */
+/* line 456, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li:last-child details {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding-bottom: 5px;
 }
-/* line 432, ../sass/_main.scss */
+/* line 463, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details {
   position: relative;
   width: auto;
   z-index: 10;
   height: auto;
 }
-/* line 438, ../sass/_main.scss */
+/* line 469, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details summary {
   cursor: pointer;
   font-size: 90%;
@@ -515,11 +551,11 @@ body main div#cards-container .card ul.entities li details summary {
   align-items: center;
   justify-content: space-between;
 }
-/* line 448, ../sass/_main.scss */
+/* line 479, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details summary::-webkit-details-marker {
   display: none;
 }
-/* line 453, ../sass/_main.scss */
+/* line 484, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details span {
   width: 60%;
   background: #DAF0F9;
@@ -528,7 +564,7 @@ body main div#cards-container .card ul.entities li details span {
   position: relative;
   overflow: hidden;
 }
-/* line 460, ../sass/_main.scss */
+/* line 491, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details span:before {
   content: '';
   position: absolute;
@@ -539,7 +575,7 @@ body main div#cards-container .card ul.entities li details span:before {
   display: block;
   background: #7ed321;
 }
-/* line 470, ../sass/_main.scss */
+/* line 501, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details span:after {
   content: '';
   position: absolute;
@@ -550,12 +586,12 @@ body main div#cards-container .card ul.entities li details span:after {
   display: block;
   background: #ff7979;
 }
-/* line 482, ../sass/_main.scss */
+/* line 513, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details[open] {
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
   background: #275F90;
 }
-/* line 487, ../sass/_main.scss */
+/* line 518, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul {
   display: flex;
   flex-wrap: wrap;
@@ -563,7 +599,7 @@ body main div#cards-container .card ul.entities li details ul {
   position: relative;
   color: white;
 }
-/* line 494, ../sass/_main.scss */
+/* line 525, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li {
   width: 33.3%;
   flex-basis: 33.3%;
@@ -575,33 +611,33 @@ body main div#cards-container .card ul.entities li details ul li {
   padding: 0 7px;
   line-height: 16px;
 }
-/* line 505, ../sass/_main.scss */
+/* line 536, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li:nth-child(3n+1) {
   padding-left: 0;
 }
-/* line 509, ../sass/_main.scss */
+/* line 540, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li:nth-child(3n) {
   padding-right: 0;
 }
-/* line 513, ../sass/_main.scss */
+/* line 544, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li i {
   margin: 2px 5px 0 0;
 }
-/* line 517, ../sass/_main.scss */
+/* line 548, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li a {
   margin-left: 5px;
 }
-/* line 590, ../sass/_main.scss */
+/* line 621, ../sass/_main.scss */
 body a {
   color: #74C5EB;
   text-decoration: underline;
   transition: ease .5s;
 }
-/* line 594, ../sass/_main.scss */
+/* line 625, ../sass/_main.scss */
 body a:hover {
   color: #1070B7;
 }
-/* line 597, ../sass/_main.scss */
+/* line 628, ../sass/_main.scss */
 body footer {
   width: 100%;
   background-color: white;
@@ -614,7 +650,7 @@ body footer {
   align-items: center;
   justify-content: center;
 }
-/* line 611, ../sass/_main.scss */
+/* line 642, ../sass/_main.scss */
 body footer p {
   line-height: 15px;
   font-weight: 300;
@@ -622,48 +658,48 @@ body footer p {
   transition: ease all 0.5s;
 }
 @media screen and (max-width: 580px) {
-  /* line 611, ../sass/_main.scss */
+  /* line 642, ../sass/_main.scss */
   body footer p {
     font-size: 9px;
     line-height: 10px;
   }
 }
-/* line 624, ../sass/_main.scss */
+/* line 655, ../sass/_main.scss */
 body footer a {
   color: #275F90;
 }
-/* line 626, ../sass/_main.scss */
+/* line 657, ../sass/_main.scss */
 body footer a:hover {
   color: #275F90;
   text-decoration: none;
 }
-/* line 632, ../sass/_main.scss */
+/* line 663, ../sass/_main.scss */
 body footer section#EGA {
   margin-left: 30px;
   font-size: 12px;
 }
-/* line 635, ../sass/_main.scss */
+/* line 666, ../sass/_main.scss */
 body footer section#EGA a {
   color: white;
 }
-/* line 637, ../sass/_main.scss */
+/* line 668, ../sass/_main.scss */
 body footer section#EGA a:hover {
   color: #74C5EB;
 }
-/* line 640, ../sass/_main.scss */
+/* line 671, ../sass/_main.scss */
 body footer section#EU {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: right;
 }
-/* line 646, ../sass/_main.scss */
+/* line 677, ../sass/_main.scss */
 body footer section#EU p {
   max-width: 400px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 652, ../sass/_main.scss */
+/* line 683, ../sass/_main.scss */
 body footer section#EU img {
   height: 30px;
   margin-right: 30px;

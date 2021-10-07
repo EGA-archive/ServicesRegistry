@@ -47,6 +47,19 @@
           <summary>Example Queries</summary>
           {% include 'examples.html' %}
         </details> -->
+        {% if services %}
+          <nav>
+            <strong>Beacons:</strong>
+            {% for service in services %}
+              {% if not service.error %}
+                <a href="#{{service.beaconId}}" style="--order:{{service.order}}" title="{{ service.title }}">
+                  <img src="{{ service.logo_url }}" title="{{ service.name }} Logo" />
+                </a>
+              {% endif %}
+              {# Couldn't contact: {{ service }} #}
+            {% endfor %}
+          </nav>
+        {% endif %}
 
         <div id="cards-container" data-cards="{{ services|length }}">
           {% for service in services %}

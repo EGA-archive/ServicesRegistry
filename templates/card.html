@@ -1,5 +1,5 @@
 <!-- CARD -->
-<div class="card" style="--order:{{ service.order }}">
+<div id="{{ service.beaconId }}" class="card" style="--order:{{ service.order }}">
   <div>
     {% if service.last_updated %}
       <i class="fas fa-history" data-tooltip="Last updated {{ service.last_updated }}"></i>

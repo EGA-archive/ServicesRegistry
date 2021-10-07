@@ -14,7 +14,6 @@ body {
         min-width: 80%;
         height: 80px;
         background-color: white;
-        position: fixed;
         top: 0;
         z-index: 98;
 
@@ -60,11 +59,43 @@ body {
     }
 
     main {
-        width: 85%;
-        margin: 80px auto 80px;
+        margin: 0 auto 80px;
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
+
+        nav {
+          display: flex;
+          background: $background;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+
+          @media screen and (min-width:1576px){
+              display: none;
+          }
+
+          strong {
+            font-weight: bold;
+            margin-right: 5px;
+          }
+          a {
+            display: flex;
+            order: var(--order);
+            border-radius: 5px;
+            background: white;
+            padding: 7px;
+            text-decoration: none;
+            font-size: 12px;
+            margin:0 5px;
+            img {
+              height: 30px;
+            }
+            &:hover {
+              opacity: .5;
+            }
+          }
+        }
 
         [data-tooltip] {
           cursor: help;
