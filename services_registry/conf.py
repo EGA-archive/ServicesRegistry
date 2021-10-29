@@ -16,7 +16,7 @@ services = {
 	'org.ega-archive.beacon-giab-demo': {
 		'name': 'EGA Beacon - Genome In A Bottle',
 		'address': 'https://beacon-giab-demo.ega-archive.org/api',
-		'order': '3'
+		'order': '1'
 	},
 	'org.progenetix.beacon': {
 		'name': 'Progenetix Cancer Genomics Beacon+',
@@ -26,7 +26,7 @@ services = {
 	'org.rd-connect.beacon': {
 		'name': 'Beacon @ RD-Connect',
 		'address': 'https://playground.rd-connect.eu/beacon2/api',
-		'order': '1'
+		'order': '3'
 	},
 	# 'org.ega-archive.beacon': {
 	# 	'name': 'Beacon Test Instance',
