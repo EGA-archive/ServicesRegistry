@@ -37,6 +37,14 @@ async def initialize(app):
     app['static_root_url'] = '/static'
     LOG.info("Initialization done.")
 
+def check_logo_exist(url):
+    if not url:
+        return False
+    r = httpx.get(url)
+    if r.status_code != 200:
+        return False
+    return True
+
 def check_logo(url):
     if not url:
         return getattr(conf, 'default_logo', '/static/img/no_logo.png')
@@ -76,6 +84,7 @@ def explore_service(name, url, order, info, error):
         "beacon_ui": response.get("welcomeUrl"),
         "beacon_api": url,
         "contact_us": org.get("contactUrl"),
+        "logo_exist": check_logo_exist(org.get("logoUrl")),
         "logo_url": check_logo(org.get("logoUrl")),
         "order": order
     }

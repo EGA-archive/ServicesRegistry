@@ -79,6 +79,7 @@ body {
             font-weight: bold;
             margin-right: 5px;
           }
+
           a {
             display: flex;
             order: var(--order);
@@ -88,11 +89,15 @@ body {
             text-decoration: none;
             font-size: 12px;
             margin:0 5px;
+            align-items: center;
+            font-weight: bold;
+            color: #717578;
             img {
               height: 30px;
             }
             &:hover {
               opacity: .5;
+              color: #717578;
             }
           }
         }

@@ -32,6 +32,11 @@ services = {
 		'name': 'CafeVariome beacon',
 		'address': 'https://www448.lamp.le.ac.uk/beacon/BeaconApi/info',
 		'order': '4'
+	},
+	'org.cafevariome.beaconv2': {
+		'name': 'Cafe Variome Beacon v2',
+		'address': 'https://beaconv2.cafevariome.org',
+		'order': '5'
 	}
 	# 'org.ega-archive.beacon': {
 	# 	'name': 'Beacon Test Instance',
