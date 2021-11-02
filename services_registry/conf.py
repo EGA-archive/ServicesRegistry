@@ -28,6 +28,11 @@ services = {
 		'address': 'https://playground.rd-connect.eu/beacon2/api',
 		'order': '3'
 	},
+	'uk.ac.le.lamp.www448': {
+		'name': 'CafeVariome beacon',
+		'address': 'https://www448.lamp.le.ac.uk/beacon/BeaconApi/info',
+		'order': '4'
+	}
 	# 'org.ega-archive.beacon': {
 	# 	'name': 'Beacon Test Instance',
 	# 	'address': 'https://beacon-giab-test.ega-archive.org/api'
