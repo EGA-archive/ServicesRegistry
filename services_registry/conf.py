@@ -16,27 +16,32 @@ services = {
 	'org.ega-archive.beacon-giab-demo': {
 		'name': 'EGA Beacon - Genome In A Bottle',
 		'address': 'https://beacon-giab-demo.ega-archive.org/api',
-		'order': '1'
+		'order': '1',
+		'verifier': 'org.ega-archive.beacon-giab-demo.json'
 	},
 	'org.progenetix.beacon': {
 		'name': 'Progenetix Cancer Genomics Beacon+',
 		'address': 'https://progenetix.org/beacon/info',
-		'order': '2'
+		'order': '2',
+		'verifier': 'org.progenetix.beacon.json'
 	},
 	'org.rd-connect.beacon': {
 		'name': 'Beacon @ RD-Connect',
 		'address': 'https://playground.rd-connect.eu/beacon2/api',
-		'order': '3'
+		'order': '3',
+		'verifier': 'org.rd-connect.beacon.json'
 	},
 	'uk.ac.le.lamp.www448': {
 		'name': 'CafeVariome beacon',
 		'address': 'https://www448.lamp.le.ac.uk/beacon/BeaconApi/info',
-		'order': '4'
+		'order': '4',
+		'verifier': ''
 	},
 	'org.cafevariome.beaconv2': {
 		'name': 'Cafe Variome Beacon v2',
 		'address': 'https://beaconv2.cafevariome.org',
-		'order': '5'
+		'order': '5',
+		'verifier': ''
 	}
 	# 'org.ega-archive.beacon': {
 	# 	'name': 'Beacon Test Instance',

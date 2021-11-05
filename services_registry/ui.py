@@ -56,7 +56,7 @@ def check_logo(url):
 def valid_filter(dic, valid_type):
     return dic['valid'] is valid_type
 
-def explore_service(name, url, order, info, error):
+def explore_service(name, url, order, verifier, info, error):
     """Fetch the interesting information of a service
     by using its base URL"""
 
@@ -73,7 +73,7 @@ def explore_service(name, url, order, info, error):
         response = results # Supporting the old format
     org = response.get("organization", {})
     beacon_id = response.get('id') or response.get('beaconId')
-    entities_json_file = f'static/entities/{beacon_id}.json';
+    entities_json_file = f'static/entities/{verifier}';
     d = {
         "beaconId": beacon_id,
         "title": name,
