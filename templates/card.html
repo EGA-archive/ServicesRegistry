@@ -52,13 +52,13 @@
             </summary>
             <ul>
               {% for entity in entities %}
-                <li class="{{ entity.valid|lower }}" {% if entity.error %}data-tooltip="{{ entity.error }}"{% endif %}>
+                <li class="{{ entity.valid|lower }}">
                   {% if entity.valid == True %}
-                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-check-circle" {% if entity.error %}data-tooltip="{{ entity.error }}"{% endif %}></i>
                   {% elif entity.valid == False %}
-                    <i class="fas fa-times-circle"></i>
+                    <i class="fas fa-times-circle" {% if entity.error %}data-tooltip="{{ entity.error }}"{% endif %}></i>
                   {% else %}
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" {% if entity.error %}data-tooltip="{{ entity.error }}"{% endif %}></i>
                   {% endif %}
                   {{ entity.name }}
                 </li>

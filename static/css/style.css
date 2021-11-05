@@ -150,12 +150,6 @@ body main nav {
   justify-content: center;
   align-items: center;
 }
-@media screen and (min-width: 1576px) {
-  /* line 67, ../sass/_main.scss */
-  body main nav {
-    display: none;
-  }
-}
 /* line 78, ../sass/_main.scss */
 body main nav strong {
   font-weight: bold;
@@ -200,8 +194,8 @@ body main [data-tooltip]:hover:after {
   border-bottom-right-radius: 5px;
   color: white;
   white-space: pre;
-  left: 15px;
-  top: -25px;
+  left: 7px;
+  bottom: 13px;
   z-index: 10000;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
@@ -626,22 +620,23 @@ body main div#cards-container .card ul.entities li details ul li:nth-child(3n) {
 /* line 549, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li i {
   margin: 2px 5px 0 0;
+  height: max-content;
 }
-/* line 553, ../sass/_main.scss */
+/* line 554, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li a {
   margin-left: 5px;
 }
-/* line 626, ../sass/_main.scss */
+/* line 627, ../sass/_main.scss */
 body a {
   color: #74C5EB;
   text-decoration: underline;
   transition: ease .5s;
 }
-/* line 630, ../sass/_main.scss */
+/* line 631, ../sass/_main.scss */
 body a:hover {
   color: #1070B7;
 }
-/* line 633, ../sass/_main.scss */
+/* line 634, ../sass/_main.scss */
 body footer {
   width: 100%;
   background-color: white;
@@ -654,7 +649,7 @@ body footer {
   align-items: center;
   justify-content: center;
 }
-/* line 647, ../sass/_main.scss */
+/* line 648, ../sass/_main.scss */
 body footer p {
   line-height: 15px;
   font-weight: 300;
@@ -662,48 +657,48 @@ body footer p {
   transition: ease all 0.5s;
 }
 @media screen and (max-width: 580px) {
-  /* line 647, ../sass/_main.scss */
+  /* line 648, ../sass/_main.scss */
   body footer p {
     font-size: 9px;
     line-height: 10px;
   }
 }
-/* line 660, ../sass/_main.scss */
+/* line 661, ../sass/_main.scss */
 body footer a {
   color: #275F90;
 }
-/* line 662, ../sass/_main.scss */
+/* line 663, ../sass/_main.scss */
 body footer a:hover {
   color: #275F90;
   text-decoration: none;
 }
-/* line 668, ../sass/_main.scss */
+/* line 669, ../sass/_main.scss */
 body footer section#EGA {
   margin-left: 30px;
   font-size: 12px;
 }
-/* line 671, ../sass/_main.scss */
+/* line 672, ../sass/_main.scss */
 body footer section#EGA a {
   color: white;
 }
-/* line 673, ../sass/_main.scss */
+/* line 674, ../sass/_main.scss */
 body footer section#EGA a:hover {
   color: #74C5EB;
 }
-/* line 676, ../sass/_main.scss */
+/* line 677, ../sass/_main.scss */
 body footer section#EU {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: right;
 }
-/* line 682, ../sass/_main.scss */
+/* line 683, ../sass/_main.scss */
 body footer section#EU p {
   max-width: 400px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 688, ../sass/_main.scss */
+/* line 689, ../sass/_main.scss */
 body footer section#EU img {
   height: 30px;
   margin-right: 30px;

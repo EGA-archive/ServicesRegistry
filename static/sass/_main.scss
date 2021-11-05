@@ -116,8 +116,8 @@ body {
             border-bottom-right-radius: 5px;
             color: white;
             white-space: pre;
-            left: 15px;
-            top: -25px;
+            left: 7px;
+            bottom: 13px;
             z-index: 10000;
             font-family: 'Open Sans', sans-serif;
             font-size: 12px;
@@ -548,6 +548,7 @@ body {
 
                           i {
                             margin: 2px 5px 0 0;
+                            height: max-content;
                           }
 
                           a {
