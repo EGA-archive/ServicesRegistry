@@ -31,12 +31,6 @@ services = {
 		'order': '3',
 		'verifier': 'org.rd-connect.beacon.json'
 	},
-	'uk.ac.le.lamp.www448': {
-		'name': 'CafeVariome beacon',
-		'address': 'https://www448.lamp.le.ac.uk/beacon/BeaconApi/info',
-		'order': '4',
-		'verifier': ''
-	},
 	'org.cafevariome.beaconv2': {
 		'name': 'Cafe Variome Beacon v2',
 		'address': 'https://beaconv2.cafevariome.org',
