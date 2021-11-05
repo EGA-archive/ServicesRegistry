@@ -41,7 +41,7 @@ services = {
 		'name': 'Cafe Variome Beacon v2',
 		'address': 'https://beaconv2.cafevariome.org',
 		'order': '5',
-		'verifier': ''
+		'verifier': 'org.cafevariome.beaconv2.json'
 	}
 	# 'org.ega-archive.beacon': {
 	# 	'name': 'Beacon Test Instance',
