@@ -334,6 +334,7 @@ body {
                   flex-flow: row nowrap;
                   align-items: stretch;
                   position: relative;
+                  min-height: 205px;
 
                   >i {
                     position: absolute;
@@ -412,28 +413,35 @@ body {
                 }
                 section.right-part {
                     margin: 20px 0;
-                    padding: 0 20px;
+                    padding: 5px 20px;
                     display: flex;
                     flex-flow: column nowrap;
-                    justify-content: space-around;
                     align-items: flex-start;
+                    justify-content: space-between;
 
                     h1 {
                         font-size: 110%;
                         line-height: initial;
                         font-weight: bold;
                         font-family: 'Roboto', sans-serif;
+                        margin-bottom: 5px;
                     }
                     h2, p {
                         font-size: 80%;
                         line-height: initial;
+                        margin-bottom: 5px;
                     }
 
                     p {
+                      height: 100%;
+                    }
+
+                    p[title] {
                       overflow: hidden;
-                      -webkit-line-clamp: 2;
+                      -webkit-line-clamp: 4;
                       -webkit-box-orient: vertical;
                       display: -webkit-box;
+                      height: auto !important;
                     }
                 }
 

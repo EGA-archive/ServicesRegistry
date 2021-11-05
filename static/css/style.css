@@ -398,21 +398,22 @@ body main div#cards-container .card div {
   flex-flow: row nowrap;
   align-items: stretch;
   position: relative;
+  min-height: 205px;
 }
-/* line 338, ../sass/_main.scss */
+/* line 339, ../sass/_main.scss */
 body main div#cards-container .card div > i {
   position: absolute;
   right: 7px;
   bottom: 7px;
 }
-/* line 343, ../sass/_main.scss */
+/* line 344, ../sass/_main.scss */
 body main div#cards-container .card div > i[data-tooltip]:hover:after {
   right: 15px;
   left: auto;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 5px;
 }
-/* line 353, ../sass/_main.scss */
+/* line 354, ../sass/_main.scss */
 body main div#cards-container .card section.left-part {
   padding: 20px;
   display: flex;
@@ -421,92 +422,99 @@ body main div#cards-container .card section.left-part {
   align-items: center;
   min-width: 140px;
 }
-/* line 360, ../sass/_main.scss */
+/* line 361, ../sass/_main.scss */
 body main div#cards-container .card section.left-part img {
   height: 40px;
 }
-/* line 363, ../sass/_main.scss */
+/* line 364, ../sass/_main.scss */
 body main div#cards-container .card section.left-part img.white-img {
   -webkit-filter: drop-shadow(1px 1px 4px #222);
   filter: drop-shadow(1px 1px 5px rgba(34, 34, 34, 0.5));
 }
-/* line 368, ../sass/_main.scss */
+/* line 369, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul {
   font-size: 12px;
   margin-top: 10px;
 }
-/* line 371, ../sass/_main.scss */
+/* line 372, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li {
   list-style: none;
   padding: 8px;
   display: flex;
   align-items: baseline;
 }
-/* line 377, ../sass/_main.scss */
+/* line 378, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li i {
   margin-right: 3px;
 }
-/* line 381, ../sass/_main.scss */
+/* line 382, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li a {
   text-decoration: none;
   color: #717578;
   transition: ease .5s;
 }
-/* line 386, ../sass/_main.scss */
+/* line 387, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li a:hover {
   color: #74C5EB;
 }
-/* line 390, ../sass/_main.scss */
+/* line 391, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li progress {
   -webkit-appearance: none;
   appearance: none;
   width: 70px;
   height: 8px;
 }
-/* line 396, ../sass/_main.scss */
+/* line 397, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li progress[value]::-webkit-progress-value {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   background: #7ed321;
 }
-/* line 401, ../sass/_main.scss */
+/* line 402, ../sass/_main.scss */
 body main div#cards-container .card section.left-part ul li progress[value]::-webkit-progress-bar {
   border-radius: 10px;
   background: #ff7979;
 }
-/* line 409, ../sass/_main.scss */
+/* line 410, ../sass/_main.scss */
 body main div#cards-container .card section.left-part + section.right-part {
   border-left: 1px solid #74C5EB;
 }
-/* line 413, ../sass/_main.scss */
+/* line 414, ../sass/_main.scss */
 body main div#cards-container .card section.right-part {
   margin: 20px 0;
-  padding: 0 20px;
+  padding: 5px 20px;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-around;
   align-items: flex-start;
+  justify-content: space-between;
 }
-/* line 421, ../sass/_main.scss */
+/* line 422, ../sass/_main.scss */
 body main div#cards-container .card section.right-part h1 {
   font-size: 110%;
   line-height: initial;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
+  margin-bottom: 5px;
 }
-/* line 427, ../sass/_main.scss */
+/* line 429, ../sass/_main.scss */
 body main div#cards-container .card section.right-part h2, body main div#cards-container .card section.right-part p {
   font-size: 80%;
   line-height: initial;
+  margin-bottom: 5px;
 }
-/* line 432, ../sass/_main.scss */
+/* line 435, ../sass/_main.scss */
 body main div#cards-container .card section.right-part p {
+  height: 100%;
+}
+/* line 439, ../sass/_main.scss */
+body main div#cards-container .card section.right-part p[title] {
   overflow: hidden;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   display: -webkit-box;
+  height: auto !important;
 }
-/* line 440, ../sass/_main.scss */
+/* line 448, ../sass/_main.scss */
 body main div#cards-container .card ul.entities {
   display: flex;
   flex-wrap: wrap;
@@ -517,28 +525,28 @@ body main div#cards-container .card ul.entities {
   border-bottom-right-radius: 10px;
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
 }
-/* line 451, ../sass/_main.scss */
+/* line 459, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li {
   width: 100%;
 }
-/* line 455, ../sass/_main.scss */
+/* line 463, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li:first-child details {
   padding-top: 5px;
 }
-/* line 461, ../sass/_main.scss */
+/* line 469, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li:last-child details {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding-bottom: 5px;
 }
-/* line 468, ../sass/_main.scss */
+/* line 476, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details {
   position: relative;
   width: auto;
   z-index: 10;
   height: auto;
 }
-/* line 474, ../sass/_main.scss */
+/* line 482, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details summary {
   cursor: pointer;
   font-size: 90%;
@@ -549,11 +557,11 @@ body main div#cards-container .card ul.entities li details summary {
   align-items: center;
   justify-content: space-between;
 }
-/* line 484, ../sass/_main.scss */
+/* line 492, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details summary::-webkit-details-marker {
   display: none;
 }
-/* line 489, ../sass/_main.scss */
+/* line 497, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details span {
   width: 60%;
   background: #DAF0F9;
@@ -562,7 +570,7 @@ body main div#cards-container .card ul.entities li details span {
   position: relative;
   overflow: hidden;
 }
-/* line 496, ../sass/_main.scss */
+/* line 504, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details span:before {
   content: '';
   position: absolute;
@@ -573,7 +581,7 @@ body main div#cards-container .card ul.entities li details span:before {
   display: block;
   background: #7ed321;
 }
-/* line 506, ../sass/_main.scss */
+/* line 514, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details span:after {
   content: '';
   position: absolute;
@@ -584,12 +592,12 @@ body main div#cards-container .card ul.entities li details span:after {
   display: block;
   background: #ff7979;
 }
-/* line 518, ../sass/_main.scss */
+/* line 526, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details[open] {
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
   background: #275F90;
 }
-/* line 523, ../sass/_main.scss */
+/* line 531, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul {
   display: flex;
   flex-wrap: wrap;
@@ -597,7 +605,7 @@ body main div#cards-container .card ul.entities li details ul {
   position: relative;
   color: white;
 }
-/* line 530, ../sass/_main.scss */
+/* line 538, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li {
   width: 33.3%;
   flex-basis: 33.3%;
@@ -609,34 +617,34 @@ body main div#cards-container .card ul.entities li details ul li {
   padding: 0 7px;
   line-height: 16px;
 }
-/* line 541, ../sass/_main.scss */
+/* line 549, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li:nth-child(3n+1) {
   padding-left: 0;
 }
-/* line 545, ../sass/_main.scss */
+/* line 553, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li:nth-child(3n) {
   padding-right: 0;
 }
-/* line 549, ../sass/_main.scss */
+/* line 557, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li i {
   margin: 2px 5px 0 0;
   height: max-content;
 }
-/* line 554, ../sass/_main.scss */
+/* line 562, ../sass/_main.scss */
 body main div#cards-container .card ul.entities li details ul li a {
   margin-left: 5px;
 }
-/* line 627, ../sass/_main.scss */
+/* line 635, ../sass/_main.scss */
 body a {
   color: #74C5EB;
   text-decoration: underline;
   transition: ease .5s;
 }
-/* line 631, ../sass/_main.scss */
+/* line 639, ../sass/_main.scss */
 body a:hover {
   color: #1070B7;
 }
-/* line 634, ../sass/_main.scss */
+/* line 642, ../sass/_main.scss */
 body footer {
   width: 100%;
   background-color: white;
@@ -649,7 +657,7 @@ body footer {
   align-items: center;
   justify-content: center;
 }
-/* line 648, ../sass/_main.scss */
+/* line 656, ../sass/_main.scss */
 body footer p {
   line-height: 15px;
   font-weight: 300;
@@ -657,48 +665,48 @@ body footer p {
   transition: ease all 0.5s;
 }
 @media screen and (max-width: 580px) {
-  /* line 648, ../sass/_main.scss */
+  /* line 656, ../sass/_main.scss */
   body footer p {
     font-size: 9px;
     line-height: 10px;
   }
 }
-/* line 661, ../sass/_main.scss */
+/* line 669, ../sass/_main.scss */
 body footer a {
   color: #275F90;
 }
-/* line 663, ../sass/_main.scss */
+/* line 671, ../sass/_main.scss */
 body footer a:hover {
   color: #275F90;
   text-decoration: none;
 }
-/* line 669, ../sass/_main.scss */
+/* line 677, ../sass/_main.scss */
 body footer section#EGA {
   margin-left: 30px;
   font-size: 12px;
 }
-/* line 672, ../sass/_main.scss */
+/* line 680, ../sass/_main.scss */
 body footer section#EGA a {
   color: white;
 }
-/* line 674, ../sass/_main.scss */
+/* line 682, ../sass/_main.scss */
 body footer section#EGA a:hover {
   color: #74C5EB;
 }
-/* line 677, ../sass/_main.scss */
+/* line 685, ../sass/_main.scss */
 body footer section#EU {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: right;
 }
-/* line 683, ../sass/_main.scss */
+/* line 691, ../sass/_main.scss */
 body footer section#EU p {
   max-width: 400px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 689, ../sass/_main.scss */
+/* line 697, ../sass/_main.scss */
 body footer section#EU img {
   height: 30px;
   margin-right: 30px;

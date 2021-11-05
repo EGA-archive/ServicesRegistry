@@ -38,6 +38,8 @@
       {% endif %}
       {% if service.description %}
         <p title="{{ service.description|safe }}">{{ service.description|safe }}</p>
+      {% else %}
+        <p></p>
       {% endif %}
     </section>
   </div>

@@ -1,0 +1,273 @@
+{
+  "name": "Cafe Variome Beacon v2",
+  "url": "https://beaconv2.cafevariome.org/",
+  "last_updated": "2021-11-05T10:59:30.759042",
+  "entities": {
+    "BeaconMap": [
+      {
+        "name": "BeaconMap",
+        "url": "https://beaconv2.cafevariome.org/map",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Bioinformatics analysis": [
+      {
+        "name": "Bioinformatics analysis all entries",
+        "url": "https://beaconv2.cafevariome.org/analyses",
+        "valid": null,
+        "error": "Endpoint https://beaconv2.cafevariome.org/analyses did not respond"
+      },
+      {
+        "name": "Bioinformatics analysis single entry",
+        "url": "https://beaconv2.cafevariome.org/analyses/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Bioinformatics analysis",
+        "url": "https://beaconv2.cafevariome.org/analyses/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "Biological Sample": [
+      {
+        "name": "Bioinformatics analysis related with a Biological Sample",
+        "url": "https://beaconv2.cafevariome.org/biosamples/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Biological Sample all entries",
+        "url": "https://beaconv2.cafevariome.org/biosamples",
+        "valid": null,
+        "error": "Endpoint https://beaconv2.cafevariome.org/biosamples did not respond"
+      },
+      {
+        "name": "Biological Sample single entry",
+        "url": "https://beaconv2.cafevariome.org/biosamples/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Biological Sample",
+        "url": "https://beaconv2.cafevariome.org/biosamples/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run related with a Biological Sample",
+        "url": "https://beaconv2.cafevariome.org/biosamples/_id_/runs",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "Cohort": [
+      {
+        "name": "Bioinformatics analysis related with a Cohort",
+        "url": "https://beaconv2.cafevariome.org/cohorts/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Biological Sample related with a Cohort",
+        "url": "https://beaconv2.cafevariome.org/cohorts/_id_/biosamples",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Cohort all entries",
+        "url": "https://beaconv2.cafevariome.org/cohorts",
+        "valid": null,
+        "error": "Endpoint https://beaconv2.cafevariome.org/cohorts did not respond"
+      },
+      {
+        "name": "Cohort single entry",
+        "url": "https://beaconv2.cafevariome.org/cohorts/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Cohort",
+        "url": "https://beaconv2.cafevariome.org/cohorts/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Individual related with a Cohort",
+        "url": "https://beaconv2.cafevariome.org/cohorts/_id_/individuals",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run related with a Cohort",
+        "url": "https://beaconv2.cafevariome.org/cohorts/_id_/runs",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "Configuration": [
+      {
+        "name": "Configuration",
+        "url": "https://beaconv2.cafevariome.org/configuration",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Dataset": [
+      {
+        "name": "Bioinformatics analysis related with a Dataset",
+        "url": "https://beaconv2.cafevariome.org/datasets/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Biological Sample related with a Dataset",
+        "url": "https://beaconv2.cafevariome.org/datasets/_id_/biosamples",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Dataset all entries",
+        "url": "https://beaconv2.cafevariome.org/datasets",
+        "valid": true,
+        "error": null
+      },
+      {
+        "name": "Dataset single entry",
+        "url": "https://beaconv2.cafevariome.org/datasets/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Dataset",
+        "url": "https://beaconv2.cafevariome.org/datasets/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Individual related with a Dataset",
+        "url": "https://beaconv2.cafevariome.org/datasets/_id_/individuals",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run related with a Dataset",
+        "url": "https://beaconv2.cafevariome.org/datasets/_id_/runs",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "EntryTypes": [
+      {
+        "name": "EntryTypes",
+        "url": "https://beaconv2.cafevariome.org/entry_types",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Genomic Variants": [
+      {
+        "name": "Bioinformatics analysis related with a Genomic Variants",
+        "url": "https://beaconv2.cafevariome.org/g_variants/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Biological Sample related with a Genomic Variants",
+        "url": "https://beaconv2.cafevariome.org/g_variants/_id_/biosamples",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants all entries",
+        "url": "https://beaconv2.cafevariome.org/g_variants",
+        "valid": true,
+        "error": null
+      },
+      {
+        "name": "Genomic Variants single entry",
+        "url": "https://beaconv2.cafevariome.org/g_variants/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Individual related with a Genomic Variants",
+        "url": "https://beaconv2.cafevariome.org/g_variants/_id_/individuals",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run related with a Genomic Variants",
+        "url": "https://beaconv2.cafevariome.org/g_variants/_id_/runs",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "Individual": [
+      {
+        "name": "Bioinformatics analysis related with a Individual",
+        "url": "https://beaconv2.cafevariome.org/individuals/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Biological Sample related with a Individual",
+        "url": "https://beaconv2.cafevariome.org/individuals/_id_/biosamples",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Individual",
+        "url": "https://beaconv2.cafevariome.org/individuals/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Individual all entries",
+        "url": "https://beaconv2.cafevariome.org/individuals",
+        "valid": null,
+        "error": "Endpoint https://beaconv2.cafevariome.org/individuals did not respond"
+      },
+      {
+        "name": "Individual single entry",
+        "url": "https://beaconv2.cafevariome.org/individuals/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run related with a Individual",
+        "url": "https://beaconv2.cafevariome.org/individuals/_id_/runs",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ],
+    "Sequencing run": [
+      {
+        "name": "Bioinformatics analysis related with a Sequencing run",
+        "url": "https://beaconv2.cafevariome.org/runs/_id_/analyses",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Genomic Variants related with a Sequencing run",
+        "url": "https://beaconv2.cafevariome.org/runs/_id_/g_variants",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      },
+      {
+        "name": "Sequencing run all entries",
+        "url": "https://beaconv2.cafevariome.org/runs",
+        "valid": null,
+        "error": "Endpoint https://beaconv2.cafevariome.org/runs did not respond"
+      },
+      {
+        "name": "Sequencing run single entry",
+        "url": "https://beaconv2.cafevariome.org/runs/_id_",
+        "valid": null,
+        "error": "No ids were extracted from the main entity endpoint"
+      }
+    ]
+  }
+}
