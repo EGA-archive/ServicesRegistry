@@ -1,0 +1,87 @@
+{
+  "name": "GA4GH Approval Beacon Test",
+  "url": "https://ga4gh-approval-beacon-test.ega-archive.org/api/",
+  "last_updated": "2021-11-29T15:04:26.665483",
+  "entities": {
+    "BeaconMap": [
+      {
+        "name": "GA4GH Approval Beacon Test",
+        "url": "https://ga4gh-approval-beacon-test.ega-archive.org/api/map",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Bioinformatics analysis": [
+      {
+        "name": "Bioinformatics analysis all entries",
+        "url": "https://ga4gh-approval-beacon-test.ega-archive.org/api/analyses",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Biological Sample": [
+      {
+        "name": "Biological Sample all entries",
+        "url": "https://ga4gh-approval-beacon-test.ega-archive.org/api/biosamples",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Cohort": [
+      {
+        "name": "Cohort all entries",
+        "url": "https://ga4gh-approval-beacon-test.ega-archive.org/api/cohorts",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Configuration": [
+      {
+        "name": "GA4GH Approval Beacon Test",
+        "url": "https://ga4gh-approval-beacon-test.ega-archive.org/api/configuration",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Dataset": [
+      {
+        "name": "Dataset all entries",
+        "url": "https://ga4gh-approval-beacon-test.ega-archive.org/api/datasets",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "EntryTypes": [
+      {
+        "name": "GA4GH Approval Beacon Test",
+        "url": "https://ga4gh-approval-beacon-test.ega-archive.org/api/entry_types",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Genomic Variants": [
+      {
+        "name": "Genomic Variants all entries",
+        "url": "https://ga4gh-approval-beacon-test.ega-archive.org/api/g_variants",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Individual": [
+      {
+        "name": "Individual all entries",
+        "url": "https://ga4gh-approval-beacon-test.ega-archive.org/api/individuals",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Sequencing run": [
+      {
+        "name": "Sequencing run all entries",
+        "url": "https://ga4gh-approval-beacon-test.ega-archive.org/api/runs",
+        "valid": true,
+        "error": null
+      }
+    ]
+  }
+}
