@@ -75,7 +75,7 @@ class Collector():
 
             # Do the call
             LOG.debug('---- %s %s | headers: %s', method, url, headers)
-            async with httpx.AsyncClient() as client:
+            async with httpx.AsyncClient(verify=False) as client:
                 r = await client.request(method, url, headers=headers, data=data)
                 LOG.debug('---- status: %s', r.status_code)
                 if r.status_code == 304:
