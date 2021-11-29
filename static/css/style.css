@@ -418,7 +418,7 @@ body main div#cards-container .card section.left-part {
   padding: 20px;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   min-width: 140px;
 }

@@ -37,13 +37,13 @@ async def initialize(app):
     app['static_root_url'] = '/static'
     LOG.info("Initialization done.")
 
-def check_logo_exist(url):
+def check_url_exist(url):
     if not url:
-        return False
+        return None
     r = httpx.get(url)
     if r.status_code != 200:
-        return False
-    return True
+        return None
+    return url
 
 def check_logo(url):
     if not url:
@@ -80,11 +80,11 @@ def explore_service(name, url, order, verifier, info, error):
         "organization_name": org.get("name"),
         "name": response.get("name"),
         "description": response.get("description"),
-        "visit_us": org.get("welcomeUrl"),
-        "beacon_ui": response.get("welcomeUrl"),
+        "visit_us": check_url_exist(org.get("welcomeUrl")),
+        "beacon_ui": check_url_exist(response.get("welcomeUrl")),
         "beacon_api": url,
         "contact_us": org.get("contactUrl"),
-        "logo_exist": check_logo_exist(org.get("logoUrl")),
+        "logo_exist": check_url_exist(org.get("logoUrl")),
         "logo_url": check_logo(org.get("logoUrl")),
         "order": order
     }
