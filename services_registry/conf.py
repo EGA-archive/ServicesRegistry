@@ -36,6 +36,12 @@ services = {
 		'address': 'https://beaconv2.cafevariome.org',
 		'order': '4',
 		'verifier': 'org.cafevariome.beaconv2.json'
+	},
+	'org.cbra.csvs.beacon.v2': {
+		'name': 'CSVS GA4GH Beacon',
+		'address': 'https://csvs-beacon.clinbioinfosspa.es/csvs/ga4ghbeacon/v2/api/',
+		'order': '5',
+		'verifier': 'es.clinbioinfosspa.csvs-beacon.json'
 	}
 	# 'org.ega-archive.beacon': {
 	# 	'name': 'Beacon Test Instance',
