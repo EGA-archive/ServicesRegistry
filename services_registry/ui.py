@@ -40,9 +40,12 @@ async def initialize(app):
 def check_url_exist(url):
     if not url:
         return None
-    r = httpx.get(url)
-    if r.status_code != 200:
-        return None
+    try:
+        r = httpx.get(url)
+        if r.status_code != 200:
+            return None
+    except Exception as e:
+        LOG.error('Error: %s', e)
     return url
 
 def check_logo(url):
