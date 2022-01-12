@@ -19,7 +19,7 @@ services = {
 	},
 	'ega-beacon': {
 		'name': 'EGA Beacon - Genome In A Bottle',
-		'address': 'https://beacon-giab-test.ega-archive.org/api'
+		'address': 'https://ga4gh-approval-beacon-test.ega-archive.org/api/'
 	},
 }
 
