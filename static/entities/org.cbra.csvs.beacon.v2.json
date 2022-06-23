@@ -1,0 +1,95 @@
+{
+  "name": "CSVS GA4GH Beacon",
+  "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api",
+  "last_updated": "2022-06-23T11:08:16.679949",
+  "entities": {
+    "BeaconMap": [
+      {
+        "name": "CSVS GA4GH Beacon",
+        "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api/map",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Bioinformatics analysis": [
+      {
+        "name": "Bioinformatics analysis all entries",
+        "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api/analyses",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Biological Sample": [
+      {
+        "name": "Biological Sample all entries",
+        "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api/biosamples",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Cohort": [
+      {
+        "name": "Cohort all entries",
+        "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api/cohorts",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Configuration": [
+      {
+        "name": "CSVS GA4GH Beacon",
+        "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api/configuration",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Dataset": [
+      {
+        "name": "Dataset all entries",
+        "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api/datasets",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "EntryTypes": [
+      {
+        "name": "CSVS GA4GH Beacon",
+        "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api/entry_types",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Genomic Variants": [
+      {
+        "name": "Genomic Variants all entries",
+        "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api/g_variants",
+        "valid": false,
+        "error": "Response does not match the schema: \"variantType\" is a required property ()\n\"alternateBases\" is a required property ()\n\"position\" is a required property ()\n"
+      }
+    ],
+    "Individual": [
+      {
+        "name": "Individual all entries",
+        "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api/individuals",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Info": [
+      {
+        "name": "CSVS GA4GH Beacon",
+        "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api/info",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Sequencing run": [
+      {
+        "name": "Sequencing run all entries",
+        "url": "https://csvs.clinbioinfosspa.es/beacon/v2/api/runs",
+        "valid": true,
+        "error": null
+      }
+    ]
+  }
+}

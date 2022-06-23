@@ -1,0 +1,149 @@
+{
+  "name": "ENOD Beacon",
+  "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/",
+  "last_updated": "2022-06-23T11:08:40.154622",
+  "entities": {
+    "BeaconMap": [
+      {
+        "name": "ENOD Beacon",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/map",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Bioinformatics analysis": [
+      {
+        "name": "Bioinformatics analysis all entries",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/analyses",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Biological Sample": [
+      {
+        "name": "Bioinformatics analysis related with a Biological Sample",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/biosamples/0013-010-COHO_1/analyses",
+        "valid": true,
+        "error": null
+      },
+      {
+        "name": "Biological Sample all entries",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/biosamples",
+        "valid": true,
+        "error": null
+      },
+      {
+        "name": "Biological Sample single entry",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/biosamples/0013-010-COHO_1",
+        "valid": true,
+        "error": null
+      },
+      {
+        "name": "Genomic Variants related with a Biological Sample",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/biosamples/0013-010-COHO_1/g_variants",
+        "valid": false,
+        "error": "Response does not match the schema: \"variantType\" is a required property ()\n\"alternateBases\" is a required property ()\n\"position\" is a required property ()\n"
+      },
+      {
+        "name": "Sequencing run related with a Biological Sample",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/biosamples/0013-010-COHO_1/runs",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Cohort": [
+      {
+        "name": "Cohort all entries",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/cohorts",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Configuration": [
+      {
+        "name": "ENOD Beacon",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/configuration",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Dataset": [
+      {
+        "name": "Dataset all entries",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/datasets",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "EntryTypes": [
+      {
+        "name": "ENOD Beacon",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/entry_types",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Genomic Variants": [
+      {
+        "name": "Genomic Variants all entries",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/g_variants",
+        "valid": false,
+        "error": "Response does not match the schema: \"variantType\" is a required property ()\n\"alternateBases\" is a required property ()\n\"position\" is a required property ()\n"
+      }
+    ],
+    "Individual": [
+      {
+        "name": "Bioinformatics analysis related with a Individual",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/individuals/0013-010-COHO_1/analyses",
+        "valid": null,
+        "error": "Endpoint http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/individuals/0013-010-COHO_1/analyses did not respond"
+      },
+      {
+        "name": "Biological Sample related with a Individual",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/individuals/0013-010-COHO_1/biosamples",
+        "valid": true,
+        "error": null
+      },
+      {
+        "name": "Genomic Variants related with a Individual",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/individuals/0013-010-COHO_1/g_variants",
+        "valid": false,
+        "error": "Response does not match the schema: \"variantType\" is a required property ()\n\"alternateBases\" is a required property ()\n\"position\" is a required property ()\n"
+      },
+      {
+        "name": "Individual all entries",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/individuals",
+        "valid": true,
+        "error": null
+      },
+      {
+        "name": "Individual single entry",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/individuals/0013-010-COHO_1",
+        "valid": true,
+        "error": null
+      },
+      {
+        "name": "Sequencing run related with a Individual",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/individuals/0013-010-COHO_1/runs",
+        "valid": null,
+        "error": "Endpoint http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/individuals/0013-010-COHO_1/runs did not respond"
+      }
+    ],
+    "Info": [
+      {
+        "name": "ENOD Beacon",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/info",
+        "valid": true,
+        "error": null
+      }
+    ],
+    "Sequencing run": [
+      {
+        "name": "Sequencing run all entries",
+        "url": "http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/runs",
+        "valid": true,
+        "error": null
+      }
+    ]
+  }
+}

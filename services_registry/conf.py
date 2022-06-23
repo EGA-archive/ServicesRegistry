@@ -48,6 +48,18 @@ services = {
 		'address': 'https://csvs-beacon.clinbioinfosspa.es/csvs/ga4ghbeacon/v2/api/',
 		'order': '5',
 		'verifier': 'es.clinbioinfosspa.csvs-beacon.json'
+	},
+	'org.cbra.csvs.beacon.v2': {
+		'name': 'CSVS GA4GH Beacon',
+		'address': 'https://csvs.clinbioinfosspa.es/beacon/v2/api',
+		'order': '6',
+		'verifier': 'org.cbra.csvs.beacon.v2.json'
+	},
+	'org.clinbioinfosspa.enod.ga4ghbeaconv2': {
+		'name': 'ENOD Beacon',
+		'address': 'http://iva-enod.clinbioinfosspa.es:8080/ga4gh-beacon-v2/',
+		'order': '7',
+		'verifier': 'org.clinbioinfosspa.enod.ga4ghbeaconv2.json'
 	}
 	# 'org.ega-archive.beacon': {
 	# 	'name': 'Beacon Test Instance',
