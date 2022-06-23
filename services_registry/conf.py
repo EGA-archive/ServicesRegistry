@@ -20,8 +20,8 @@ services = {
 	# 	'verifier': 'org.ega-archive.beacon-giab-demo.json'
 	# },
 	'org.ega-archive.ga4gh-approval-beacon-test': {
-		'name': 'GA4GH Approval Beacon Test',
-		'address': 'https://ga4gh-approval-beacon-test.ega-archive.org/api/',
+		'name': 'GA4GH Approval Beacon Demo',
+		'address': 'https://ga4gh-approval-beacon-demo.ega-archive.org/api/',
 		'order': '1',
 		'verifier': 'org.ega-archive.ga4gh-approval-beacon-test.json'
 	},
